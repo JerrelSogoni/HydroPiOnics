@@ -9,6 +9,7 @@ import wx.lib.stattext
 import wx.lib.scrolledpanel
 import wx.lib.buttons
 import os
+import sys
 
 def create(parent):
     return HydroPiOnics(parent)
@@ -92,7 +93,13 @@ def create(parent):
 ] = [wx.NewId() for _init_ctrls in range(122)]
 
 class HydroPiOnics(wx.Frame):
-    IMG_LOCATION = os.getcwd().strip("src") + "Image\\"
+    #Identify Operating System in order to direct image loading path
+    #Mac OS or Linux
+    if(sys.platform.startswith('darwin') or sys.platform.startswith('linux')):
+        IMG_LOCATION = os.getcwd().strip("src") + "Image//"
+    #Windows
+    elif(sys.platform.startswith('win32')):
+        IMG_LOCATION = os.getcwd().strip("src") + "Image\\"
     def _init_ctrls(self, prnt):
         # generated method, don't edit
         wx.Frame.__init__(self, id=wxID_HYDROPIONICS, name=u'HydroPiOnics',
