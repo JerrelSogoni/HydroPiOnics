@@ -10,6 +10,11 @@ import wx.lib.scrolledpanel
 import wx.lib.buttons
 import os
 import sys
+from gui.HydroPiOnicsView import HydroPiOnicsView
+from data.HydroPiOnicsM import HydroPiOnicsM
+from controller.HydroPiOnicsController import HydroPiOnicsController
+
+
 
 def create(parent):
     return HydroPiOnics(parent)
@@ -95,11 +100,13 @@ def create(parent):
 class HydroPiOnics(wx.Frame):
     #Identify Operating System in order to direct image loading path
     #Mac OS or Linux
+    DIRECTORY = os.getcwd()[:len(os.getcwd()) - 6]
+
     if(sys.platform.startswith('darwin') or sys.platform.startswith('linux')):
-        IMG_LOCATION = os.getcwd().strip("src") + "Image//"
+        IMG_LOCATION = DIRECTORY + "Image//"
     #Windows
     elif(sys.platform.startswith('win32')):
-        IMG_LOCATION = os.getcwd().strip("src") + "Image\\"
+        IMG_LOCATION = DIRECTORY + "Image\\"
     def _init_ctrls(self, prnt):
         # generated method, don't edit
         wx.Frame.__init__(self, id=wxID_HYDROPIONICS, name=u'HydroPiOnics',
@@ -924,8 +931,14 @@ class HydroPiOnics(wx.Frame):
               False, u'Small Fonts'))
 
     def __init__(self, parent):
+        self.GUI = HydroPiOnicsView(self)
+        self.GUIModel =  HydroPiOnicsM()
+        self.GUIController = HydroPiOnicsController(self.GUIModel,self.GUI)
+
         self._init_ctrls(parent)
 
+    def initGUI(self, frame):
+        self.GUI = HydroPiOnicsView(frame)
     def OnCheckBox12Checkbox(self, event):
         event.Skip()
 
@@ -1018,7 +1031,12 @@ class HydroPiOnics(wx.Frame):
 
     def OnCheckPHCheckBoxCheckbox(self, event):
         event.Skip()
-
+    def initPage(self, parent):
+        pass
+    def initMotor(self, parent):
+        pass
+    def initRelay(self, parent):
+        pass
 
 if __name__ == '__main__':
     app = wx.App()
