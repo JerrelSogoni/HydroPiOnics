@@ -13,10 +13,8 @@ class HydroPiOnicsView:
 
         self.appGUI.SetClientSize(wx.Size(934, 761))
         self.appGUI.SetBackgroundColour(wx.Colour(196, 233, 253))
-        self.appGUI.SetMaxClientSize(wx.Size(950, 800))
         self.appGUI.SetMaxSize(wx.Size(950, 800))
         self.appGUI.SetInitialSize(wx.Size(950, 800))
-        self.appGUI.SetMinClientSize(wx.Size(-1, -1))
         self.appGUI.Show(True)
         self.appGUI.Centre()
         self.appGUI.SetIcon(wx.Icon(self.imageAttachment("applicationicon.ico"),
