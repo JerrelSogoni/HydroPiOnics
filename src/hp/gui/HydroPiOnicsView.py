@@ -33,8 +33,6 @@ class HydroPiOnicsView:
     def initPageButtons(self, appGUI):
         pass
 
-
-
     def initMenuBar(self, appGUI):
         menu = MenuBarView()
         self.appGUI.SetMenuBar(menu)
@@ -44,7 +42,8 @@ class HydroPiOnicsView:
         pass
     def initRelay(self, appGUI):
         pass
-
+    def getAppGUI(self):
+        return self.appGUI
     def imageAttachment(self, object):
         # Identify Operating System in order to direct image loading path
         # Mac OS or Linux

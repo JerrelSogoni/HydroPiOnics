@@ -13,7 +13,12 @@ import sys
 from gui.HydroPiOnicsView import HydroPiOnicsView
 from data.HydroPiOnicsM import HydroPiOnicsM
 from controller.HydroPiOnicsController import HydroPiOnicsController
-
+from gui.MenuBarView import MenuBarView
+from data.MenuBar import MenuBar
+from controller.MenuBarController import MenuBarController
+from gui.MonitorView import MonitorView
+from data.Monitor import Monitor
+from controller.MonitorController import MonitorController
 
 
 def create(parent):
@@ -921,12 +926,21 @@ class HydroPiOnics(wx.Frame):
         #       False, u'Small Fonts'))
 
     def __init__(self, parent):
-        self.GUI = HydroPiOnicsView(self)
-        self.GUIModel =  HydroPiOnicsM()
-        self.GUIController = HydroPiOnicsController(self.GUIModel,self.GUI)
+        self.initFrameMVC()
+        self.initMenuBarMVC()
 
         self._init_ctrls(parent)
-
+    def initFrameMVC(self):
+        self.GUI = HydroPiOnicsView(self)
+        self.GUIModel =  HydroPiOnicsM()
+        self.GUIController = HydroPiOnicsController(self.GUIModel, self.GUI, self)
+    def initMenuBarMVC(self):
+        self.menuView = MenuBarView()
+        self.SetMenuBar(self.menuView)
+        self.menuModel = MenuBar()
+        self.menuController = MenuBarController(self.menuModel, self.menuView, self)
+    def initMonitorMVC(self):
+        pass
     # def OnCheckBox12Checkbox(self, event):
     #     event.Skip()
     #
