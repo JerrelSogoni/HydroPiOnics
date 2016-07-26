@@ -941,6 +941,14 @@ class HydroPiOnics(wx.Frame):
         self.menuController = MenuBarController(self.menuModel, self.menuView, self)
     def initMonitorMVC(self):
         pass
+    def initMotorMVC(self):
+        pass
+    def initRelayMVC(self):
+        pass
+    def initWorkspaceMVC(self):
+        pass
+    def getGUIController(self):
+        return self.GUIController
     # def OnCheckBox12Checkbox(self, event):
     #     event.Skip()
     #
@@ -1039,6 +1047,7 @@ class HydroPiOnics(wx.Frame):
     #     pass
     # def initRelay(self, parent):
     #     pass
+
 
 if __name__ == '__main__':
     app = wx.App()

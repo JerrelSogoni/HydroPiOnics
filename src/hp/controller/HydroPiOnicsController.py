@@ -15,7 +15,7 @@ class HydroPiOnicsController:
         response = dialog.ShowModal()
 
         if (response == wx.ID_YES):
-            self.hydroView.getAppGUI().Destroy()
+            self.appGUI.Destroy()
         else:
             event.StopPropagation()
 

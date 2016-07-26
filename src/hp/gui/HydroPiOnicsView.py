@@ -1,16 +1,10 @@
 import wx
 import os
 import sys
-
-from gui.MenuBarView import MenuBarView
-
 class HydroPiOnicsView:
     def __init__(self, appGUI):
         self.appGUI = appGUI
         self.initFrame(self.appGUI)
-        self.initMenuBar(self.appGUI)
-
-
     def initFrame(self, appGUI):
         # init frame
         wx.Frame.__init__(self.appGUI, id= wx.ID_ANY, name=u'HydroPiOnics',
@@ -27,23 +21,7 @@ class HydroPiOnicsView:
         self.appGUI.Centre()
         self.appGUI.SetIcon(wx.Icon(self.imageAttachment("applicationicon.ico"),
                              wx.BITMAP_TYPE_ICO))
-    def initWorkspace(self, appGUI):
 
-        pass
-    def initPageButtons(self, appGUI):
-        pass
-
-    def initMenuBar(self, appGUI):
-        menu = MenuBarView()
-        self.appGUI.SetMenuBar(menu)
-    def initMonitor(self, appGUI):
-        pass
-    def initMotorView(self, appGUI):
-        pass
-    def initRelay(self, appGUI):
-        pass
-    def getAppGUI(self):
-        return self.appGUI
     def imageAttachment(self, object):
         # Identify Operating System in order to direct image loading path
         # Mac OS or Linux
@@ -55,4 +33,5 @@ class HydroPiOnicsView:
         elif (sys.platform.startswith('win32')):
             imglocation = directory + "Image\\" + object
         return imglocation
+
 

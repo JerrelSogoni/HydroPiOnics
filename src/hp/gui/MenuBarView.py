@@ -28,5 +28,7 @@ class MenuBarView(wx.MenuBar):
         return self.menuFile
     def setMenuFile(self, menuFile):
         self.menuFile = menuFile
+    def getExitItem(self):
+        return self.exitItem
 
 
