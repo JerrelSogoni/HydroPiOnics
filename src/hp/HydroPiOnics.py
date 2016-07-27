@@ -117,15 +117,6 @@ class HydroPiOnics(wx.Frame):
         pass
 
 
-        # self.MenuPane = wx.Panel(id=wxID_HYDROPIONICSMENUPANE, name=u'MenuPane',
-        #       parent=self, pos=wx.Point(0, 0), size=wx.Size(950, 50),
-        #       style=wx.TAB_TRAVERSAL)
-        # self.MenuPane.SetToolTipString(u'')
-        # self.MenuPane.SetBackgroundColour(wx.Colour(114, 151, 250))
-        # self.MenuPane.SetInitialSize(wx.Size(950, 50))
-        # self.MenuPane.SetFont(wx.Font(9, wx.ROMAN, wx.NORMAL, wx.NORMAL, False,
-        #       u'Modern No. 20'))
-        #
         # self.manualToggleButton = wx.lib.buttons.GenToggleButton(id=wxID_HYDROPIONICSMANUALTOGGLEBUTTON,
         #       label=u'Manual', name=u'manualToggleButton', parent=self.MenuPane,
         #       pos=wx.Point(0, 0), size=wx.Size(112, 50), style=0)
@@ -204,12 +195,7 @@ class HydroPiOnics(wx.Frame):
         #       pos=wx.Point(32, 136), size=wx.Size(50, 66), style=0)
         # self.mixToPlantPicture.SetToolTipString(u'')
         #
-        # self.AirTemp = wx.lib.stattext.GenStaticText(ID=wxID_HYDROPIONICSAIRTEMP,
-        #       label=u'Air Temperature:', name=u'AirTemp', parent=self.MenuPane,
-        #       pos=wx.Point(339, 17), size=wx.Size(89, 15), style=0)
-        # self.AirTemp.SetFont(wx.Font(9, wx.ROMAN, wx.NORMAL, wx.NORMAL, False,
-        #       u'Modern No. 20'))
-        #
+
         # self.humidityText = wx.lib.stattext.GenStaticText(ID=wxID_HYDROPIONICSHUMIDITYTEXT,
         #       label=u'Humidity:', name=u'humidityText', parent=self.MenuPane,
         #       pos=wx.Point(504, 16), size=wx.Size(56, 16), style=0)
@@ -928,19 +914,22 @@ class HydroPiOnics(wx.Frame):
     def __init__(self, parent):
         self.initFrameMVC()
         self.initMenuBarMVC()
+        self.initMonitorMVC()
 
         self._init_ctrls(parent)
     def initFrameMVC(self):
-        self.GUI = HydroPiOnicsView(self)
-        self.GUIModel =  HydroPiOnicsM()
-        self.GUIController = HydroPiOnicsController(self.GUIModel, self.GUI, self)
+        self.gui = HydroPiOnicsView(self)
+        self.guiModel =  HydroPiOnicsM()
+        self.guiController = HydroPiOnicsController(self.guiModel, self.gui, self)
     def initMenuBarMVC(self):
         self.menuView = MenuBarView()
         self.SetMenuBar(self.menuView)
         self.menuModel = MenuBar()
         self.menuController = MenuBarController(self.menuModel, self.menuView, self)
     def initMonitorMVC(self):
-        pass
+        self.monitorView = MonitorView(self)
+        self.monitorModel = Monitor()
+        self.monitorController = MonitorController(self.monitorModel, self.monitorView, self)
     def initMotorMVC(self):
         pass
     def initRelayMVC(self):
@@ -948,7 +937,7 @@ class HydroPiOnics(wx.Frame):
     def initWorkspaceMVC(self):
         pass
     def getGUIController(self):
-        return self.GUIController
+        return self.guiController
     # def OnCheckBox12Checkbox(self, event):
     #     event.Skip()
     #

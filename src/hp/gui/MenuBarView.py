@@ -34,9 +34,15 @@ class MenuBarView(wx.MenuBar):
         return self.exitItem
     def initModeTab(self):
         self.menuMode = wx.Menu()
-        self.manualItem = self.menuMode.Append(wx.ID_FILE1, 'Manual')
-        self.timerItem = self.menuMode.Append(wx.ID_FILE2, 'Timer')
+        self.manualItem = self.menuMode.AppendRadioItem(wx.ID_FILE1, "MANUAL")
+        self.timerItem = self.menuMode.AppendRadioItem(wx.ID_FILE2, "TIMER")
         return self.menuMode
+    def getMenuMode(self):
+        return self.menuMode
+
+
+
+
 
 
 

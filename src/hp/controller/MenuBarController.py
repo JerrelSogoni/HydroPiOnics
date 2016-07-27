@@ -1,5 +1,4 @@
 import wx
-from controller.HydroPiOnicsController import *
 
 
 
@@ -8,10 +7,19 @@ class MenuBarController:
         self.menuBarModel = menuBarModel
         self.menuBarView = menuBarView
         self.appGUI = appGUI
+        self.HydroController = self.appGUI.getGUIController()
         self.initActionListners()
 
     def initActionListners(self):
-        tempHydroController = self.appGUI.getGUIController()
-        self.appGUI.Bind(wx.EVT_MENU, tempHydroController.onClose, self.menuBarView.getExitItem() )
-        pass
+        self.menuBarView.getFileTab().Bind(wx.EVT_MENU, self.HydroController.onClose, self.menuBarView.getExitItem() )
+        self.menuBarView.getMenuMode().Bind(wx.EVT_MENU, self.giveModeToController)
+
+    def giveModeToController(self, event):
+        item = self.menuBarView.FindItemById(event.GetId())
+        mode = item.GetText()
+        self.HydroController.setMode(mode)
+        return mode
+
+
+
 
