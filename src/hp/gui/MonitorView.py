@@ -6,7 +6,7 @@ class MonitorView(wx.Panel):
         self.appGUI = appGUI
         #init Panel
         super(self.__class__, self).__init__(id=wx.ID_ANY, name=u'MenuPane',
-                                 parent=self.appGUI, pos=wx.Point(0, 0), size=wx.Size(950, 50),
+                                 parent=self.appGUI, pos=wx.Point(0, 0), size=wx.Size(700, 50),
                                  style=wx.TAB_TRAVERSAL)
 
         self.SetToolTipString(u'')
