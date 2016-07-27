@@ -66,7 +66,7 @@ class MonitorView(wx.Panel):
                u'Modern No. 20'))
         self.pHSensor = wx.lib.stattext.GenStaticText(ID=wx.ID_ANY,
                label=u'10.00', name=u'pHSensor', parent=self,
-               pos=wx.Point(765, 15), size=wx.Size(30, 15), style=0)
+               pos=wx.Point(750, 15), size=wx.Size(30, 15), style=0)
         self.pHSensor.SetInitialSize(wx.Size(30, 15))
         self.pHSensor.SetFont(wx.Font(13, wx.SCRIPT, wx.NORMAL, wx.BOLD, False,
                u'Lucida Handwriting'))
