@@ -12,10 +12,11 @@ class MenuBarController:
 
     def initActionListners(self):
         self.appGUI.Bind(wx.EVT_MENU, self.HydroController.onClose, self.menuBarView.getExitItem() )
-        self.menuBarView.getMenuMode().Bind(wx.EVT_MENU, self.giveModeToController)
+        self.appGUI.Bind(wx.EVT_MENU, self.giveModeToController, self.menuBarView.getManualItem())
+        self.appGUI.Bind(wx.EVT_MENU, self.giveModeToController, self.menuBarView.getTimerItem())
+
 
     def giveModeToController(self, event):
-        self.HydroController.onClose(event)
         item = self.menuBarView.FindItemById(event.GetId())
         mode = item.GetText()
         self.HydroController.setMode(mode)

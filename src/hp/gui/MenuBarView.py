@@ -39,6 +39,10 @@ class MenuBarView(wx.MenuBar):
         return self.menuMode
     def getMenuMode(self):
         return self.menuMode
+    def getManualItem(self):
+        return self.manualItem
+    def getTimerItem(self):
+        return self.timerItem
 
 
 
