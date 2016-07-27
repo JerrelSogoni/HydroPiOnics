@@ -35,33 +35,33 @@ class MonitorView(wx.Panel):
     def initHumidityMonitor(self):
         self.humidityText = wx.lib.stattext.GenStaticText(ID=wx.ID_ANY,
                label=u'Humidity:', name=u'humidityText', parent=self,
-               pos=wx.Point(225, 15), size=wx.Size(56, 16), style=0)
+               pos=wx.Point(235, 15), size=wx.Size(56, 16), style=0)
         self.humidityText.SetFont(wx.Font(13, wx.ROMAN, wx.NORMAL, wx.NORMAL,
                False, u'Modern No. 20'))
         self.humiditySensor = wx.lib.stattext.GenStaticText(ID=wx.ID_ANY,
                label=u'100.0 %', name=u'humiditySensor', parent=self,
-               pos=wx.Point(307, 15), size=wx.Size(56, 15), style=0)
+               pos=wx.Point(317, 15), size=wx.Size(56, 15), style=0)
         self.humiditySensor.SetFont(wx.Font(13, wx.SCRIPT, wx.NORMAL, wx.BOLD,
                False, u'Lucida Handwriting'))
         self.humiditySensor.SetBackgroundStyle(wx.BG_STYLE_COLOUR)
     def initWaterTempMonitor(self):
         self.waterTemperatureText = wx.lib.stattext.GenStaticText(ID=wx.ID_ANY,
                label=u'Water Temperature:', name=u'waterTemperatureText',
-               parent=self, pos=wx.Point(390, 15), size=wx.Size(105,
+               parent=self, pos=wx.Point(400, 15), size=wx.Size(105,
                16), style=0)
         self.waterTemperatureText.SetFont(wx.Font(13, wx.ROMAN, wx.NORMAL,
                wx.NORMAL, False, u'Modern No. 20'))
 
         self.waterTemperatureSensor = wx.lib.stattext.GenStaticText(ID=wx.ID_ANY,
                label=u'100.0 F', name=u'waterTemperatureSensor', parent=self,
-               pos=wx.Point(560, 15), size=wx.Size(65, 15), style=0)
+               pos=wx.Point(570, 15), size=wx.Size(65, 15), style=0)
         self.waterTemperatureSensor.SetInitialSize(wx.Size(65, 15))
         self.waterTemperatureSensor.SetFont(wx.Font(13, wx.SCRIPT, wx.NORMAL,
                wx.NORMAL, False, u'Lucida Handwriting'))
     def initPHMonitor(self):
         self.pHText = wx.lib.stattext.GenStaticText(ID=wx.ID_ANY,
                label=u'PH Level:', name=u'pHText', parent=self,
-               pos=wx.Point(630, 15), size=wx.Size(51, 15), style=0)
+               pos=wx.Point(700, 15), size=wx.Size(51, 15), style=0)
         self.pHText.SetFont(wx.Font(13, wx.ROMAN, wx.NORMAL, wx.NORMAL, False,
                u'Modern No. 20'))
 
