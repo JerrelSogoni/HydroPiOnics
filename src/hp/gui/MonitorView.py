@@ -19,13 +19,13 @@ class MonitorView(wx.Panel):
         self.initHumidityMonitor()
     def initAirTempMonitor(self):
         self.AirTemp = wx.lib.stattext.GenStaticText(ID=wx.ID_ANY,label=u'Air Temperature:', name=u'AirTemp',
-                                                     parent= self,pos=wx.Point(0, 17), size=wx.Size(89, 15),
+                                                     parent= self,pos=wx.Point(0, 15), size=wx.Size(89, 15),
                                                      style=0)
         self.AirTemp.SetFont(wx.Font(13, wx.ROMAN, wx.NORMAL, wx.NORMAL, False,
                 u'Modern No. 20'))
         self.TemperatureSensor = wx.lib.stattext.GenStaticText(ID=wx.ID_ANY,
                label=u'103.0 F', name=u'TemperatureSensor', parent=self,
-               pos=wx.Point(150, 14), size=wx.Size(14, 16), style=0)
+               pos=wx.Point(150, 15), size=wx.Size(14, 16), style=0)
         self.TemperatureSensor.SetInitialSize(wx.Size(65, 15))
         self.TemperatureSensor.SetSizeHints(-1, -1, -1, -1)
         self.TemperatureSensor.SetFont(wx.Font(13, wx.SCRIPT, wx.NORMAL, wx.BOLD,
