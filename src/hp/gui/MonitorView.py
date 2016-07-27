@@ -39,7 +39,7 @@ class MonitorView(wx.Panel):
                False, u'Modern No. 20'))
         self.humiditySensor = wx.lib.stattext.GenStaticText(ID=wx.ID_ANY,
                label=u'100.0 %', name=u'humiditySensor', parent=self,
-               pos=wx.Point(310, 15), size=wx.Size(56, 15), style=0)
+               pos=wx.Point(307, 15), size=wx.Size(56, 15), style=0)
         self.humiditySensor.SetFont(wx.Font(13, wx.SCRIPT, wx.NORMAL, wx.BOLD,
                False, u'Lucida Handwriting'))
         self.humiditySensor.SetBackgroundStyle(wx.BG_STYLE_COLOUR)
