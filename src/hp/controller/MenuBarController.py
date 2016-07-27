@@ -11,7 +11,7 @@ class MenuBarController:
         self.initActionListners()
 
     def initActionListners(self):
-        self.menuBarView.getFileTab().Bind(wx.EVT_MENU, self.HydroController.onClose, self.menuBarView.getExitItem() )
+        self.appGUI.Bind(wx.EVT_MENU, self.HydroController.onClose, self.menuBarView.getExitItem() )
         self.menuBarView.getMenuMode().Bind(wx.EVT_MENU, self.giveModeToController)
 
     def giveModeToController(self, event):
