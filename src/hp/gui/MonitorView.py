@@ -34,7 +34,7 @@ class MonitorView(wx.Panel):
     def initHumidityMonitor(self):
         self.humidityText = wx.lib.stattext.GenStaticText(ID=wx.ID_ANY,
                label=u'Humidity:', name=u'humidityText', parent=self,
-               pos=wx.Point(250, 15), size=wx.Size(56, 16), style=0)
+               pos=wx.Point(225, 15), size=wx.Size(56, 16), style=0)
         self.humidityText.SetFont(wx.Font(13, wx.ROMAN, wx.NORMAL, wx.NORMAL,
                False, u'Modern No. 20'))
         self.humiditySensor = wx.lib.stattext.GenStaticText(ID=wx.ID_ANY,
