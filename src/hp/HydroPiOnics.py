@@ -202,13 +202,7 @@ class HydroPiOnics(wx.Frame):
         # self.humidityText.SetFont(wx.Font(9, wx.ROMAN, wx.NORMAL, wx.NORMAL,
         #       False, u'Modern No. 20'))
         #
-        # self.waterTemperatureText = wx.lib.stattext.GenStaticText(ID=wxID_HYDROPIONICSWATERTEMPERATURETEXT,
-        #       label=u'Water Temperature:', name=u'waterTemperatureText',
-        #       parent=self.MenuPane, pos=wx.Point(640, 16), size=wx.Size(105,
-        #       16), style=0)
-        # self.waterTemperatureText.SetFont(wx.Font(9, wx.ROMAN, wx.NORMAL,
-        #       wx.NORMAL, False, u'Modern No. 20'))
-        #
+
         # self.TemperatureSensor = wx.lib.stattext.GenStaticText(ID=wxID_HYDROPIONICSTEMPERATURESENSOR,
         #       label=u'', name=u'TemperatureSensor', parent=self.MenuPane,
         #       pos=wx.Point(434, 16), size=wx.Size(14, 16), style=0)
