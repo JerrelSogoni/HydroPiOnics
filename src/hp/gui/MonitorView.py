@@ -25,7 +25,7 @@ class MonitorView(wx.Panel):
                 u'Modern No. 20'))
         self.TemperatureSensor = wx.lib.stattext.GenStaticText(ID=wx.ID_ANY,
                label=u'3', name=u'TemperatureSensor', parent=self,
-               pos=wx.Point(200, 15), size=wx.Size(14, 16), style=0)
+               pos=wx.Point(150, 15), size=wx.Size(14, 16), style=0)
         self.TemperatureSensor.SetInitialSize(wx.Size(65, 15))
         self.TemperatureSensor.SetSizeHints(-1, -1, -1, -1)
         self.TemperatureSensor.SetFont(wx.Font(13, wx.SCRIPT, wx.NORMAL, wx.BOLD,
