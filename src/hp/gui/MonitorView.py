@@ -11,7 +11,7 @@ class MonitorView(wx.Panel):
 
         self.SetToolTipString(u'')
         self.SetBackgroundColour(wx.Colour(114, 151, 250))
-        self.SetInitialSize(wx.Size(700, 32))
+        self.SetMaxSize(wx.Size(700,50))
         self.SetFont(wx.Font(9, wx.ROMAN, wx.NORMAL, wx.NORMAL, False,
                               u'Modern No. 20'))
 
