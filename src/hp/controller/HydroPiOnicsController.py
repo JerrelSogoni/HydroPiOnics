@@ -22,5 +22,4 @@ class HydroPiOnicsController:
             event.StopPropagation()
     def setMode(self,mode):
         self.hydroModel.setMode(mode)
-        print self.hydroModel.getMode()
 
