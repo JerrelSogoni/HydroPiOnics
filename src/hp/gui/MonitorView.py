@@ -41,12 +41,10 @@ class MonitorView(wx.Panel):
                label=u'100.0 %', name=u'humiditySensor', parent=self,
                pos=wx.Point(450, 16), size=wx.Size(65, 15), style=0)
         self.humiditySensor.SetInitialSize(wx.Size(65, 50))
-        self.humiditySensor.SetMaxClientSize(wx.Size(65, 15))
         self.humiditySensor.SetFont(wx.Font(13, wx.SCRIPT, wx.NORMAL, wx.BOLD,
                False, u'Lucida Handwriting'))
         self.humiditySensor.SetBackgroundColour(wx.Colour(255, 251, 251))
         self.humiditySensor.SetBackgroundStyle(wx.BG_STYLE_COLOUR)
-        self.humiditySensor.SetMinClientSize(wx.Size(65, 15))
 
 
 
