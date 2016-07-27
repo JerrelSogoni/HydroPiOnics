@@ -2,4 +2,5 @@
 
 class MonitorController:
     def __init__(self, monitorModel, monitorView, appGUI):
-        pass
+        self.monitorModel = monitorModel
+        self.

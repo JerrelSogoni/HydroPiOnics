@@ -25,7 +25,7 @@ class MonitorView(wx.Panel):
         self.AirTemp.SetFont(wx.Font(13, wx.ROMAN, wx.NORMAL, wx.NORMAL, False,
                 u'Modern No. 20'))
         self.TemperatureSensor = wx.lib.stattext.GenStaticText(ID=wx.ID_ANY,
-               label=u'103.0 F', name=u'TemperatureSensor', parent=self,
+               label=u'', name=u'TemperatureSensor', parent=self,
                pos=wx.Point(140, 15), size=wx.Size(14, 16), style=0)
         self.TemperatureSensor.SetInitialSize(wx.Size(65, 15))
         self.TemperatureSensor.SetSizeHints(-1, -1, -1, -1)
@@ -39,7 +39,7 @@ class MonitorView(wx.Panel):
         self.humidityText.SetFont(wx.Font(13, wx.ROMAN, wx.NORMAL, wx.NORMAL,
                False, u'Modern No. 20'))
         self.humiditySensor = wx.lib.stattext.GenStaticText(ID=wx.ID_ANY,
-               label=u'100.0 %', name=u'humiditySensor', parent=self,
+               label=u'', name=u'humiditySensor', parent=self,
                pos=wx.Point(317, 15), size=wx.Size(56, 15), style=0)
         self.humiditySensor.SetFont(wx.Font(13, wx.SCRIPT, wx.NORMAL, wx.BOLD,
                False, u'Lucida Handwriting'))
@@ -53,7 +53,7 @@ class MonitorView(wx.Panel):
                wx.NORMAL, False, u'Modern No. 20'))
 
         self.waterTemperatureSensor = wx.lib.stattext.GenStaticText(ID=wx.ID_ANY,
-               label=u'100.0 F', name=u'waterTemperatureSensor', parent=self,
+               label=u'', name=u'waterTemperatureSensor', parent=self,
                pos=wx.Point(587, 15), size=wx.Size(65, 15), style=0)
         self.waterTemperatureSensor.SetInitialSize(wx.Size(65, 15))
         self.waterTemperatureSensor.SetFont(wx.Font(13, wx.SCRIPT, wx.NORMAL,
@@ -65,11 +65,12 @@ class MonitorView(wx.Panel):
         self.pHText.SetFont(wx.Font(13, wx.ROMAN, wx.NORMAL, wx.NORMAL, False,
                u'Modern No. 20'))
         self.pHSensor = wx.lib.stattext.GenStaticText(ID=wx.ID_ANY,
-               label=u'10.00', name=u'pHSensor', parent=self,
+               label=u'', name=u'pHSensor', parent=self,
                pos=wx.Point(757, 15), size=wx.Size(30, 15), style=0)
         self.pHSensor.SetInitialSize(wx.Size(30, 15))
         self.pHSensor.SetFont(wx.Font(13, wx.SCRIPT, wx.NORMAL, wx.BOLD, False,
                u'Lucida Handwriting'))
+
 
 
 
