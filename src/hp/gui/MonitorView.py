@@ -16,7 +16,7 @@ class MonitorView(wx.Panel):
                               u'Modern No. 20'))
 
         self.initAirTempMonitor()
-        self.initWaterTempMonitor()
+        self.initHumidityMonitor()
     def initAirTempMonitor(self):
         self.AirTemp = wx.lib.stattext.GenStaticText(ID=wx.ID_ANY,label=u'Air Temperature:', name=u'AirTemp',
                                                      parent= self,pos=wx.Point(0, 17), size=wx.Size(89, 15),
@@ -31,7 +31,23 @@ class MonitorView(wx.Panel):
         self.TemperatureSensor.SetFont(wx.Font(13, wx.SCRIPT, wx.NORMAL, wx.BOLD,
                False, u'Lucida Handwriting'))
         self.TemperatureSensor.SetBackgroundStyle(wx.BG_STYLE_COLOUR)
-    def initWaterTempMonitor(self):
-        pass
+    def initHumidityMonitor(self):
+        self.humidityText = wx.lib.stattext.GenStaticText(ID=wx.ID_ANY,
+               label=u'Humidity:', name=u'humidityText', parent=self,
+               pos=wx.Point(300, 15), size=wx.Size(56, 16), style=0)
+        self.humidityText.SetFont(wx.Font(13, wx.ROMAN, wx.NORMAL, wx.NORMAL,
+               False, u'Modern No. 20'))
+        self.humiditySensor = wx.lib.stattext.GenStaticText(ID=wx.ID_ANY,
+               label=u'100.0 %', name=u'humiditySensor', parent=self,
+               pos=wx.Point(450, 16), size=wx.Size(65, 15), style=0)
+        self.humiditySensor.SetInitialSize(wx.Size(65, 50))
+        self.humiditySensor.SetMaxClientSize(wx.Size(65, 15))
+        self.humiditySensor.SetFont(wx.Font(13, wx.SCRIPT, wx.NORMAL, wx.BOLD,
+               False, u'Lucida Handwriting'))
+        self.humiditySensor.SetBackgroundColour(wx.Colour(255, 251, 251))
+        self.humiditySensor.SetBackgroundStyle(wx.BG_STYLE_COLOUR)
+        self.humiditySensor.SetMinClientSize(wx.Size(65, 15))
+
+
 
 

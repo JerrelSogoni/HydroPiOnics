@@ -196,12 +196,6 @@ class HydroPiOnics(wx.Frame):
         # self.mixToPlantPicture.SetToolTipString(u'')
         #
 
-        # self.humidityText = wx.lib.stattext.GenStaticText(ID=wxID_HYDROPIONICSHUMIDITYTEXT,
-        #       label=u'Humidity:', name=u'humidityText', parent=self.MenuPane,
-        #       pos=wx.Point(504, 16), size=wx.Size(56, 16), style=0)
-        # self.humidityText.SetFont(wx.Font(9, wx.ROMAN, wx.NORMAL, wx.NORMAL,
-        #       False, u'Modern No. 20'))
-        #
         # self.waterTemperatureText = wx.lib.stattext.GenStaticText(ID=wxID_HYDROPIONICSWATERTEMPERATURETEXT,
         #       label=u'Water Temperature:', name=u'waterTemperatureText',
         #       parent=self.MenuPane, pos=wx.Point(640, 16), size=wx.Size(105,
