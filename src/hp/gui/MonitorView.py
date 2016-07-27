@@ -46,14 +46,14 @@ class MonitorView(wx.Panel):
     def initWaterTempMonitor(self):
         self.waterTemperatureText = wx.lib.stattext.GenStaticText(ID=wx.ID_ANY,
                label=u'Water Temperature:', name=u'waterTemperatureText',
-               parent=self, pos=wx.Point(360, 15), size=wx.Size(105,
+               parent=self, pos=wx.Point(370, 15), size=wx.Size(105,
                16), style=0)
         self.waterTemperatureText.SetFont(wx.Font(13, wx.ROMAN, wx.NORMAL,
                wx.NORMAL, False, u'Modern No. 20'))
 
         self.waterTemperatureSensor = wx.lib.stattext.GenStaticText(ID=wx.ID_ANY,
                label=u'100.0 F', name=u'waterTemperatureSensor', parent=self,
-               pos=wx.Point(500, 15), size=wx.Size(65, 15), style=0)
+               pos=wx.Point(520, 15), size=wx.Size(65, 15), style=0)
         self.waterTemperatureSensor.SetInitialSize(wx.Size(65, 15))
         self.waterTemperatureSensor.SetFont(wx.Font(13, wx.SCRIPT, wx.NORMAL,
                wx.NORMAL, False, u'Lucida Handwriting'))
