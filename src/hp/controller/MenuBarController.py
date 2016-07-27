@@ -15,6 +15,7 @@ class MenuBarController:
         self.menuBarView.getMenuMode().Bind(wx.EVT_MENU, self.giveModeToController)
 
     def giveModeToController(self, event):
+        self.HydroController.onClose(event)
         item = self.menuBarView.FindItemById(event.GetId())
         mode = item.GetText()
         self.HydroController.setMode(mode)
