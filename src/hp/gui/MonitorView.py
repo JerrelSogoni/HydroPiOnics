@@ -53,7 +53,7 @@ class MonitorView(wx.Panel):
 
         self.waterTemperatureSensor = wx.lib.stattext.GenStaticText(ID=wx.ID_ANY,
                label=u'100.0 F', name=u'waterTemperatureSensor', parent=self,
-               pos=wx.Point(570, 15), size=wx.Size(65, 15), style=0)
+               pos=wx.Point(555, 15), size=wx.Size(65, 15), style=0)
         self.waterTemperatureSensor.SetInitialSize(wx.Size(65, 15))
         self.waterTemperatureSensor.SetFont(wx.Font(13, wx.SCRIPT, wx.NORMAL,
                wx.NORMAL, False, u'Lucida Handwriting'))
