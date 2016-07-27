@@ -6,12 +6,12 @@ class MonitorView(wx.Panel):
         self.appGUI = appGUI
         #init Panel
         super(self.__class__, self).__init__(id=wx.ID_ANY, name=u'MenuPane',
-                                 parent=self.appGUI, pos=wx.Point(0, 0), size=wx.Size(700, 50),
+                                 parent=self.appGUI, pos=wx.Point(0, 0), size=wx.Size(900, 50),
                                  style=wx.TAB_TRAVERSAL)
 
         self.SetToolTipString(u'')
         self.SetBackgroundColour(wx.Colour(114, 151, 250))
-        self.SetMaxSize(wx.Size(700,50))
+        self.SetMaxSize(wx.Size(900,50))
         self.SetFont(wx.Font(9, wx.ROMAN, wx.NORMAL, wx.NORMAL, False,
                               u'Modern No. 20'))
         self.initAirTempMonitor()
