@@ -8,13 +8,13 @@ class HydroPiOnicsView:
     def initFrame(self, appGUI):
         # init frame
         wx.Frame.__init__(self.appGUI, id= wx.ID_ANY, name=u'HydroPiOnics',
-                          parent=None, pos=wx.Point(636, 99), size=wx.Size(950, 800),
+                          parent=None, pos=wx.Point(636, 99), size=wx.Size(400, 400),
                           style=wx.DEFAULT_FRAME_STYLE, title=u'HydroPiOnics')
 
-        self.appGUI.SetClientSize(wx.Size(934, 761))
+        self.appGUI.SetClientSize(wx.Size(400, 400))
         self.appGUI.SetBackgroundColour(wx.Colour(196, 233, 253))
-        self.appGUI.SetMaxSize(wx.Size(950, 800))
-        self.appGUI.SetInitialSize(wx.Size(950, 800))
+        self.appGUI.SetMaxSize(wx.Size(400, 400))
+        self.appGUI.SetInitialSize(wx.Size(400, 400))
         self.appGUI.Show(True)
         self.appGUI.Centre()
         self.appGUI.SetIcon(wx.Icon(self.imageAttachment("applicationicon.ico"),
