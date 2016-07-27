@@ -57,7 +57,7 @@ class MonitorView(wx.Panel):
                pos=wx.Point(587, 15), size=wx.Size(65, 15), style=0)
         self.waterTemperatureSensor.SetInitialSize(wx.Size(65, 15))
         self.waterTemperatureSensor.SetFont(wx.Font(13, wx.SCRIPT, wx.NORMAL,
-               wx.NORMAL, False, u'Lucida Handwriting'))
+                                            wx.BOLD, False, u'Lucida Handwriting'))
     def initPHMonitor(self):
         self.pHText = wx.lib.stattext.GenStaticText(ID=wx.ID_ANY,
                label=u'PH Level:', name=u'pHText', parent=self,
@@ -66,9 +66,9 @@ class MonitorView(wx.Panel):
                u'Modern No. 20'))
         self.pHSensor = wx.lib.stattext.GenStaticText(ID=wx.ID_ANY,
                label=u'10.00', name=u'pHSensor', parent=self,
-               pos=wx.Point(770, 15), size=wx.Size(30, 15), style=0)
+               pos=wx.Point(765, 15), size=wx.Size(30, 15), style=0)
         self.pHSensor.SetInitialSize(wx.Size(30, 15))
-        self.pHSensor.SetFont(wx.Font(13, wx.SCRIPT, wx.NORMAL, wx.NORMAL, False,
+        self.pHSensor.SetFont(wx.Font(13, wx.SCRIPT, wx.NORMAL, wx.BOLD, False,
                u'Lucida Handwriting'))
 
 
