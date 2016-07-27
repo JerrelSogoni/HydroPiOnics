@@ -61,7 +61,7 @@ class MonitorView(wx.Panel):
     def initPHMonitor(self):
         self.pHText = wx.lib.stattext.GenStaticText(ID=wx.ID_ANY,
                label=u'PH Level:', name=u'pHText', parent=self,
-               pos=wx.Point(650, 15), size=wx.Size(51, 15), style=0)
+               pos=wx.Point(630, 15), size=wx.Size(51, 15), style=0)
         self.pHText.SetFont(wx.Font(13, wx.ROMAN, wx.NORMAL, wx.NORMAL, False,
                u'Modern No. 20'))
 
