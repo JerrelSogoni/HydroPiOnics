@@ -8,8 +8,8 @@ class MonitorController:
         self.monitorThreading = MonitorThreading(self)
         self.monitorThreading.start()
     def updateAirHumidityView(self):
-        self.monitorView.setAirTemperatureText(self.monitorModel.getTemperature())
-        self.monitorView.setHumidityText(self.monitorModel.getHumidity())
+        self.monitorView.setAirTemperatureText(str(self.monitorModel.getTemperature()))
+        self.monitorView.setHumidityText(str(self.monitorModel.getHumidity()))
     def setTemperature(self, temp):
         self.monitorModel.setTemperature(temp)
     def getTemperature(self):
