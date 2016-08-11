@@ -9,7 +9,7 @@ class MonitorThreading(threading.Thread):
         self.monitorController = monitorController
         self.isDead = False
         self.initAirTemperature()
-        self.initpHSensor()
+       # self.initpHSensor()
 
 
     def run(self):
