@@ -31,7 +31,6 @@ class MonitorHumidityTemperatureThreading(threading.Thread):
         self.airTemperatureLeftSideSensor = AdafruitDHT2('22', Monitor.LEFTSIDEAIRSENSOR)
     def averageHumidityAndTemp(self,humidityR,humidityL,tempR,tempL):
         humidityAvg = (humidityR + humidityR)/2
-        humidityAvg = round(humidityAvg,2)
         tempAvg = (tempR + tempL)/2
         return humidityAvg, tempAvg
     def die(self):
