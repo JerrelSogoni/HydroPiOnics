@@ -3,7 +3,7 @@ import RPi.GPIO as GPIO
 import time
 import sys
 
-from src.hp.ThirdPartyAPIs.Adafruit_Python_DHT.examples.AdafruitDHT2 import AdafruitDHT2
+from ThirdPartyAPIs.Adafruit_Python_DHT.examples.AdafruitDHT2 import AdafruitDHT2
 #testing
 def main():
     GPIO.setmode(GPIO.BCM)
