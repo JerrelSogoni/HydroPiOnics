@@ -7,7 +7,6 @@ import wx.lib.masked.textctrl
 import wx.calendar
 import wx.lib.stattext
 import wx.lib.scrolledpanel
-from src.hp.ThirdPartyAPIs.Adafruit_Python_DHT.examples import AdafruitDHT2
 import wx.lib.buttons
 import os
 import sys
