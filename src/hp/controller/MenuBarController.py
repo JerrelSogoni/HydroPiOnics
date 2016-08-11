@@ -14,6 +14,8 @@ class MenuBarController:
         self.appGUI.Bind(wx.EVT_MENU, self.HydroController.onClose, self.menuBarView.getExitItem() )
         self.appGUI.Bind(wx.EVT_MENU, self.giveModeToController, self.menuBarView.getManualItem())
         self.appGUI.Bind(wx.EVT_MENU, self.giveModeToController, self.menuBarView.getTimerItem())
+        self.appGUI.Bind(wx.EVT_MENU, self.giveModeToController, self.menuBarView.getEnvironmentalItem())
+
 
 
     def giveModeToController(self, event):

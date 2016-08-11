@@ -7,6 +7,7 @@ class HydroPiOnicsM:
         self.OFF = "OFF"
         self.MANUAL = "MANUAL"
         self.TIMER = "TIMER"
+        self.ENVIRONMENTAL = "ENVIRONMENTAL"
         self.running = ""
         self.Mode = ""
     def setRunning(self, running):
@@ -25,5 +26,7 @@ class HydroPiOnicsM:
         return self.MANUAL
     def getTIMER(self):
         return self.TIMER
+    def getENVIROMENTAL(self):
+        return self.ENVIRONMENTAL
 
 

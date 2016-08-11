@@ -36,6 +36,7 @@ class MenuBarView(wx.MenuBar):
         self.menuMode = wx.Menu()
         self.manualItem = self.menuMode.AppendRadioItem(wx.ID_FILE1, "MANUAL")
         self.timerItem = self.menuMode.AppendRadioItem(wx.ID_FILE2, "TIMER")
+        self.environmentalItem = self.menuMode.AppendRadioItem(wx.ID_FILE3, "ENVIRONMENTAL")
         return self.menuMode
     def getMenuMode(self):
         return self.menuMode
@@ -43,6 +44,8 @@ class MenuBarView(wx.MenuBar):
         return self.manualItem
     def getTimerItem(self):
         return self.timerItem
+    def getEnvironmentalItem(self):
+        return self.environmentalItem
 
 
 

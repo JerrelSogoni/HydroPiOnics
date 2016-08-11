@@ -7,9 +7,11 @@ import wx.lib.masked.textctrl
 import wx.calendar
 import wx.lib.stattext
 import wx.lib.scrolledpanel
+from src.hp.ThirdPartyAPIs.Adafruit_Python_DHT.examples import AdafruitDHT2
 import wx.lib.buttons
 import os
 import sys
+from src.hp import humidifer
 from gui.HydroPiOnicsView import HydroPiOnicsView
 from data.HydroPiOnicsM import HydroPiOnicsM
 from controller.HydroPiOnicsController import HydroPiOnicsController
@@ -906,9 +908,14 @@ class HydroPiOnics(wx.Frame):
         #       False, u'Small Fonts'))
 
     def __init__(self, parent):
+
         self.initFrameMVC()
         self.initMenuBarMVC()
         self.initMonitorMVC()
+        try:
+            humidifer.main()
+        except:
+            print "humifier not working"
 
         self._init_ctrls(parent)
     def initFrameMVC(self):

@@ -17,3 +17,4 @@ class Monitor:
         self.waterTemperature = temperature
     def getWaterTemperature(self):
         return self.waterTemperature
+
