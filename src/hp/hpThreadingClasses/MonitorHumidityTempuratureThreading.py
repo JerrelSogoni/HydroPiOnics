@@ -20,7 +20,7 @@ class MonitorHumidityTemperatureThreading(threading.Thread):
                 self.monitorController.setHumidity(humidityAvg)
                 self.monitorController.setTemperature(tempAvg)
                 self.monitorController.updateAirHumidityView()
-                time.sleep(1)
+                time.sleep(2)
             except:
                 time.sleep(2)
                 continue
