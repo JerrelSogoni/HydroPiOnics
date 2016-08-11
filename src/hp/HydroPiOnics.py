@@ -924,7 +924,6 @@ class HydroPiOnics(wx.Frame):
         self.monitorView = MonitorView(self)
         self.monitorModel = Monitor()
         self.monitorController = MonitorController(self.monitorModel, self.monitorView, self)
-        pass
     def initMotorMVC(self):
         pass
     def initRelayMVC(self):
