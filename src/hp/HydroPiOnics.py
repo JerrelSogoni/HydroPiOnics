@@ -10,7 +10,6 @@ import wx.lib.scrolledpanel
 import wx.lib.buttons
 import os
 import sys
-import humidifer
 from gui.HydroPiOnicsView import HydroPiOnicsView
 from data.HydroPiOnicsM import HydroPiOnicsM
 from controller.HydroPiOnicsController import HydroPiOnicsController
