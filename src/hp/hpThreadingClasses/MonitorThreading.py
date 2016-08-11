@@ -1,7 +1,7 @@
 import threading
 from ThirdPartyAPIs.Adafruit_Python_DHT.examples.AdafruitDHT2 import AdafruitDHT2
 from ThirdPartyAPIs.MinipHBFW.BeagleBone.pHReader import pHReader
-from ThirdPartyAPIs.UnderwaterTemperatureReader.Temperature import Temperature
+import ThirdPartyAPIs.UnderwaterTemperatureReader.Temperature as Temperature
 from data.Monitor import Monitor
 class MonitorThreading(threading.Thread):
     def __init__(self,monitorController):
