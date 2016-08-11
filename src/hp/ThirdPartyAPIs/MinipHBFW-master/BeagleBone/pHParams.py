@@ -96,4 +96,3 @@ class pHParams(object):
         y = self.calibs.values()
         slope, intercept, r_value, p_value, std_err = scipy.linregress(x, y)
         return slope, intercept
-
