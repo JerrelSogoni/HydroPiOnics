@@ -3,7 +3,7 @@ import RPi.GPIO as GPIO
 import time
 import sys
 
-from src.hp.ThirdPartyAPIs.Adafruit_Python_DHT.examples import AdafruitDHT
+from src.hp.ThirdPartyAPIs.Adafruit_Python_DHT.examples import AdafruitDHT2
 #testing
 def main():
     GPIO.setmode(GPIO.BCM)
@@ -41,8 +41,11 @@ def main():
       isOn = False
       while True:
         try:
-            humidity1, temp1 = AdafruitDHT2.main('22',22)
-            humidity2, temp2 = AdafruitDHT2.main('22',23)
+            sensorOne = AdafruitDHT2('22',22)
+            sensorTwo = AdafruitDHT2('22',23)
+
+            humidity1, temp1 = sensorOne.getHumidityandTemp();
+            humidity2, temp2 = sensorTwo.getHumidityandTemp();
             time.sleep(1)
             avgH = (humidity1 + humidity2) / 2
             if(avgH >= 50 and isOn):
