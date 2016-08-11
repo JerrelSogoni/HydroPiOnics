@@ -6,4 +6,22 @@ class MonitorController:
         self.monitorView = monitorView
         self.appGUI = appGUI
         self.monitorThreading = MonitorThreading(self)
+        self.monitorThreading.start()
+    def updateAirHumidityView(self):
+        self.monitorView.setAirTemperatureText(self.monitorModel.getTemperature())
+        self.monitorView.setHumidityText(self.monitorModel.getHumidity())
+    def setTemperature(self, temp):
+        self.monitorModel.setTemperature(temp)
+    def getTemperature(self):
+        return self.monitorModel.getTemperature()
+    def setHumidity(self, humiditiy):
+        self.monitorModel.setHumidity(humiditiy)
+    def getHumidity(self):
+        return self.monitorModel.getHumidity()
+    def setWaterTemperature(self,temperature):
+        self.monitorModel.setWaterTemperature(temperature)
+    def getWaterTemperature(self):
+        return self.monitorModel.getWaterTemperature()
+
+
 

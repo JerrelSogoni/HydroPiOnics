@@ -1,7 +1,7 @@
 import threading
-import sys
-print sys.path
 from ThirdPartyAPIs.Adafruit_Python_DHT.examples.AdafruitDHT2 import AdafruitDHT2
+from ThirdPartyAPIs.MinipHBFW.BeagleBone.pHReader import pHReader
+from ThirdPartyAPIs.UnderwaterTemperatureReader.Temperature import Temperature
 from data.Monitor import Monitor
 class MonitorThreading(threading.Thread):
     def __init__(self,monitorController):
@@ -9,10 +9,22 @@ class MonitorThreading(threading.Thread):
         self.monitorController = monitorController
         self.isDead = False
         self.initAirTemperature()
+        self.initpHSensor()
+
 
     def run(self):
         while(self.isDead != True):
-            print "Hello"
+            try:
+                humidtyR, temperatureR = self.airTemperatureRightSideSensor.getHumidityandTemp()
+                humidtyL, temperatureL = self.airTemperatureLeftSideSensor.getHumidityandTemp()
+                humidityAvg, tempAvg = self.averageHumidityAndTemp(humidtyR,humidtyL,temperatureR,temperatureL)
+                self.monitorController.setHumidity(humidityAvg)
+                self.monitorController.setTemperature(tempAvg)
+                self.monitorController.updateAirHumidityView()
+            except:
+                continue
+
+
 
 
     def initAirTemperature(self):
@@ -21,8 +33,12 @@ class MonitorThreading(threading.Thread):
     def initpHSensor(self):
         self.pHReader = pHReader()
 
-    def initUnderWaterSensor(self):
-        pass
+    def getWaterTemperature(self):
+        return Temperature.read_temp()
+    def averageHumidityAndTemp(self,humidityR,humidityL,tempR,tempL):
+        humidityAvg = (humidityR + humidityR)/2
+        tempAvg = (tempR + tempL)/2
+        return humidityAvg, tempAvg
 
 
 
