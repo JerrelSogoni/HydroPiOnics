@@ -911,11 +911,6 @@ class HydroPiOnics(wx.Frame):
         self.initFrameMVC()
         self.initMenuBarMVC()
         self.initMonitorMVC()
-        try:
-            humidifer.main()
-        except:
-            print "humifier not working"
-
         self._init_ctrls(parent)
     def initFrameMVC(self):
         self.gui = HydroPiOnicsView(self)
