@@ -22,6 +22,8 @@
 import sys
 import Adafruit_DHT
 
+global sensor
+global pin
 
 def main(arg1, arg2):
     # Parse command line parameters.
