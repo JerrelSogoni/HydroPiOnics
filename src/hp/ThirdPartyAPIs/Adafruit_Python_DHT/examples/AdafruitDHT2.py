@@ -53,7 +53,10 @@ def main(arg1, arg2):
     else:
         print('Failed to get reading. Try again!')
         sys.exit(1)
-
+def getHumidityandTemp():
+    humidity, temperature = Adafruit_DHT.read_retry(sensor, pin)
+    temperature = temperature * 9 / 5.0 + 32
+    return humidity, temperature
 
 
 if __name__ == '__main__':

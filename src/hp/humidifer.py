@@ -2,6 +2,7 @@
 import RPi.GPIO as GPIO
 import time
 import sys
+print sys.path
 from src.hp.ThirdPartyAPIs.Adafruit_Python_DHT.examples import AdafruitDHT2
 #testing
 def main():
