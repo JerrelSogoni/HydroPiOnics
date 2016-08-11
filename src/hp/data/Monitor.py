@@ -1,10 +1,13 @@
 
 
 class Monitor:
+    RIGHTSIDEAIRSENSOR = 22
+    LEFTSIDEAIRSENSOR = 23
     def __init__(self):
         self.temperature = None
         self.humidity = None
         self.waterTemperature = None
+        self.phLevel = None
     def setTemperature(self, temp):
         self.temperature = temp
     def getTemperature(self):
@@ -17,4 +20,5 @@ class Monitor:
         self.waterTemperature = temperature
     def getWaterTemperature(self):
         return self.waterTemperature
+
 

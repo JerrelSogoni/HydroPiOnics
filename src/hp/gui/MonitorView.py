@@ -70,7 +70,22 @@ class MonitorView(wx.Panel):
         self.pHSensor.SetInitialSize(wx.Size(30, 15))
         self.pHSensor.SetFont(wx.Font(13, wx.SCRIPT, wx.NORMAL, wx.BOLD, False,
                u'Lucida Handwriting'))
-
+    def getPHText(self):
+        return self.pHSensor
+    def getWaterTempText(self):
+        return self.waterTemperatureSensor
+    def getHumidityText(self):
+        return self.humiditySensor
+    def getAirTemperatureText(self):
+        return self.TemperatureSensor
+    def setPHText(self,ph):
+        self.pHSensor.SetLabel(ph)
+    def setWaterTempText(self,temp):
+        self.waterTemperatureSensor.SetLabel(temp)
+    def setHumidityText(self,humidity):
+        self.humiditySensor.SetLabel(humidity)
+    def setAirTemperatureText(self,temp):
+        self.TemperatureSensor.SetLabel(temp)
 
 
 

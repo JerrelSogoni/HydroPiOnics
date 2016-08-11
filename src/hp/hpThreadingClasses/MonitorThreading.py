@@ -1,18 +1,32 @@
 import threading
-import time
-from src.hp.ThirdPartyAPIs.Adafruit-Motor-HAT-Python-Library.Adafruit_MotorHAT import Adafruit_MotorHAT, Adafruit_DCMotor
-import atexit
-
-isDead = False
-mh = Adafruit_MotorHAT(addr=0x60)
+import sys
+print sys.path
+from ThirdPartyAPIs.Adafruit_Python_DHT.examples.AdafruitDHT2 import AdafruitDHT2
+from data.Monitor import Monitor
 class MonitorThreading(threading.Thread):
+    def __init__(self,monitorController):
+        super(MonitorThreading, self).__init__()
+        self.monitorController = monitorController
+        self.isDead = False
+        self.initAirTemperature()
+
+    def run(self):
+        while(self.isDead != True):
+            print "Hello"
+
+
+    def initAirTemperature(self):
+        self.airTemperatureRightSideSensor = AdafruitDHT2('22', Monitor.RIGHTSIDEAIRSENSOR)
+        self.airTemperatureLeftSideSensor = AdafruitDHT2('22', Monitor.LEFTSIDEAIRSENSOR)
+    def initpHSensor(self):
+        self.pHReader = pHReader()
+
+    def initUnderWaterSensor(self):
+        pass
 
 
 
-    def turnOffMotors(self):
-        mh.getMotor(1).run(Adafruit_MotorHAT.RELEASE)
-        mh.getMotor(2).run(Adafruit_MotorHAT.RELEASE)
-        mh.getMotor(3).run(Adafruit_MotorHAT.RELEASE)
-        mh.getMotor(4).run(Adafruit_MotorHAT.RELEASE)
 
-    atexit.register(turnOffMotors)
+
+    def die(self):
+        self.isDead = True
