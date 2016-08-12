@@ -9,6 +9,7 @@ class MonitorHumidityTemperatureThreading(threading.Thread):
         self.monitorController = monitorController
         self.isDead = False
         self.initAirTemperature()
+        self.start()
 
 
     def run(self):
