@@ -1,14 +1,11 @@
 import sys
-from hpThreadingClasses.MonitorHumidityTempuratureThreading import MonitorHumidityTempuratureThreading
-from hpThreadingClasses.MonitorWaterTempThreading import MonitorWaterTempThreading
-
+from hpThreadingClasses.MonitorThreading import MonitorThreading
 class MonitorController:
     def __init__(self, monitorModel, monitorView, appGUI):
         self.monitorModel = monitorModel
         self.monitorView = monitorView
         self.appGUI = appGUI
-        self.monitorHumidityTempThreading = MonitorHumidityTempuratureThreading(self)
-        self.monitorWaterTemperatureThreading = MonitorWaterTempThreading(self)
+        self.monitorHumidityTempThreading = MonitorThreading(self)
 
 
     def updateAirHumidityView(self):
@@ -27,7 +24,7 @@ class MonitorController:
     def getWaterTemperature(self):
         return self.monitorModel.getWaterTemperature()
     def updateWaterTemperatureView(self):
-        self.monitorView.setWaterTempText(self.monitorModel.getWaterTemperature())
+        self.monitorView.setWaterTempText(self.monitorModel.getTemperature())
 
 
 
