@@ -7,7 +7,7 @@ class MonitorController:
         self.monitorView = monitorView
         self.appGUI = appGUI
         self.monitorHumidityTempThreading = MonitorThreading(self)
-        self.monitorWaterTempThreading = MonitorWaterTempThreading(self)
+       # self.monitorWaterTempThreading = MonitorWaterTempThreading(self)
 
 
     def updateAirHumidityView(self):
