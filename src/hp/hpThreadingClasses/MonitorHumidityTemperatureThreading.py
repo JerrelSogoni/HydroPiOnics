@@ -18,10 +18,10 @@ class MonitorHumidityTemperatureThreading(threading.Thread):
                 humidtyR, temperatureR = self.airTemperatureRightSideSensor.getHumidityandTemp()
                 humidtyL, temperatureL = self.airTemperatureLeftSideSensor.getHumidityandTemp()
                 humidityAvg, tempAvg = self.averageHumidityAndTemp(humidtyR,humidtyL,temperatureR,temperatureL)
-                if(humidityAvg == self.monitorController.getHumidity()):
+                if(humidityAvg != self.monitorController.getHumidity()):
                     self.monitorController.setHumidity(humidityAvg)
                     self.monitorController.updateHumidityView()
-                if(tempAvg == self.monitorController.getTemperature()):
+                if(tempAvg != self.monitorController.getTemperature()):
                     self.monitorController.setTemperature(tempAvg)
                     self.monitorController.updateAirView()
                 time.sleep(3)

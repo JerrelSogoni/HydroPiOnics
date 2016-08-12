@@ -14,9 +14,11 @@ class MonitorWaterTempThreading(threading.Thread):
         while(self.isDead != True):
             try:
                 waterTemp = self.waterTemperature.read_temp()
-                self.monitorController.setWaterTemperature(waterTemp)
-                if(waterTemp == self.monitorController.getWaterTemperature()):
+                if(waterTemp != self.monitorController.getWaterTemperature()):
+                    self.monitorController.setWaterTemperature(waterTemp)
                     self.monitorController.updateWaterTemperatureView()
+
+
                 time.sleep(3)
             except:
                 time.sleep(5)
