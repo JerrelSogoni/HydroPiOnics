@@ -6,7 +6,7 @@ class MonitorController:
         self.monitorModel = monitorModel
         self.monitorView = monitorView
         self.appGUI = appGUI
-        self.monitorHumidityTempThreading = MonitorThreading(self)
+        self.monitorHumidityTempThreading = MonitorHumidityTemperatureThreading(self)
         self.monitorWaterTempThreading = MonitorWaterTempThreading(self)
 
 
