@@ -20,11 +20,12 @@ class MonitorHumidityTemperatureThreading(threading.Thread):
                 humidityAvg, tempAvg = self.averageHumidityAndTemp(humidtyR,humidtyL,temperatureR,temperatureL)
                 if(humidityAvg != self.monitorController.getHumidity()):
                     self.monitorController.setHumidity(humidityAvg)
-                    wx.CallAfter(self.monitorController.updateHumidityView())
-
+                    wx.Yield()
+                    self.monitorController.updateHumidityView()
                 if(tempAvg != self.monitorController.getTemperature()):
                     self.monitorController.setTemperature(tempAvg)
-                    wx.CallAfter(self.monitorController.updateAirView())
+                    wx.Yield()
+                    self.monitorController.updateAirView()
                 time.sleep(3)
             except:
                 time.sleep(2)
