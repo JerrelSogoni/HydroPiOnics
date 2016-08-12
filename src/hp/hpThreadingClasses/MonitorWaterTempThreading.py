@@ -12,6 +12,7 @@ class MonitorWaterTempThreading(threading.Thread):
     def run(self):
         while(self.isDead != True):
             waterTemp = self.waterTemperature.read_temp()
+            print waterTemp
             wx.Yield()
             self.monitorController.setWaterTemperature(waterTemp)
             self.monitorController.updateWaterTemperatureView()
