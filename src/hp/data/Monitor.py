@@ -1,8 +1,8 @@
 
 
 class Monitor:
-    RIGHTSIDEAIRSENSOR = 22
-    LEFTSIDEAIRSENSOR = 23
+    RIGHTSIDEAIRSENSOR = 23
+    LEFTSIDEAIRSENSOR = 22
     def __init__(self):
         self.temperature = None
         self.humidity = None

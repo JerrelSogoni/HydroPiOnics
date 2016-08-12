@@ -52,7 +52,8 @@ class AdafruitDHT2:
         humidity, temperature = Adafruit_DHT.read_retry(self.sensor, self.pin)
         temperature = temperature * 9 / 5.0 + 32
         if humidity is not None and temperature is not None:
-            print('Temp={0:0.1f}F  Humidity={1:0.1f}%'.format(temperature, humidity))
+        # uncomment to see temp and humid in console
+        #    print('Temp={0:0.1f}F  Humidity={1:0.1f}%'.format(temperature, humidity))
             return humidity, temperature
         else:
             raise ValueError('Failed to get reading. Try again!')
