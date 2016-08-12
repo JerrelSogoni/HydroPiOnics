@@ -26,7 +26,7 @@ class MonitorController:
     def getWaterTemperature(self):
         return self.monitorModel.getWaterTemperature()
     def updateWaterTemperatureView(self):
-        self.monitorView.setWaterTempText(str(self.monitorModel.getTemperature()))
+        self.monitorView.setWaterTempText(str(self.monitorModel.getWaterTemperature()))
 
 
 
