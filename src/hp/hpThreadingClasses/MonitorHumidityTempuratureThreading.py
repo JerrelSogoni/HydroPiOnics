@@ -20,6 +20,7 @@ class MonitorHumidityTemperatureThreading(threading.Thread):
                 wx.Yield()
                 self.monitorController.setHumidity(humidityAvg)
                 self.monitorController.setTemperature(tempAvg)
+                wx.Yield()
                 self.monitorController.updateAirHumidityView()
                 time.sleep(5)
             except:
