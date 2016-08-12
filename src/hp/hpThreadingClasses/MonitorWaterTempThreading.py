@@ -1,4 +1,5 @@
 import threading
+import time
 import wx
 from ThirdPartyAPIs.UnderwaterTemperatureReader.Temperature import Temperature
 class MonitorWaterTempThreading(threading.Thread):
@@ -11,11 +12,16 @@ class MonitorWaterTempThreading(threading.Thread):
 
     def run(self):
         while(self.isDead != True):
-            waterTemp = self.waterTemperature.read_temp()
-            print waterTemp
-            wx.Yield()
-            self.monitorController.setWaterTemperature(waterTemp)
-            self.monitorController.updateWaterTemperatureView()
+            try:
+                waterTemp = self.waterTemperature.read_temp()
+                self.monitorController.setWaterTemperature(waterTemp)
+                wx.Yield()
+                time.sleep(10)
+                self.monitorController.updateWaterTemperatureView()
+            except:
+                time.sleep(5)
+                continue
+
     def initWaterTemperature(self):
         self.waterTemperature = Temperature()
 
