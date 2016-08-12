@@ -1,4 +1,5 @@
 import threading
+import wx
 import time
 from ThirdPartyAPIs.Adafruit_Python_DHT.examples.AdafruitDHT2 import AdafruitDHT2
 from data.Monitor import Monitor
@@ -16,6 +17,7 @@ class MonitorHumidityTemperatureThreading(threading.Thread):
                 humidtyR, temperatureR = self.airTemperatureRightSideSensor.getHumidityandTemp()
                 humidtyL, temperatureL = self.airTemperatureLeftSideSensor.getHumidityandTemp()
                 humidityAvg, tempAvg = self.averageHumidityAndTemp(humidtyR,humidtyL,temperatureR,temperatureL)
+                wx.Yield()
                 self.monitorController.setHumidity(humidityAvg)
                 self.monitorController.setTemperature(tempAvg)
                 self.monitorController.updateAirHumidityView()
