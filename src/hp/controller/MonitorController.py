@@ -1,5 +1,5 @@
 import sys
-from hpThreadingClasses.MonitorThreading import MonitorThreading
+from hpThreadingClasses.MonitorHumidityTemperatureThreading import MonitorHumidityTemperatureThreading
 from hpThreadingClasses.MonitorWaterTempThreading import MonitorWaterTempThreading
 class MonitorController:
     def __init__(self, monitorModel, monitorView, appGUI):
@@ -7,7 +7,7 @@ class MonitorController:
         self.monitorView = monitorView
         self.appGUI = appGUI
         self.monitorHumidityTempThreading = MonitorThreading(self)
-       # self.monitorWaterTempThreading = MonitorWaterTempThreading(self)
+        self.monitorWaterTempThreading = MonitorWaterTempThreading(self)
 
 
     def updateAirHumidityView(self):
