@@ -10,9 +10,12 @@ class MonitorController:
         self.monitorWaterTempThreading = MonitorWaterTempThreading(self)
 
 
-    def updateAirHumidityView(self):
+    def updateAirView(self):
         self.monitorView.setAirTemperatureText("{:.2f} F".format(self.monitorModel.getTemperature()))
+
+    def updateHumidityView(self):
         self.monitorView.setHumidityText("{:.2f} %".format(self.monitorModel.getHumidity()))
+
     def setTemperature(self, temp):
         self.monitorModel.setTemperature(temp)
     def getTemperature(self):

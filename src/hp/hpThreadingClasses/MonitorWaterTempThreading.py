@@ -15,9 +15,9 @@ class MonitorWaterTempThreading(threading.Thread):
             try:
                 waterTemp = self.waterTemperature.read_temp()
                 self.monitorController.setWaterTemperature(waterTemp)
-                wx.Yield()
-                time.sleep(10)
-                self.monitorController.updateWaterTemperatureView()
+                if(waterTemp == self.monitorController.getWaterTemperature()):
+                    self.monitorController.updateWaterTemperatureView()
+                time.sleep(3)
             except:
                 time.sleep(5)
                 continue
