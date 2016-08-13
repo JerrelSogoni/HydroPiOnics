@@ -9,7 +9,9 @@
 """
 import smbus as I2C
 import pHParams
-import time
+import sys
+import os
+print os.getcwd()
 
 class pHReader(object):
     """Reads values from the pH probe + MinipH and converts to pH
