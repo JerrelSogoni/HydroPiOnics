@@ -11,7 +11,7 @@ class MonitorPHThreading(threading.Thread):
     def run(self):
         while(self.isDead != True):
             try:
-                phLevel = self.pHReader.main()
+                phLevel = self.getPHLevel()
                 if(phLevel != self.monitorController.getPHLevel()):
                     self.monitorController.setPHLevel(phLevel)
                     self.monitorController.updatePHView()
