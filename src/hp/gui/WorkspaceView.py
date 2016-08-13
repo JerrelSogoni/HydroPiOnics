@@ -86,7 +86,6 @@ class WorkspaceView(wx.Panel):
                label=u'Environmental Control', name=u'environmentControlText',
                parent=self, pos=wx.Point(464, 8),
                size=wx.Size(154, 16), style=0)
-        self.environmentControlText.SetLabelText(u'Environmental Control')
         self.environmentControlText.SetFont(wx.Font(9, wx.SCRIPT, wx.NORMAL,
                wx.NORMAL, False, u'Lucida Calligraphy'))
 
