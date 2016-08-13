@@ -68,7 +68,7 @@ class pHParams(object):
             return -1
 
 
-    def read_calibs(self, calibs_file= JSONFILE):
+    def read_calibs(self, calibs_file= "ph.json"):
         """Reads calibrations from file.
 
         :param calibs_file: The file to read params from
@@ -80,7 +80,7 @@ class pHParams(object):
         return calibs
 
 
-    def write_calibs(self, calibs_file= JSONFILE):
+    def write_calibs(self, calibs_file= "ph.json"):
         """Writes calibrations to file.
 
         :param calibs_file: The file to write params to
