@@ -26,15 +26,7 @@ def create(parent):
     return HydroPiOnics(parent)
 
 class HydroPiOnics(wx.Frame):
-    #Identify Operating System in order to direct image loading path
-    #Mac OS or Linux
-    DIRECTORY = os.getcwd()[:len(os.getcwd()) - 6]
 
-    if(sys.platform.startswith('darwin') or sys.platform.startswith('linux')):
-        IMG_LOCATION = DIRECTORY + "Image//"
-    #Windows
-    elif(sys.platform.startswith('win32')):
-        IMG_LOCATION = DIRECTORY + "Image\\"
     def _init_ctrls(self, prnt):
         pass
 
