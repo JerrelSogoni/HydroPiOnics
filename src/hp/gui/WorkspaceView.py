@@ -19,8 +19,12 @@ class WorkspaceView(wx.Panel):
         self.SetMaxSize(wx.Size(950,800))
         self.SetBackgroundColour(wx.Colour(185, 242, 253))
 
-        self.initGUIImages()
-        self.initStaticText()
+        self.initElectronicImages()
+        self.initMotorImages()
+        self.initPumpImages()
+        self.initStaticElectronicText()
+        self.initStaticMotorText()
+        self.initStaticPumpText()
         self.initSliders()
 
     def initMotor(self):
