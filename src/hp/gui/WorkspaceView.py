@@ -251,7 +251,7 @@ class WorkspaceView(wx.Panel):
               label=u'Temperature Range', name=u'temperatureRangeText',
               parent=self, pos=wx.Point(32, 432),
               size=wx.Size(104, 15), style=0)
-        self.temperatureRangeText.SetFont(wx.Font(5, wx.DECORATIVE, wx.NORMAL,
+        self.temperatureRangeText.SetFont(wx.Font(12, wx.DECORATIVE, wx.NORMAL,
                     False))
         self.temperatureRangeText.SetToolTipString(u'in Fahrenheit')
         self.temperatureRangeText.SetHelpText(u'in Fahrenheit')
@@ -260,7 +260,7 @@ class WorkspaceView(wx.Panel):
               label=u'Humidity Range', name=u'humdiityRangeText',
               parent=self, pos=wx.Point(32, 528),
               size=wx.Size(86, 15), style=0)
-        self.humidityRangeText.SetFont(wx.Font(5, wx.DECORATIVE, wx.NORMAL,
+        self.humidityRangeText.SetFont(wx.Font(12, wx.DECORATIVE, wx.NORMAL,
                     False))
 
         self.humidityRangeStartValue = wx.lib.masked.textctrl.TextCtrl(id=wx.ID_ANY,
