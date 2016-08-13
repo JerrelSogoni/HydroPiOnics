@@ -174,13 +174,17 @@ class WorkspaceView(wx.Panel):
               label=u'Temperature Range', name=u'temperatureRangeText',
               parent=self, pos=wx.Point(32, 432),
               size=wx.Size(104, 15), style=0)
+        self.temperatureRangeText.SetFont(wx.Font(5, wx.DECORATIVE, wx.NORMAL,
+                    False))
         self.temperatureRangeText.SetToolTipString(u'in Fahrenheit')
         self.temperatureRangeText.SetHelpText(u'in Fahrenheit')
 
-        self.humdiityRangeText = wx.lib.stattext.GenStaticText(ID=wx.ID_ANY,
+        self.humidityRangeText = wx.lib.stattext.GenStaticText(ID=wx.ID_ANY,
               label=u'Humidity Range', name=u'humdiityRangeText',
               parent=self, pos=wx.Point(32, 528),
               size=wx.Size(86, 15), style=0)
+        self.humidityRangeText.SetFont(wx.Font(5, wx.DECORATIVE, wx.NORMAL,
+                    False))
 
         self.humidityRangeStartValue = wx.lib.masked.textctrl.TextCtrl(id=wx.ID_ANY,
               name=u'humidityRangeStartValue', parent=self,
@@ -203,22 +207,178 @@ class WorkspaceView(wx.Panel):
         #       self.OnHumidityRangeEndValueTextEnter,
         #       id=wxID_HYDROPIONICSHUMIDITYRANGEENDVALUE)
 
+
+        self.ledText = wx.lib.stattext.GenStaticText(ID=wx.ID_ANY,
+              label=u'LEDs', name=u'ledText', parent=self,
+              pos=wx.Point(416, 584), size=wx.Size(30, 15), style=0)
+        self.ledText.SetFont(wx.Font(9, wx.DECORATIVE, wx.NORMAL, wx.NORMAL,
+              False, u'Showcard Gothic'))
+        self.temperatureRangeText = wx.lib.stattext.GenStaticText(ID=wx.ID_ANY,
+              label=u'Temperature Range', name=u'temperatureRangeText',
+              parent=self, pos=wx.Point(32, 432),
+              size=wx.Size(104, 15), style=0)
+        self.temperatureRangeText.SetToolTipString(u'in Fahrenheit')
+        self.temperatureRangeText.SetHelpText(u'in Fahrenheit')
+
+
+        self.temperatureRangeStartValue = wx.TextCtrl(id=wx.ID_ANY,
+              name=u'temperatureRangeStartValue', parent=self,
+              pos=wx.Point(144, 424), size=wx.Size(40, 32), style=0, value=u'')
+        # self.temperatureRangeStartValue.Bind(wx.EVT_TEXT_ENTER,
+        #       self.OnTemperatureRangeStartValueTextEnter,
+        #       id=wxID_HYDROPIONICSTEMPERATURERANGESTARTVALUE)
+
+        self.genStaticText19 = wx.lib.stattext.GenStaticText(ID=wx.ID_ANY,
+              label=u'-', name='genStaticText19', parent=self,
+              pos=wx.Point(216, 424), size=wx.Size(8, 25), style=0)
+        self.genStaticText19.SetFont(wx.Font(14, wx.SWISS, wx.NORMAL, wx.BOLD,
+              False, u'Segoe UI'))
+        self.genStaticText19.SetBackgroundColour(wx.Colour(167, 231, 252))
+
+        self.temperatureRangeEndValue = wx.lib.masked.textctrl.TextCtrl(id=wx.ID_ANY,
+              name=u'temperatureRangeEndValue', parent=self,
+              pos=wx.Point(240, 424), size=wx.Size(40, 32), style=0, value='')
+        # self.temperatureRangeEndValue.Bind(wx.EVT_TEXT_ENTER,
+        #       self.OnTemperatureRangeEndValueTextEnter,
+        #       id=wxID_HYDROPIONICSTEMPERATURERANGEENDVALUE)
+
+
+        self.pHRangeText = wx.lib.stattext.GenStaticText(ID=wx.ID_ANY,
+              label=u'PH Level Range', name=u'pHRangeText',
+              parent=self, pos=wx.Point(32, 640),
+              size=wx.Size(82, 15), style=0)
+
+        self.pHLevelStartValue = wx.lib.masked.textctrl.TextCtrl(id=wx.ID_ANY,
+              name=u'pHLevelStartValue', parent=self,
+              pos=wx.Point(144, 624), size=wx.Size(40, 31), style=0, value='')
+        # self.pHLevelStartValue.Bind(wx.EVT_TEXT_ENTER,
+        #       self.OnPHLevelStartValueTextEnter,
+        #       id=wxID_HYDROPIONICSPHLEVELSTARTVALUE)
+
+        self.genStaticText23 = wx.lib.stattext.GenStaticText(ID=wx.ID_ANY,
+              label=u'-', name='genStaticText23', parent=self,
+              pos=wx.Point(208, 632), size=wx.Size(6, 15), style=0)
+        self.genStaticText23.SetBackgroundColour(wx.Colour(159, 221, 251))
+        self.genStaticText23.SetFont(wx.Font(9, wx.DECORATIVE, wx.NORMAL,
+              wx.BOLD, False, u'Showcard Gothic'))
+
+        self.phLevelEndValue = wx.lib.masked.textctrl.TextCtrl(id=wx.ID_ANY,
+              name=u'phLevelEndValue', parent=self,
+              pos=wx.Point(232, 624), size=wx.Size(40, 32), style=0, value='')
+        # self.phLevelEndValue.Bind(wx.EVT_TEXT_ENTER,
+        #       self.OnPhLevelEndValueTextEnter,
+        #       id=wxID_HYDROPIONICSPHLEVELENDVALUE)
+
+
+        self.waterAirPowerText = wx.lib.stattext.GenStaticText(ID=wx.ID_ANY,
+              label=u'Water/Air Power', name=u'waterAirPowerText',
+              parent=self, pos=wx.Point(200, 32),
+              size=wx.Size(87, 15), style=0)
+        self.waterAirPowerText.SetToolTipString(u'')
+
+        self.waterAirPowerSlider = wx.Slider(id=wx.ID_ANY,
+              maxValue=255, minValue=100, name=u'waterAirPowerSlider',
+              parent=self, pos=wx.Point(168, 48),
+              size=wx.Size(216, 24), style=wx.SL_HORIZONTAL, value=100)
+        self.waterAirPowerSlider.SetLabel(u'')
+        self.waterAirPowerSlider.SetMax(255)
+        self.waterAirPowerSlider.SetPageSize(1)
+        self.waterAirPowerSlider.SetMin(100)
+        # self.waterAirPowerSlider.Bind(wx.EVT_COMMAND_SCROLL,
+        #       self.OnWaterAirPowerSliderCommandScroll,
+        #       id=wxID_HYDROPIONICSWATERAIRPOWERSLIDER)
+
+        self.cycleOnWaterAirPumpText = wx.lib.stattext.GenStaticText(ID=wx.ID_ANY,
+              label=u'Cycle On', name=u'cycleOnWaterAirPumpText',
+              parent=self, pos=wx.Point(176, 72),
+              size=wx.Size(96, 15), style=0)
+        self.cycleOnWaterAirPumpText.SetToolTipString(u'')
+
+        self.cycleOffWaterAirPumpText = wx.lib.stattext.GenStaticText(ID=wx.ID_ANY,
+              label=u'Cycle Off', name=u'cycleOffWaterAirPumpText',
+              parent=self, pos=wx.Point(280, 72),
+              size=wx.Size(104, 15), style=0)
+
+        self.temperatureRangeEndText = wx.lib.stattext.GenStaticText(ID=wx.ID_ANY,
+              label=u'F', name=u'temperatureRangeEndText',
+              parent=self, pos=wx.Point(280, 424),
+              size=wx.Size(16, 36), style=0)
+        self.temperatureRangeEndText.SetFont(wx.Font(16, wx.DEFAULT, wx.NORMAL,
+              wx.NORMAL, False, u'Segoe Print'))
+
+        self.humidityPercentSignStart = wx.lib.stattext.GenStaticText(ID=wx.ID_ANY,
+              label=u'%', name=u'humidityPercentSignStart',
+              parent=self, pos=wx.Point(184, 512),
+              size=wx.Size(15, 36), style=0)
+        self.humidityPercentSignStart.SetFont(wx.Font(16, wx.DEFAULT, wx.NORMAL,
+              wx.NORMAL, False, u'Segoe Print'))
+
+        self.humidityEndText = wx.lib.stattext.GenStaticText(ID=wx.ID_ANY,
+              label=u'%', name=u'humidityEndText', parent=self,
+              pos=wx.Point(280, 512), size=wx.Size(15, 36), style=0)
+        self.humidityEndText.SetFont(wx.Font(16, wx.DEFAULT, wx.NORMAL,
+              wx.NORMAL, False, u'Segoe Print'))
+
+    def initSliders(self):
         self.humidityRangeStartSlider = wx.Slider(id=wx.ID_ANY,
-              maxValue=100, minValue=0, name=u'humidityRangeStartSlider',
-              parent=self, pos=wx.Point(16, 560),
-              size=wx.Size(360, 32), style=wx.SL_HORIZONTAL, value=0)
+                                                  maxValue=100, minValue=0, name=u'humidityRangeStartSlider',
+                                                  parent=self, pos=wx.Point(16, 560),
+                                                  size=wx.Size(360, 20), style=wx.SL_HORIZONTAL, value=0)
         self.humidityRangeStartSlider.SetPageSize(1)
         # self.humidityRangeStartSlider.Bind(wx.EVT_COMMAND_SCROLL,
         #       self.OnHumidityRangeStartSliderCommandScroll,
         #       id=wxID_HYDROPIONICSHUMIDITYRANGESTARTSLIDER)
 
         self.humidityRangeEndSlider = wx.Slider(id=wx.ID_ANY,
-              maxValue=100, minValue=0, name=u'humidityRangeEndSlider',
-              parent=self, pos=wx.Point(16, 600),
-              size=wx.Size(360, 24), style=wx.SL_HORIZONTAL, value=0)
+                                                maxValue=100, minValue=0, name=u'humidityRangeEndSlider',
+                                                parent=self, pos=wx.Point(16, 600),
+                                                size=wx.Size(360, 20), style=wx.SL_HORIZONTAL, value=0)
         self.humidityRangeEndSlider.SetPageSize(1)
         # self.humidityRangeEndSlider.Bind(wx.EVT_COMMAND_SCROLL,
         #       self.OnHumidityRangeEndSliderCommandScroll,
         #       id=wxID_HYDROPIONICSHUMIDITYRANGEENDSLIDER)
+
+
+        self.temperatureRangeStartSlider = wx.Slider(id=wx.ID_ANY,
+                                                     maxValue=100, minValue=45, name=u'temperatureRangeStartSlider',
+                                                     parent=self, pos=wx.Point(16, 456),
+                                                     size=wx.Size(360, 24), style=wx.SL_HORIZONTAL, value=45)
+        self.temperatureRangeStartSlider.SetMin(45)
+        self.temperatureRangeStartSlider.SetPageSize(1)
+        self.temperatureRangeStartSlider.SetThumbLength(25)
+        # self.temperatureRangeStartSlider.Bind(wx.EVT_COMMAND_SCROLL,
+        #                                       self.OnTemperatureRangeStartSliderCommandScroll,
+        #                                       id=wxID_HYDROPIONICSTEMPERATURERANGESTARTSLIDER)
+        self.temperatureRangeEndSlider = wx.Slider(id=wx.ID_ANY,
+                                                   maxValue=100, minValue=45, name=u'temperatureRangeEndSlider',
+                                                   parent=self, pos=wx.Point(16, 488),
+                                                   size=wx.Size(360, 24), style=wx.SL_HORIZONTAL, value=0)
+        self.temperatureRangeEndSlider.SetPageSize(1)
+        # self.temperatureRangeEndSlider.Bind(wx.EVT_COMMAND_SCROLL,
+        #                                     self.OnTemperatureRangeEndSliderCommandScroll,
+        #                                     id=wxID_HYDROPIONICSTEMPERATURERANGEENDSLIDER)
+
+        self.pHRangeStartSlider = wx.Slider(id=wx.ID_ANY,
+                                            maxValue=12, minValue=0, name=u'pHRangeStartSlider',
+                                            parent=self, pos=wx.Point(16, 656),
+                                            size=wx.Size(360, 24), style=wx.SL_HORIZONTAL, value=0)
+        self.pHRangeStartSlider.SetPageSize(1)
+        # self.pHRangeStartSlider.Bind(wx.EVT_COMMAND_SCROLL,
+        #                              self.OnPHRangeStartSliderCommandScroll,
+        #                              id=wxID_HYDROPIONICSPHRANGESTARTSLIDER)
+
+        self.pHRangeEndSlider = wx.Slider(id=wx.ID_ANY,
+                                          maxValue=12, minValue=0, name=u'pHRangeEndSlider',
+                                          parent=self, pos=wx.Point(16, 680),
+                                          size=wx.Size(360, 32), style=wx.SL_HORIZONTAL, value=0)
+        self.pHRangeEndSlider.SetPageSize(1)
+        # self.pHRangeEndSlider.Bind(wx.EVT_COMMAND_SCROLL,
+        #                            self.OnPHRangeEndSliderCommandScroll,
+        #                            id=wxID_HYDROPIONICSPHRANGEENDSLIDER)
+
+
+
+
+
 
 
