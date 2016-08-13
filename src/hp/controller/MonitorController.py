@@ -38,6 +38,6 @@ class MonitorController:
     def getPHLevel(self):
         return self.monitorModel.getPHLevel()
     def updatePHView(self):
-        self.monitorView.setPHText(self.monitorModel.getPHLevel())
+        self.monitorView.setPHText(str(self.monitorModel.getPHLevel()))
 
 

@@ -20,7 +20,7 @@ import os
 
 class pHParams(object):
     JSONFILE = os.path.realpath(__file__)[:len(os.path.realpath(__file__)) - 11] + "ph.json"
-    print JSONFILE
+
     def __init__(self, calibs=None):
         """Creates a new pHParams object and initializes its calibs dictionary
 
