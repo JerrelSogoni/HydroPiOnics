@@ -27,29 +27,120 @@ class WorkspaceView(wx.Panel):
         pass
     def initRelay(self):
         pass
-    def initGUIImages(self):
+    def initMotorImages(self):
         self.ventFanPicture = wx.StaticBitmap(bitmap=wx.Bitmap(IMG_LOCATION + "ventFan.jpg",
-               wx.BITMAP_TYPE_JPEG), id=wx.ID_ANY,
-               name=u'ventFanPicture', parent=self,
-               pos=wx.Point(400, 136), size=wx.Size(64, 56), style=0)
+                                                               wx.BITMAP_TYPE_JPEG), id=wx.ID_ANY,
+                                              name=u'ventFanPicture', parent=self,
+                                              pos=wx.Point(400, 136), size=wx.Size(64, 56), style=0)
         self.waterAirPicture = wx.StaticBitmap(bitmap=wx.Bitmap(IMG_LOCATION + "air&pump.jpg",
-               wx.BITMAP_TYPE_JPEG), id=wx.ID_ANY,
-               name=u'waterAirPicture', parent=self,
-               pos=wx.Point(24, 48), size=wx.Size(64, 56), style=0)
+                                                                wx.BITMAP_TYPE_JPEG), id=wx.ID_ANY,
+                                               name=u'waterAirPicture', parent=self,
+                                               pos=wx.Point(24, 48), size=wx.Size(64, 56), style=0)
         self.intakeFanPicture = wx.StaticBitmap(bitmap=wx.Bitmap(IMG_LOCATION + "intakeFan.jpg",
-               wx.BITMAP_TYPE_JPEG), id=wx.ID_ANY,
-               name=u'intakeFanPicture', parent=self,
-               pos=wx.Point(400, 232), size=wx.Size(64, 56), style=0)
+                                                                 wx.BITMAP_TYPE_JPEG), id=wx.ID_ANY,
+                                                name=u'intakeFanPicture', parent=self,
+                                                pos=wx.Point(400, 232), size=wx.Size(64, 56), style=0)
 
+
+
+        self.exhaustFanPicture = wx.StaticBitmap(bitmap=wx.Bitmap(IMG_LOCATION + "exaustFan.jpg",
+               wx.BITMAP_TYPE_JPEG), id=wx.ID_ANY,
+               name=u'exhaustFanPicture', parent=self,
+               pos=wx.Point(400, 40), size=wx.Size(64, 56), style=0)
+    def initStaticMotorText(self):
+        self.environmentControlText = wx.lib.stattext.GenStaticText(ID=wx.ID_ANY,
+                                                                    label=u'Environmental Control',
+                                                                    name=u'environmentControlText',
+                                                                    parent=self, pos=wx.Point(464, 8),
+                                                                    size=wx.Size(154, 16), style=0)
+        self.environmentControlText.SetFont(wx.Font(9, wx.SCRIPT, wx.NORMAL,
+                                                    wx.NORMAL, False, u'Lucida Calligraphy'))
+
+        self.intakeFanText = wx.lib.stattext.GenStaticText(ID=wx.ID_ANY,
+                                                           label=u'Intake Fan', name=u'intakeFanText',
+                                                           parent=self, pos=wx.Point(400, 216),
+                                                           size=wx.Size(69, 15), style=0)
+        self.intakeFanText.SetFont(wx.Font(9, wx.DECORATIVE, wx.NORMAL,
+                                           wx.NORMAL, False, u'Showcard Gothic'))
+
+        self.ventFanText = wx.lib.stattext.GenStaticText(ID=wx.ID_ANY,
+                                                         label=u'Vent Fan', name=u'ventFanText',
+                                                         parent=self, pos=wx.Point(400, 120),
+                                                         size=wx.Size(56, 15), style=0)
+        self.ventFanText.SetFont(wx.Font(9, wx.DECORATIVE, wx.NORMAL, wx.NORMAL,
+                                         False, u'Showcard Gothic'))
+        self.waterPumpAirTitle = wx.lib.stattext.GenStaticText(ID=wx.ID_ANY,
+                                                               label=u'Water/Air Pump', name=u'waterPumpAirTitle',
+                                                               parent=self, pos=wx.Point(8, 32), size=wx.Size(104,
+                                                                                                              15),
+                                                               style=0)
+        self.waterPumpAirTitle.SetFont(wx.Font(9, wx.DECORATIVE, wx.NORMAL,
+                                               wx.NORMAL, False, u'Showcard Gothic'))
+
+        self.exhaustFanText = wx.lib.stattext.GenStaticText(ID=wx.ID_ANY,
+                                                            label=u'Exhaust Fan', name=u'exhaustFanText',
+                                                            parent=self, pos=wx.Point(392, 24),
+                                                            size=wx.Size(80, 15), style=0)
+        self.exhaustFanText.SetFont(wx.Font(9, wx.DECORATIVE, wx.NORMAL,
+                                            wx.NORMAL, False, u'Showcard Gothic'))
+        self.cycleOnWaterAirPumpText = wx.lib.stattext.GenStaticText(ID=wx.ID_ANY,
+                                                                     label=u'Cycle On', name=u'cycleOnWaterAirPumpText',
+                                                                     parent=self, pos=wx.Point(176, 72),
+                                                                     size=wx.Size(96, 15), style=0)
+        self.cycleOnWaterAirPumpText.SetToolTipString(u'')
+
+        self.cycleOffWaterAirPumpText = wx.lib.stattext.GenStaticText(ID=wx.ID_ANY,
+                                                                      label=u'Cycle Off',
+                                                                      name=u'cycleOffWaterAirPumpText',
+                                                                      parent=self, pos=wx.Point(280, 72),
+                                                                      size=wx.Size(104, 15), style=0)
+        self.exaustFanCycleOnText = wx.lib.stattext.GenStaticText(ID=wx.ID_ANY,
+              label=u'Cycle On', name=u'exaustFanCycleOnText',
+              parent=self, pos=wx.Point(560, 40),
+              size=wx.Size(104, 15), style=0)
+
+        self.exaustFanCycleOffText = wx.lib.stattext.GenStaticText(ID=wx.ID_ANY,
+              label=u'Cycle Off', name='exaustFanCycleOffText',
+              parent=self, pos=wx.Point(688, 40),
+              size=wx.Size(104, 15), style=0)
+
+        self.cycleOnVentFanText = wx.lib.stattext.GenStaticText(ID=wx.ID_ANY,
+              label=u'Cycle On', name=u'cycleOnVentFanText',
+              parent=self, pos=wx.Point(560, 128),
+              size=wx.Size(104, 15), style=0)
+
+        self.cycleOffVentFanText = wx.lib.stattext.GenStaticText(ID=wx.ID_ANY,
+              label=u'Cycle Off', name=u'cycleOffVentFanText',
+              parent=self, pos=wx.Point(688, 128),
+              size=wx.Size(104, 15), style=0)
+        self.cycleOnIntakeFanText = wx.lib.stattext.GenStaticText(ID=wx.ID_ANY,
+              label=u'Cycle On', name=u'cycleOnIntakeFanText',
+              parent=self, pos=wx.Point(560, 224),
+              size=wx.Size(104, 15), style=0)
+
+        self.cycleOffIntakeFanText = wx.lib.stattext.GenStaticText(ID=wx.ID_ANY,
+              label=u'Cycle Off', name=u'cycleOffIntakeFanText',
+              parent=self, pos=wx.Point(688, 224),
+              size=wx.Size(104, 15), style=0)
+
+
+    def initElectronicImages(self):
         self.airFilterFanPicture = wx.StaticBitmap(bitmap=wx.Bitmap(IMG_LOCATION + "airFilterFan.jpg",
-               wx.BITMAP_TYPE_JPEG), id=wx.ID_ANY,
-               name=u'airFilterFanPicture', parent=self,
-               pos=wx.Point(408, 312), size=wx.Size(50, 66), style=0)
-
+                                                                    wx.BITMAP_TYPE_JPEG), id=wx.ID_ANY,
+                                                   name=u'airFilterFanPicture', parent=self,
+                                                   pos=wx.Point(408, 312), size=wx.Size(50, 66), style=0)
         self.humidifierPicture = wx.StaticBitmap(bitmap=wx.Bitmap(IMG_LOCATION + "humidifier.jpg",
                wx.BITMAP_TYPE_JPEG), id=wx.ID_ANY,
                name=u'humidifierPicture', parent=self,
                pos=wx.Point(400, 416), size=wx.Size(64, 56), style=0)
+
+        self.ledPicture = wx.StaticBitmap(bitmap=wx.Bitmap(IMG_LOCATION + "myLedLights.JPG",
+              wx.BITMAP_TYPE_JPEG), id=wx.ID_ANY,
+               name=u'ledPicture', parent=self, pos=wx.Point(400,
+               592), size=wx.Size(64, 56), style=0)
+
+
+    def initPumpImages(self):
 
         self.mixToPlantPicture = wx.StaticBitmap(bitmap=wx.Bitmap(IMG_LOCATION + "dcwaterPumps.jpg",
                wx.BITMAP_TYPE_JPEG), id=wx.ID_ANY,
@@ -61,16 +152,6 @@ class WorkspaceView(wx.Panel):
                name=u'airHeaterPicture', parent=self,
                pos=wx.Point(400, 512), size=wx.Size(64, 56), style=0)
 
-        self.exhaustFanPicture = wx.StaticBitmap(bitmap=wx.Bitmap(IMG_LOCATION + "exaustFan.jpg",
-               wx.BITMAP_TYPE_JPEG), id=wx.ID_ANY,
-               name=u'exhaustFanPicture', parent=self,
-               pos=wx.Point(400, 40), size=wx.Size(64, 56), style=0)
-
-        self.ledPicture = wx.StaticBitmap(bitmap=wx.Bitmap(IMG_LOCATION + "myLedLights.JPG",
-              wx.BITMAP_TYPE_JPEG), id=wx.ID_ANY,
-               name=u'ledPicture', parent=self, pos=wx.Point(400,
-               592), size=wx.Size(64, 56), style=0)
-
         self.plantToMixPicture = wx.StaticBitmap(bitmap=wx.Bitmap(IMG_LOCATION + "dcwaterPumps.jpg",
                wx.BITMAP_TYPE_JPEG), id=wx.ID_ANY,
                name=u'plantToMixPicture', parent=self,
@@ -80,43 +161,39 @@ class WorkspaceView(wx.Panel):
                wx.BITMAP_TYPE_JPEG), id=wx.ID_ANY,
                name=u'mixToDrainPicture', parent=self,
                pos=wx.Point(32, 336), size=wx.Size(50, 66), style=0)
+    def initStaticPumpText(self):
+        self.waterControlText = wx.lib.stattext.GenStaticText(ID=wx.ID_ANY,
+              label=u'Water Control', name=u'waterControlText',
+              parent=self, pos=wx.Point(24, 8), size=wx.Size(100,
+              16), style=0)
+        self.waterControlText.SetFont(wx.Font(9, wx.SCRIPT, wx.NORMAL,
+              wx.NORMAL, False, u'Lucida Handwriting'))
+        self.waterControlText.SetToolTipString(u'')
+        self.mixToPlantText = wx.lib.stattext.GenStaticText(ID=wx.ID_ANY,
+                                                            label=u'Mix to Plant', name=u'mixToPlantText',
+                                                            parent=self, pos=wx.Point(16, 112),
+                                                            size=wx.Size(82, 15), style=0)
+        self.mixToPlantText.SetFont(wx.Font(9, wx.DECORATIVE, wx.NORMAL,
+                                            wx.NORMAL, False, u'Showcard Gothic'))
+        self.mixToPlantText.SetToolTipString(u'')
 
-    def initStaticText(self):
+        self.plantToMixText = wx.lib.stattext.GenStaticText(ID=wx.ID_ANY,
+                                                            label=u'Plant to Mix', name=u'plantToMixText',
+                                                            parent=self, pos=wx.Point(16, 216),
+                                                            size=wx.Size(82, 15), style=0)
+        self.plantToMixText.SetFont(wx.Font(9, wx.DECORATIVE, wx.NORMAL,
+                                            wx.NORMAL, False, u'Showcard Gothic'))
+        self.plantToMixText.SetToolTipString(u'')
 
-        self.environmentControlText = wx.lib.stattext.GenStaticText(ID=wx.ID_ANY,
-               label=u'Environmental Control', name=u'environmentControlText',
-               parent=self, pos=wx.Point(464, 8),
-               size=wx.Size(154, 16), style=0)
-        self.environmentControlText.SetFont(wx.Font(9, wx.SCRIPT, wx.NORMAL,
-               wx.NORMAL, False, u'Lucida Calligraphy'))
+        self.mixToDrainText = wx.lib.stattext.GenStaticText(ID=wx.ID_ANY,
+                                                            label=u'Mix to Drain', name=u'mixToDrainText',
+                                                            parent=self, pos=wx.Point(16, 320),
+                                                            size=wx.Size(84, 15), style=0)
+        self.mixToDrainText.SetFont(wx.Font(9, wx.DECORATIVE, wx.NORMAL,
+                                            wx.NORMAL, False, u'Showcard Gothic'))
+        self.mixToDrainText.SetToolTipString(u'')
 
-        self.intakeFanText = wx.lib.stattext.GenStaticText(ID=wx.ID_ANY,
-               label=u'Intake Fan', name=u'intakeFanText',
-               parent=self, pos=wx.Point(400, 216),
-               size=wx.Size(69, 15), style=0)
-        self.intakeFanText.SetFont(wx.Font(9, wx.DECORATIVE, wx.NORMAL,
-               wx.NORMAL, False, u'Showcard Gothic'))
-
-        self.ventFanText = wx.lib.stattext.GenStaticText(ID=wx.ID_ANY,
-               label=u'Vent Fan', name=u'ventFanText',
-               parent=self, pos=wx.Point(400, 120),
-               size=wx.Size(56, 15), style=0)
-        self.ventFanText.SetFont(wx.Font(9, wx.DECORATIVE, wx.NORMAL, wx.NORMAL,
-               False, u'Showcard Gothic'))
-        self.waterPumpAirTitle = wx.lib.stattext.GenStaticText(ID=wx.ID_ANY,
-              label=u'Water/Air Pump', name=u'waterPumpAirTitle',
-              parent=self, pos=wx.Point(8, 32), size=wx.Size(104,
-              15), style=0)
-        self.waterPumpAirTitle.SetFont(wx.Font(9, wx.DECORATIVE, wx.NORMAL,
-              wx.NORMAL, False, u'Showcard Gothic'))
-        self.waterPumpAirTitle.SetToolTipString(u'')
-
-        self.exhaustFanText = wx.lib.stattext.GenStaticText(ID=wx.ID_ANY,
-              label=u'Exhaust Fan', name=u'exhaustFanText',
-              parent=self, pos=wx.Point(392, 24),
-              size=wx.Size(80, 15), style=0)
-        self.exhaustFanText.SetFont(wx.Font(9, wx.DECORATIVE, wx.NORMAL,
-              wx.NORMAL, False, u'Showcard Gothic'))
+    def initStaticElectronicText(self):
 
         self.humidifierText = wx.lib.stattext.GenStaticText(ID=wx.ID_ANY,
               label=u'Humifier', name=u'humidifierText',
@@ -132,13 +209,6 @@ class WorkspaceView(wx.Panel):
         self.airHeaterText.SetFont(wx.Font(9, wx.DECORATIVE, wx.NORMAL,
               wx.NORMAL, False, u'Showcard Gothic'))
 
-        self.waterControlText = wx.lib.stattext.GenStaticText(ID=wx.ID_ANY,
-              label=u'Water Control', name=u'waterControlText',
-              parent=self, pos=wx.Point(24, 8), size=wx.Size(100,
-              16), style=0)
-        self.waterControlText.SetFont(wx.Font(9, wx.SCRIPT, wx.NORMAL,
-              wx.NORMAL, False, u'Lucida Handwriting'))
-        self.waterControlText.SetToolTipString(u'')
 
         self.airFilterFanText = wx.lib.stattext.GenStaticText(ID=wx.ID_ANY,
               label=u'Air Filter Fan', name=u'airFilterFanText',
@@ -146,31 +216,33 @@ class WorkspaceView(wx.Panel):
               size=wx.Size(88, 15), style=0)
         self.airFilterFanText.SetFont(wx.Font(9, wx.DECORATIVE, wx.NORMAL,
               wx.NORMAL, False, u'Showcard Gothic'))
+        self.ledText = wx.lib.stattext.GenStaticText(ID=wx.ID_ANY,
+                                                     label=u'LEDs', name=u'ledText', parent=self,
+                                                     pos=wx.Point(416, 584), size=wx.Size(30, 15), style=0)
+        self.ledText.SetFont(wx.Font(9, wx.DECORATIVE, wx.NORMAL, wx.NORMAL,
+                                     False, u'Showcard Gothic'))
+        self.cycleOffAirFIlterFanText = wx.lib.stattext.GenStaticText(ID=wx.ID_ANY,
+              label=u'Cycle Off', name=u'cycleOffAirFIlterFanText',
+              parent=self, pos=wx.Point(688, 320),
+              size=wx.Size(104, 15), style=0)
 
-        self.mixToPlantText = wx.lib.stattext.GenStaticText(ID=wx.ID_ANY,
-              label=u'Mix to Plant', name=u'mixToPlantText',
-              parent=self, pos=wx.Point(16, 112),
-              size=wx.Size(82, 15), style=0)
-        self.mixToPlantText.SetFont(wx.Font(9, wx.DECORATIVE, wx.NORMAL,
-              wx.NORMAL, False, u'Showcard Gothic'))
-        self.mixToPlantText.SetToolTipString(u'')
+        self.cycleOnAirFIlterFanText = wx.lib.stattext.GenStaticText(ID=wx.ID_ANY,
+              label=u'Cycle On', name=u'cycleOnAirFIlterFanText',
+              parent=self, pos=wx.Point(560, 320),
+              size=wx.Size(104, 15), style=0)
 
-        self.plantToMixText = wx.lib.stattext.GenStaticText(ID=wx.ID_ANY,
-              label=u'Plant to Mix', name=u'plantToMixText',
-              parent=self, pos=wx.Point(16, 216),
-              size=wx.Size(82, 15), style=0)
-        self.plantToMixText.SetFont(wx.Font(9, wx.DECORATIVE, wx.NORMAL,
-              wx.NORMAL, False, u'Showcard Gothic'))
-        self.plantToMixText.SetToolTipString(u'')
+        self.cycleOnLedText = wx.lib.stattext.GenStaticText(ID=wx.ID_ANY,
+              label=u'Cycle On', name=u'cycleOnLedText',
+              parent=self, pos=wx.Point(560, 592),
+              size=wx.Size(104, 15), style=0)
 
-        self.mixToDrainText = wx.lib.stattext.GenStaticText(ID=wx.ID_ANY,
-              label=u'Mix to Drain', name=u'mixToDrainText',
-              parent=self, pos=wx.Point(16, 320),
-              size=wx.Size(84, 15), style=0)
-        self.mixToDrainText.SetFont(wx.Font(9, wx.DECORATIVE, wx.NORMAL,
-              wx.NORMAL, False, u'Showcard Gothic'))
-        self.mixToDrainText.SetToolTipString(u'')
+        self.cycleOffLedText = wx.lib.stattext.GenStaticText(ID=wx.ID_ANY,
+              label=u'Cycle Off', name=u'cycleOffLedText',
+              parent=self, pos=wx.Point(696, 592),
+              size=wx.Size(104, 15), style=0)
 
+
+    def initStaticEnvironmentText(self):
         self.temperatureRangeText = wx.lib.stattext.GenStaticText(ID=wx.ID_ANY,
               label=u'Temperature Range', name=u'temperatureRangeText',
               parent=self, pos=wx.Point(32, 432),
@@ -209,11 +281,7 @@ class WorkspaceView(wx.Panel):
         #       id=wxID_HYDROPIONICSHUMIDITYRANGEENDVALUE)
 
 
-        self.ledText = wx.lib.stattext.GenStaticText(ID=wx.ID_ANY,
-              label=u'LEDs', name=u'ledText', parent=self,
-              pos=wx.Point(416, 584), size=wx.Size(30, 15), style=0)
-        self.ledText.SetFont(wx.Font(9, wx.DECORATIVE, wx.NORMAL, wx.NORMAL,
-              False, u'Showcard Gothic'))
+
         self.temperatureRangeText = wx.lib.stattext.GenStaticText(ID=wx.ID_ANY,
               label=u'Temperature Range', name=u'temperatureRangeText',
               parent=self, pos=wx.Point(32, 432),
@@ -276,19 +344,6 @@ class WorkspaceView(wx.Panel):
         # self.phLevelEndValue.Bind(wx.EVT_TEXT_ENTER,
         #       self.OnPhLevelEndValueTextEnter,
         #       id=wxID_HYDROPIONICSPHLEVELENDVALUE)
-
-
-        self.cycleOnWaterAirPumpText = wx.lib.stattext.GenStaticText(ID=wx.ID_ANY,
-              label=u'Cycle On', name=u'cycleOnWaterAirPumpText',
-              parent=self, pos=wx.Point(176, 72),
-              size=wx.Size(96, 15), style=0)
-        self.cycleOnWaterAirPumpText.SetToolTipString(u'')
-
-        self.cycleOffWaterAirPumpText = wx.lib.stattext.GenStaticText(ID=wx.ID_ANY,
-              label=u'Cycle Off', name=u'cycleOffWaterAirPumpText',
-              parent=self, pos=wx.Point(280, 72),
-              size=wx.Size(104, 15), style=0)
-
         self.temperatureRangeEndText = wx.lib.stattext.GenStaticText(ID=wx.ID_ANY,
               label=u'F', name=u'temperatureRangeEndText',
               parent=self, pos=wx.Point(280, 424),

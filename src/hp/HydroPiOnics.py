@@ -30,10 +30,6 @@ class HydroPiOnics(wx.Frame):
     def _init_ctrls(self, prnt):
         pass
 
-
-
-
-
         # self.exhaustFanCheckBox = wx.CheckBox(id=wxID_HYDROPIONICSEXHAUSTFANCHECKBOX,
         #       label=u'On/Off', name=u'exhaustFanCheckBox',
         #       parent=self.scrolledPanel1, pos=wx.Point(472, 56),
@@ -45,11 +41,6 @@ class HydroPiOnics(wx.Frame):
         #       self.OnExhaustFanCheckBoxCheckbox,
         #       id=wxID_HYDROPIONICSEXHAUSTFANCHECKBOX)
         #
-
-
-
-
-
 
         # self.ventFanCheckBox = wx.CheckBox(id=wxID_HYDROPIONICSVENTFANCHECKBOX,
         #       label=u'On/Off', name=u'ventFanCheckBox',
@@ -93,15 +84,11 @@ class HydroPiOnics(wx.Frame):
         #       size=wx.Size(78, 15), style=0)
         # self.airFilterFanCheckBox.SetValue(True)
         #
-
-
         # self.ledCheckBox = wx.CheckBox(id=wxID_HYDROPIONICSLEDCHECKBOX,
         #       label=u'On/Off', name=u'ledCheckBox', parent=self.scrolledPanel1,
         #       pos=wx.Point(472, 608), size=wx.Size(78, 15), style=0)
         # self.ledCheckBox.SetValue(False)
         #
-
-
         # self.mixToPlantCheckBox = wx.CheckBox(id=wxID_HYDROPIONICSMIXTOPLANTCHECKBOX,
         #       label=u'On/Off', name=u'mixToPlantCheckBox',
         #       parent=self.scrolledPanel1, pos=wx.Point(96, 160),
@@ -131,7 +118,6 @@ class HydroPiOnics(wx.Frame):
         #
         ##### Temperature Range and PH level Range Will not be implemented Yet since I cannot control them
         ## Incorporating in future upgrades
-
         # self.cycleOnWaterAirPumpValue = wx.lib.masked.textctrl.TextCtrl(id=wxID_HYDROPIONICSCYCLEONWATERAIRPUMPVALUE,
         #       name=u'cycleOnWaterAirPumpValue', parent=self.scrolledPanel1,
         #       pos=wx.Point(176, 88), size=wx.Size(48, 23), style=0, value='')
@@ -146,16 +132,7 @@ class HydroPiOnics(wx.Frame):
         #       self.OnCycleOffWaterAirPumpValueTextEnter,
         #       id=wxID_HYDROPIONICSCYCLEOFFWATERAIRPUMPVALUE)
         #
-        # self.cycleOnMixToPlantText = wx.lib.stattext.GenStaticText(ID=wxID_HYDROPIONICSCYCLEONMIXTOPLANTTEXT,
-        #       label=u'Cycle On', name=u'cycleOnMixToPlantText',
-        #       parent=self.scrolledPanel1, pos=wx.Point(176, 184),
-        #       size=wx.Size(96, 15), style=0)
-        #
-        # self.cycleOffMixToPlantText = wx.lib.stattext.GenStaticText(ID=wxID_HYDROPIONICSCYCLEOFFMIXTOPLANTTEXT,
-        #       label=u'Cycle Off', name=u'cycleOffMixToPlantText',
-        #       parent=self.scrolledPanel1, pos=wx.Point(280, 184),
-        #       size=wx.Size(104, 15), style=0)
-        #
+
         # self.cycleOnMixToPlantValue = wx.lib.masked.textctrl.TextCtrl(id=wxID_HYDROPIONICSCYCLEONMIXTOPLANTVALUE,
         #       name=u'cycleOnMixToPlantValue', parent=self.scrolledPanel1,
         #       pos=wx.Point(176, 200), size=wx.Size(48, 24), style=0, value='')
@@ -179,16 +156,7 @@ class HydroPiOnics(wx.Frame):
         #       self.OnDrainSystemCheckBoxCheckbox,
         #       id=wxID_HYDROPIONICSDRAINSYSTEMCHECKBOX)
         #
-        # self.exaustFanCycleOnText = wx.lib.stattext.GenStaticText(ID=wxID_HYDROPIONICSEXAUSTFANCYCLEONTEXT,
-        #       label=u'Cycle On', name=u'exaustFanCycleOnText',
-        #       parent=self.scrolledPanel1, pos=wx.Point(560, 40),
-        #       size=wx.Size(104, 15), style=0)
-        #
-        # self.genStaticText3 = wx.lib.stattext.GenStaticText(ID=wxID_HYDROPIONICSGENSTATICTEXT3,
-        #       label=u'Cycle Off', name='genStaticText3',
-        #       parent=self.scrolledPanel1, pos=wx.Point(688, 40),
-        #       size=wx.Size(104, 15), style=0)
-        #
+
         # self.exaustFanCycleOnValue = wx.lib.masked.textctrl.TextCtrl(id=wxID_HYDROPIONICSEXAUSTFANCYCLEONVALUE,
         #       name=u'exaustFanCycleOnValue', parent=self.scrolledPanel1,
         #       pos=wx.Point(560, 56), size=wx.Size(48, 23), style=0, value='')
@@ -197,16 +165,7 @@ class HydroPiOnics(wx.Frame):
         #       name=u'exaustFanCycleOffValue', parent=self.scrolledPanel1,
         #       pos=wx.Point(688, 56), size=wx.Size(48, 23), style=0, value='')
         #
-        # self.cycleOnVentFanText = wx.lib.stattext.GenStaticText(ID=wxID_HYDROPIONICSCYCLEONVENTFANTEXT,
-        #       label=u'Cycle On', name=u'cycleOnVentFanText',
-        #       parent=self.scrolledPanel1, pos=wx.Point(560, 128),
-        #       size=wx.Size(104, 15), style=0)
-        #
-        # self.cycleOffVentFanText = wx.lib.stattext.GenStaticText(ID=wxID_HYDROPIONICSCYCLEOFFVENTFANTEXT,
-        #       label=u'Cycle Off', name=u'cycleOffVentFanText',
-        #       parent=self.scrolledPanel1, pos=wx.Point(688, 128),
-        #       size=wx.Size(104, 15), style=0)
-        #
+
         # self.ventFanCycleOnValue = wx.lib.masked.textctrl.TextCtrl(id=wxID_HYDROPIONICSVENTFANCYCLEONVALUE,
         #       name=u'ventFanCycleOnValue', parent=self.scrolledPanel1,
         #       pos=wx.Point(560, 144), size=wx.Size(48, 23), style=0, value='')
@@ -215,16 +174,7 @@ class HydroPiOnics(wx.Frame):
         #       name=u'ventFanCycleOffValue', parent=self.scrolledPanel1,
         #       pos=wx.Point(688, 144), size=wx.Size(48, 23), style=0, value='')
         #
-        # self.cycleOnIntakeFanText = wx.lib.stattext.GenStaticText(ID=wxID_HYDROPIONICSCYCLEONINTAKEFANTEXT,
-        #       label=u'Cycle On', name=u'cycleOnIntakeFanText',
-        #       parent=self.scrolledPanel1, pos=wx.Point(560, 224),
-        #       size=wx.Size(104, 15), style=0)
-        #
-        # self.cycleOffIntakeFanText = wx.lib.stattext.GenStaticText(ID=wxID_HYDROPIONICSCYCLEOFFINTAKEFANTEXT,
-        #       label=u'Cycle Off', name=u'cycleOffIntakeFanText',
-        #       parent=self.scrolledPanel1, pos=wx.Point(688, 224),
-        #       size=wx.Size(104, 15), style=0)
-        #
+
         # self.intakeFanCycleOnValue = wx.lib.masked.textctrl.TextCtrl(id=wxID_HYDROPIONICSINTAKEFANCYCLEONVALUE,
         #       name=u'intakeFanCycleOnValue', parent=self.scrolledPanel1,
         #       pos=wx.Point(560, 240), size=wx.Size(48, 23), style=0, value='')
@@ -232,12 +182,7 @@ class HydroPiOnics(wx.Frame):
         # self.intakeFanCycleOffValue = wx.lib.masked.textctrl.TextCtrl(id=wxID_HYDROPIONICSINTAKEFANCYCLEOFFVALUE,
         #       name=u'intakeFanCycleOffValue', parent=self.scrolledPanel1,
         #       pos=wx.Point(688, 240), size=wx.Size(48, 23), style=0, value='')
-        #
-        # self.cycleOnAirFIlterFanText = wx.lib.stattext.GenStaticText(ID=wxID_HYDROPIONICSCYCLEONAIRFILTERFANTEXT,
-        #       label=u'Cycle On', name=u'cycleOnAirFIlterFanText',
-        #       parent=self.scrolledPanel1, pos=wx.Point(560, 320),
-        #       size=wx.Size(104, 15), style=0)
-        #
+
         # self.airFilterFanCycleOnValue = wx.lib.masked.textctrl.TextCtrl(id=wxID_HYDROPIONICSAIRFILTERFANCYCLEONVALUE,
         #       name=u'airFilterFanCycleOnValue', parent=self.scrolledPanel1,
         #       pos=wx.Point(560, 336), size=wx.Size(48, 23), style=0, value='')
@@ -246,21 +191,7 @@ class HydroPiOnics(wx.Frame):
         #       name=u'airFilterFanCycleOffValue', parent=self.scrolledPanel1,
         #       pos=wx.Point(688, 336), size=wx.Size(48, 23), style=0, value='')
         #
-        # self.cycleOffAirFIlterFanText = wx.lib.stattext.GenStaticText(ID=wxID_HYDROPIONICSCYCLEOFFAIRFILTERFANTEXT,
-        #       label=u'Cycle Off', name=u'cycleOffAirFIlterFanText',
-        #       parent=self.scrolledPanel1, pos=wx.Point(688, 320),
-        #       size=wx.Size(104, 15), style=0)
-        #
-        # self.cycleOnLedText = wx.lib.stattext.GenStaticText(ID=wxID_HYDROPIONICSCYCLEONLEDTEXT,
-        #       label=u'Cycle On', name=u'cycleOnLedText',
-        #       parent=self.scrolledPanel1, pos=wx.Point(560, 592),
-        #       size=wx.Size(104, 15), style=0)
-        #
-        # self.cycleOffLedText = wx.lib.stattext.GenStaticText(ID=wxID_HYDROPIONICSCYCLEOFFLEDTEXT,
-        #       label=u'Cycle Off', name=u'cycleOffLedText',
-        #       parent=self.scrolledPanel1, pos=wx.Point(696, 592),
-        #       size=wx.Size(104, 15), style=0)
-        #
+
         # self.ledCycleOnValue = wx.lib.masked.textctrl.TextCtrl(id=wxID_HYDROPIONICSLEDCYCLEONVALUE,
         #       name=u'ledCycleOnValue', parent=self.scrolledPanel1,
         #       pos=wx.Point(560, 608), size=wx.Size(48, 23), style=0, value='')
@@ -268,8 +199,6 @@ class HydroPiOnics(wx.Frame):
         # self.ledCycleOffValue = wx.lib.masked.textctrl.TextCtrl(id=wxID_HYDROPIONICSLEDCYCLEOFFVALUE,
         #       name=u'ledCycleOffValue', parent=self.scrolledPanel1,
         #       pos=wx.Point(696, 608), size=wx.Size(48, 23), style=0, value='')
-        #
-
 
         # self.cycleOnExaustFan = wx.Choice(choices=['s', 'm', 'h'],
         #       id=wxID_HYDROPIONICSCYCLEONEXAUSTFAN, name=u'cycleOnExaustFan',
