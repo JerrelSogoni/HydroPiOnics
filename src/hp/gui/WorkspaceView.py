@@ -64,7 +64,7 @@ class WorkspaceView(wx.Panel):
                name=u'exhaustFanPicture', parent=self,
                pos=wx.Point(400, 40), size=wx.Size(64, 56), style=0)
 
-        self.ledPicture = wx.StaticBitmap(bitmap=wx.Bitmap(IMG_LOCATION + "myLedLights.jpg",
+        self.ledPicture = wx.StaticBitmap(bitmap=wx.Bitmap(IMG_LOCATION + "myLedLights.JPG",
               wx.BITMAP_TYPE_JPEG), id=wx.ID_ANY,
                name=u'ledPicture', parent=self, pos=wx.Point(400,
                592), size=wx.Size(64, 56), style=0)
