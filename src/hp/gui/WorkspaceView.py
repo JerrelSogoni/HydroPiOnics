@@ -26,6 +26,7 @@ class WorkspaceView(wx.Panel):
         self.initStaticMotorText()
         self.initStaticPumpText()
         self.initSliders()
+        self.initStaticEnvironmentText()
 
     def initMotor(self):
         pass
