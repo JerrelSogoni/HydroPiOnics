@@ -44,13 +44,7 @@ class HydroPiOnics(wx.Frame):
         # self.genButton1 = wx.lib.buttons.GenButton(id=wxID_HYDROPIONICSGENBUTTON1,
         #       label='genButton1', name='genButton1', parent=self.MenuPane,
         #       pos=wx.Point(64, 168), size=wx.Size(112, 50), style=0)
-        #
-        # self.scrolledPanel1 = wx.lib.scrolledpanel.ScrolledPanel(id=wxID_HYDROPIONICSSCROLLEDPANEL1,
-        #       name='scrolledPanel1', parent=self, pos=wx.Point(0, 50),
-        #       size=wx.Size(950, 800), style=wx.TAB_TRAVERSAL)
-        # self.scrolledPanel1.SetInitialSize(wx.Size(950, 800))
-        # self.scrolledPanel1.SetBackgroundColour(wx.Colour(185, 242, 253))
-        #
+
         # self.exhaustFanCheckBox = wx.CheckBox(id=wxID_HYDROPIONICSEXHAUSTFANCHECKBOX,
         #       label=u'On/Off', name=u'exhaustFanCheckBox',
         #       parent=self.scrolledPanel1, pos=wx.Point(472, 56),
@@ -62,75 +56,10 @@ class HydroPiOnics(wx.Frame):
         #       self.OnExhaustFanCheckBoxCheckbox,
         #       id=wxID_HYDROPIONICSEXHAUSTFANCHECKBOX)
         #
-        # self.ventFanPicture = wx.StaticBitmap(bitmap=wx.Bitmap(self.IMG_LOCATION + "ventFan.jpg",
-        #       wx.BITMAP_TYPE_JPEG), id=wxID_HYDROPIONICSVENTFANPICTURE,
-        #       name=u'ventFanPicture', parent=self.scrolledPanel1,
-        #       pos=wx.Point(400, 136), size=wx.Size(64, 56), style=0)
-        #
-        # self.waterAirPicture = wx.StaticBitmap(bitmap=wx.Bitmap(self.IMG_LOCATION + "air&pump.jpg",
-        #       wx.BITMAP_TYPE_JPEG), id=wxID_HYDROPIONICSWATERAIRPICTURE,
-        #       name=u'waterAirPicture', parent=self.scrolledPanel1,
-        #       pos=wx.Point(24, 48), size=wx.Size(64, 56), style=0)
-        #
-        # self.intakeFanPicture = wx.StaticBitmap(bitmap=wx.Bitmap(self.IMG_LOCATION + "intakeFan.jpg",
-        #       wx.BITMAP_TYPE_JPEG), id=wxID_HYDROPIONICSINTAKEFANPICTURE,
-        #       name=u'intakeFanPicture', parent=self.scrolledPanel1,
-        #       pos=wx.Point(400, 232), size=wx.Size(64, 56), style=0)
-        #
-        # self.airFilterFanPicture = wx.StaticBitmap(bitmap=wx.Bitmap(self.IMG_LOCATION + "airFilterFan.jpg",
-        #       wx.BITMAP_TYPE_JPEG), id=wxID_HYDROPIONICSAIRFILTERFANPICTURE,
-        #       name=u'airFilterFanPicture', parent=self.scrolledPanel1,
-        #       pos=wx.Point(408, 312), size=wx.Size(50, 66), style=0)
-        #
-        # self.humidifierPicture = wx.StaticBitmap(bitmap=wx.Bitmap(self.IMG_LOCATION + "humidifier.jpg",
-        #       wx.BITMAP_TYPE_JPEG), id=wxID_HYDROPIONICSHUMIDIFIERPICTURE,
-        #       name=u'humidifierPicture', parent=self.scrolledPanel1,
-        #       pos=wx.Point(400, 416), size=wx.Size(64, 56), style=0)
-        #
-        # self.mixToPlantPicture = wx.StaticBitmap(bitmap=wx.Bitmap(self.IMG_LOCATION + "dcwaterPumps.jpg",
-        #       wx.BITMAP_TYPE_JPEG), id=wxID_HYDROPIONICSMIXTOPLANTPICTURE,
-        #       name=u'mixToPlantPicture', parent=self.scrolledPanel1,
-        #       pos=wx.Point(32, 136), size=wx.Size(50, 66), style=0)
-        # self.mixToPlantPicture.SetToolTipString(u'')
-        #
 
-        # self.humidityText = wx.lib.stattext.GenStaticText(ID=wxID_HYDROPIONICSHUMIDITYTEXT,
-        #       label=u'Humidity:', name=u'humidityText', parent=self.MenuPane,
-        #       pos=wx.Point(504, 16), size=wx.Size(56, 16), style=0)
-        # self.humidityText.SetFont(wx.Font(9, wx.ROMAN, wx.NORMAL, wx.NORMAL,
-        #       False, u'Modern No. 20'))
-        #
 
-        # self.TemperatureSensor = wx.lib.stattext.GenStaticText(ID=wxID_HYDROPIONICSTEMPERATURESENSOR,
-        #       label=u'', name=u'TemperatureSensor', parent=self.MenuPane,
-        #       pos=wx.Point(434, 16), size=wx.Size(14, 16), style=0)
-        # self.TemperatureSensor.SetMaxClientSize(wx.Size(65, 15))
-        # self.TemperatureSensor.SetMinClientSize(wx.Size(40, 50))
-        # self.TemperatureSensor.SetInitialSize(wx.Size(65, 15))
-        # self.TemperatureSensor.SetSizeHints(-1, -1, -1, -1)
-        # self.TemperatureSensor.SetFont(wx.Font(9, wx.SCRIPT, wx.NORMAL, wx.BOLD,
-        #       False, u'Lucida Handwriting'))
-        # self.TemperatureSensor.SetBackgroundStyle(wx.BG_STYLE_COLOUR)
-        #
-        # self.humiditySensor = wx.lib.stattext.GenStaticText(ID=wxID_HYDROPIONICSHUMIDITYSENSOR,
-        #       label=u'', name=u'humiditySensor', parent=self.MenuPane,
-        #       pos=wx.Point(568, 16), size=wx.Size(65, 15), style=0)
-        # self.humiditySensor.SetInitialSize(wx.Size(65, 50))
-        # self.humiditySensor.SetMaxClientSize(wx.Size(65, 15))
-        # self.humiditySensor.SetFont(wx.Font(9, wx.SCRIPT, wx.NORMAL, wx.BOLD,
-        #       False, u'Lucida Handwriting'))
-        # self.humiditySensor.SetBackgroundColour(wx.Colour(255, 251, 251))
-        # self.humiditySensor.SetBackgroundStyle(wx.BG_STYLE_COLOUR)
-        # self.humiditySensor.SetMinClientSize(wx.Size(65, 15))
-        #
-        # self.waterTemperatureSensor = wx.lib.stattext.GenStaticText(ID=wxID_HYDROPIONICSWATERTEMPERATURESENSOR,
-        #       label=u'', name=u'waterTemperatureSensor', parent=self.MenuPane,
-        #       pos=wx.Point(752, 16), size=wx.Size(65, 15), style=0)
-        # self.waterTemperatureSensor.SetInitialSize(wx.Size(65, 15))
-        # self.waterTemperatureSensor.SetMaxClientSize(wx.Size(65, 15))
-        # self.waterTemperatureSensor.SetFont(wx.Font(9, wx.SCRIPT, wx.NORMAL,
-        #       wx.NORMAL, False, u'Lucida Handwriting'))
-        #
+
+
         # self.environmentControlText = wx.lib.stattext.GenStaticText(ID=wxID_HYDROPIONICSENVIRONMENTCONTROLTEXT,
         #       label=u'Environmental Control', name=u'environmentControlText',
         #       parent=self.scrolledPanel1, pos=wx.Point(464, 8),
@@ -139,25 +68,8 @@ class HydroPiOnics(wx.Frame):
         # self.environmentControlText.SetFont(wx.Font(9, wx.SCRIPT, wx.NORMAL,
         #       wx.NORMAL, False, u'Lucida Calligraphy'))
         #
-        # self.airHeaterPicture = wx.StaticBitmap(bitmap=wx.Bitmap(self.IMG_LOCATION + "heater.jpg",
-        #       wx.BITMAP_TYPE_JPEG), id=wxID_HYDROPIONICSAIRHEATERPICTURE,
-        #       name=u'airHeaterPicture', parent=self.scrolledPanel1,
-        #       pos=wx.Point(400, 512), size=wx.Size(64, 56), style=0)
-        #
-        # self.pHText = wx.lib.stattext.GenStaticText(ID=wxID_HYDROPIONICSPHTEXT,
-        #       label=u'PH Level:', name=u'pHText', parent=self.MenuPane,
-        #       pos=wx.Point(824, 16), size=wx.Size(51, 15), style=0)
-        # self.pHText.SetFont(wx.Font(9, wx.ROMAN, wx.NORMAL, wx.NORMAL, False,
-        #       u'Modern No. 20'))
-        #
-        # self.pHSensor = wx.lib.stattext.GenStaticText(ID=wxID_HYDROPIONICSPHSENSOR,
-        #       label=u'', name=u'pHSensor', parent=self.MenuPane,
-        #       pos=wx.Point(880, 16), size=wx.Size(30, 15), style=0)
-        # self.pHSensor.SetInitialSize(wx.Size(30, 15))
-        # self.pHSensor.SetMaxClientSize(wx.Size(30, 15))
-        # self.pHSensor.SetFont(wx.Font(9, wx.SCRIPT, wx.NORMAL, wx.NORMAL, False,
-        #       u'Lucida Handwriting'))
-        #
+
+
         # self.ventFanCheckBox = wx.CheckBox(id=wxID_HYDROPIONICSVENTFANCHECKBOX,
         #       label=u'On/Off', name=u'ventFanCheckBox',
         #       parent=self.scrolledPanel1, pos=wx.Point(472, 152),
@@ -190,12 +102,7 @@ class HydroPiOnics(wx.Frame):
         #       parent=self.scrolledPanel1, pos=wx.Point(472, 528),
         #       size=wx.Size(78, 15), style=0)
         # self.airHeaterCheckBox.SetValue(True)
-        #
-        # self.exhaustFanPicture = wx.StaticBitmap(bitmap=wx.Bitmap(self.IMG_LOCATION + "exaustFan.jpg",
-        #       wx.BITMAP_TYPE_JPEG), id=wxID_HYDROPIONICSEXHAUSTFANPICTURE,
-        #       name=u'exhaustFanPicture', parent=self.scrolledPanel1,
-        #       pos=wx.Point(400, 40), size=wx.Size(64, 56), style=0)
-        #
+
         # self.intakeFanText = wx.lib.stattext.GenStaticText(ID=wxID_HYDROPIONICSINTAKEFANTEXT,
         #       label=u'Intake Fan', name=u'intakeFanText',
         #       parent=self.scrolledPanel1, pos=wx.Point(400, 216),
@@ -260,11 +167,7 @@ class HydroPiOnics(wx.Frame):
         #       size=wx.Size(78, 15), style=0)
         # self.airFilterFanCheckBox.SetValue(True)
         #
-        # self.ledPicture = wx.StaticBitmap(bitmap=wx.Bitmap(self.IMG_LOCATION + "myLedLights.jpg",
-        #       wx.BITMAP_TYPE_JPEG), id=wxID_HYDROPIONICSLEDPICTURE,
-        #       name=u'ledPicture', parent=self.scrolledPanel1, pos=wx.Point(400,
-        #       592), size=wx.Size(64, 56), style=0)
-        #
+
         # self.ledText = wx.lib.stattext.GenStaticText(ID=wxID_HYDROPIONICSLEDTEXT,
         #       label=u'LEDs', name=u'ledText', parent=self.scrolledPanel1,
         #       pos=wx.Point(416, 584), size=wx.Size(30, 15), style=0)
@@ -300,17 +203,7 @@ class HydroPiOnics(wx.Frame):
         #       wx.NORMAL, False, u'Showcard Gothic'))
         # self.mixToDrainText.SetToolTipString(u'')
         #
-        # self.plantToMixPicture = wx.StaticBitmap(bitmap=wx.Bitmap(self.IMG_LOCATION + "dcwaterPumps.jpg",
-        #       wx.BITMAP_TYPE_JPEG), id=wxID_HYDROPIONICSPLANTTOMIXPICTURE,
-        #       name=u'plantToMixPicture', parent=self.scrolledPanel1,
-        #       pos=wx.Point(32, 232), size=wx.Size(50, 66), style=0)
-        # self.plantToMixPicture.SetToolTipString(u'')
-        #
-        # self.mixToDrainPicture = wx.StaticBitmap(bitmap=wx.Bitmap(self.IMG_LOCATION + "dcwaterPumps.jpg",
-        #       wx.BITMAP_TYPE_JPEG), id=wxID_HYDROPIONICSMIXTODRAINPICTURE,
-        #       name=u'mixToDrainPicture', parent=self.scrolledPanel1,
-        #       pos=wx.Point(32, 336), size=wx.Size(50, 66), style=0)
-        #
+
         # self.mixToPlantCheckBox = wx.CheckBox(id=wxID_HYDROPIONICSMIXTOPLANTCHECKBOX,
         #       label=u'On/Off', name=u'mixToPlantCheckBox',
         #       parent=self.scrolledPanel1, pos=wx.Point(96, 160),
