@@ -269,13 +269,7 @@ class HydroPiOnics(wx.Frame):
         #       name=u'ledCycleOffValue', parent=self.scrolledPanel1,
         #       pos=wx.Point(696, 608), size=wx.Size(48, 23), style=0, value='')
         #
-        # self.temperatureTextStart = wx.lib.stattext.GenStaticText(ID=wxID_HYDROPIONICSTEMPERATURETEXTSTART,
-        #       label=u'F', name=u'temperatureTextStart',
-        #       parent=self.scrolledPanel1, pos=wx.Point(184, 424),
-        #       size=wx.Size(16, 36), style=0)
-        # self.temperatureTextStart.SetFont(wx.Font(16, wx.DEFAULT, wx.NORMAL,
-        #       wx.NORMAL, False, u'Segoe Print'))
-        #
+
 
         # self.cycleOnExaustFan = wx.Choice(choices=['s', 'm', 'h'],
         #       id=wxID_HYDROPIONICSCYCLEONEXAUSTFAN, name=u'cycleOnExaustFan',

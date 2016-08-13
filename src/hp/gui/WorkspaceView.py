@@ -21,6 +21,7 @@ class WorkspaceView(wx.Panel):
 
         self.initGUIImages()
         self.initStaticText()
+        self.initSliders()
 
     def initMotor(self):
         pass
@@ -227,6 +228,13 @@ class WorkspaceView(wx.Panel):
         # self.temperatureRangeStartValue.Bind(wx.EVT_TEXT_ENTER,
         #       self.OnTemperatureRangeStartValueTextEnter,
         #       id=wxID_HYDROPIONICSTEMPERATURERANGESTARTVALUE)
+        self.temperatureTextStart = wx.lib.stattext.GenStaticText(ID=wx.ID_ANY,
+              label=u'F', name=u'temperatureTextStart',
+              parent=self.scrolledPanel1, pos=wx.Point(184, 424),
+              size=wx.Size(16, 36), style=0)
+        self.temperatureTextStart.SetFont(wx.Font(16, wx.DEFAULT, wx.NORMAL,
+              wx.NORMAL, False, u'Segoe Print'))
+
 
         self.genStaticText19 = wx.lib.stattext.GenStaticText(ID=wx.ID_ANY,
               label=u'-', name='genStaticText19', parent=self,
@@ -269,24 +277,6 @@ class WorkspaceView(wx.Panel):
         #       self.OnPhLevelEndValueTextEnter,
         #       id=wxID_HYDROPIONICSPHLEVELENDVALUE)
 
-
-        self.waterAirPowerText = wx.lib.stattext.GenStaticText(ID=wx.ID_ANY,
-              label=u'Water/Air Power', name=u'waterAirPowerText',
-              parent=self, pos=wx.Point(200, 32),
-              size=wx.Size(87, 15), style=0)
-        self.waterAirPowerText.SetToolTipString(u'')
-
-        self.waterAirPowerSlider = wx.Slider(id=wx.ID_ANY,
-              maxValue=255, minValue=100, name=u'waterAirPowerSlider',
-              parent=self, pos=wx.Point(168, 48),
-              size=wx.Size(216, 24), style=wx.SL_HORIZONTAL, value=100)
-        self.waterAirPowerSlider.SetLabel(u'')
-        self.waterAirPowerSlider.SetMax(255)
-        self.waterAirPowerSlider.SetPageSize(1)
-        self.waterAirPowerSlider.SetMin(100)
-        # self.waterAirPowerSlider.Bind(wx.EVT_COMMAND_SCROLL,
-        #       self.OnWaterAirPowerSliderCommandScroll,
-        #       id=wxID_HYDROPIONICSWATERAIRPOWERSLIDER)
 
         self.cycleOnWaterAirPumpText = wx.lib.stattext.GenStaticText(ID=wx.ID_ANY,
               label=u'Cycle On', name=u'cycleOnWaterAirPumpText',
