@@ -1,5 +1,5 @@
 import wx
-import HydroPiOnics
+from HydroPiOnics import HydroPiOnics
 class WorkspaceView(wx.Panel):
     def __init__(self, appGUI):
         self.appGUI = appGUI
