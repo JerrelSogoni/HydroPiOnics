@@ -20,6 +20,7 @@ class WorkspaceView(wx.Panel):
         self.SetBackgroundColour(wx.Colour(185, 242, 253))
 
         self.initGUIImages()
+        self.initStaticText()
 
     def initMotor(self):
         pass
