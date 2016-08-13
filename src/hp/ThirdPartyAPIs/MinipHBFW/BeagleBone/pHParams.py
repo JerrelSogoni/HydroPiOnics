@@ -16,7 +16,7 @@
 import json
 import scipy.stats as scipy
 import os
-print os.path.realpath(__file__)
+print os.path.realpath(__file__)[:len(os.path.realpath(__file__)) - 10]
 
 
 class pHParams(object):
