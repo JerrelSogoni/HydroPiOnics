@@ -22,7 +22,6 @@ class pHParams(object):
     JSONFILE = os.path.realpath(__file__).replace("pHParams.py", "ph.json")
     if(JSONFILE[len(JSONFILE) - 1] == 'c'):
         JSONFILE = JSONFILE[0:len(JSONFILE) - 2]
-    print JSONFILE
 
     def __init__(self, calibs=None):
         """Creates a new pHParams object and initializes its calibs dictionary
