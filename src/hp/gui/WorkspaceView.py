@@ -230,7 +230,7 @@ class WorkspaceView(wx.Panel):
         #       id=wxID_HYDROPIONICSTEMPERATURERANGESTARTVALUE)
         self.temperatureTextStart = wx.lib.stattext.GenStaticText(ID=wx.ID_ANY,
               label=u'F', name=u'temperatureTextStart',
-              parent=self.scrolledPanel1, pos=wx.Point(184, 424),
+              parent=self, pos=wx.Point(184, 424),
               size=wx.Size(16, 36), style=0)
         self.temperatureTextStart.SetFont(wx.Font(16, wx.DEFAULT, wx.NORMAL,
               wx.NORMAL, False, u'Segoe Print'))
