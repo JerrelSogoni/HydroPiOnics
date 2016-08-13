@@ -57,6 +57,8 @@ class pHReader(object):
         """
         phr = pHReader()
         sample = phr.read()
+        print sample
+        print phr.calc_ph(sample)
         return phr.calc_ph(sample)
 
 
