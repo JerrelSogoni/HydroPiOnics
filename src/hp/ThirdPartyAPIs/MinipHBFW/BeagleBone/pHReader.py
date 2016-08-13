@@ -51,5 +51,16 @@ class pHReader(object):
         reading = reading - self.params.intercept
         return round(reading / self.params.slope, 2)
 
+    def main(self):
+        """Test function to ensure that your system is working properly and to
+        obtain calibration readings.
+
+        """
+        phr = pHReader()
+        sample = phr.read()
+        return phr.calc_ph(sample)
+
+
+
 
 

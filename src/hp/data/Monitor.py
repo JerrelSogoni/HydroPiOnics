@@ -20,5 +20,9 @@ class Monitor:
         self.waterTemperature = temperature
     def getWaterTemperature(self):
         return self.waterTemperature
+    def setPHLevel(self,ph):
+        self.phLevel = ph
+    def getPHLevel(self):
+        return self.phLevel
 
 
