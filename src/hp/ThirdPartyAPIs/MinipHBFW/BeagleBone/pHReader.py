@@ -37,7 +37,6 @@ class pHReader(object):
 
         :return : Integer between 0 and 4096 (2^12).
         """
-        print "Hello"
         reading = self.i2c.read_i2c_block_data(self.addr, 0x00, 2)
         return (reading[0] << 8) + reading[1]
 
