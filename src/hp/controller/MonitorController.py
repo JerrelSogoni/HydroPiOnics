@@ -32,7 +32,7 @@ class MonitorController:
     def getWaterTemperature(self):
         return self.monitorModel.getWaterTemperature()
     def updateWaterTemperatureView(self):
-        self.monitorView.setWaterTempText("{f} F".format(self.monitorModel.getWaterTemperature()))
+        self.monitorView.setWaterTempText("{:.2f} F".format(self.monitorModel.getWaterTemperature()))
     def setPHLevel(self,ph):
         self.monitorModel.setPHLevel(ph)
     def getPHLevel(self):
