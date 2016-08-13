@@ -16,7 +16,7 @@
 import json
 import scipy.stats as scipy
 import os
-print os.path.realpath("ph.json")
+print os.path.dirname(os.path.realpath(__file__)) + os.path.realpath("ph.json")
 
 
 class pHParams(object):
