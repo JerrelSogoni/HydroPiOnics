@@ -1,6 +1,6 @@
 import wx
 
-class WorkspaceView(wx.ScrolledPanel):
+class WorkspaceView(wx.Panel):
     def __init__(self, appGUI):
         self.appGUI = appGUI
         super(WorkspaceView, self).__init__(id.wx_ANY, name =u'workspace', parent = self.appGUI,
