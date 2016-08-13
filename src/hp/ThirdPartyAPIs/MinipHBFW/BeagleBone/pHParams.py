@@ -20,7 +20,6 @@ import os
 
 class pHParams(object):
     JSONFILE = os.path.realpath(__file__)[:len(os.path.realpath(__file__)) - 11] + "ph.json"
-
     def __init__(self, calibs=None):
         """Creates a new pHParams object and initializes its calibs dictionary
 
@@ -68,7 +67,7 @@ class pHParams(object):
             return -1
 
 
-    def read_calibs(self, calibs_file= "ph.json"):
+    def read_calibs(self, calibs_file= JSONFILE):
         """Reads calibrations from file.
 
         :param calibs_file: The file to read params from
@@ -80,7 +79,7 @@ class pHParams(object):
         return calibs
 
 
-    def write_calibs(self, calibs_file= "ph.json"):
+    def write_calibs(self, calibs_file= JSONFILE):
         """Writes calibrations to file.
 
         :param calibs_file: The file to write params to
