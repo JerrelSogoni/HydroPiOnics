@@ -10,22 +10,17 @@ class MonitorPHThreading(threading.Thread):
         self.start()
     def run(self):
         while(self.isDead != True):
-            try:
-                phLevel = self.getPHLevel()
-                if(phLevel != self.monitorController.getPHLevel()):
-                    self.monitorController.setPHLevel(phLevel)
-                    self.monitorController.updatePHView()
-                time.sleep(10)
-            except:
-                print "Error in PH Sensor, re-reading in 5 seconds"
-                time.sleep(5)
-                continue
+            phLevel = self.getPHLevel()
+            if(phLevel != self.monitorController.getPHLevel()):
+                self.monitorController.setPHLevel(phLevel)
+                self.monitorController.updatePHView()
+            time.sleep(10)
+
 
 
     def initPHSensor(self):
         self.pHReader = pHReader()
     def getPHLevel(self):
-        print "fine"
         sample = self.pHReader.read()
         return self.pHReader.calc_ph(sample)
 
