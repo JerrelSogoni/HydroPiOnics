@@ -26,7 +26,7 @@ class MonitorPHThreading(threading.Thread):
         self.pHReader = pHReader()
     def getPHLevel(self):
         sample = self.pHReader.read()
-        print sample
+        print sample + "whu"
         return self.pHReader.calc_ph(sample)
 
 
