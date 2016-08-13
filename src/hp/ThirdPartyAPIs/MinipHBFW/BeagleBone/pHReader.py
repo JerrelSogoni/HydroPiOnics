@@ -13,7 +13,7 @@ import pHParams
 class pHReader(object):
     """Reads values from the pH probe + MinipH and converts to pH
     """
-    def __init__(self, addr=0x4D, busnum=-1):
+    def __init__(self, addr=0x4C, busnum=-1):
         """Creates an pH Reader with a given address and on a specific I2C bus
         (if provided). If no bus number is provided, the default Adafruit_I2C
         bus will be selected (I2C2).
