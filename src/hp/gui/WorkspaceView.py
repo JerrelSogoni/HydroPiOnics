@@ -1,5 +1,4 @@
 import wx
-from HydroPiOnics import HydroPiOnics
 class WorkspaceView(wx.Panel):
     def __init__(self, appGUI):
         self.appGUI = appGUI
@@ -8,7 +7,7 @@ class WorkspaceView(wx.Panel):
         self.SetMaxSize(wx.Size(950,800))
         self.SetBackgroundColour(wx.Colour(185, 242, 253))
 
-        self.initGUIImages()
+        #self.initGUIImages()
 
     def initMotor(self):
         pass
