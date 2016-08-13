@@ -32,6 +32,7 @@ class pHReader(object):
         self.params = pHParams.pHParams()
 
 
+
     def read(self):
         """Read and assemble the 12-bit reading from the MCP3221 of the MinipH.
 
