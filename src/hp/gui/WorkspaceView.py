@@ -333,9 +333,7 @@ class WorkspaceView(wx.Panel):
                                                      maxValue=100, minValue=45, name=u'temperatureRangeStartSlider',
                                                      parent=self, pos=wx.Point(16, 456),
                                                      size=wx.Size(360, 24), style=wx.SL_HORIZONTAL, value=45)
-        self.temperatureRangeStartSlider.SetMin(45)
         self.temperatureRangeStartSlider.SetPageSize(1)
-        self.temperatureRangeStartSlider.SetThumbLength(25)
         # self.temperatureRangeStartSlider.Bind(wx.EVT_COMMAND_SCROLL,
         #                                       self.OnTemperatureRangeStartSliderCommandScroll,
         #                                       id=wxID_HYDROPIONICSTEMPERATURERANGESTARTSLIDER)
