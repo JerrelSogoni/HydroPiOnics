@@ -722,7 +722,6 @@ class HydroPiOnics(wx.Frame):
         pass
     def initWorkspaceMVC(self):
         self.workspaceView = WorkspaceView(self)
-        pass
     def getGUIController(self):
         return self.guiController
     # def OnCheckBox12Checkbox(self, event):
