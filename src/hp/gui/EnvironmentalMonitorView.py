@@ -53,28 +53,28 @@ class EvironmentalMonitorView:
                                                False))
         self.temperatureRangeStartValue = wx.TextCtrl(id=wx.ID_ANY,
                                                       name=u'temperatureRangeStartValue', parent=self.workspace,
-                                                      pos=wx.Point(144, 410), size=wx.Size(30, 30), style=0, value=u'')
+                                                      pos=wx.Point(144, 405), size=wx.Size(40, 30), style=0, value=u'')
         self.temperatureRangeEndValue = wx.lib.masked.textctrl.TextCtrl(id=wx.ID_ANY,
                                                                         name=u'temperatureRangeEndValue',
                                                                         parent=self.workspace,
-                                                                        pos=wx.Point(240, 410), size=wx.Size(30, 30),
+                                                                        pos=wx.Point(240, 405), size=wx.Size(40, 30),
                                                                         style=0, value='')
 
         self.temperatureTextStart = wx.lib.stattext.GenStaticText(ID=wx.ID_ANY,
                                                                   label=u'F', name=u'temperatureTextStart',
-                                                                  parent=self.workspace, pos=wx.Point(170, 405),
-                                                                  size=wx.Size(16, 36), style=0)
+                                                                  parent=self.workspace, pos=wx.Point(180, 405),
+                                                                  size=wx.Size(16, 20), style=0)
         self.temperatureTextStart.SetFont(wx.Font(7, wx.DEFAULT, wx.NORMAL,
                                                   wx.NORMAL, False, u'Segoe Print'))
         self.temperatureRangeEndText = wx.lib.stattext.GenStaticText(ID=wx.ID_ANY,
                                                                      label=u'F', name=u'temperatureRangeEndText',
                                                                      parent=self.workspace, pos=wx.Point(285, 410),
-                                                                     size=wx.Size(16, 25), style=0)
+                                                                     size=wx.Size(16, 20), style=0)
         self.temperatureRangeEndText.SetFont(wx.Font(7, wx.DEFAULT, wx.NORMAL,
                                                      wx.NORMAL, False, u'Segoe Print'))
         self.genStaticText19 = wx.lib.stattext.GenStaticText(ID=wx.ID_ANY,
                                                              label=u'-', name='genStaticText19', parent=self.workspace,
-                                                             pos=wx.Point(205, 410), size=wx.Size(8, 20), style=0)
+                                                             pos=wx.Point(205, 410), size=wx.Size(8, 10), style=0)
         self.genStaticText19.SetFont(wx.Font(7, wx.SWISS, wx.NORMAL, wx.BOLD,
                                              False, u'Segoe UI'))
         self.genStaticText19.SetBackgroundColour(wx.Colour(167, 231, 252))
