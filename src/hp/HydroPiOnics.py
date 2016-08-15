@@ -47,6 +47,7 @@ class HydroPiOnics(wx.Frame):
         self.initMonitorMVC()
         self.initMotorMVC()
         self.initPumpMVC()
+        self.initEnvironmentalMonitorMVC()
 
         self._init_ctrls(parent)
     def initFrameMVC(self):
@@ -62,7 +63,7 @@ class HydroPiOnics(wx.Frame):
     def initMotorMVC(self):
         self.motorView = MotorView(self.workspaceView)
         self.motorModel = Motor()
-        self.monitorController = MonitorController(self.motorView,self.motorModel, self.guiModel)
+        self.monitorController = MotorController(self.motorView,self.motorModel, self.guiModel)
     def initPumpMVC(self):
         self.pumpView = PumpView(self.workspaceView)
         self.pumpModel = Pump()
@@ -72,13 +73,17 @@ class HydroPiOnics(wx.Frame):
         self.workspaceModel = Workspace()
         self.workspaceController = WorkspaceController(self.workspaceView, self.workspaceModel, self.guiModel)
     def initMonitorMVC(self):
+
         self.monitorView = MonitorView(self)
         self.monitorModel = Monitor()
         self.monitorController = MonitorController(self.monitorModel, self.monitorView, self)
+
     def getGUIController(self):
         return self.guiController
     def initEnvironmentalMonitorMVC(self):
-        pass
+        self.environmentalMonitorView = EvironmentalMonitorView(self.workspaceView)
+        self.environmentalMonitorModel = EnvironmentalMonitor()
+        self.environmentalMonitorController = EnvironmentalMonitorController(self.environmentalMonitorView, self.environmentalMonitorModel, self.guiModel)
     def initElectronicRelayEnvironmentMVC(self):
         pass
     # def OnCheckBox12Checkbox(self, event):
