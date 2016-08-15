@@ -42,15 +42,6 @@ class EvironmentalMonitorView:
         self.pHRangeEndSlider.SetPageSize(1)
 
     def initStaticEnvironmentText(self):
-        self.temperatureRangeText = wx.lib.stattext.GenStaticText(ID=wx.ID_ANY,
-                                                                  label=u'Temperature Range',
-                                                                  name=u'temperatureRangeText',
-                                                                  parent=self.workspace, pos=wx.Point(32, 432),
-                                                                  size=wx.Size(104, 15), style=0)
-        self.temperatureRangeText.SetFont(wx.Font(12, wx.DECORATIVE, wx.NORMAL,
-                                                  False))
-        self.temperatureRangeText.SetToolTipString(u'in Fahrenheit')
-        self.temperatureRangeText.SetHelpText(u'in Fahrenheit')
 
         self.humidityRangeText = wx.lib.stattext.GenStaticText(ID=wx.ID_ANY,
                                                                label=u'Humidity Range', name=u'humdiityRangeText',
