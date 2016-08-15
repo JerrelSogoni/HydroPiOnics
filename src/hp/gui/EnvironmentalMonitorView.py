@@ -78,35 +78,55 @@ class EvironmentalMonitorView:
         self.genStaticText19.SetFont(wx.Font(7, wx.SWISS, wx.NORMAL, wx.BOLD,
                                              False, u'Segoe UI'))
         self.genStaticText19.SetBackgroundColour(wx.Colour(167, 231, 252))
-
-
-
-        self.humidityRangeText = wx.lib.stattext.GenStaticText(ID=wx.ID_ANY,
-                                                               label=u'Humidity Range', name=u'humdiityRangeText',
-                                                               parent=self.workspace, pos=wx.Point(32, 528),
-                                                               size=wx.Size(86, 15), style=0)
-        self.humidityRangeText.SetFont(wx.Font(12, wx.DECORATIVE, wx.NORMAL,
-                                               False))
+        # humidity
 
         self.humidityRangeStartValue = wx.lib.masked.textctrl.TextCtrl(id=wx.ID_ANY,
                                                                        name=u'humidityRangeStartValue',
                                                                        parent=self.workspace,
-                                                                       pos=wx.Point(144, 512), size=wx.Size(40, 32),
+                                                                       pos=wx.Point(144, 460), size=wx.Size(40, 25),
                                                                        style=0, value='')
-        self.genStaticText21 = wx.lib.stattext.GenStaticText(ID=wx.ID_ANY,
-                                                             label=u'-', name='genStaticText21', parent=self.workspace,
-                                                             pos=wx.Point(216, 520), size=wx.Size(6, 15), style=0)
-        self.genStaticText21.SetFont(wx.Font(9, wx.DECORATIVE, wx.NORMAL,
-                                             wx.BOLD, False, u'Showcard Gothic'))
-        self.genStaticText21.SetBackgroundColour(wx.Colour(143, 210, 250))
-
         self.humidityRangeEndValue = wx.lib.masked.textctrl.TextCtrl(id=wx.ID_ANY,
                                                                      name=u'humidityRangeEndValue',
                                                                      parent=self.workspace,
-                                                                     pos=wx.Point(240, 512), size=wx.Size(40, 32),
+                                                                     pos=wx.Point(240, 460), size=wx.Size(40, 25),
                                                                      style=0, value='')
 
+        self.humidityRangeText = wx.lib.stattext.GenStaticText(ID=wx.ID_ANY,
+                                                               label=u'Humidity Range', name=u'humdiityRangeText',
+                                                               parent=self.workspace, pos=wx.Point(32, 455),
+                                                               size=wx.Size(86, 15), style=0)
+        self.humidityRangeText.SetFont(wx.Font(7, wx.DECORATIVE, wx.NORMAL,
+                                               False))
 
+
+
+
+        self.humidityPercentSignStart = wx.lib.stattext.GenStaticText(ID=wx.ID_ANY,
+                                                                      label=u'%', name=u'humidityPercentSignStart',
+                                                                      parent=self.workspace, pos=wx.Point(184, 455),
+                                                                      size=wx.Size(15, 36), style=0)
+        self.humidityPercentSignStart.SetFont(wx.Font(7, wx.DEFAULT, wx.NORMAL,
+                                                      wx.NORMAL, False, u'Segoe Print'))
+
+        self.humidityEndText = wx.lib.stattext.GenStaticText(ID=wx.ID_ANY,
+                                                             label=u'%', name=u'humidityEndText', parent=self.workspace,
+                                                             pos=wx.Point(280, 455), size=wx.Size(15, 36), style=0)
+        self.humidityEndText.SetFont(wx.Font(7, wx.DEFAULT, wx.NORMAL,
+                                             wx.NORMAL, False, u'Segoe Print'))
+
+
+
+
+
+        self.genStaticText21 = wx.lib.stattext.GenStaticText(ID=wx.ID_ANY,
+                                                             label=u'-', name='genStaticText21', parent=self.workspace,
+                                                             pos=wx.Point(216, 455), size=wx.Size(6, 15), style=0)
+        self.genStaticText21.SetFont(wx.Font(7, wx.DECORATIVE, wx.NORMAL,
+                                             wx.BOLD, False, u'Showcard Gothic'))
+        self.genStaticText21.SetBackgroundColour(wx.Colour(143, 210, 250))
+
+
+        # ph Sensor
 
 
         self.pHRangeText = wx.lib.stattext.GenStaticText(ID=wx.ID_ANY,
@@ -131,18 +151,6 @@ class EvironmentalMonitorView:
                                                                value='')
 
 
-        self.humidityPercentSignStart = wx.lib.stattext.GenStaticText(ID=wx.ID_ANY,
-                                                                      label=u'%', name=u'humidityPercentSignStart',
-                                                                      parent=self.workspace, pos=wx.Point(184, 512),
-                                                                      size=wx.Size(15, 36), style=0)
-        self.humidityPercentSignStart.SetFont(wx.Font(16, wx.DEFAULT, wx.NORMAL,
-                                                      wx.NORMAL, False, u'Segoe Print'))
-
-        self.humidityEndText = wx.lib.stattext.GenStaticText(ID=wx.ID_ANY,
-                                                             label=u'%', name=u'humidityEndText', parent=self.workspace,
-                                                             pos=wx.Point(280, 512), size=wx.Size(15, 36), style=0)
-        self.humidityEndText.SetFont(wx.Font(16, wx.DEFAULT, wx.NORMAL,
-                                             wx.NORMAL, False, u'Segoe Print'))
 
 
         self.underwaterRangeText = wx.lib.stattext.GenStaticText(ID=wx.ID_ANY,
