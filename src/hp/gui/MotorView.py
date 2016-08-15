@@ -177,14 +177,12 @@ class MotorView:
               label=u'On/Off', name=u'exhaustFanCheckBox',
               parent=self.workspace, pos=wx.Point(472, 56),
               size=wx.Size(78, 15), style=0)
-        self.exhaustFanCheckBox.Show(True)
-        self.exhaustFanCheckBox.Enable(False)
-        self.exhaustFanCheckBox.SetValue(True)
+        self.exhaustFanCheckBox.SetValue(False)
         self.ventFanCheckBox = wx.CheckBox(id=wx.ID_ANY,
               label=u'On/Off', name=u'ventFanCheckBox',
               parent=self.workspace, pos=wx.Point(472, 152),
               size=wx.Size(78, 15), style=0)
-        self.ventFanCheckBox.SetValue(True)
+        self.ventFanCheckBox.SetValue(False)
 
         self.waterAirCheckBox = wx.CheckBox(id=wx.ID_ANY,
               label=u'On/Off', name=u'waterAirCheckBox',
@@ -195,5 +193,5 @@ class MotorView:
               label=u'On/Off', name=u'intakeFanCheckBox',
               parent=self.workspace, pos=wx.Point(472, 248),
               size=wx.Size(78, 15), style=0)
-        self.intakeFanCheckBox.SetValue(True)
+        self.intakeFanCheckBox.SetValue(False)
 
