@@ -1,12 +1,13 @@
 import wx
 import WorkspaceView
 IMG_LOCATION = WorkspaceView.IMG_LOCATION
-SLIDERSTARTX = 360
+SLIDERSTARTWIDTH = 360
 STARTTEXTX = 32
+STARTSLIDERX = 16
 STARTINPUTXSTATIC = 144
 ENDINPUTXSTATIC = 240
 STARTINPUTX = 205
-STARTMIDDLETEXT = 220
+STARTMIDDLETEXT = 225
 STARTENDINPUTX = 300
 STARTINPUTSIZEWIDTH = 60
 class EvironmentalMonitorView:
@@ -21,38 +22,50 @@ class EvironmentalMonitorView:
         #Humidity
         self.humidityRangeStartSlider = wx.Slider(id=wx.ID_ANY,
                                                   maxValue=100, minValue=0, name=u'humidityRangeStartSlider',
-                                                  parent=self.workspace, pos=wx.Point(16, 470),
-                                                  size=wx.Size(SLIDERSTARTX, 24), style=wx.SL_HORIZONTAL, value=0)
+                                                  parent=self.workspace, pos=wx.Point(STARTSLIDERX, 470),
+                                                  size=wx.Size(SLIDERSTARTWIDTH, 24), style=wx.SL_HORIZONTAL, value=0)
         self.humidityRangeStartSlider.SetPageSize(1)
         self.humidityRangeEndSlider = wx.Slider(id=wx.ID_ANY,
                                                 maxValue=100, minValue=0, name=u'humidityRangeEndSlider',
-                                                parent=self.workspace, pos=wx.Point(16, 490),
-                                                size=wx.Size(SLIDERSTARTX, 24), style=wx.SL_HORIZONTAL, value=0)
+                                                parent=self.workspace, pos=wx.Point(STARTSLIDERX, 490),
+                                                size=wx.Size(SLIDERSTARTWIDTH, 24), style=wx.SL_HORIZONTAL, value=0)
         self.humidityRangeEndSlider.SetPageSize(1)
         #airTemperature
         self.temperatureRangeStartSlider = wx.Slider(id=wx.ID_ANY,
                                                      maxValue=100, minValue=45, name=u'temperatureRangeStartSlider',
-                                                     parent=self.workspace, pos=wx.Point(16, 420),
-                                                     size=wx.Size(SLIDERSTARTX, 24), style=wx.SL_HORIZONTAL, value=45)
+                                                     parent=self.workspace, pos=wx.Point(STARTSLIDERX, 420),
+                                                     size=wx.Size(SLIDERSTARTWIDTH, 24), style=wx.SL_HORIZONTAL, value=45)
         self.temperatureRangeStartSlider.SetPageSize(1)
 
         self.temperatureRangeEndSlider = wx.Slider(id=wx.ID_ANY,
                                                    maxValue=100, minValue=45, name=u'temperatureRangeEndSlider',
-                                                   parent=self.workspace, pos=wx.Point(16, 440),
-                                                   size=wx.Size(SLIDERSTARTX, 24), style=wx.SL_HORIZONTAL, value=0)
+                                                   parent=self.workspace, pos=wx.Point(STARTSLIDERX, 440),
+                                                   size=wx.Size(SLIDERSTARTWIDTH, 24), style=wx.SL_HORIZONTAL, value=0)
         self.temperatureRangeEndSlider.SetPageSize(1)
         # ph Sensor
         self.pHRangeStartSlider = wx.Slider(id=wx.ID_ANY,
                                             maxValue=12, minValue=0, name=u'pHRangeStartSlider',
-                                            parent=self.workspace, pos=wx.Point(16, 520),
-                                            size=wx.Size(SLIDERSTARTX, 24), style=wx.SL_HORIZONTAL, value=0)
+                                            parent=self.workspace, pos=wx.Point(STARTSLIDERX, 520),
+                                            size=wx.Size(SLIDERSTARTWIDTH, 24), style=wx.SL_HORIZONTAL, value=0)
         self.pHRangeStartSlider.SetPageSize(1)
 
         self.pHRangeEndSlider = wx.Slider(id=wx.ID_ANY,
                                           maxValue=12, minValue=0, name=u'pHRangeEndSlider',
-                                          parent=self.workspace, pos=wx.Point(16, 540),
-                                          size=wx.Size(SLIDERSTARTX, 24), style=wx.SL_HORIZONTAL, value=0)
+                                          parent=self.workspace, pos=wx.Point(STARTSLIDERX, 540),
+                                          size=wx.Size(SLIDERSTARTWIDTH, 24), style=wx.SL_HORIZONTAL, value=0)
         self.pHRangeEndSlider.SetPageSize(1)
+        #underwater
+        self.underwaterTemperatureRangeStartSlider = wx.Slider(id=wx.ID_ANY,
+                                                     maxValue=100, minValue=45, name=u'temperatureRangeStartSlider',
+                                                     parent=self.workspace, pos=wx.Point(STARTSLIDERX, 570),
+                                                     size=wx.Size(SLIDERSTARTWIDTH, 24), style=wx.SL_HORIZONTAL, value=45)
+        self.underwaterTemperatureRangeStartSlider.SetPageSize(1)
+
+        self.underwaterTemperatureRangeEndSlider = wx.Slider(id=wx.ID_ANY,
+                                                   maxValue=100, minValue=45, name=u'temperatureRangeEndSlider',
+                                                   parent=self.workspace, pos=wx.Point(STARTSLIDERX, 590),
+                                                   size=wx.Size(SLIDERSTARTWIDTH, 24), style=wx.SL_HORIZONTAL, value=0)
+        self.temperatureRangeEndSlider.SetPageSize(1)
 
     def initStaticEnvironmentText(self):
         self.temperatureRangeText = wx.lib.stattext.GenStaticText(ID=wx.ID_ANY,
