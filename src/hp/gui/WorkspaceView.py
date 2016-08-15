@@ -1,16 +1,17 @@
 import wx
 import sys
 import os
-# Identify Operating System in order to direct image loading path
-# Mac OS or Linux
-DIRECTORY = os.getcwd()[:len(os.getcwd()) - 6]
 
-if (sys.platform.startswith('darwin') or sys.platform.startswith('linux')):
-    IMG_LOCATION = DIRECTORY + "Image//"
-# Windows
-elif (sys.platform.startswith('win32')):
-    IMG_LOCATION = DIRECTORY + "Image\\"
 class WorkspaceView(wx.Panel):
+    # Identify Operating System in order to direct image loading path
+    # Mac OS or Linux
+    DIRECTORY = os.getcwd()[:len(os.getcwd()) - 6]
+
+    if (sys.platform.startswith('darwin') or sys.platform.startswith('linux')):
+        IMG_LOCATION = DIRECTORY + "Image//"
+    # Windows
+    elif (sys.platform.startswith('win32')):
+        IMG_LOCATION = DIRECTORY + "Image\\"
     def __init__(self, appGUI):
         self.appGUI = appGUI
         super(WorkspaceView, self).__init__(id=wx.ID_ANY, name =u'workspace', parent = self.appGUI,
