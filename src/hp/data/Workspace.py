@@ -1,3 +1,4 @@
 
 class Workspace:
-    pass
+    def __init__(self):
+        pass

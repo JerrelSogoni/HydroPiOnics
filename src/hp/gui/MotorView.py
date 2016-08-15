@@ -2,9 +2,8 @@ import wx
 from WorkspaceView import WorkspaceView
 IMG_LOCATION = WorkspaceView.IMG_LOCATION
 class MotorView:
-    def __init__(self, workspace, appGUI):
+    def __init__(self, workspace):
         self.workspace = workspace
-        self.appGUI = appGUI
         self.initMotorImages()
         self.initStaticMotorText()
         self.initMotorCheckBoxes()

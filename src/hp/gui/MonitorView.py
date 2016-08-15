@@ -2,7 +2,8 @@ import wx
 
 
 class MonitorView(wx.Panel):
-    def __init__(self, appGUI):
+    def __init__(self, appGUI, workspace):
+        self.workspace = workspace
         self.appGUI = appGUI
         #init Panel
         super(self.__class__, self).__init__(id=wx.ID_ANY, name=u'MenuPane',
@@ -86,6 +87,10 @@ class MonitorView(wx.Panel):
         self.humiditySensor.SetLabel(humidity)
     def setAirTemperatureText(self,temp):
         self.TemperatureSensor.SetLabel(temp)
+
+
+
+
 
 
 

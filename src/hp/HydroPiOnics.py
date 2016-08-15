@@ -12,6 +12,21 @@ from gui.MonitorView import MonitorView
 from data.Monitor import Monitor
 from controller.MonitorController import MonitorController
 from gui.WorkspaceView import WorkspaceView
+from data.Workspace import Workspace
+from controller.WorkspaceController import WorkspaceController
+from gui.MotorView import MotorView
+from data.Motor import Motor
+from controller.MotorController import MotorController
+from gui.PumpView import PumpView
+from data.Pump import Pump
+from controller.PumpController import PumpController
+from gui.EnvironmentalMonitorView import EvironmentalMonitorView
+from data.EnvironmentalMonitor import EnvironmentalMonitor
+from controller.EnvironmentalMonitorController import EnvironmentalMonitorController
+from gui.ElectronicRelayEnviromentView import  ElectronicRelayEnviromentView
+from data.ElectronicRelayEnviroment import ElectronicRelayEnvironment
+from controller.ElectronicRelayEnvironmentController import ElectronicRelayEnvironmentController
+
 
 
 def create(parent):
@@ -31,6 +46,7 @@ class HydroPiOnics(wx.Frame):
         self.initMenuBarMVC()
         self.initMonitorMVC()
         self.initWorkspaceMVC()
+        self.initMonitorMVC()
         self._init_ctrls(parent)
     def initFrameMVC(self):
         self.gui = HydroPiOnicsView(self)
@@ -46,13 +62,21 @@ class HydroPiOnics(wx.Frame):
         self.monitorModel = Monitor()
         self.monitorController = MonitorController(self.monitorModel, self.monitorView, self)
     def initMotorMVC(self):
-        pass
-    def initRelayMVC(self):
+        self.motorView = MotorView(self.monitorView)
+        self.motorModel = Motor()
+        self.monitorController = MonitorController(self.motorView,self.motorModel, self.guiModel)
+    def initPumpMVC(self):
         pass
     def initWorkspaceMVC(self):
         self.workspaceView = WorkspaceView(self)
+        self.workspaceModel = Workspace()
+        self.workspaceController = WorkspaceController(self.workspaceView, self.workspaceModel, self.guiModel)
     def getGUIController(self):
         return self.guiController
+    def initEnvironmentalMonitorMVC(self):
+        pass
+    def initElectronicRelayEnvironmentMVC(self):
+        pass
     # def OnCheckBox12Checkbox(self, event):
     #     event.Skip()
     #
