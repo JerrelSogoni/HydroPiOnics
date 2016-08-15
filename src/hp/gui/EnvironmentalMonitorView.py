@@ -180,36 +180,36 @@ class EvironmentalMonitorView:
         self.temperatureRangeEndValue = wx.lib.masked.textctrl.TextCtrl(id=wx.ID_ANY,
                                                                         name=u'temperatureRangeEndValue',
                                                                         parent=self.workspace,
-                                                                        pos=wx.Point(ENDINPUTXSTATIC, 400), size=wx.Size(40, 25),
+                                                                        pos=wx.Point(ENDINPUTXSTATIC, 400), size=wx.Size(STARTINPUTSIZEWIDTH, 25),
                                                                         style=0, value='')
         #humid
         self.humidityRangeStartValue = wx.lib.masked.textctrl.TextCtrl(id=wx.ID_ANY,
                                                                        name=u'humidityRangeStartValue',
                                                                        parent=self.workspace,
-                                                                       pos=wx.Point(STARTINPUTXSTATIC, 455), size=wx.Size(40, 25),
+                                                                       pos=wx.Point(STARTINPUTXSTATIC, 455), size=wx.Size(STARTINPUTSIZEWIDTH, 25),
                                                                        style=0, value='')
         self.humidityRangeEndValue = wx.lib.masked.textctrl.TextCtrl(id=wx.ID_ANY,
                                                                      name=u'humidityRangeEndValue',
                                                                      parent=self.workspace,
-                                                                     pos=wx.Point(ENDINPUTXSTATIC, 455), size=wx.Size(40, 25),
+                                                                     pos=wx.Point(ENDINPUTXSTATIC, 455), size=wx.Size(STARTINPUTSIZEWIDTH, 25),
                                                                      style=0, value='')
         #ph
 
         self.pHLevelStartValue = wx.lib.masked.textctrl.TextCtrl(id=wx.ID_ANY,
                                                                  name=u'pHLevelStartValue', parent=self.workspace,
-                                                                 pos=wx.Point(STARTINPUTXSTATIC, 505), size=wx.Size(40, 25), style=0,
+                                                                 pos=wx.Point(STARTINPUTXSTATIC, 505), size=wx.Size(STARTINPUTSIZEWIDTH, 25), style=0,
                                                                  value='')
         self.phLevelEndValue = wx.lib.masked.textctrl.TextCtrl(id=wx.ID_ANY,
                                                                name=u'phLevelEndValue', parent=self.workspace,
-                                                               pos=wx.Point(ENDINPUTXSTATIC, 505), size=wx.Size(40, 25), style=0,
+                                                               pos=wx.Point(ENDINPUTXSTATIC, 505), size=wx.Size(STARTINPUTSIZEWIDTH, 25), style=0,
                                                                value='')
         #underwater
         self.underwaterTemperatureRangeStartValue = wx.TextCtrl(id=wx.ID_ANY,
                                                       name=u'temperatureRangeStartValue', parent=self.workspace,
-                                                      pos=wx.Point(STARTINPUTXSTATIC, 555), size=wx.Size(40, 25), style=0, value=u'')
+                                                      pos=wx.Point(STARTINPUTXSTATIC, 555), size=wx.Size(STARTINPUTSIZEWIDTH, 25), style=0, value=u'')
         self.underwaterTemperatureRangeEndValue = wx.lib.masked.textctrl.TextCtrl(id=wx.ID_ANY,
                                                                         name=u'temperatureRangeEndValue',
                                                                         parent=self.workspace,
-                                                                        pos=wx.Point(ENDINPUTXSTATIC, 555), size=wx.Size(40, 25),
+                                                                        pos=wx.Point(ENDINPUTXSTATIC, 555), size=wx.Size(STARTINPUTSIZEWIDTH, 25),
                                                                         style=0, value='')
 
