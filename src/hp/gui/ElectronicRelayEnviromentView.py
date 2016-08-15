@@ -78,6 +78,10 @@ class ElectronicRelayEnviromentView:
                                                                                                   592),
                                           size=wx.Size(64, 56),
                                           style=0)
+        self.humidifierPicture = wx.StaticBitmap(bitmap=wx.Bitmap(IMG_LOCATION + "humidifier.jpg",
+                                                                  wx.BITMAP_TYPE_JPEG), id=wx.ID_ANY,
+                                                 name=u'humidifierPicture', parent=self.workspace,
+                                                 pos=wx.Point(400, 416), size=wx.Size(64, 56), style=0)
 
     def initRelayCheckBoxes(self):
 
@@ -91,6 +95,18 @@ class ElectronicRelayEnviromentView:
                                        label=u'On/Off', name=u'ledCheckBox', parent=self.workspace,
                                        pos=wx.Point(472, 608), size=wx.Size(78, 15), style=0)
         self.ledCheckBox.SetValue(False)
+
+        self.humidifierCheckBox = wx.CheckBox(id=wx.ID_ANY,
+                                              label=u'On/Off', name=u'humidifierCheckBox',
+                                              parent=self.workspace, pos=wx.Point(472, 440),
+                                              size=wx.Size(78, 15), style=0)
+        self.humidifierCheckBox.SetValue(False)
+
+        self.airHeaterCheckBox = wx.CheckBox(id=wx.ID_ANY,
+                                             label=u'On/Off', name=u'airHeaterCheckBox',
+                                             parent=self.workspace, pos=wx.Point(472, 528),
+                                             size=wx.Size(78, 15), style=0)
+        self.airHeaterCheckBox.SetValue(False)
 
     def initRelayInputs(self):
 
