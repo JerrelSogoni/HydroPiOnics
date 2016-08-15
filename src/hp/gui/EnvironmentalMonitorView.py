@@ -8,6 +8,7 @@ class EvironmentalMonitorView:
         self.initSliders()
 
     def initSliders(self):
+        #Humidity
         self.humidityRangeStartSlider = wx.Slider(id=wx.ID_ANY,
                                                   maxValue=100, minValue=0, name=u'humidityRangeStartSlider',
                                                   parent=self.workspace, pos=wx.Point(16, 470),
@@ -18,6 +19,7 @@ class EvironmentalMonitorView:
                                                 parent=self.workspace, pos=wx.Point(16, 490),
                                                 size=wx.Size(360, 24), style=wx.SL_HORIZONTAL, value=0)
         self.humidityRangeEndSlider.SetPageSize(1)
+        #airTemperature
         self.temperatureRangeStartSlider = wx.Slider(id=wx.ID_ANY,
                                                      maxValue=100, minValue=45, name=u'temperatureRangeStartSlider',
                                                      parent=self.workspace, pos=wx.Point(16, 420),
@@ -29,16 +31,17 @@ class EvironmentalMonitorView:
                                                    parent=self.workspace, pos=wx.Point(16, 440),
                                                    size=wx.Size(360, 24), style=wx.SL_HORIZONTAL, value=0)
         self.temperatureRangeEndSlider.SetPageSize(1)
+        # ph Sensor
         self.pHRangeStartSlider = wx.Slider(id=wx.ID_ANY,
                                             maxValue=12, minValue=0, name=u'pHRangeStartSlider',
-                                            parent=self.workspace, pos=wx.Point(16, 656),
+                                            parent=self.workspace, pos=wx.Point(16, 520),
                                             size=wx.Size(360, 24), style=wx.SL_HORIZONTAL, value=0)
         self.pHRangeStartSlider.SetPageSize(1)
 
         self.pHRangeEndSlider = wx.Slider(id=wx.ID_ANY,
                                           maxValue=12, minValue=0, name=u'pHRangeEndSlider',
-                                          parent=self.workspace, pos=wx.Point(16, 680),
-                                          size=wx.Size(360, 32), style=wx.SL_HORIZONTAL, value=0)
+                                          parent=self.workspace, pos=wx.Point(16, 540),
+                                          size=wx.Size(360, 24), style=wx.SL_HORIZONTAL, value=0)
         self.pHRangeEndSlider.SetPageSize(1)
 
     def initStaticEnvironmentText(self):
@@ -131,14 +134,14 @@ class EvironmentalMonitorView:
 
         self.pHRangeText = wx.lib.stattext.GenStaticText(ID=wx.ID_ANY,
                                                          label=u'PH Level Range', name=u'pHRangeText',
-                                                         parent=self.workspace, pos=wx.Point(32, 500),
+                                                         parent=self.workspace, pos=wx.Point(32, 510),
                                                          size=wx.Size(82, 15), style=0)
         self.pHRangeText.SetFont(wx.Font(7, wx.DECORATIVE, wx.NORMAL,
-                                             wx.BOLD, False, u'Showcard Gothic'))
+                                             wx.NORMAL, False, u'Showcard Gothic'))
 
         self.pHLevelStartValue = wx.lib.masked.textctrl.TextCtrl(id=wx.ID_ANY,
                                                                  name=u'pHLevelStartValue', parent=self.workspace,
-                                                                 pos=wx.Point(144, 495), size=wx.Size(40, 31), style=0,
+                                                                 pos=wx.Point(144, 505), size=wx.Size(40, 25), style=0,
                                                                  value='')
         self.genStaticText23 = wx.lib.stattext.GenStaticText(ID=wx.ID_ANY,
                                                              label=u'-', name='genStaticText23', parent=self.workspace,
@@ -149,7 +152,7 @@ class EvironmentalMonitorView:
 
         self.phLevelEndValue = wx.lib.masked.textctrl.TextCtrl(id=wx.ID_ANY,
                                                                name=u'phLevelEndValue', parent=self.workspace,
-                                                               pos=wx.Point(240, 495), size=wx.Size(40, 32), style=0,
+                                                               pos=wx.Point(240, 505), size=wx.Size(40, 25), style=0,
                                                                value='')
 
 
