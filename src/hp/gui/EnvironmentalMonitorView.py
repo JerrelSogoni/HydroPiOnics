@@ -145,7 +145,7 @@ class EvironmentalMonitorView:
                                                                  value='')
         self.genStaticText23 = wx.lib.stattext.GenStaticText(ID=wx.ID_ANY,
                                                              label=u'-', name='genStaticText23', parent=self.workspace,
-                                                             pos=wx.Point(220, 500), size=wx.Size(6, 15), style=0)
+                                                             pos=wx.Point(220, 505), size=wx.Size(6, 10), style=0)
         self.genStaticText23.SetBackgroundColour(wx.Colour(159, 221, 251))
         self.genStaticText23.SetFont(wx.Font(7, wx.DECORATIVE, wx.NORMAL,
                                              wx.BOLD, False, u'Showcard Gothic'))
@@ -155,11 +155,43 @@ class EvironmentalMonitorView:
                                                                pos=wx.Point(240, 505), size=wx.Size(40, 25), style=0,
                                                                value='')
 
+        # underwater temp
+        self.underwaterTemperatureRangeText = wx.lib.stattext.GenStaticText(ID=wx.ID_ANY,
+                                                                  label=u'Water Temperature Range',
+                                                                  name=u'temperatureRangeText',
+                                                                  parent=self.workspace, pos=wx.Point(32, 560),
+                                                                  size=wx.Size(104, 13), style=0)
+        self.underwaterTemperatureRangeText.SetToolTipString(u'in Fahrenheit')
+        self.underwaterTemperatureRangeText.SetHelpText(u'in Fahrenheit')
+        self.underwaterTemperatureRangeText.SetFont(wx.Font(7, wx.DECORATIVE, wx.NORMAL,
+                                               False))
+        self.underwaterTemperatureRangeStartValue = wx.TextCtrl(id=wx.ID_ANY,
+                                                      name=u'temperatureRangeStartValue', parent=self.workspace,
+                                                      pos=wx.Point(144, 400), size=wx.Size(40, 25), style=0, value=u'')
+        self.underwaterTemperatureRangeEndValue = wx.lib.masked.textctrl.TextCtrl(id=wx.ID_ANY,
+                                                                        name=u'temperatureRangeEndValue',
+                                                                        parent=self.workspace,
+                                                                        pos=wx.Point(240, 555), size=wx.Size(40, 25),
+                                                                        style=0, value='')
 
-        self.underwaterRangeText = wx.lib.stattext.GenStaticText(ID=wx.ID_ANY,
-                                                         label=u'underwater Range', name=u'underwaterRangeText',
-                                                         parent=self.workspace, pos=wx.Point(32, 640),
-                                                         size=wx.Size(82, 15), style=0)
+        self.underwaterTemperatureTextStart = wx.lib.stattext.GenStaticText(ID=wx.ID_ANY,
+                                                                  label=u'F', name=u'temperatureTextStart',
+                                                                  parent=self.workspace, pos=wx.Point(185, 555),
+                                                                  size=wx.Size(16, 10), style=0)
+        self.underwaterTemperatureTextStart.SetFont(wx.Font(7, wx.DEFAULT, wx.NORMAL,
+                                                  wx.NORMAL, False, u'Segoe Print'))
+        self.underwaterTemperatureRangeEndText = wx.lib.stattext.GenStaticText(ID=wx.ID_ANY,
+                                                                     label=u'F', name=u'temperatureRangeEndText',
+                                                                     parent=self.workspace, pos=wx.Point(290, 555),
+                                                                     size=wx.Size(16, 10), style=0)
+        self.underwaterTemperatureRangeEndText.SetFont(wx.Font(7, wx.DEFAULT, wx.NORMAL,
+                                                     wx.NORMAL, False, u'Segoe Print'))
+        self.genStaticText20 = wx.lib.stattext.GenStaticText(ID=wx.ID_ANY,
+                                                             label=u'-', name='genStaticText19', parent=self.workspace,
+                                                             pos=wx.Point(220, 555), size=wx.Size(8, 10), style=0)
+        self.genStaticText20.SetFont(wx.Font(7, wx.SWISS, wx.NORMAL, wx.BOLD,
+                                             False, u'Segoe UI'))
+        self.genStaticText20.SetBackgroundColour(wx.Colour(167, 231, 252))
 
     def initEnvironmentInput(self):
         self.underwaterStartValue = wx.lib.masked.textctrl.TextCtrl(id=wx.ID_ANY,
