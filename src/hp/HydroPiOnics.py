@@ -57,10 +57,7 @@ class HydroPiOnics(wx.Frame):
         self.SetMenuBar(self.menuView)
         self.menuModel = MenuBar()
         self.menuController = MenuBarController(self.menuModel, self.menuView, self)
-    def initMonitorMVC(self):
-        self.monitorView = MonitorView(self, self.workspaceView)
-        self.monitorModel = Monitor()
-        self.monitorController = MonitorController(self.monitorModel, self.monitorView, self)
+
     def initMotorMVC(self):
         self.motorView = MotorView(self.monitorView)
         self.motorModel = Motor()
@@ -71,6 +68,10 @@ class HydroPiOnics(wx.Frame):
         self.workspaceView = WorkspaceView(self)
         self.workspaceModel = Workspace()
         self.workspaceController = WorkspaceController(self.workspaceView, self.workspaceModel, self.guiModel)
+    def initMonitorMVC(self):
+        self.monitorView = MonitorView(self, self.workspaceView)
+        self.monitorModel = Monitor()
+        self.monitorController = MonitorController(self.monitorModel, self.monitorView, self)
     def getGUIController(self):
         return self.guiController
     def initEnvironmentalMonitorMVC(self):
