@@ -74,7 +74,7 @@ class EvironmentalMonitorView:
                                                      wx.NORMAL, False, u'Segoe Print'))
         self.genStaticText19 = wx.lib.stattext.GenStaticText(ID=wx.ID_ANY,
                                                              label=u'-', name='genStaticText19', parent=self.workspace,
-                                                             pos=wx.Point(205, 410), size=wx.Size(8, 10), style=0)
+                                                             pos=wx.Point(240, 405), size=wx.Size(8, 10), style=0)
         self.genStaticText19.SetFont(wx.Font(7, wx.SWISS, wx.NORMAL, wx.BOLD,
                                              False, u'Segoe UI'))
         self.genStaticText19.SetBackgroundColour(wx.Colour(167, 231, 252))
