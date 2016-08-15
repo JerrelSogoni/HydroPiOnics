@@ -145,6 +145,8 @@ class EvironmentalMonitorView:
                                                          label=u'underwater Range', name=u'underwaterRangeText',
                                                          parent=self.workspace, pos=wx.Point(32, 640),
                                                          size=wx.Size(82, 15), style=0)
+
+    def initEnvironmentInput(self):
         self.underwaterStartValue = wx.lib.masked.textctrl.TextCtrl(id=wx.ID_ANY,
                                                                  name=u'underwaterStartValue', parent=self.workspace,
                                                                  pos=wx.Point(144, 624), size=wx.Size(40, 31), style=0,
