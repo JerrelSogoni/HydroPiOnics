@@ -1,7 +1,9 @@
 
 
-
-import wx.lib.buttons
+import wxversion
+print wxversion
+wxversion.select('2.4')
+import wx
 from gui.HydroPiOnicsView import HydroPiOnicsView
 from data.HydroPiOnicsM import HydroPiOnicsM
 from controller.HydroPiOnicsController import HydroPiOnicsController
