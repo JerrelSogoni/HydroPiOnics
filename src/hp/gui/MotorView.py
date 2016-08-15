@@ -1,6 +1,5 @@
 import wx
-from WorkspaceView import WorkspaceView
-IMG_LOCATION = WorkspaceView.IMG_LOCATION
+from WorkspaceView import IMG_LOCATION
 class MotorView:
     def __init__(self, workspace):
         self.workspace = workspace
