@@ -157,7 +157,7 @@ class EvironmentalMonitorView:
 
         # underwater temp
         self.underwaterTemperatureRangeText = wx.lib.stattext.GenStaticText(ID=wx.ID_ANY,
-                                                                  label=u'Water Temperature Range',
+                                                                  label=u'Water Temperature Rg.',
                                                                   name=u'temperatureRangeText',
                                                                   parent=self.workspace, pos=wx.Point(32, 560),
                                                                   size=wx.Size(104, 13), style=0)
@@ -167,7 +167,7 @@ class EvironmentalMonitorView:
                                                False))
         self.underwaterTemperatureRangeStartValue = wx.TextCtrl(id=wx.ID_ANY,
                                                       name=u'temperatureRangeStartValue', parent=self.workspace,
-                                                      pos=wx.Point(144, 400), size=wx.Size(40, 25), style=0, value=u'')
+                                                      pos=wx.Point(144, 555), size=wx.Size(40, 25), style=0, value=u'')
         self.underwaterTemperatureRangeEndValue = wx.lib.masked.textctrl.TextCtrl(id=wx.ID_ANY,
                                                                         name=u'temperatureRangeEndValue',
                                                                         parent=self.workspace,
