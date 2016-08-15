@@ -15,6 +15,7 @@ class EvironmentalMonitorView:
         self.workspace = workspace
         self.initStaticEnvironmentText()
         self.initSliders()
+        self.initEnvironmentInput()
 
     def initSliders(self):
         #Humidity
