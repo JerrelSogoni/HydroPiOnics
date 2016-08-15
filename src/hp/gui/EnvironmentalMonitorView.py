@@ -11,7 +11,7 @@ class EvironmentalMonitorView:
         self.humidityRangeStartSlider = wx.Slider(id=wx.ID_ANY,
                                                   maxValue=100, minValue=0, name=u'humidityRangeStartSlider',
                                                   parent=self.workspace, pos=wx.Point(16, 560),
-                                                  size=wx.Size(360, 10), style=wx.SL_HORIZONTAL, value=0)
+                                                  size=wx.Size(360, 20), style=wx.SL_HORIZONTAL, value=0)
         self.humidityRangeStartSlider.SetPageSize(1)
         self.humidityRangeEndSlider = wx.Slider(id=wx.ID_ANY,
                                                 maxValue=100, minValue=0, name=u'humidityRangeEndSlider',
@@ -47,7 +47,7 @@ class EvironmentalMonitorView:
                                                                   name=u'temperatureRangeText',
                                                                   parent=self.workspace, pos=wx.Point(32, 432),
                                                                   size=wx.Size(104, 15), style=0)
-        self.temperatureRangeText.SetFont(wx.Font(5, wx.DECORATIVE, wx.NORMAL,
+        self.temperatureRangeText.SetFont(wx.Font(12, wx.DECORATIVE, wx.NORMAL,
                                                   False))
         self.temperatureRangeText.SetToolTipString(u'in Fahrenheit')
         self.temperatureRangeText.SetHelpText(u'in Fahrenheit')
@@ -56,7 +56,7 @@ class EvironmentalMonitorView:
                                                                label=u'Humidity Range', name=u'humdiityRangeText',
                                                                parent=self.workspace, pos=wx.Point(32, 528),
                                                                size=wx.Size(86, 15), style=0)
-        self.humidityRangeText.SetFont(wx.Font(5, wx.DECORATIVE, wx.NORMAL,
+        self.humidityRangeText.SetFont(wx.Font(12, wx.DECORATIVE, wx.NORMAL,
                                                False))
 
         self.humidityRangeStartValue = wx.lib.masked.textctrl.TextCtrl(id=wx.ID_ANY,
@@ -67,7 +67,7 @@ class EvironmentalMonitorView:
         self.genStaticText21 = wx.lib.stattext.GenStaticText(ID=wx.ID_ANY,
                                                              label=u'-', name='genStaticText21', parent=self.workspace,
                                                              pos=wx.Point(216, 520), size=wx.Size(6, 15), style=0)
-        self.genStaticText21.SetFont(wx.Font(5, wx.DECORATIVE, wx.NORMAL,
+        self.genStaticText21.SetFont(wx.Font(9, wx.DECORATIVE, wx.NORMAL,
                                              wx.BOLD, False, u'Showcard Gothic'))
         self.genStaticText21.SetBackgroundColour(wx.Colour(143, 210, 250))
 
@@ -91,19 +91,19 @@ class EvironmentalMonitorView:
                                                                   label=u'F', name=u'temperatureTextStart',
                                                                   parent=self.workspace, pos=wx.Point(184, 424),
                                                                   size=wx.Size(16, 36), style=0)
-        self.temperatureTextStart.SetFont(wx.Font(5, wx.DEFAULT, wx.NORMAL,
+        self.temperatureTextStart.SetFont(wx.Font(16, wx.DEFAULT, wx.NORMAL,
                                                   wx.NORMAL, False, u'Segoe Print'))
         self.genStaticText19 = wx.lib.stattext.GenStaticText(ID=wx.ID_ANY,
                                                              label=u'-', name='genStaticText19', parent=self.workspace,
                                                              pos=wx.Point(216, 424), size=wx.Size(8, 25), style=0)
-        self.genStaticText19.SetFont(wx.Font(5, wx.SWISS, wx.NORMAL, wx.BOLD,
+        self.genStaticText19.SetFont(wx.Font(14, wx.SWISS, wx.NORMAL, wx.BOLD,
                                              False, u'Segoe UI'))
         self.genStaticText19.SetBackgroundColour(wx.Colour(167, 231, 252))
 
         self.temperatureRangeEndValue = wx.lib.masked.textctrl.TextCtrl(id=wx.ID_ANY,
                                                                         name=u'temperatureRangeEndValue',
                                                                         parent=self.workspace,
-                                                                        pos=wx.Point(240, 424), size=wx.Size(20,20),
+                                                                        pos=wx.Point(240, 424), size=wx.Size(40, 32),
                                                                         style=0, value='')
         self.pHRangeText = wx.lib.stattext.GenStaticText(ID=wx.ID_ANY,
                                                          label=u'PH Level Range', name=u'pHRangeText',
