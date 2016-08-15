@@ -1,7 +1,8 @@
 import wx
 import sys
 import os
-
+import wx.lib.stattext
+import wx.lib.masked.timectrl
 
 # Identify Operating System in order to direct image loading path
 # Mac OS or Linux

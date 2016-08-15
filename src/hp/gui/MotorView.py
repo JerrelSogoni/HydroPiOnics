@@ -1,5 +1,6 @@
 import wx
-
+import wx.lib.masked.textctrl
+import wx.lib.stattext
 from WorkspaceView import IMG_LOCATION
 class MotorView:
     def __init__(self, workspace):

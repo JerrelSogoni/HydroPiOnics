@@ -1,7 +1,6 @@
 import wx
 import os
 import sys
-
 class HydroPiOnicsView:
     def __init__(self, appGUI):
         self.appGUI = appGUI
