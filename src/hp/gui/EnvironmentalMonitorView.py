@@ -20,13 +20,13 @@ class EvironmentalMonitorView:
         self.humidityRangeEndSlider.SetPageSize(1)
         self.temperatureRangeStartSlider = wx.Slider(id=wx.ID_ANY,
                                                      maxValue=100, minValue=45, name=u'temperatureRangeStartSlider',
-                                                     parent=self.workspace, pos=wx.Point(16, 456),
+                                                     parent=self.workspace, pos=wx.Point(16, 420),
                                                      size=wx.Size(360, 24), style=wx.SL_HORIZONTAL, value=45)
         self.temperatureRangeStartSlider.SetPageSize(1)
 
         self.temperatureRangeEndSlider = wx.Slider(id=wx.ID_ANY,
                                                    maxValue=100, minValue=45, name=u'temperatureRangeEndSlider',
-                                                   parent=self.workspace, pos=wx.Point(16, 488),
+                                                   parent=self.workspace, pos=wx.Point(16, 430),
                                                    size=wx.Size(360, 24), style=wx.SL_HORIZONTAL, value=0)
         self.temperatureRangeEndSlider.SetPageSize(1)
         self.pHRangeStartSlider = wx.Slider(id=wx.ID_ANY,
@@ -53,11 +53,11 @@ class EvironmentalMonitorView:
                                                False))
         self.temperatureRangeStartValue = wx.TextCtrl(id=wx.ID_ANY,
                                                       name=u'temperatureRangeStartValue', parent=self.workspace,
-                                                      pos=wx.Point(144, 400), size=wx.Size(40, 30), style=0, value=u'')
+                                                      pos=wx.Point(144, 400), size=wx.Size(40, 25), style=0, value=u'')
         self.temperatureRangeEndValue = wx.lib.masked.textctrl.TextCtrl(id=wx.ID_ANY,
                                                                         name=u'temperatureRangeEndValue',
                                                                         parent=self.workspace,
-                                                                        pos=wx.Point(240, 400), size=wx.Size(40, 30),
+                                                                        pos=wx.Point(240, 400), size=wx.Size(40, 25),
                                                                         style=0, value='')
 
         self.temperatureTextStart = wx.lib.stattext.GenStaticText(ID=wx.ID_ANY,
@@ -68,7 +68,7 @@ class EvironmentalMonitorView:
                                                   wx.NORMAL, False, u'Segoe Print'))
         self.temperatureRangeEndText = wx.lib.stattext.GenStaticText(ID=wx.ID_ANY,
                                                                      label=u'F', name=u'temperatureRangeEndText',
-                                                                     parent=self.workspace, pos=wx.Point(285, 410),
+                                                                     parent=self.workspace, pos=wx.Point(310, 410),
                                                                      size=wx.Size(16, 20), style=0)
         self.temperatureRangeEndText.SetFont(wx.Font(7, wx.DEFAULT, wx.NORMAL,
                                                      wx.NORMAL, False, u'Segoe Print'))
