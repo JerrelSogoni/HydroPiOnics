@@ -46,6 +46,7 @@ class HydroPiOnics(wx.Frame):
         self.initWorkspaceMVC()
         self.initMonitorMVC()
         self.initMotorMVC()
+        self.initPumpMVC()
 
         self._init_ctrls(parent)
     def initFrameMVC(self):
@@ -63,7 +64,9 @@ class HydroPiOnics(wx.Frame):
         self.motorModel = Motor()
         self.monitorController = MonitorController(self.motorView,self.motorModel, self.guiModel)
     def initPumpMVC(self):
-        pass
+        self.pumpView = PumpView(self.workspaceView)
+        self.pumpModel = Pump()
+        self.pumpController = PumpController(self.motorView, self.motorModel, self.guiModel)
     def initWorkspaceMVC(self):
         self.workspaceView = WorkspaceView(self)
         self.workspaceModel = Workspace()
