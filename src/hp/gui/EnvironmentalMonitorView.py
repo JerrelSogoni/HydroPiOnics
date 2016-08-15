@@ -3,9 +3,11 @@ import WorkspaceView
 IMG_LOCATION = WorkspaceView.IMG_LOCATION
 SLIDERSTARTX = 360
 STARTTEXTX = 32
-STARTINPUTX = 185
-STARTMIDDLETEXT = 220
-STARTENDINPUTX = 290
+STARTINPUTXSTATIC = 144
+ENDINPUTXSTATIC = 240
+STARTINPUTX = 200
+STARTMIDDLETEXT = 240
+STARTENDINPUTX = 330
 STARTINPUTSIZEWIDTH = 60
 class EvironmentalMonitorView:
 
@@ -132,7 +134,7 @@ class EvironmentalMonitorView:
 
         self.genStaticText23 = wx.lib.stattext.GenStaticText(ID=wx.ID_ANY,
                                                              label=u'-', name='genStaticText23', parent=self.workspace,
-                                                             pos=wx.Point(STARTMIDDLETEXT, 505), size=wx.Size(6, 10), style=0)
+                                                             pos=wx.Point(STARTMIDDLETEXT, 510), size=wx.Size(6, 10), style=0)
         self.genStaticText23.SetBackgroundColour(wx.Colour(159, 221, 251))
         self.genStaticText23.SetFont(wx.Font(7, wx.DECORATIVE, wx.NORMAL,
                                              wx.BOLD, False, u'Showcard Gothic'))
@@ -174,40 +176,40 @@ class EvironmentalMonitorView:
         #temp
         self.temperatureRangeStartValue = wx.TextCtrl(id=wx.ID_ANY,
                                                       name=u'temperatureRangeStartValue', parent=self.workspace,
-                                                      pos=wx.Point(144, 400), size=wx.Size(40, 25), style=0, value=u'')
+                                                      pos=wx.Point(STARTINPUTXSTATIC, 400), size=wx.Size(40, 25), style=0, value=u'')
         self.temperatureRangeEndValue = wx.lib.masked.textctrl.TextCtrl(id=wx.ID_ANY,
                                                                         name=u'temperatureRangeEndValue',
                                                                         parent=self.workspace,
-                                                                        pos=wx.Point(240, 400), size=wx.Size(40, 25),
+                                                                        pos=wx.Point(ENDINPUTXSTATIC, 400), size=wx.Size(40, 25),
                                                                         style=0, value='')
         #humid
         self.humidityRangeStartValue = wx.lib.masked.textctrl.TextCtrl(id=wx.ID_ANY,
                                                                        name=u'humidityRangeStartValue',
                                                                        parent=self.workspace,
-                                                                       pos=wx.Point(144, 455), size=wx.Size(40, 25),
+                                                                       pos=wx.Point(STARTINPUTXSTATIC, 455), size=wx.Size(40, 25),
                                                                        style=0, value='')
         self.humidityRangeEndValue = wx.lib.masked.textctrl.TextCtrl(id=wx.ID_ANY,
                                                                      name=u'humidityRangeEndValue',
                                                                      parent=self.workspace,
-                                                                     pos=wx.Point(240, 455), size=wx.Size(40, 25),
+                                                                     pos=wx.Point(ENDINPUTXSTATIC, 455), size=wx.Size(40, 25),
                                                                      style=0, value='')
         #ph
 
         self.pHLevelStartValue = wx.lib.masked.textctrl.TextCtrl(id=wx.ID_ANY,
                                                                  name=u'pHLevelStartValue', parent=self.workspace,
-                                                                 pos=wx.Point(144, 505), size=wx.Size(40, 25), style=0,
+                                                                 pos=wx.Point(STARTINPUTXSTATIC, 505), size=wx.Size(40, 25), style=0,
                                                                  value='')
         self.phLevelEndValue = wx.lib.masked.textctrl.TextCtrl(id=wx.ID_ANY,
                                                                name=u'phLevelEndValue', parent=self.workspace,
-                                                               pos=wx.Point(240, 505), size=wx.Size(40, 25), style=0,
+                                                               pos=wx.Point(ENDINPUTXSTATIC, 505), size=wx.Size(40, 25), style=0,
                                                                value='')
         #underwater
         self.underwaterTemperatureRangeStartValue = wx.TextCtrl(id=wx.ID_ANY,
                                                       name=u'temperatureRangeStartValue', parent=self.workspace,
-                                                      pos=wx.Point(144, 555), size=wx.Size(40, 25), style=0, value=u'')
+                                                      pos=wx.Point(STARTINPUTXSTATIC, 555), size=wx.Size(40, 25), style=0, value=u'')
         self.underwaterTemperatureRangeEndValue = wx.lib.masked.textctrl.TextCtrl(id=wx.ID_ANY,
                                                                         name=u'temperatureRangeEndValue',
                                                                         parent=self.workspace,
-                                                                        pos=wx.Point(240, 555), size=wx.Size(40, 25),
+                                                                        pos=wx.Point(ENDINPUTXSTATIC, 555), size=wx.Size(40, 25),
                                                                         style=0, value='')
 
