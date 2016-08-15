@@ -79,10 +79,14 @@ class EvironmentalMonitorView:
         self.temperatureRangeText = wx.lib.stattext.GenStaticText(ID=wx.ID_ANY,
                                                                   label=u'Temperature Range',
                                                                   name=u'temperatureRangeText',
-                                                                  parent=self.workspace, pos=wx.Point(32, 432),
+                                                                  parent=self.workspace, pos=wx.Point(32, 420),
                                                                   size=wx.Size(104, 15), style=0)
         self.temperatureRangeText.SetToolTipString(u'in Fahrenheit')
         self.temperatureRangeText.SetHelpText(u'in Fahrenheit')
+        self.temperatureRangeText.SetFont(wx.Font(5, wx.DECORATIVE, wx.NORMAL,
+                                               False))
+
+
 
         self.temperatureRangeStartValue = wx.TextCtrl(id=wx.ID_ANY,
                                                       name=u'temperatureRangeStartValue', parent=self.workspace,
