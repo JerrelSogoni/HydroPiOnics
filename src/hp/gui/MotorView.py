@@ -1,6 +1,5 @@
 import wx
 import wx.lib.masked.textctrl
-import wx.Choice
 import wx.lib.stattext
 from WorkspaceView import IMG_LOCATION
 class MotorView:
