@@ -99,35 +99,35 @@ class MotorView:
                                                                     name=u'environmentControlText',
                                                                     parent=self.workspace, pos=wx.Point(464, 8),
                                                                     size=wx.Size(154, 16), style=0)
-        self.environmentControlText.SetFont(wx.Font(9, wx.SCRIPT, wx.NORMAL,
+        self.environmentControlText.SetFont(wx.Font(8, wx.SCRIPT, wx.NORMAL,
                                                     wx.NORMAL, False, u'Lucida Calligraphy'))
 
         self.intakeFanText = wx.lib.stattext.GenStaticText(ID=wx.ID_ANY,
                                                            label=u'Intake Fan', name=u'intakeFanText',
                                                            parent=self.workspace, pos=wx.Point(400, 216),
                                                            size=wx.Size(69, 15), style=0)
-        self.intakeFanText.SetFont(wx.Font(9, wx.DECORATIVE, wx.NORMAL,
+        self.intakeFanText.SetFont(wx.Font(8, wx.DECORATIVE, wx.NORMAL,
                                            wx.NORMAL, False, u'Showcard Gothic'))
 
         self.ventFanText = wx.lib.stattext.GenStaticText(ID=wx.ID_ANY,
                                                          label=u'Vent Fan', name=u'ventFanText',
                                                          parent=self.workspace, pos=wx.Point(400, 120),
                                                          size=wx.Size(56, 15), style=0)
-        self.ventFanText.SetFont(wx.Font(9, wx.DECORATIVE, wx.NORMAL, wx.NORMAL,
+        self.ventFanText.SetFont(wx.Font(8, wx.DECORATIVE, wx.NORMAL, wx.NORMAL,
                                          False, u'Showcard Gothic'))
         self.waterPumpAirTitle = wx.lib.stattext.GenStaticText(ID=wx.ID_ANY,
                                                                label=u'Water/Air Pump', name=u'waterPumpAirTitle',
                                                                parent=self.workspace, pos=wx.Point(8, 32), size=wx.Size(104,
                                                                                                               15),
                                                                style=0)
-        self.waterPumpAirTitle.SetFont(wx.Font(9, wx.DECORATIVE, wx.NORMAL,
+        self.waterPumpAirTitle.SetFont(wx.Font(8, wx.DECORATIVE, wx.NORMAL,
                                                wx.NORMAL, False, u'Showcard Gothic'))
 
         self.exhaustFanText = wx.lib.stattext.GenStaticText(ID=wx.ID_ANY,
                                                             label=u'Exhaust Fan', name=u'exhaustFanText',
                                                             parent=self.workspace, pos=wx.Point(392, 24),
                                                             size=wx.Size(80, 15), style=0)
-        self.exhaustFanText.SetFont(wx.Font(9, wx.DECORATIVE, wx.NORMAL,
+        self.exhaustFanText.SetFont(wx.Font(8, wx.DECORATIVE, wx.NORMAL,
                                             wx.NORMAL, False, u'Showcard Gothic'))
 
         self.exaustFanCycleOnText = wx.lib.stattext.GenStaticText(ID=wx.ID_ANY,
