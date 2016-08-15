@@ -29,7 +29,7 @@ class WorkspaceView(wx.Panel):
     def initWorkspaceCheckboxes(self):
         self.delayStartCheckBox = wx.CheckBox(id=wx.ID_ANY,
               label=u'Delay Start', name=u'delayStartCheckBox',
-              parent=self.workspace, pos=wx.Point(408, 648),
+              parent=self, pos=wx.Point(408, 648),
               size=wx.Size(78, 23), style=0)
         self.delayStartCheckBox.SetValue(False)
 
@@ -37,15 +37,14 @@ class WorkspaceView(wx.Panel):
 
 
     def initWorkspaceStaticText(self):
-        self.systemStatusText = wx.lib.stattext.GenStaticText(ID=wx.ID_ANY,
-              label=u'System Status:', name=u'systemStatusText',
-              parent=self.workspace, pos=wx.Point(784, 688),
+        self.systemStatusText = wx.lib.stattext.GenStaticText(ID=wx.ID_ANY,label=u'System Status:', name=u'systemStatusText',
+              parent=self, pos=wx.Point(784, 688),
               size=wx.Size(78, 13), style=0)
         self.systemStatusText.SetFont(wx.Font(9, wx.SWISS, wx.NORMAL, wx.NORMAL,
               False, u'Small Fonts'))
 
         self.systemStatus = wx.lib.stattext.GenStaticText(ID=wx.ID_ANY,
-              label=u'', name=u'systemStatus', parent=self.workspace,
+              label=u'', name=u'systemStatus', parent=self,
               pos=wx.Point(872, 688), size=wx.Size(12, 13), style=0)
         self.systemStatus.SetFont(wx.Font(9, wx.SWISS, wx.NORMAL, wx.NORMAL,
               False, u'Small Fonts'))
@@ -54,7 +53,7 @@ class WorkspaceView(wx.Panel):
         self.delayStartTime = wx.lib.masked.timectrl.TimeCtrl(display_seconds=True,
               fmt24hr=False, id=wx.ID_ANY,
               name=u'delayStartTime', oob_color=wx.NamedColour('Yellow'),
-              parent=self.workspace, pos=wx.Point(488, 648),
+              parent=self, pos=wx.Point(488, 648),
               size=wx.Size(85, 23), style=0, useFixedWidthFont=True,
               value='12:00:00 AM')
 
