@@ -1,5 +1,5 @@
 import wx
-
+import wx.lib.stattext
 
 class MonitorView(wx.Panel):
     def __init__(self, appGUI):
