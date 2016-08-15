@@ -68,7 +68,7 @@ class HydroPiOnics(wx.Frame):
         self.workspaceModel = Workspace()
         self.workspaceController = WorkspaceController(self.workspaceView, self.workspaceModel, self.guiModel)
     def initMonitorMVC(self):
-        self.monitorView = MonitorView(self, self.workspaceView)
+        self.monitorView = MonitorView(self)
         self.monitorModel = Monitor()
         self.monitorController = MonitorController(self.monitorModel, self.monitorView, self)
     def getGUIController(self):
