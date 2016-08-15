@@ -120,7 +120,7 @@ class EvironmentalMonitorView:
 
         self.genStaticText21 = wx.lib.stattext.GenStaticText(ID=wx.ID_ANY,
                                                              label=u'-', name='genStaticText21', parent=self.workspace,
-                                                             pos=wx.Point(220, 455), size=wx.Size(6, 10), style=0)
+                                                             pos=wx.Point(220, 460), size=wx.Size(6, 10), style=0)
         self.genStaticText21.SetFont(wx.Font(7, wx.DECORATIVE, wx.NORMAL,
                                              wx.BOLD, False, u'Showcard Gothic'))
         self.genStaticText21.SetBackgroundColour(wx.Colour(143, 210, 250))
@@ -131,26 +131,26 @@ class EvironmentalMonitorView:
 
         self.pHRangeText = wx.lib.stattext.GenStaticText(ID=wx.ID_ANY,
                                                          label=u'PH Level Range', name=u'pHRangeText',
-                                                         parent=self.workspace, pos=wx.Point(32, 640),
+                                                         parent=self.workspace, pos=wx.Point(32, 500),
                                                          size=wx.Size(82, 15), style=0)
+        self.pHRangeText.SetFont(wx.Font(7, wx.DECORATIVE, wx.NORMAL,
+                                             wx.BOLD, False, u'Showcard Gothic'))
 
         self.pHLevelStartValue = wx.lib.masked.textctrl.TextCtrl(id=wx.ID_ANY,
                                                                  name=u'pHLevelStartValue', parent=self.workspace,
-                                                                 pos=wx.Point(144, 624), size=wx.Size(40, 31), style=0,
+                                                                 pos=wx.Point(144, 495), size=wx.Size(40, 31), style=0,
                                                                  value='')
         self.genStaticText23 = wx.lib.stattext.GenStaticText(ID=wx.ID_ANY,
                                                              label=u'-', name='genStaticText23', parent=self.workspace,
-                                                             pos=wx.Point(208, 632), size=wx.Size(6, 15), style=0)
+                                                             pos=wx.Point(220, 500), size=wx.Size(6, 15), style=0)
         self.genStaticText23.SetBackgroundColour(wx.Colour(159, 221, 251))
-        self.genStaticText23.SetFont(wx.Font(9, wx.DECORATIVE, wx.NORMAL,
+        self.genStaticText23.SetFont(wx.Font(7, wx.DECORATIVE, wx.NORMAL,
                                              wx.BOLD, False, u'Showcard Gothic'))
 
         self.phLevelEndValue = wx.lib.masked.textctrl.TextCtrl(id=wx.ID_ANY,
                                                                name=u'phLevelEndValue', parent=self.workspace,
-                                                               pos=wx.Point(232, 624), size=wx.Size(40, 32), style=0,
+                                                               pos=wx.Point(240, 495), size=wx.Size(40, 32), style=0,
                                                                value='')
-
-
 
 
         self.underwaterRangeText = wx.lib.stattext.GenStaticText(ID=wx.ID_ANY,
