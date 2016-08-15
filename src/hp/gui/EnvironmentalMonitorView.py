@@ -83,12 +83,12 @@ class EvironmentalMonitorView:
         self.humidityRangeStartValue = wx.lib.masked.textctrl.TextCtrl(id=wx.ID_ANY,
                                                                        name=u'humidityRangeStartValue',
                                                                        parent=self.workspace,
-                                                                       pos=wx.Point(144, 460), size=wx.Size(40, 25),
+                                                                       pos=wx.Point(144, 455), size=wx.Size(40, 25),
                                                                        style=0, value='')
         self.humidityRangeEndValue = wx.lib.masked.textctrl.TextCtrl(id=wx.ID_ANY,
                                                                      name=u'humidityRangeEndValue',
                                                                      parent=self.workspace,
-                                                                     pos=wx.Point(240, 460), size=wx.Size(40, 25),
+                                                                     pos=wx.Point(240, 455), size=wx.Size(40, 25),
                                                                      style=0, value='')
 
         self.humidityRangeText = wx.lib.stattext.GenStaticText(ID=wx.ID_ANY,
@@ -120,7 +120,7 @@ class EvironmentalMonitorView:
 
         self.genStaticText21 = wx.lib.stattext.GenStaticText(ID=wx.ID_ANY,
                                                              label=u'-', name='genStaticText21', parent=self.workspace,
-                                                             pos=wx.Point(240, 455), size=wx.Size(6, 10), style=0)
+                                                             pos=wx.Point(220, 455), size=wx.Size(6, 10), style=0)
         self.genStaticText21.SetFont(wx.Font(7, wx.DECORATIVE, wx.NORMAL,
                                              wx.BOLD, False, u'Showcard Gothic'))
         self.genStaticText21.SetBackgroundColour(wx.Colour(143, 210, 250))
