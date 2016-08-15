@@ -1,7 +1,5 @@
 
 
-import wxversion
-print wxversion.getInstalled()
 import wx
 from gui.HydroPiOnicsView import HydroPiOnicsView
 from data.HydroPiOnicsM import HydroPiOnicsM
@@ -45,7 +43,7 @@ class HydroPiOnics(wx.Frame):
 
         self.initFrameMVC()
         self.initMenuBarMVC()
-        self.initWorkspaceMVC()
+        #self.initWorkspaceMVC()
         self.initMonitorMVC()
 
         self._init_ctrls(parent)
