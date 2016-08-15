@@ -10,13 +10,13 @@ class EvironmentalMonitorView:
     def initSliders(self):
         self.humidityRangeStartSlider = wx.Slider(id=wx.ID_ANY,
                                                   maxValue=100, minValue=0, name=u'humidityRangeStartSlider',
-                                                  parent=self.workspace, pos=wx.Point(16, 560),
-                                                  size=wx.Size(360, 20), style=wx.SL_HORIZONTAL, value=0)
+                                                  parent=self.workspace, pos=wx.Point(16, 470),
+                                                  size=wx.Size(360, 24), style=wx.SL_HORIZONTAL, value=0)
         self.humidityRangeStartSlider.SetPageSize(1)
         self.humidityRangeEndSlider = wx.Slider(id=wx.ID_ANY,
                                                 maxValue=100, minValue=0, name=u'humidityRangeEndSlider',
-                                                parent=self.workspace, pos=wx.Point(16, 600),
-                                                size=wx.Size(360, 20), style=wx.SL_HORIZONTAL, value=0)
+                                                parent=self.workspace, pos=wx.Point(16, 490),
+                                                size=wx.Size(360, 24), style=wx.SL_HORIZONTAL, value=0)
         self.humidityRangeEndSlider.SetPageSize(1)
         self.temperatureRangeStartSlider = wx.Slider(id=wx.ID_ANY,
                                                      maxValue=100, minValue=45, name=u'temperatureRangeStartSlider',
@@ -93,7 +93,7 @@ class EvironmentalMonitorView:
 
         self.humidityRangeText = wx.lib.stattext.GenStaticText(ID=wx.ID_ANY,
                                                                label=u'Humidity Range', name=u'humdiityRangeText',
-                                                               parent=self.workspace, pos=wx.Point(32, 455),
+                                                               parent=self.workspace, pos=wx.Point(32, 460),
                                                                size=wx.Size(86, 15), style=0)
         self.humidityRangeText.SetFont(wx.Font(7, wx.DECORATIVE, wx.NORMAL,
                                                False))
@@ -103,14 +103,14 @@ class EvironmentalMonitorView:
 
         self.humidityPercentSignStart = wx.lib.stattext.GenStaticText(ID=wx.ID_ANY,
                                                                       label=u'%', name=u'humidityPercentSignStart',
-                                                                      parent=self.workspace, pos=wx.Point(184, 455),
-                                                                      size=wx.Size(15, 36), style=0)
+                                                                      parent=self.workspace, pos=wx.Point(185, 460),
+                                                                      size=wx.Size(15, 10), style=0)
         self.humidityPercentSignStart.SetFont(wx.Font(7, wx.DEFAULT, wx.NORMAL,
                                                       wx.NORMAL, False, u'Segoe Print'))
 
         self.humidityEndText = wx.lib.stattext.GenStaticText(ID=wx.ID_ANY,
                                                              label=u'%', name=u'humidityEndText', parent=self.workspace,
-                                                             pos=wx.Point(280, 455), size=wx.Size(15, 36), style=0)
+                                                             pos=wx.Point(290, 460), size=wx.Size(15, 10), style=0)
         self.humidityEndText.SetFont(wx.Font(7, wx.DEFAULT, wx.NORMAL,
                                              wx.NORMAL, False, u'Segoe Print'))
 
@@ -120,7 +120,7 @@ class EvironmentalMonitorView:
 
         self.genStaticText21 = wx.lib.stattext.GenStaticText(ID=wx.ID_ANY,
                                                              label=u'-', name='genStaticText21', parent=self.workspace,
-                                                             pos=wx.Point(216, 455), size=wx.Size(6, 15), style=0)
+                                                             pos=wx.Point(240, 455), size=wx.Size(6, 10), style=0)
         self.genStaticText21.SetFont(wx.Font(7, wx.DECORATIVE, wx.NORMAL,
                                              wx.BOLD, False, u'Showcard Gothic'))
         self.genStaticText21.SetBackgroundColour(wx.Colour(143, 210, 250))
