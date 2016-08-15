@@ -1,7 +1,7 @@
 
 
 import wxversion
-print wxversion
+print wxversion.checkInstalled()
 import wx
 from gui.HydroPiOnicsView import HydroPiOnicsView
 from data.HydroPiOnicsM import HydroPiOnicsM
