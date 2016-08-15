@@ -44,9 +44,9 @@ class HydroPiOnics(wx.Frame):
 
         self.initFrameMVC()
         self.initMenuBarMVC()
-        self.initMonitorMVC()
         self.initWorkspaceMVC()
-      #  self.initMonitorMVC()
+        self.initMonitorMVC()
+
         self._init_ctrls(parent)
     def initFrameMVC(self):
         self.gui = HydroPiOnicsView(self)
