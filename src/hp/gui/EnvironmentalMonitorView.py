@@ -153,19 +153,19 @@ class EvironmentalMonitorView:
 
         self.underwaterTemperatureTextStart = wx.lib.stattext.GenStaticText(ID=wx.ID_ANY,
                                                                   label=u'F', name=u'temperatureTextStart',
-                                                                  parent=self.workspace, pos=wx.Point(STARTINPUTX, 600),
+                                                                  parent=self.workspace, pos=wx.Point(STARTINPUTX, 560),
                                                                   size=wx.Size(16, 10), style=0)
         self.underwaterTemperatureTextStart.SetFont(wx.Font(7, wx.DEFAULT, wx.NORMAL,
                                                   wx.NORMAL, False, u'Segoe Print'))
         self.underwaterTemperatureRangeEndText = wx.lib.stattext.GenStaticText(ID=wx.ID_ANY,
                                                                      label=u'F', name=u'temperatureRangeEndText',
-                                                                     parent=self.workspace, pos=wx.Point(STARTENDINPUTX, 600),
+                                                                     parent=self.workspace, pos=wx.Point(STARTENDINPUTX, 560),
                                                                      size=wx.Size(16, 10), style=0)
         self.underwaterTemperatureRangeEndText.SetFont(wx.Font(7, wx.DEFAULT, wx.NORMAL,
                                                      wx.NORMAL, False, u'Segoe Print'))
         self.genStaticText20 = wx.lib.stattext.GenStaticText(ID=wx.ID_ANY,
                                                              label=u'-', name='genStaticText19', parent=self.workspace,
-                                                             pos=wx.Point(STARTMIDDLETEXT, 600), size=wx.Size(8, 10), style=0)
+                                                             pos=wx.Point(STARTMIDDLETEXT, 560), size=wx.Size(8, 10), style=0)
         self.genStaticText20.SetFont(wx.Font(7, wx.SWISS, wx.NORMAL, wx.BOLD,
                                              False, u'Segoe UI'))
         self.genStaticText20.SetBackgroundColour(wx.Colour(167, 231, 252))
