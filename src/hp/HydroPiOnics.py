@@ -43,7 +43,7 @@ class HydroPiOnics(wx.Frame):
 
         self.initFrameMVC()
         self.initMenuBarMVC()
-        #self.initWorkspaceMVC()
+        self.initWorkspaceMVC()
         self.initMonitorMVC()
 
         self._init_ctrls(parent)
