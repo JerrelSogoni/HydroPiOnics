@@ -16,11 +16,6 @@ class PumpView:
                                                  name=u'mixToPlantPicture', parent=self.workspace,
                                                  pos=wx.Point(32, 136), size=wx.Size(50, 66), style=0)
 
-        self.airHeaterPicture = wx.StaticBitmap(bitmap=wx.Bitmap(IMG_LOCATION + "heater.jpg",
-                                                                 wx.BITMAP_TYPE_JPEG), id=wx.ID_ANY,
-                                                name=u'airHeaterPicture', parent=self.workspace,
-                                                pos=wx.Point(400, 512), size=wx.Size(64, 56), style=0)
-
         self.plantToMixPicture = wx.StaticBitmap(bitmap=wx.Bitmap(IMG_LOCATION + "dcwaterPumps.jpg",
                                                                   wx.BITMAP_TYPE_JPEG), id=wx.ID_ANY,
                                                  name=u'plantToMixPicture', parent=self.workspace,
@@ -86,7 +81,7 @@ class PumpView:
         self.drainSystemCheckBox = wx.CheckBox(id=wx.ID_ANY,
                                                label=u'Drain System', name=u'drainSystemCheckBox',
                                                parent=self.workspace, pos=wx.Point(192, 360),
-                                               size=wx.Size(84, 15), style=0)
+                                               size=wx.Size(90, 15), style=0)
         self.drainSystemCheckBox.SetValue(False)
 
 

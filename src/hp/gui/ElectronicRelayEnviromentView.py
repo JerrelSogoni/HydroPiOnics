@@ -66,6 +66,12 @@ class ElectronicRelayEnviromentView:
             pos=wx.Point(408, 312),
             size=wx.Size(50, 66), style=0)
 
+        self.airHeaterPicture = wx.StaticBitmap(bitmap=wx.Bitmap(IMG_LOCATION + "heater.jpg",
+                                                                 wx.BITMAP_TYPE_JPEG), id=wx.ID_ANY,
+                                                name=u'airHeaterPicture', parent=self.workspace,
+                                                pos=wx.Point(400, 512), size=wx.Size(64, 56), style=0)
+
+
         self.ledPicture = wx.StaticBitmap(bitmap=wx.Bitmap(IMG_LOCATION + "myLedLights.JPG",
                                                            wx.BITMAP_TYPE_JPEG), id=wx.ID_ANY,
                                           name=u'ledPicture', parent=self.workspace, pos=wx.Point(400,
