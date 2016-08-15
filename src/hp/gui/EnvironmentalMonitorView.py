@@ -5,9 +5,9 @@ SLIDERSTARTX = 360
 STARTTEXTX = 32
 STARTINPUTXSTATIC = 144
 ENDINPUTXSTATIC = 240
-STARTINPUTX = 200
-STARTMIDDLETEXT = 240
-STARTENDINPUTX = 330
+STARTINPUTX = 210
+STARTMIDDLETEXT = 220
+STARTENDINPUTX = 290
 STARTINPUTSIZEWIDTH = 60
 class EvironmentalMonitorView:
 
@@ -177,7 +177,7 @@ class EvironmentalMonitorView:
         #temp
         self.temperatureRangeStartValue = wx.TextCtrl(id=wx.ID_ANY,
                                                       name=u'temperatureRangeStartValue', parent=self.workspace,
-                                                      pos=wx.Point(STARTINPUTXSTATIC, 400), size=wx.Size(40, 25), style=0, value=u'')
+                                                      pos=wx.Point(STARTINPUTXSTATIC, 400), size=wx.Size(STARTINPUTSIZEWIDTH, 25), style=0, value=u'')
         self.temperatureRangeEndValue = wx.lib.masked.textctrl.TextCtrl(id=wx.ID_ANY,
                                                                         name=u'temperatureRangeEndValue',
                                                                         parent=self.workspace,
