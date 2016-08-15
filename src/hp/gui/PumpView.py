@@ -81,7 +81,7 @@ class PumpView:
         self.drainSystemCheckBox = wx.CheckBox(id=wx.ID_ANY,
                                                label=u'Drain System', name=u'drainSystemCheckBox',
                                                parent=self.workspace, pos=wx.Point(192, 360),
-                                               size=wx.Size(100, 15), style=0)
+                                               size=wx.Size(120, 15), style=0)
         self.drainSystemCheckBox.SetValue(False)
 
 
