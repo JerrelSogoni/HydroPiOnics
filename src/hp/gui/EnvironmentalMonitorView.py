@@ -26,7 +26,7 @@ class EvironmentalMonitorView:
 
         self.temperatureRangeEndSlider = wx.Slider(id=wx.ID_ANY,
                                                    maxValue=100, minValue=45, name=u'temperatureRangeEndSlider',
-                                                   parent=self.workspace, pos=wx.Point(16, 430),
+                                                   parent=self.workspace, pos=wx.Point(16, 440),
                                                    size=wx.Size(360, 24), style=wx.SL_HORIZONTAL, value=0)
         self.temperatureRangeEndSlider.SetPageSize(1)
         self.pHRangeStartSlider = wx.Slider(id=wx.ID_ANY,
@@ -62,14 +62,14 @@ class EvironmentalMonitorView:
 
         self.temperatureTextStart = wx.lib.stattext.GenStaticText(ID=wx.ID_ANY,
                                                                   label=u'F', name=u'temperatureTextStart',
-                                                                  parent=self.workspace, pos=wx.Point(190, 410),
-                                                                  size=wx.Size(16, 20), style=0)
+                                                                  parent=self.workspace, pos=wx.Point(185, 405),
+                                                                  size=wx.Size(16, 10), style=0)
         self.temperatureTextStart.SetFont(wx.Font(7, wx.DEFAULT, wx.NORMAL,
                                                   wx.NORMAL, False, u'Segoe Print'))
         self.temperatureRangeEndText = wx.lib.stattext.GenStaticText(ID=wx.ID_ANY,
                                                                      label=u'F', name=u'temperatureRangeEndText',
-                                                                     parent=self.workspace, pos=wx.Point(310, 410),
-                                                                     size=wx.Size(16, 20), style=0)
+                                                                     parent=self.workspace, pos=wx.Point(290, 405),
+                                                                     size=wx.Size(16, 10), style=0)
         self.temperatureRangeEndText.SetFont(wx.Font(7, wx.DEFAULT, wx.NORMAL,
                                                      wx.NORMAL, False, u'Segoe Print'))
         self.genStaticText19 = wx.lib.stattext.GenStaticText(ID=wx.ID_ANY,
