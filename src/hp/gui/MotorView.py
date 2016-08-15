@@ -129,45 +129,47 @@ class MotorView:
                                                             size=wx.Size(80, 15), style=0)
         self.exhaustFanText.SetFont(wx.Font(9, wx.DECORATIVE, wx.NORMAL,
                                             wx.NORMAL, False, u'Showcard Gothic'))
-        self.cycleOnWaterAirPumpText = wx.lib.stattext.GenStaticText(ID=wx.ID_ANY,
-                                                                     label=u'Cycle On', name=u'cycleOnWaterAirPumpText',
-                                                                     parent=self.workspace, pos=wx.Point(176, 72),
-                                                                     size=wx.Size(96, 15), style=0)
-        self.cycleOnWaterAirPumpText.SetToolTipString(u'')
 
-        self.cycleOffWaterAirPumpText = wx.lib.stattext.GenStaticText(ID=wx.ID_ANY,
-                                                                      label=u'Cycle Off',
-                                                                      name=u'cycleOffWaterAirPumpText',
-                                                                      parent=self.workspace, pos=wx.Point(280, 72),
-                                                                      size=wx.Size(104, 15), style=0)
         self.exaustFanCycleOnText = wx.lib.stattext.GenStaticText(ID=wx.ID_ANY,
                                                                   label=u'Cycle On', name=u'exaustFanCycleOnText',
                                                                   parent=self.workspace, pos=wx.Point(560, 40),
                                                                   size=wx.Size(104, 15), style=0)
-
+        self.exaustFanCycleOnText.setFont(wx.Font(8, wx.DECORATIVE, wx.NORMAL,
+                                            wx.NORMAL, False, u'Showcard Gothic'))
         self.exaustFanCycleOffText = wx.lib.stattext.GenStaticText(ID=wx.ID_ANY,
                                                                    label=u'Cycle Off', name='exaustFanCycleOffText',
                                                                    parent=self.workspace, pos=wx.Point(688, 40),
                                                                    size=wx.Size(104, 15), style=0)
+        self.exaustFanCycleOffText.setFont(wx.Font(8, wx.DECORATIVE, wx.NORMAL,
+                                                  wx.NORMAL, False, u'Showcard Gothic'))
 
         self.cycleOnVentFanText = wx.lib.stattext.GenStaticText(ID=wx.ID_ANY,
                                                                 label=u'Cycle On', name=u'cycleOnVentFanText',
                                                                 parent=self.workspace, pos=wx.Point(560, 128),
                                                                 size=wx.Size(104, 15), style=0)
+        self.cycleOnVentFanText.setFont(wx.Font(8, wx.DECORATIVE, wx.NORMAL,
+                                                  wx.NORMAL, False, u'Showcard Gothic'))
 
         self.cycleOffVentFanText = wx.lib.stattext.GenStaticText(ID=wx.ID_ANY,
                                                                  label=u'Cycle Off', name=u'cycleOffVentFanText',
                                                                  parent=self.workspace, pos=wx.Point(688, 128),
                                                                  size=wx.Size(104, 15), style=0)
+        self.cycleOffVentFanText.setFont(wx.Font(8, wx.DECORATIVE, wx.NORMAL,
+                                                  wx.NORMAL, False, u'Showcard Gothic'))
         self.cycleOnIntakeFanText = wx.lib.stattext.GenStaticText(ID=wx.ID_ANY,
                                                                   label=u'Cycle On', name=u'cycleOnIntakeFanText',
                                                                   parent=self.workspace, pos=wx.Point(560, 224),
                                                                   size=wx.Size(104, 15), style=0)
+        self.cycleOnIntakeFanText.setFont(wx.Font(8, wx.DECORATIVE, wx.NORMAL,
+                                                  wx.NORMAL, False, u'Showcard Gothic'))
 
         self.cycleOffIntakeFanText = wx.lib.stattext.GenStaticText(ID=wx.ID_ANY,
                                                                    label=u'Cycle Off', name=u'cycleOffIntakeFanText',
                                                                    parent=self.workspace, pos=wx.Point(688, 224),
                                                                    size=wx.Size(104, 15), style=0)
+        self.cycleOffIntakeFanText.setFont(wx.Font(8, wx.DECORATIVE, wx.NORMAL,
+                                                  wx.NORMAL, False, u'Showcard Gothic'))
+
         
     def initMotorCheckBoxes(self):
 
