@@ -60,8 +60,8 @@ class ElectronicRelayEnviromentView:
                                                              parent=self.workspace, pos=wx.Point(696, 592),
                                                              size=wx.Size(104, 15), style=0)
         self.underwaterTitle = wx.lib.stattext.GenStaticText(ID=wx.ID_ANY,
-                                                               label=u'Underwater Heater', name=u'waterPumpAirTitle',
-                                                               parent=self.workspace, pos=wx.Point(8, 190), size=wx.Size(104,
+                                                               label=u'Underwater Heater', name=u'underwaterHeaterTitle',
+                                                               parent=self.workspace, pos=wx.Point(8, 100), size=wx.Size(104,
                                                                                                               15),
                                                                style=0)
 
