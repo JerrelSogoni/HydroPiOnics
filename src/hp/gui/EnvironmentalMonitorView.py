@@ -103,7 +103,7 @@ class EvironmentalMonitorView:
                                                                      size=wx.Size(16, 10), style=0)
         self.temperatureRangeEndText.SetFont(wx.Font(7, wx.DEFAULT, wx.NORMAL,
                                                      wx.NORMAL, False, u'Segoe Print'))
-        self.staticEnvironmentArray(self.temperatureRangeEndText)
+        self.staticEnvironmentArray.append(self.temperatureRangeEndText)
         self.genStaticText19 = wx.lib.stattext.GenStaticText(ID=wx.ID_ANY,
                                                              label=u'-', name='genStaticText19', parent=self.workspace,
                                                              pos=wx.Point(STARTMIDDLETEXT, 405), size=wx.Size(8, 10), style=0)
