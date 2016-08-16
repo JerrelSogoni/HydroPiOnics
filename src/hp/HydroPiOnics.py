@@ -72,6 +72,7 @@ class HydroPiOnics(wx.Frame):
         self.pumpModel = Pump()
         self.pumpController = PumpController(self.motorView, self.motorModel, self.guiModel)
         self.pumpView.initController(self.pumpController)
+        self.pumpView.initListeners()
     def initWorkspaceMVC(self):
         self.workspaceView = WorkspaceView(self)
         self.workspaceModel = Workspace()
