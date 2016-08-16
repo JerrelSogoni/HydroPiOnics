@@ -55,7 +55,7 @@ class WorkspaceView(wx.Panel):
         self.delayStartTime = wx.lib.masked.timectrl.TimeCtrl(display_seconds=True,
               fmt24hr=False, id=wx.ID_ANY,
               name=u'delayStartTime', oob_color=wx.NamedColour('Yellow'),
-              parent=self, pos=wx.Point(790, 560),
+              parent=self, pos=wx.Point(790, 550),
               size=wx.Size(10, 15), style=0, useFixedWidthFont=False,
               value='12:00:00 AM')
 
