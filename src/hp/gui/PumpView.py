@@ -10,6 +10,7 @@ class PumpView:
         self.initStaticPumpText()
         self.initPumpCheckbox()
         self.pumpController = None
+        self.initListeners()
 
     def initPumpImages(self):
         self.mixToPlantPicture = wx.StaticBitmap(bitmap=wx.Bitmap(IMG_LOCATION + "dcwaterPumps.jpg",
