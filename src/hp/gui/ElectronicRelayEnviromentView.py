@@ -136,12 +136,12 @@ class ElectronicRelayEnviromentView:
 
         self.ledCycleOnValue = wx.lib.masked.textctrl.TextCtrl(id=wx.ID_ANY,
                                                                name=u'ledCycleOnValue', parent=self.workspace,
-                                                               pos=wx.Point(560, 608), size=wx.Size(48, 23), style=0,
+                                                               pos=wx.Point(560, 603), size=wx.Size(48, 23), style=0,
                                                                value='')
 
         self.ledCycleOffValue = wx.lib.masked.textctrl.TextCtrl(id=wx.ID_ANY,
                                                                 name=u'ledCycleOffValue', parent=self.workspace,
-                                                                pos=wx.Point(696, 608), size=wx.Size(48, 23), style=0,
+                                                                pos=wx.Point(696, 603), size=wx.Size(48, 23), style=0,
                                                                 value='')
 
         self.cycleOnAirFIlterFan = wx.Choice(choices=['s', 'm', 'h'],
