@@ -11,6 +11,7 @@ class MotorController:
     def updateMode(self, mode):
         if(mode != self.appData.MANUAL):
             self.environmentManual(True,False)
+            self.motorView.waterAirCheckBox.Show(True)
         else:
             self.environmentManual(False,True)
 
