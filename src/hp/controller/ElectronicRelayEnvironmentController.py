@@ -18,7 +18,7 @@ class ElectronicRelayEnvironmentController:
 
     def updateMode(self,mode):
         if(mode == self.appData.ENVIRONMENTAL):
-            self.cycleOrEnvironmentalMode(True, True)
+            self.cycleOrEnvironmentalMode(True, False)
         elif(mode == self.appData.TIMER):
             self.cycleOrEnvironmentalMode(True, False)
             self.electronicRelayView.underwaterHeaterCheckBox.Show(True)
