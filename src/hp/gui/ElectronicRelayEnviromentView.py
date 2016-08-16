@@ -118,14 +118,13 @@ class ElectronicRelayEnviromentView:
                                                 parent=self.workspace, pos=wx.Point(472, 336),
                                                 size=wx.Size(78, 15), style=0)
         self.airFilterFanCheckBox.SetValue(False)
-        self.cycleArray.append(self.airFilterFanCheckBox)
-
+        self.environmentalArray.append(self.airFilterFanCheckBox)
 
         self.ledCheckBox = wx.CheckBox(id=wx.ID_ANY,
                                        label=u'On/Off', name=u'ledCheckBox', parent=self.workspace,
                                        pos=wx.Point(472, 608), size=wx.Size(78, 15), style=0)
         self.ledCheckBox.SetValue(False)
-        self.cycleArray.append(self.ledCheckBox)
+        self.environmentalArray.append(self.ledCheckBox)
 
         self.humidifierCheckBox = wx.CheckBox(id=wx.ID_ANY,
                                               label=u'On/Off', name=u'humidifierCheckBox',

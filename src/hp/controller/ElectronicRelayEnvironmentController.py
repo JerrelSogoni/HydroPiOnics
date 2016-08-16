@@ -27,7 +27,7 @@ class ElectronicRelayEnvironmentController:
     def cycleOrEnvironmentalMode(self, cycles, environment):
         for cycles in self.electronicRelayView.cycleArray:
             if(cycles):
-                cycles.Hide()
+                cycles.Show(True)
             else:
                 cycles.Hide()
         for environment in self.electronicRelayView.environmentalArray:
