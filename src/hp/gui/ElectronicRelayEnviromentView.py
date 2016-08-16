@@ -83,7 +83,7 @@ class ElectronicRelayEnviromentView:
         self.waterHeaterPicture = wx.StaticBitmap(bitmap=wx.Bitmap(IMG_LOCATION + "underwaterTemperature.jpg",
                                                                 wx.BITMAP_TYPE_JPEG), id=wx.ID_ANY,
                                                name=u'waterHeaterPicutre', parent=self.workspace,
-                                               pos=wx.Point(24, 48), size=wx.Size(400, 56), style=0)
+                                               pos=wx.Point(110, 48), size=wx.Size(64, 56), style=0)
 
     def initRelayCheckBoxes(self):
 
