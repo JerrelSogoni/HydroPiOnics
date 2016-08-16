@@ -52,12 +52,12 @@ class ElectronicRelayEnviromentView:
 
         self.cycleOnLedText = wx.lib.stattext.GenStaticText(ID=wx.ID_ANY,
                                                             label=u'Cycle On', name=u'cycleOnLedText',
-                                                            parent=self.workspace, pos=wx.Point(560, 592),
+                                                            parent=self.workspace, pos=wx.Point(560, 587),
                                                             size=wx.Size(104, 15), style=0)
 
         self.cycleOffLedText = wx.lib.stattext.GenStaticText(ID=wx.ID_ANY,
                                                              label=u'Cycle Off', name=u'cycleOffLedText',
-                                                             parent=self.workspace, pos=wx.Point(696, 592),
+                                                             parent=self.workspace, pos=wx.Point(696, 587),
                                                              size=wx.Size(104, 15), style=0)
         self.underwaterTitle = wx.lib.stattext.GenStaticText(ID=wx.ID_ANY,
                                                                label=u'Underwater Heater', name=u'underwaterHeaterTitle',
@@ -158,14 +158,14 @@ class ElectronicRelayEnviromentView:
 
         self.cycleOnLed = wx.Choice(choices=['s', 'm', 'h'],
                                     id=wx.ID_ANY, name=u'cycleOnLed',
-                                    parent=self.workspace, pos=wx.Point(608, 608),
+                                    parent=self.workspace, pos=wx.Point(608, 603),
                                     size=wx.Size(56, 23), style=0)
         self.cycleOnLed.SetStringSelection(u'')
         self.cycleOnLed.SetSelection(0)
 
         self.cycleOffLed = wx.Choice(choices=['s', 'm', 'h'],
                                      id=wx.ID_ANY, name=u'cycleOffLed',
-                                     parent=self.workspace, pos=wx.Point(744, 608),
+                                     parent=self.workspace, pos=wx.Point(744, 603),
                                      size=wx.Size(56, 23), style=0)
         self.cycleOffLed.SetSelection(0)
 
