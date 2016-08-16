@@ -48,6 +48,7 @@ class HydroPiOnics(wx.Frame):
         self.initMotorMVC()
         self.initPumpMVC()
         self.initEnvironmentalMonitorMVC()
+        self.initElectronicRelayEnvironmentMVC()
 
         self._init_ctrls(parent)
     def initFrameMVC(self):
@@ -88,7 +89,6 @@ class HydroPiOnics(wx.Frame):
         self.electronicRelayView = ElectronicRelayEnviromentView(self.workspaceView)
         self.electronicRelayModel = ElectronicRelayEnvironment()
         self.electronicRelayController = ElectronicRelayEnvironmentController(self.electronicRelayView, self.electronicRelayModel, self.guiModel)
-        pass
     # def OnCheckBox12Checkbox(self, event):
     #     event.Skip()
     #
