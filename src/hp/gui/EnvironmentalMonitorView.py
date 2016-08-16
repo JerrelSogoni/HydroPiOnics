@@ -36,7 +36,7 @@ class EvironmentalMonitorView:
                                                 parent=self.workspace, pos=wx.Point(STARTSLIDERX, 490),
                                                 size=wx.Size(SLIDERSTARTWIDTH, 24), style=wx.SL_HORIZONTAL, value=0)
         self.humidityRangeEndSlider.SetPageSize(1)
-        self.sliderArray.append(self.humidityRangeStartSlider)
+        self.sliderArray.append(self.humidityRangeEndSlider)
         #airTemperature
         self.temperatureRangeStartSlider = wx.Slider(id=wx.ID_ANY,
                                                      maxValue=100, minValue=45, name=u'temperatureRangeStartSlider',
