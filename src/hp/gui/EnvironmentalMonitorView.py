@@ -14,12 +14,13 @@ class EvironmentalMonitorView:
 
     def __init__(self, workspace):
         self.workspace = workspace
-        self.initStaticEnvironmentText()
-        self.initSliders()
-        self.initEnvironmentInput()
         self.sliderArray = []
         self.environmentInputArray = []
         self.staticEnvironmentArray = []
+        self.initStaticEnvironmentText()
+        self.initSliders()
+        self.initEnvironmentInput()
+
 
 
     def initSliders(self):

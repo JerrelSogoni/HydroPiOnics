@@ -5,11 +5,12 @@ from WorkspaceView import IMG_LOCATION
 class MotorView:
     def __init__(self, workspace):
         self.workspace = workspace
+        self.cycleArray = []
         self.initMotorImages()
         self.initStaticMotorText()
         self.initMotorCheckBoxes()
         self.initMotorInput()
-        self.cycleArray = []
+
     def initMotorInput(self):
         self.exaustFanCycleOnValue = wx.lib.masked.textctrl.TextCtrl(id=wx.ID_ANY,
               name=u'exaustFanCycleOnValue', parent=self.workspace,
