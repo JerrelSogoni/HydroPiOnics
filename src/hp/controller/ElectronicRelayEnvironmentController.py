@@ -22,17 +22,16 @@ class ElectronicRelayEnvironmentController:
         elif(mode == self.appData.TIMER):
             self.cycleOrEnvironmentalMode(True, False)
         else:
-            print "MaunalMode"
             self.cycleOrEnvironmentalMode(False, True)
 
-    def cycleOrEnvironmentalMode(self, cycles, environment):
+    def cycleOrEnvironmentalMode(self, cycle, environmental):
         for cycles in self.electronicRelayView.cycleArray:
-            if(cycles):
+            if(cycle):
                 cycles.Show(True)
             else:
                 cycles.Hide()
         for environment in self.electronicRelayView.environmentalArray:
-            if(environment):
+            if(environmental):
                 environment.Show(True)
             else:
                 environment.Hide()
