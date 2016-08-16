@@ -215,5 +215,5 @@ class MotorView:
               parent=self.workspace, pos=wx.Point(472, 248),
               size=wx.Size(78, 15), style=0)
         self.intakeFanCheckBox.SetValue(False)
-        self.manualArray(self.intakeFanCheckBox)
+        self.manualArray.append(self.intakeFanCheckBox)
 
