@@ -32,7 +32,7 @@ class WorkspaceView(wx.Panel):
         self.delayStartCheckBox = wx.CheckBox(id=wx.ID_ANY,
               label=u'Delay Start', name=u'delayStartCheckBox',
               parent=self, pos=wx.Point(800, 550),
-              size=wx.Size(78, 23), style=0)
+              size=wx.Size(25, 23), style=0)
         self.delayStartCheckBox.SetValue(False)
 
 
@@ -56,7 +56,7 @@ class WorkspaceView(wx.Panel):
               fmt24hr=False, id=wx.ID_ANY,
               name=u'delayStartTime', oob_color=wx.NamedColour('Yellow'),
               parent=self, pos=wx.Point(800, 580),
-              size=wx.Size(85, 23), style=0, useFixedWidthFont=True,
+              size=wx.Size(50, 15), style=0, useFixedWidthFont=True,
               value='12:00:00 AM')
 
 
