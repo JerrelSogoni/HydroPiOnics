@@ -14,14 +14,14 @@ class MotorController:
         else:
             self.environmentManual(False,True)
 
-    def environmentManual(self, cycle, manual):
+    def environmentManual(self, cycle, manuals):
         for cycles in self.motorView.cycleArray:
             if(cycle):
                 cycles.Show(True)
             else:
                 cycles.Hide()
         for manual in self.motorView.manualArray:
-            if(manual):
+            if(manuals):
                 manual.Show(True)
             else:
                 manual.Hide()
