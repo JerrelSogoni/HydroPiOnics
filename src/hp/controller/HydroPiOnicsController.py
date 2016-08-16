@@ -31,8 +31,8 @@ class HydroPiOnicsController:
 
 
 
-    def setElectronicRelayEnvironment(self, electronicRelayEnvironmentC):
-        self.electronicRelayEnvironment = electronicRelayEnvironmentC
+    def setElectronicRelayEnvironmentC(self, electronicRelayEnvironmentC):
+        self.electronicRelayEnvironmentC = electronicRelayEnvironmentC
     def setEnvironmentalMonitorC(self, environmentalMonitorC):
         self.environmentalMonitorC = environmentalMonitorC
     def setMotorC(self, motorC):

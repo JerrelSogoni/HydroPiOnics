@@ -92,7 +92,7 @@ class HydroPiOnics(wx.Frame):
         self.electronicRelayController = ElectronicRelayEnvironmentController(self.electronicRelayView, self.electronicRelayModel, self.guiModel)
 
     def giveControllersToMainController(self):
-        self.guiController.setElectronicRelayEnvironment(self.electronicRelayController)
+        self.guiController.setElectronicRelayEnvironmentC(self.electronicRelayController)
         self.guiController.setEnvironmentalMonitorC(self.environmentalMonitorController)
         self.guiController.setMotorC(self.motorController)
     # def OnCheckBox12Checkbox(self, event):

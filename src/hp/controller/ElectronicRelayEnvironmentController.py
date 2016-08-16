@@ -18,7 +18,6 @@ class ElectronicRelayEnvironmentController:
 
     def updateMode(self,mode):
         print mode
-        print self.appData.ENVIRONMENTAL
         if(mode == self.appData.ENVIRONMENTAL):
             self.cycleOrEnvironmentalMode(True, True)
         elif(mode == self.appData.TIMER):
