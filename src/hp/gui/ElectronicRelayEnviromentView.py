@@ -7,9 +7,7 @@ class ElectronicRelayEnviromentView:
     def __init__(self,workpace):
         self.workspace = workpace
         self.initElectronicImages()
-        self.initStaticElectronicText()
-        self.initRelayInputs()
-        self.initRelayCheckBoxes()
+
 
 
     def initStaticElectronicText(self):
