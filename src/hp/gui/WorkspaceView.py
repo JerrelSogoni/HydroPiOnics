@@ -47,7 +47,7 @@ class WorkspaceView(wx.Panel):
 
         self.systemStatus = wx.lib.stattext.GenStaticText(ID=wx.ID_ANY,
               label=u'RUNNING', name=u'systemStatus', parent=self,
-              pos=wx.Point(790, 600), size=wx.Size(12, 13), style=0)
+              pos=wx.Point(800, 620), size=wx.Size(12, 13), style=0)
         self.systemStatus.SetFont(wx.Font(9, wx.SWISS, wx.NORMAL, wx.NORMAL,
               False, u'Small Fonts'))
     def initWorkspaceClock(self):
