@@ -56,6 +56,11 @@ class ElectronicRelayEnviromentView:
                                                              label=u'Cycle Off', name=u'cycleOffLedText',
                                                              parent=self.workspace, pos=wx.Point(696, 592),
                                                              size=wx.Size(104, 15), style=0)
+        self.underwaterTitle = wx.lib.stattext.GenStaticText(ID=wx.ID_ANY,
+                                                               label=u'Underwater Heater', name=u'waterPumpAirTitle',
+                                                               parent=self.workspace, pos=wx.Point(8, 190), size=wx.Size(104,
+                                                                                                              15),
+                                                               style=0)
 
     def initElectronicImages(self):
         self.airFilterFanPicture = wx.StaticBitmap(
