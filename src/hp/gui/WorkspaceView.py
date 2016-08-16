@@ -40,7 +40,7 @@ class WorkspaceView(wx.Panel):
 
     def initWorkspaceStaticText(self):
         self.systemStatusText = wx.lib.stattext.GenStaticText(ID=wx.ID_ANY,label=u'System Status:', name=u'systemStatusText',
-              parent=self, pos=wx.Point(750, 603),
+              parent=self, pos=wx.Point(790, 603),
               size=wx.Size(78, 13), style=0)
         self.systemStatusText.SetFont(wx.Font(9, wx.SWISS, wx.NORMAL, wx.NORMAL,
               False, u'Small Fonts'))
