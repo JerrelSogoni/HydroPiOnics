@@ -131,7 +131,7 @@ class ElectronicRelayEnviromentView:
 
         self.underwaterHeaterCheckBox = wx.CheckBox(id=wx.ID_ANY,
               label=u'On/Off', name=u'waterAirCheckBox',
-              parent=self.workspace, pos=wx.Point(220, 64), size=wx.Size(78,
+              parent=self.workspace, pos=wx.Point(250, 64), size=wx.Size(78,
               15), style=0)
         self.underwaterHeaterCheckBox.SetValue(False)
 
