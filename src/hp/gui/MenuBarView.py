@@ -43,8 +43,8 @@ class MenuBarView(wx.MenuBar):
         return self.menuMode
     def initRunTab(self):
         self.runMode = wx.Menu()
-        self.start = self.menuMode.AppendRadioItem(wx.ID_FILE4, "START")
-        self.stop = self.menuMode.AppendRadioItem(wx.ID_FILE5, "STOP")
+        self.start = self.runMode.AppendRadioItem(wx.ID_FILE4, "START")
+        self.stop = self.runMode.AppendRadioItem(wx.ID_FILE5, "STOP")
         return self.runMode
     def getMenuMode(self):
         return self.menuMode
