@@ -31,8 +31,8 @@ class WorkspaceView(wx.Panel):
     def initWorkspaceCheckboxes(self):
         self.delayStartCheckBox = wx.CheckBox(id=wx.ID_ANY,
               label=u'Delay Start', name=u'delayStartCheckBox',
-              parent=self, pos=wx.Point(800, 550),
-              size=wx.Size(25, 23), style=0)
+              parent=self, pos=wx.Point(800, 530),
+              size=wx.Size(50, 20), style=0)
         self.delayStartCheckBox.SetValue(False)
 
 
@@ -46,7 +46,7 @@ class WorkspaceView(wx.Panel):
               False, u'Small Fonts'))
 
         self.systemStatus = wx.lib.stattext.GenStaticText(ID=wx.ID_ANY,
-              label=u'RUNNING', name=u'systemStatus', parent=self,
+              label=u'', name=u'systemStatus', parent=self,
               pos=wx.Point(820, 600), size=wx.Size(12, 13), style=0)
         self.systemStatus.SetFont(wx.Font(9, wx.SWISS, wx.NORMAL, wx.NORMAL,
               False, u'Small Fonts'))
