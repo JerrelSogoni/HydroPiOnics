@@ -110,7 +110,7 @@ class EvironmentalMonitorView:
         self.genStaticText19.SetFont(wx.Font(7, wx.SWISS, wx.NORMAL, wx.BOLD,
                                              False, u'Segoe UI'))
         self.genStaticText19.SetBackgroundColour(wx.Colour(167, 231, 252))
-        self.staticEnvironmentArray(self.genStaticText19)
+        self.staticEnvironmentArray.append(self.genStaticText19)
         # humidity
 
 
@@ -121,7 +121,7 @@ class EvironmentalMonitorView:
                                                                size=wx.Size(86, 15), style=0)
         self.humidityRangeText.SetFont(wx.Font(7, wx.DECORATIVE, wx.NORMAL,
                                                False))
-        self.staticEnvironmentArray(self.humidityRangeText)
+        self.staticEnvironmentArray.append(self.humidityRangeText)
 
 
         self.humidityPercentSignStart = wx.lib.stattext.GenStaticText(ID=wx.ID_ANY,
@@ -158,7 +158,7 @@ class EvironmentalMonitorView:
                                                          size=wx.Size(82, 15), style=0)
         self.pHRangeText.SetFont(wx.Font(7, wx.DECORATIVE, wx.NORMAL,
                                              wx.NORMAL, False, u'Showcard Gothic'))
-        self.staticEnvironmentArray(self.pHRangeText)
+        self.staticEnvironmentArray.append(self.pHRangeText)
 
 
         self.genStaticText23 = wx.lib.stattext.GenStaticText(ID=wx.ID_ANY,
@@ -167,7 +167,7 @@ class EvironmentalMonitorView:
         self.genStaticText23.SetBackgroundColour(wx.Colour(159, 221, 251))
         self.genStaticText23.SetFont(wx.Font(7, wx.DECORATIVE, wx.NORMAL,
                                              wx.BOLD, False, u'Showcard Gothic'))
-        self.staticEnvironmentArray(self.genStaticText23)
+        self.staticEnvironmentArray.append(self.genStaticText23)
 
 
 
@@ -181,7 +181,7 @@ class EvironmentalMonitorView:
         self.underwaterTemperatureRangeText.SetHelpText(u'in Fahrenheit')
         self.underwaterTemperatureRangeText.SetFont(wx.Font(7, wx.DECORATIVE, wx.NORMAL,
                                                False))
-        self.staticEnvironmentArray(self.underwaterTemperatureRangeText)
+        self.staticEnvironmentArray.append(self.underwaterTemperatureRangeText)
 
 
         self.underwaterTemperatureTextStart = wx.lib.stattext.GenStaticText(ID=wx.ID_ANY,
@@ -190,68 +190,68 @@ class EvironmentalMonitorView:
                                                                   size=wx.Size(16, 10), style=0)
         self.underwaterTemperatureTextStart.SetFont(wx.Font(7, wx.DEFAULT, wx.NORMAL,
                                                   wx.NORMAL, False, u'Segoe Print'))
-        self.staticEnvironmentArray(self.underwaterTemperatureTextStart)
+        self.staticEnvironmentArray.append(self.underwaterTemperatureTextStart)
         self.underwaterTemperatureRangeEndText = wx.lib.stattext.GenStaticText(ID=wx.ID_ANY,
                                                                      label=u'F', name=u'temperatureRangeEndText',
                                                                      parent=self.workspace, pos=wx.Point(STARTENDINPUTX, 560),
                                                                      size=wx.Size(16, 10), style=0)
         self.underwaterTemperatureRangeEndText.SetFont(wx.Font(7, wx.DEFAULT, wx.NORMAL,
                                                      wx.NORMAL, False, u'Segoe Print'))
-        self.staticEnvironmentArray(self.underwaterTemperatureRangeEndText)
+        self.staticEnvironmentArray.append(self.underwaterTemperatureRangeEndText)
         self.genStaticText20 = wx.lib.stattext.GenStaticText(ID=wx.ID_ANY,
                                                              label=u'-', name='genStaticText19', parent=self.workspace,
                                                              pos=wx.Point(STARTMIDDLETEXT, 560), size=wx.Size(8, 10), style=0)
         self.genStaticText20.SetFont(wx.Font(7, wx.SWISS, wx.NORMAL, wx.BOLD,
                                              False, u'Segoe UI'))
         self.genStaticText20.SetBackgroundColour(wx.Colour(167, 231, 252))
-        self.staticEnvironmentArray(self.genStaticText20)
+        self.staticEnvironmentArray.append(self.genStaticText20)
 
     def initEnvironmentInput(self):
         #temp
         self.temperatureRangeStartValue = wx.TextCtrl(id=wx.ID_ANY,
                                                       name=u'temperatureRangeStartValue', parent=self.workspace,
                                                       pos=wx.Point(STARTINPUTXSTATIC, 400), size=wx.Size(STARTINPUTSIZEWIDTH, 25), style=0, value=u'')
-        self.environmentInputArray(self.temperatureRangeStartValue)
+        self.environmentInputArray.append(self.temperatureRangeStartValue)
         self.temperatureRangeEndValue = wx.lib.masked.textctrl.TextCtrl(id=wx.ID_ANY,
                                                                         name=u'temperatureRangeEndValue',
                                                                         parent=self.workspace,
                                                                         pos=wx.Point(ENDINPUTXSTATIC, 400), size=wx.Size(STARTINPUTSIZEWIDTH, 25),
                                                                         style=0, value='')
-        self.environmentInputArray(self.temperatureRangeEndValue)
+        self.environmentInputArray.append(self.temperatureRangeEndValue)
         #humid
         self.humidityRangeStartValue = wx.lib.masked.textctrl.TextCtrl(id=wx.ID_ANY,
                                                                        name=u'humidityRangeStartValue',
                                                                        parent=self.workspace,
                                                                        pos=wx.Point(STARTINPUTXSTATIC, 455), size=wx.Size(STARTINPUTSIZEWIDTH, 25),
                                                                        style=0, value='')
-        self.environmentInputArray(self.humidityRangeStartValue)
+        self.environmentInputArray.append(self.humidityRangeStartValue)
         self.humidityRangeEndValue = wx.lib.masked.textctrl.TextCtrl(id=wx.ID_ANY,
                                                                      name=u'humidityRangeEndValue',
                                                                      parent=self.workspace,
                                                                      pos=wx.Point(ENDINPUTXSTATIC, 455), size=wx.Size(STARTINPUTSIZEWIDTH, 25),
                                                                      style=0, value='')
-        self.environmentInputArray(self.humidityRangeEndValue)
+        self.environmentInputArray.append(self.humidityRangeEndValue)
         #ph
 
         self.pHLevelStartValue = wx.lib.masked.textctrl.TextCtrl(id=wx.ID_ANY,
                                                                  name=u'pHLevelStartValue', parent=self.workspace,
                                                                  pos=wx.Point(STARTINPUTXSTATIC, 505), size=wx.Size(STARTINPUTSIZEWIDTH, 25), style=0,
                                                                  value='')
-        self.environmentInputArray(self.pHLevelStartValue)
+        self.environmentInputArray.append(self.pHLevelStartValue)
         self.phLevelEndValue = wx.lib.masked.textctrl.TextCtrl(id=wx.ID_ANY,
                                                                name=u'phLevelEndValue', parent=self.workspace,
                                                                pos=wx.Point(ENDINPUTXSTATIC, 505), size=wx.Size(STARTINPUTSIZEWIDTH, 25), style=0,
                                                                value='')
-        self.environmentInputArray(self.phLevelEndValue)
+        self.environmentInputArray.append(self.phLevelEndValue)
         #underwater
         self.underwaterTemperatureRangeStartValue = wx.TextCtrl(id=wx.ID_ANY,
                                                       name=u'temperatureRangeStartValue', parent=self.workspace,
                                                       pos=wx.Point(STARTINPUTXSTATIC, 555), size=wx.Size(STARTINPUTSIZEWIDTH, 25), style=0, value=u'')
-        self.environmentInputArray(self.underwaterTemperatureRangeStartValue)
+        self.environmentInputArray.append(self.underwaterTemperatureRangeStartValue)
         self.underwaterTemperatureRangeEndValue = wx.lib.masked.textctrl.TextCtrl(id=wx.ID_ANY,
                                                                         name=u'temperatureRangeEndValue',
                                                                         parent=self.workspace,
                                                                         pos=wx.Point(ENDINPUTXSTATIC, 555), size=wx.Size(STARTINPUTSIZEWIDTH, 25),
                                                                         style=0, value='')
-        self.environmentInputArray(self.underwaterTemperatureRangeEndValue)
+        self.environmentInputArray.append(self.underwaterTemperatureRangeEndValue)
 
