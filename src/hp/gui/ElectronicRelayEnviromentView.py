@@ -129,6 +129,12 @@ class ElectronicRelayEnviromentView:
                                              size=wx.Size(78, 15), style=0)
         self.airHeaterCheckBox.SetValue(False)
 
+        self.underwaterHeaterCheckBox = wx.CheckBox(id=wx.ID_ANY,
+              label=u'On/Off', name=u'waterAirCheckBox',
+              parent=self.workspace, pos=wx.Point(150, 64), size=wx.Size(78,
+              15), style=0)
+        self.underwaterHeaterCheckBox.SetValue(False)
+
     def initRelayInputs(self):
 
         self.airFilterFanCycleOnValue = wx.lib.masked.textctrl.TextCtrl(id=wx.ID_ANY,
