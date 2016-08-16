@@ -4,11 +4,18 @@ class PumpController:
         self.pumpView = pumpView
         self.pumpData = pumpData
         self.appData = appData
-    def processResToPlantCheckbox(self, checkboxValue):
-        self.pumpData.isResToPlantOn = checkboxValue.getValue()
-    def processPlantDrainCheckbox(self,checkboxValue):
-        self.pumpData.isPlantDrainOn = checkboxValue.getValue()
-    def processResDrainCheckbox(self,checkboxValue):
-        self.pumpData.isResDrainOn = checkboxValue.getValue()
+    def processResToPlantCheckbox(self, event):
+        check = event.GetEventObject()
+        print "ResTo Plant CLicked"
+        self.pumpData.isResToPlantOn = check.getValue()
+    def processPlantDrainCheckbox(self,event):
+        check = event.GetEventObject()
+        print "PlantDrain clicked"
+        self.pumpData.isPlantDrainOn = check.getValue()
+
+    def processResDrainCheckbox(self,event):
+        check = event.GetEventObject()
+        print "ResDrain clicked"
+        self.pumpData.isResDrainOn = check.getValue()
 
 

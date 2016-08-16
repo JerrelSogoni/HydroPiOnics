@@ -3,8 +3,7 @@ import wx
 
 
 class MenuBarController:
-    def __init__(self, menuBarModel, menuBarView, appGUI):
-        self.menuBarModel = menuBarModel
+    def __init__(self, menuBarView, appGUI):
         self.menuBarView = menuBarView
         self.appGUI = appGUI
         self.HydroController = self.appGUI.getGUIController()
@@ -15,8 +14,13 @@ class MenuBarController:
         self.appGUI.Bind(wx.EVT_MENU, self.giveModeToController, self.menuBarView.getManualItem())
         self.appGUI.Bind(wx.EVT_MENU, self.giveModeToController, self.menuBarView.getTimerItem())
         self.appGUI.Bind(wx.EVT_MENU, self.giveModeToController, self.menuBarView.getEnvironmentalItem())
+        self.appGUI.Bind(wx.EVT_MENU, self.giveRunToController, self.menuBarView.start)
+        self.appGUI.Bind(wx.EVT_MENU, self.giveRunToController, self.menuBarView.stop)
 
-
+    def giveRunToController(self, event):
+        item = self.menuBarView.FindItemById(event.GetId())
+        run = item.GetText()
+        self.HydroController.setRun(run)
 
     def giveModeToController(self, event):
         item = self.menuBarView.FindItemById(event.GetId())

@@ -60,21 +60,23 @@ class HydroPiOnics(wx.Frame):
     def initMenuBarMVC(self):
         self.menuView = MenuBarView()
         self.SetMenuBar(self.menuView)
-        self.menuModel = MenuBar()
-        self.menuController = MenuBarController(self.menuModel, self.menuView, self)
+        self.menuController = MenuBarController(self.menuView, self)
 
     def initMotorMVC(self):
         self.motorView = MotorView(self.workspaceView)
         self.motorModel = Motor()
         self.motorController = MotorController(self.motorView,self.motorModel, self.guiModel)
+        self.motorView.initController(self.motorController)
     def initPumpMVC(self):
         self.pumpView = PumpView(self.workspaceView)
         self.pumpModel = Pump()
         self.pumpController = PumpController(self.motorView, self.motorModel, self.guiModel)
+        self.pumpView.initController(self.pumpController)
     def initWorkspaceMVC(self):
         self.workspaceView = WorkspaceView(self)
         self.workspaceModel = Workspace()
         self.workspaceController = WorkspaceController(self.workspaceView, self.workspaceModel, self.guiModel)
+        self.workspaceView.initController(self.workspaceController)
     def initMonitorMVC(self):
 
         self.monitorView = MonitorView(self)
@@ -87,10 +89,12 @@ class HydroPiOnics(wx.Frame):
         self.environmentalMonitorView = EvironmentalMonitorView(self.workspaceView)
         self.environmentalMonitorModel = EnvironmentalMonitor()
         self.environmentalMonitorController = EnvironmentalMonitorController(self.environmentalMonitorView, self.environmentalMonitorModel, self.guiModel)
+        self.environmentalMonitorView.initController(self.environmentalMonitorController)
     def initElectronicRelayEnvironmentMVC(self):
         self.electronicRelayView = ElectronicRelayEnviromentView(self.workspaceView)
         self.electronicRelayModel = ElectronicRelayEnvironment()
         self.electronicRelayController = ElectronicRelayEnvironmentController(self.electronicRelayView, self.electronicRelayModel, self.guiModel)
+        self.electronicRelayView.initController(self.electronicRelayController)
 
     def giveControllersToMainController(self):
         self.guiController.setElectronicRelayEnvironmentC(self.electronicRelayController)
@@ -98,6 +102,7 @@ class HydroPiOnics(wx.Frame):
         self.guiController.setMotorC(self.motorController)
     def initDefaultValue(self):
         self.guiController.initDefaultValue()
+
     # def OnCheckBox12Checkbox(self, event):
     #     event.Skip()
     #

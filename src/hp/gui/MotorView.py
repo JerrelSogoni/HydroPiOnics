@@ -11,6 +11,7 @@ class MotorView:
         self.initStaticMotorText()
         self.initMotorCheckBoxes()
         self.initMotorInput()
+        self.monitorController = None
 
     def initMotorInput(self):
         self.exaustFanCycleOnValue = wx.lib.masked.textctrl.TextCtrl(id=wx.ID_ANY,
@@ -216,4 +217,7 @@ class MotorView:
               size=wx.Size(78, 15), style=0)
         self.intakeFanCheckBox.SetValue(False)
         self.manualArray.append(self.intakeFanCheckBox)
+
+    def initController(self, controller):
+        self.monitorController = controller
 

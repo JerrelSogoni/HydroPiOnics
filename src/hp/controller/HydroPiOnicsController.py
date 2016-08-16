@@ -9,9 +9,13 @@ class HydroPiOnicsController:
         self.electronicRelayEnvironmentC = None
         self.environmentalMonitorC = None
         self.motorC = None
+        self.menuBarC = None
+        self.pumpC = None
+        self.monitorC = None
 
     def initDefaultValue(self):
         self.setMode(self.hydroModel.MANUAL)
+        self.setRun(self.hydroModel.OFF)
 
     def initActionListener(self):
         self.appGUI.Bind(wx.EVT_CLOSE, self.onClose)
@@ -32,13 +36,25 @@ class HydroPiOnicsController:
         self.environmentalMonitorC.updateMode(mode)
 
 
-
+    def setRun(self,run):
+        self.hydroModel.setRunning(run)
+        if(run == self.hydroModel.ON):
+            pass
+        else:
+            pass
     def setElectronicRelayEnvironmentC(self, electronicRelayEnvironmentC):
         self.electronicRelayEnvironmentC = electronicRelayEnvironmentC
     def setEnvironmentalMonitorC(self, environmentalMonitorC):
         self.environmentalMonitorC = environmentalMonitorC
     def setMotorC(self, motorC):
         self.motorC = motorC
+    def setMenuBarC(self, menuBarC):
+        self.menuBarC = menuBarC
+    def setPumpC(self, pumpC):
+        self.pumpC = pumpC
+    def setMonitorC(self, monitorC):
+        self.monitorC = monitorC
+
 
 
 

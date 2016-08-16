@@ -26,6 +26,7 @@ class WorkspaceView(wx.Panel):
         self.initWorkspaceStaticText()
         self.initWorkspaceCheckboxes()
         self.initWorkspaceClock()
+        self.workspaceController = None
         
     
     def initWorkspaceCheckboxes(self):
@@ -58,6 +59,10 @@ class WorkspaceView(wx.Panel):
               parent=self, pos=wx.Point(790, 550),
               size=wx.Size(10, 15), style=0, useFixedWidthFont=False,
               value='12:00:00 AM')
+
+    def initController(self, controller):
+        self.workspaceController = controller
+
 
 
 

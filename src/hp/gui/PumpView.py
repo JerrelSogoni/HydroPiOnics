@@ -9,6 +9,7 @@ class PumpView:
         self.initPumpImages()
         self.initStaticPumpText()
         self.initPumpCheckbox()
+        self.pumpController = None
 
     def initPumpImages(self):
         self.mixToPlantPicture = wx.StaticBitmap(bitmap=wx.Bitmap(IMG_LOCATION + "dcwaterPumps.jpg",
@@ -83,6 +84,12 @@ class PumpView:
                                                parent=self.workspace, pos=wx.Point(192, 360),
                                                size=wx.Size(120, 15), style=0)
         self.drainSystemCheckBox.SetValue(False)
+
+    def initController(self, controller):
+        self.pumpController = controller
+
+    def initListeners(self):
+        self.mixToDrainCheckBox.Bind(wx.EVT_CHECKBOX, self.pumpController.processPlantDrainCheckbox )
 
 
 

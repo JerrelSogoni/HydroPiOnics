@@ -8,6 +8,7 @@ class ElectronicRelayEnviromentView:
         self.workspace = workpace
         self.cycleArray = []
         self.environmentalArray = []
+        self.electronicRelayC = None
         self.initElectronicImages()
         self.initStaticElectronicText()
         self.initRelayInputs()
@@ -202,6 +203,12 @@ class ElectronicRelayEnviromentView:
                                      size=wx.Size(56, 23), style=0)
         self.cycleOffLed.SetSelection(0)
         self.cycleArray.append(self.cycleOffLed)
+
+    def initController(self,controller):
+        self.electronicRelayC = controller
+
+    def initListeners(self):
+        pass
 
 
 

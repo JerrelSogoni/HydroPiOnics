@@ -20,6 +20,7 @@ class EvironmentalMonitorView:
         self.initStaticEnvironmentText()
         self.initSliders()
         self.initEnvironmentInput()
+        self.environmentalMonitorC = None
 
 
 
@@ -255,4 +256,7 @@ class EvironmentalMonitorView:
                                                                         pos=wx.Point(ENDINPUTXSTATIC, 555), size=wx.Size(STARTINPUTSIZEWIDTH, 25),
                                                                         style=0, value='')
         self.environmentInputArray.append(self.underwaterTemperatureRangeEndValue)
+
+    def initController(self, controller):
+        self.environmentalMonitorC = controller
 
