@@ -10,6 +10,8 @@ class ElectronicRelayEnviromentView:
         self.initStaticElectronicText()
         self.initRelayInputs()
         self.initRelayCheckBoxes()
+        self.cycleArray = []
+        self.environmentalArray = []
 
 
 
@@ -46,6 +48,7 @@ class ElectronicRelayEnviromentView:
                                                                       size=wx.Size(104, 15), style=0)
         self.cycleOffAirFIlterFanText.SetFont(wx.Font(9, wx.DECORATIVE, wx.NORMAL,
                                             wx.NORMAL, False, u'Showcard Gothic'))
+        self.cycleArray.append(self.cycleOffAirFIlterFanText)
 
         self.cycleOnAirFIlterFanText = wx.lib.stattext.GenStaticText(ID=wx.ID_ANY,
                                                                      label=u'Cycle On', name=u'cycleOnAirFIlterFanText',
@@ -53,6 +56,7 @@ class ElectronicRelayEnviromentView:
                                                                      size=wx.Size(104, 15), style=0)
         self.cycleOnAirFIlterFanText.SetFont(wx.Font(9, wx.DECORATIVE, wx.NORMAL,
                                             wx.NORMAL, False, u'Showcard Gothic'))
+        self.cycleArray.append(self.cycleOnAirFIlterFanText)
 
 
         self.cycleOnLedText = wx.lib.stattext.GenStaticText(ID=wx.ID_ANY,
@@ -61,6 +65,7 @@ class ElectronicRelayEnviromentView:
                                                             size=wx.Size(104, 15), style=0)
         self.cycleOnLedText.SetFont(wx.Font(9, wx.DECORATIVE, wx.NORMAL,
                                             wx.NORMAL, False, u'Showcard Gothic'))
+        self.cycleArray.append(self.cycleOnLedText)
 
         self.cycleOffLedText = wx.lib.stattext.GenStaticText(ID=wx.ID_ANY,
                                                              label=u'Cycle Off', name=u'cycleOffLedText',
@@ -68,6 +73,7 @@ class ElectronicRelayEnviromentView:
                                                              size=wx.Size(104, 15), style=0)
         self.cycleOffLedText.SetFont(wx.Font(9, wx.DECORATIVE, wx.NORMAL,
                                             wx.NORMAL, False, u'Showcard Gothic'))
+        self.cycleArray.append(self.cycleOffLedText)
         self.underwaterTitle = wx.lib.stattext.GenStaticText(ID=wx.ID_ANY,
                                                                label=u'Underwater Heater', name=u'underwaterHeaterTitle',
                                                                parent=self.workspace, pos=wx.Point(150, 32), size=wx.Size(104,
@@ -111,29 +117,35 @@ class ElectronicRelayEnviromentView:
                                                 parent=self.workspace, pos=wx.Point(472, 336),
                                                 size=wx.Size(78, 15), style=0)
         self.airFilterFanCheckBox.SetValue(False)
+        self.cycleArray.append(self.airFilterFanCheckBox)
+
 
         self.ledCheckBox = wx.CheckBox(id=wx.ID_ANY,
                                        label=u'On/Off', name=u'ledCheckBox', parent=self.workspace,
                                        pos=wx.Point(472, 608), size=wx.Size(78, 15), style=0)
         self.ledCheckBox.SetValue(False)
+        self.cycleArray.append(self.ledCheckBox)
 
         self.humidifierCheckBox = wx.CheckBox(id=wx.ID_ANY,
                                               label=u'On/Off', name=u'humidifierCheckBox',
                                               parent=self.workspace, pos=wx.Point(472, 440),
                                               size=wx.Size(78, 15), style=0)
         self.humidifierCheckBox.SetValue(False)
+        self.environmentalArray.append(self.humidifierCheckBox)
 
         self.airHeaterCheckBox = wx.CheckBox(id=wx.ID_ANY,
                                              label=u'On/Off', name=u'airHeaterCheckBox',
                                              parent=self.workspace, pos=wx.Point(472, 528),
                                              size=wx.Size(78, 15), style=0)
         self.airHeaterCheckBox.SetValue(False)
+        self.environmentalArray.append(self.airHeaterCheckBox)
 
         self.underwaterHeaterCheckBox = wx.CheckBox(id=wx.ID_ANY,
               label=u'On/Off', name=u'waterAirCheckBox',
               parent=self.workspace, pos=wx.Point(250, 64), size=wx.Size(78,
               15), style=0)
         self.underwaterHeaterCheckBox.SetValue(False)
+        self.environmentalArray.append(self.underwaterHeaterCheckBox)
 
     def initRelayInputs(self):
 
@@ -142,34 +154,39 @@ class ElectronicRelayEnviromentView:
                                                                         parent=self.workspace,
                                                                         pos=wx.Point(560, 336), size=wx.Size(48, 23),
                                                                         style=0, value='')
+        self.cycleArray.append(self.airFilterFanCycleOnValue)
 
         self.airFilterFanCycleOffValue = wx.lib.masked.textctrl.TextCtrl(id=wx.ID_ANY,
                                                                          name=u'airFilterFanCycleOffValue',
                                                                          parent=self.workspace,
                                                                          pos=wx.Point(688, 336), size=wx.Size(48, 23),
                                                                          style=0, value='')
-
+        self.cycleArray.append(self.airFilterFanCycleOffValue)
         self.ledCycleOnValue = wx.lib.masked.textctrl.TextCtrl(id=wx.ID_ANY,
                                                                name=u'ledCycleOnValue', parent=self.workspace,
                                                                pos=wx.Point(560, 603), size=wx.Size(48, 23), style=0,
                                                                value='')
+        self.cycleArray.append(self.ledCycleOnValue)
 
         self.ledCycleOffValue = wx.lib.masked.textctrl.TextCtrl(id=wx.ID_ANY,
                                                                 name=u'ledCycleOffValue', parent=self.workspace,
                                                                 pos=wx.Point(696, 603), size=wx.Size(48, 23), style=0,
                                                                 value='')
+        self.cycleArray.append(self.ledCycleOffValue)
 
         self.cycleOnAirFIlterFan = wx.Choice(choices=['s', 'm', 'h'],
                                              id=wx.ID_ANY,
                                              name=u'cycleOnAirFIlterFan', parent=self.workspace,
                                              pos=wx.Point(608, 336), size=wx.Size(56, 23), style=0)
         self.cycleOnAirFIlterFan.SetSelection(0)
+        self.cycleArray.append(self.cycleOnAirFIlterFan)
 
         self.cycleOffAirFilterFan = wx.Choice(choices=['s', 'm', 'h'],
                                               id=wx.ID_ANY,
                                               name=u'cycleOffAirFilterFan', parent=self.workspace,
                                               pos=wx.Point(736, 336), size=wx.Size(56, 23), style=0)
         self.cycleOffAirFilterFan.SetSelection(0)
+        self.cycleArray.append(self.cycleOffAirFilterFan)
 
         self.cycleOnLed = wx.Choice(choices=['s', 'm', 'h'],
                                     id=wx.ID_ANY, name=u'cycleOnLed',
@@ -177,12 +194,14 @@ class ElectronicRelayEnviromentView:
                                     size=wx.Size(56, 23), style=0)
         self.cycleOnLed.SetStringSelection(u'')
         self.cycleOnLed.SetSelection(0)
+        self.cycleArray.append(self.cycleOnLed)
 
         self.cycleOffLed = wx.Choice(choices=['s', 'm', 'h'],
                                      id=wx.ID_ANY, name=u'cycleOffLed',
                                      parent=self.workspace, pos=wx.Point(744, 603),
                                      size=wx.Size(56, 23), style=0)
         self.cycleOffLed.SetSelection(0)
+        self.cycleArray.append(self.cycleOffLed)
 
 
 

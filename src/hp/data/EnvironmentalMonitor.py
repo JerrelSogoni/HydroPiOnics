@@ -1,7 +1,12 @@
 
 class EnvironmentalMonitor:
-    AIRHEATERPIN = 16
-    WATERHEATERPIN = 19
-    HUMIDIFIERPIN = 20
+
     def __init__(self):
-        pass
+        self.humidityStartValue = None
+        self.humidityEndValue = None
+        self.phStartValue = None
+        self.phEndValue = None
+        self.airTempStartValue = None
+        self.airTempEndValue = None
+        self.underwaterTempStartValue = None
+        self.underwaterTempEndValue = None

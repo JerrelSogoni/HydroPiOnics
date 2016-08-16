@@ -4,4 +4,6 @@ class Pump:
     PLANTDRAINPIN = 6
     RESDRAINPIN = 12
     def __init__(self):
-        pass
+        self.isResToPlantOn = None
+        self.isPlantDrainOn = None
+        self.isResDrainOn = None

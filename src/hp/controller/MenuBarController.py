@@ -22,7 +22,6 @@ class MenuBarController:
         item = self.menuBarView.FindItemById(event.GetId())
         mode = item.GetText()
         self.HydroController.setMode(mode)
-        return mode
 
 
 

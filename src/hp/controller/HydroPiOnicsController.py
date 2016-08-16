@@ -6,7 +6,9 @@ class HydroPiOnicsController:
         self.hydroView = hydroView
         self.appGUI = appGUI
         self.initActionListener()
-
+        self.electronicRelayEnvironmentC = None
+        self.environmentalMonitorC = None
+        self.motorC = None
 
     def initActionListener(self):
         self.appGUI.Bind(wx.EVT_CLOSE, self.onClose)
@@ -22,4 +24,19 @@ class HydroPiOnicsController:
             event.StopPropagation()
     def setMode(self,mode):
         self.hydroModel.setMode(mode)
+        self.motorC.updateMode(mode)
+        self.electronicRelayEnvironmentC.updateMode(mode)
+        self.environmentalMonitorC.updateMode(mode)
+
+
+
+    def setElectronicRelayEnvironment(self, electronicRelayEnvironmentC):
+        self.electronicRelayEnvironment = electronicRelayEnvironmentC
+    def setEnvironmentalMonitorC(self, environmentalMonitorC):
+        self.environmentalMonitorC = environmentalMonitorC
+    def setMotorC(self, motorC):
+        self.motorC = motorC
+
+
+
 

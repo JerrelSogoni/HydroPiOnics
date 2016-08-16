@@ -9,68 +9,77 @@ class MotorView:
         self.initStaticMotorText()
         self.initMotorCheckBoxes()
         self.initMotorInput()
+        self.cycleArray = []
     def initMotorInput(self):
         self.exaustFanCycleOnValue = wx.lib.masked.textctrl.TextCtrl(id=wx.ID_ANY,
               name=u'exaustFanCycleOnValue', parent=self.workspace,
               pos=wx.Point(560, 56), size=wx.Size(48, 23), style=0, value='')
+        self.cycleArray.append(self.exaustFanCycleOnValue)
 
         self.exaustFanCycleOffValue = wx.lib.masked.textctrl.TextCtrl(id=wx.ID_ANY,
               name=u'exaustFanCycleOffValue', parent=self.workspace,
               pos=wx.Point(688, 56), size=wx.Size(48, 23), style=0, value='')
 
-
+        self.cycleArray.append(self.exaustFanCycleOffValue)
         self.ventFanCycleOnValue = wx.lib.masked.textctrl.TextCtrl(id=wx.ID_ANY,
               name=u'ventFanCycleOnValue', parent=self.workspace,
               pos=wx.Point(560, 144), size=wx.Size(48, 23), style=0, value='')
+        self.cycleArray.append(self.ventFanCycleOnValue)
 
         self.ventFanCycleOffValue = wx.lib.masked.textctrl.TextCtrl(id=wx.ID_ANY,
               name=u'ventFanCycleOffValue', parent=self.workspace,
               pos=wx.Point(688, 144), size=wx.Size(48, 23), style=0, value='')
-
+        self.cycleArray.append(self.ventFanCycleOffValue)
 
         self.intakeFanCycleOnValue = wx.lib.masked.textctrl.TextCtrl(id=wx.ID_ANY,
               name=u'intakeFanCycleOnValue', parent=self.workspace,
               pos=wx.Point(560, 240), size=wx.Size(48, 23), style=0, value='')
-
+        self.cycleArray.append(self.intakeFanCycleOnValue)
         self.intakeFanCycleOffValue = wx.lib.masked.textctrl.TextCtrl(id=wx.ID_ANY,
               name=u'intakeFanCycleOffValue', parent=self.workspace,
               pos=wx.Point(688, 240), size=wx.Size(48, 23), style=0, value='')
-
+        self.cycleArray.append(self.intakeFanCycleOffValue)
         self.cycleOffExaustFan = wx.Choice(choices=['s', 'm', 'h'],
               id=wx.ID_ANY, name=u'cycleOffExaustFan',
               parent=self.workspace, pos=wx.Point(736, 56),
               size=wx.Size(56, 23), style=0)
         self.cycleOffExaustFan.SetSelection(0)
+        self.cycleArray.append(self.cycleOffExaustFan)
 
         self.cycleOnVentFan = wx.Choice(choices=['s', 'm', 'h'],
               id=wx.ID_ANY, name=u'cycleOnVentFan',
               parent=self.workspace, pos=wx.Point(608, 144),
               size=wx.Size(56, 23), style=0)
         self.cycleOnVentFan.SetSelection(0)
+        self.cycleArray.append(self.cycleOnVentFan)
 
         self.cycleOffVentFan = wx.Choice(choices=['s', 'm', 'h'],
               id=wx.ID_ANY, name=u'cycleOffVentFan',
               parent=self.workspace, pos=wx.Point(736, 144),
               size=wx.Size(56, 23), style=0)
         self.cycleOffVentFan.SetSelection(0)
+        self.cycleArray.append(self.cycleOffVentFan)
 
         self.cycleOnIntakeFan = wx.Choice(choices=['s', 'm', 'h'],
               id=wx.ID_ANY, name=u'cycleOnIntakeFan',
               parent=self.workspace, pos=wx.Point(608, 240),
               size=wx.Size(56, 23), style=0)
         self.cycleOnIntakeFan.SetSelection(0)
+        self.cycleArray.append(self.cycleOnIntakeFan)
 
         self.cycleOffIntakeFan = wx.Choice(choices=['s', 'm', 'h'],
               id=wx.ID_ANY, name=u'cycleOffIntakeFan',
               parent=self.workspace, pos=wx.Point(736, 240),
               size=wx.Size(56, 23), style=0)
         self.cycleOffIntakeFan.SetSelection(0)
+        self.cycleArray.append(self.cycleOffIntakeFan)
         self.cycleOnExaustFan = wx.Choice(choices=['s', 'm', 'h'],
               id=wx.ID_ANY, name=u'cycleOnExaustFan',
               parent=self.workspace, pos=wx.Point(608, 56),
               size=wx.Size(56, 23), style=0)
         self.cycleOnExaustFan.SetStringSelection(u's')
         self.cycleOnExaustFan.SetSelection(0)
+        self.cycleArray.append(self.cycleOnExaustFan)
 
     def initMotorImages(self):
         self.ventFanPicture = wx.StaticBitmap(bitmap=wx.Bitmap(IMG_LOCATION + "ventFan.jpg",
@@ -136,12 +145,14 @@ class MotorView:
                                                                   size=wx.Size(104, 15), style=0)
         self.exaustFanCycleOnText.SetFont(wx.Font(8, wx.DECORATIVE, wx.NORMAL,
                                             wx.NORMAL, False, u'Showcard Gothic'))
+        self.cycleArray.append(self.exaustFanCycleOnText)
         self.exaustFanCycleOffText = wx.lib.stattext.GenStaticText(ID=wx.ID_ANY,
                                                                    label=u'Cycle Off', name='exaustFanCycleOffText',
                                                                    parent=self.workspace, pos=wx.Point(688, 40),
                                                                    size=wx.Size(104, 15), style=0)
         self.exaustFanCycleOffText.SetFont(wx.Font(8, wx.DECORATIVE, wx.NORMAL,
                                                   wx.NORMAL, False, u'Showcard Gothic'))
+        self.cycleArray.append(self.exaustFanCycleOffText)
 
         self.cycleOnVentFanText = wx.lib.stattext.GenStaticText(ID=wx.ID_ANY,
                                                                 label=u'Cycle On', name=u'cycleOnVentFanText',
@@ -149,6 +160,7 @@ class MotorView:
                                                                 size=wx.Size(104, 15), style=0)
         self.cycleOnVentFanText.SetFont(wx.Font(8, wx.DECORATIVE, wx.NORMAL,
                                                   wx.NORMAL, False, u'Showcard Gothic'))
+        self.cycleArray.append(self.cycleOnVentFanText)
 
         self.cycleOffVentFanText = wx.lib.stattext.GenStaticText(ID=wx.ID_ANY,
                                                                  label=u'Cycle Off', name=u'cycleOffVentFanText',
@@ -156,19 +168,23 @@ class MotorView:
                                                                  size=wx.Size(104, 15), style=0)
         self.cycleOffVentFanText.SetFont(wx.Font(8, wx.DECORATIVE, wx.NORMAL,
                                                   wx.NORMAL, False, u'Showcard Gothic'))
+        self.cycleArray.append(self.cycleOffVentFanText)
         self.cycleOnIntakeFanText = wx.lib.stattext.GenStaticText(ID=wx.ID_ANY,
                                                                   label=u'Cycle On', name=u'cycleOnIntakeFanText',
                                                                   parent=self.workspace, pos=wx.Point(560, 224),
                                                                   size=wx.Size(104, 15), style=0)
         self.cycleOnIntakeFanText.SetFont(wx.Font(8, wx.DECORATIVE, wx.NORMAL,
                                                   wx.NORMAL, False, u'Showcard Gothic'))
+        self.cycleArray.append(self.cycleOnIntakeFanText)
 
         self.cycleOffIntakeFanText = wx.lib.stattext.GenStaticText(ID=wx.ID_ANY,
                                                                    label=u'Cycle Off', name=u'cycleOffIntakeFanText',
                                                                    parent=self.workspace, pos=wx.Point(688, 224),
                                                                    size=wx.Size(104, 15), style=0)
+
         self.cycleOffIntakeFanText.SetFont(wx.Font(8, wx.DECORATIVE, wx.NORMAL,
                                                   wx.NORMAL, False, u'Showcard Gothic'))
+        self.cycleArray.append(self.cycleOffIntakeFanText)
 
         
     def initMotorCheckBoxes(self):
@@ -178,11 +194,13 @@ class MotorView:
               parent=self.workspace, pos=wx.Point(472, 56),
               size=wx.Size(78, 15), style=0)
         self.exhaustFanCheckBox.SetValue(False)
+        self.cycleArray.append(self.exhaustFanCheckBox)
         self.ventFanCheckBox = wx.CheckBox(id=wx.ID_ANY,
               label=u'On/Off', name=u'ventFanCheckBox',
               parent=self.workspace, pos=wx.Point(472, 152),
               size=wx.Size(78, 15), style=0)
         self.ventFanCheckBox.SetValue(False)
+        self.cycleArray.append(self.ventFanCheckBox)
 
         self.waterAirCheckBox = wx.CheckBox(id=wx.ID_ANY,
               label=u'On/Off', name=u'waterAirCheckBox',
@@ -194,4 +212,5 @@ class MotorView:
               parent=self.workspace, pos=wx.Point(472, 248),
               size=wx.Size(78, 15), style=0)
         self.intakeFanCheckBox.SetValue(False)
+        self.cycleArray.append(self.intakeFanCheckBox)
 
