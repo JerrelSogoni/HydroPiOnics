@@ -44,21 +44,30 @@ class ElectronicRelayEnviromentView:
                                                                       name=u'cycleOffAirFIlterFanText',
                                                                       parent=self.workspace, pos=wx.Point(688, 320),
                                                                       size=wx.Size(104, 15), style=0)
+        self.cycleOffAirFIlterFanText.SetFont(wx.Font(9, wx.DECORATIVE, wx.NORMAL,
+                                            wx.NORMAL, False, u'Showcard Gothic'))
 
         self.cycleOnAirFIlterFanText = wx.lib.stattext.GenStaticText(ID=wx.ID_ANY,
                                                                      label=u'Cycle On', name=u'cycleOnAirFIlterFanText',
                                                                      parent=self.workspace, pos=wx.Point(560, 320),
                                                                      size=wx.Size(104, 15), style=0)
+        self.cycleOnAirFIlterFanText.SetFont(wx.Font(9, wx.DECORATIVE, wx.NORMAL,
+                                            wx.NORMAL, False, u'Showcard Gothic'))
+
 
         self.cycleOnLedText = wx.lib.stattext.GenStaticText(ID=wx.ID_ANY,
                                                             label=u'Cycle On', name=u'cycleOnLedText',
                                                             parent=self.workspace, pos=wx.Point(560, 587),
                                                             size=wx.Size(104, 15), style=0)
+        self.cycleOnLedText.SetFont(wx.Font(9, wx.DECORATIVE, wx.NORMAL,
+                                            wx.NORMAL, False, u'Showcard Gothic'))
 
         self.cycleOffLedText = wx.lib.stattext.GenStaticText(ID=wx.ID_ANY,
                                                              label=u'Cycle Off', name=u'cycleOffLedText',
                                                              parent=self.workspace, pos=wx.Point(696, 587),
                                                              size=wx.Size(104, 15), style=0)
+        self.cycleOffLedText.SetFont(wx.Font(9, wx.DECORATIVE, wx.NORMAL,
+                                            wx.NORMAL, False, u'Showcard Gothic'))
         self.underwaterTitle = wx.lib.stattext.GenStaticText(ID=wx.ID_ANY,
                                                                label=u'Underwater Heater', name=u'underwaterHeaterTitle',
                                                                parent=self.workspace, pos=wx.Point(150, 32), size=wx.Size(104,
