@@ -5,7 +5,7 @@ IMG_LOCATION = WorkspaceView.IMG_LOCATION
 
 class ElectronicRelayEnviromentView:
     def __init__(self,workpace):
-        self.workspace
+        self.workspace = workpace
         self.initElectronicImages()
         self.initStaticElectronicText()
         self.initRelayInputs()
