@@ -8,7 +8,7 @@ class HydroPiOnicsView:
     def initFrame(self, appGUI):
         # init frame
         wx.Frame.__init__(self.appGUI, id= wx.ID_ANY, name=u'HydroPiOnics',
-                          parent=None, pos=wx.Point(636, 99), size=wx.Size(900, 700),
+                          parent=None, pos=wx.Point(636, 0), size=wx.Size(900, 700),
                           style=wx.DEFAULT_FRAME_STYLE, title=u'HydroPiOnics')
 
         self.appGUI.SetClientSize(wx.Size(900, 700))
