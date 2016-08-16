@@ -32,7 +32,7 @@ class WorkspaceView(wx.Panel):
         self.delayStartCheckBox = wx.CheckBox(id=wx.ID_ANY,
               label=u'Delay Start', name=u'delayStartCheckBox',
               parent=self, pos=wx.Point(800, 530),
-              size=wx.Size(50, 20), style=0)
+              size=wx.Size(100, 20), style=0)
         self.delayStartCheckBox.SetValue(False)
 
 
