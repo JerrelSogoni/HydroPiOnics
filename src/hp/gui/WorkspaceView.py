@@ -31,7 +31,7 @@ class WorkspaceView(wx.Panel):
     def initWorkspaceCheckboxes(self):
         self.delayStartCheckBox = wx.CheckBox(id=wx.ID_ANY,
               label=u'Delay Start', name=u'delayStartCheckBox',
-              parent=self, pos=wx.Point(800, 530),
+              parent=self, pos=wx.Point(795, 530),
               size=wx.Size(100, 20), style=0)
         self.delayStartCheckBox.SetValue(False)
 
@@ -55,7 +55,7 @@ class WorkspaceView(wx.Panel):
         self.delayStartTime = wx.lib.masked.timectrl.TimeCtrl(display_seconds=True,
               fmt24hr=False, id=wx.ID_ANY,
               name=u'delayStartTime', oob_color=wx.NamedColour('Yellow'),
-              parent=self, pos=wx.Point(800, 580),
+              parent=self, pos=wx.Point(790, 570),
               size=wx.Size(50, 15), style=0, useFixedWidthFont=True,
               value='12:00:00 AM')
 
