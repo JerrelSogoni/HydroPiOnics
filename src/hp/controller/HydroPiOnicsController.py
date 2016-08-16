@@ -9,6 +9,8 @@ class HydroPiOnicsController:
         self.electronicRelayEnvironmentC = None
         self.environmentalMonitorC = None
         self.motorC = None
+
+    def initDefaultValue(self):
         self.setMode(self.hydroModel.MANUAL)
 
     def initActionListener(self):
