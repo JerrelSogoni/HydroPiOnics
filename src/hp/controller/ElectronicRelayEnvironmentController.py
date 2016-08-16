@@ -17,7 +17,6 @@ class ElectronicRelayEnvironmentController:
         self.electronicRelayModel.isHumidifierOn = checkboxValue()
 
     def updateMode(self,mode):
-        print mode
         if(mode == self.appData.ENVIRONMENTAL):
             self.cycleOrEnvironmentalMode(True, True)
         elif(mode == self.appData.TIMER):
