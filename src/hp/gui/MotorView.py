@@ -6,6 +6,7 @@ class MotorView:
     def __init__(self, workspace):
         self.workspace = workspace
         self.cycleArray = []
+        self.manualArray = []
         self.initMotorImages()
         self.initStaticMotorText()
         self.initMotorCheckBoxes()
@@ -194,24 +195,24 @@ class MotorView:
               label=u'On/Off', name=u'exhaustFanCheckBox',
               parent=self.workspace, pos=wx.Point(472, 56),
               size=wx.Size(78, 15), style=0)
-        self.exhaustFanCheckBox.SetValue(False)
+        self.manualArray.SetValue(False)
         self.cycleArray.append(self.exhaustFanCheckBox)
         self.ventFanCheckBox = wx.CheckBox(id=wx.ID_ANY,
               label=u'On/Off', name=u'ventFanCheckBox',
               parent=self.workspace, pos=wx.Point(472, 152),
               size=wx.Size(78, 15), style=0)
         self.ventFanCheckBox.SetValue(False)
-        self.cycleArray.append(self.ventFanCheckBox)
+        self.manualArray.append(self.ventFanCheckBox)
 
         self.waterAirCheckBox = wx.CheckBox(id=wx.ID_ANY,
               label=u'On/Off', name=u'waterAirCheckBox',
               parent=self.workspace, pos=wx.Point(96, 64), size=wx.Size(78,
               15), style=0)
-        self.waterAirCheckBox.SetValue(False)
+        self.manualArray.SetValue(False)
         self.intakeFanCheckBox = wx.CheckBox(id=wx.ID_ANY,
               label=u'On/Off', name=u'intakeFanCheckBox',
               parent=self.workspace, pos=wx.Point(472, 248),
               size=wx.Size(78, 15), style=0)
         self.intakeFanCheckBox.SetValue(False)
-        self.cycleArray.append(self.intakeFanCheckBox)
+        self.manualArray(self.intakeFanCheckBox)
 

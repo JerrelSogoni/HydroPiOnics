@@ -10,13 +10,18 @@ class MotorController:
 
     def updateMode(self, mode):
         if(mode != self.appData.MANUAL):
-            self.cycleMode(True)
+            self.environmentManual(True,False)
         else:
-            self.cycleMode(False)
+            self.environmentManual(False,True)
 
-    def cycleMode(self, bool):
+    def environmentManual(self, cycle, manual):
         for cycles in self.motorView.cycleArray:
-            if(bool):
+            if(cycle):
                 cycles.Show(True)
             else:
                 cycles.Hide()
+        for manual in self.motorView.manualArray:
+            if(manual):
+                manual.Show(True)
+            else:
+                manual.Hide()
