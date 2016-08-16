@@ -33,7 +33,7 @@ class ElectronicRelayEnvironmentController:
                 cycles.Hide()
         for environment in self.electronicRelayView.environmentalArray:
             if(environment):
-                environment.Hide()
-            else:
                 environment.Show(True)
+            else:
+                environment.Hide()
 
