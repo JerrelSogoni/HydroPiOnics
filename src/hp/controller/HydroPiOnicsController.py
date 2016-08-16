@@ -5,7 +5,6 @@ class HydroPiOnicsController:
         self.hydroModel = hydroModel
         self.hydroView = hydroView
         self.appGUI = appGUI
-        self.initDefaultValue()
         self.initActionListener()
         self.electronicRelayEnvironmentC = None
         self.environmentalMonitorC = None
