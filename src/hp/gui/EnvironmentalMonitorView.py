@@ -30,6 +30,7 @@ class EvironmentalMonitorView:
                                                   parent=self.workspace, pos=wx.Point(STARTSLIDERX, 470),
                                                   size=wx.Size(SLIDERSTARTWIDTH, 24), style=wx.SL_HORIZONTAL, value=0)
         self.humidityRangeStartSlider.SetPageSize(1)
+        self.sliderArray.append(self.humidityRangeStartSlider)
         self.humidityRangeEndSlider = wx.Slider(id=wx.ID_ANY,
                                                 maxValue=100, minValue=0, name=u'humidityRangeEndSlider',
                                                 parent=self.workspace, pos=wx.Point(STARTSLIDERX, 490),

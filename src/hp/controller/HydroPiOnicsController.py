@@ -5,10 +5,12 @@ class HydroPiOnicsController:
         self.hydroModel = hydroModel
         self.hydroView = hydroView
         self.appGUI = appGUI
+        self.initDefaultValue()
         self.initActionListener()
         self.electronicRelayEnvironmentC = None
         self.environmentalMonitorC = None
         self.motorC = None
+        self.setMode(self.hydroModel.MANUAL)
 
     def initActionListener(self):
         self.appGUI.Bind(wx.EVT_CLOSE, self.onClose)
