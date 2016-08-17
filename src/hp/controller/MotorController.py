@@ -40,8 +40,7 @@ class MotorController:
         cycleOn = event.GetEventObject()
         cycleOnValue = cycleOn.GetValue()
         if(cycleOnValue.isdigit()):
-            self.motor.exhaustMotorCycleOn = cycleOnValue
-            print cycleOnValue
+            self.motor.exhaustMotorCycleOn = int(cycleOnValue)
         else:
             self.motor.exhaustMotorCycleOn = 0
             cycleOn.SetValue("0")
@@ -54,7 +53,7 @@ class MotorController:
         cycleOff = event.GetEventObject()
         cycleOffValue = cycleOff.GetValue()
         if(cycleOffValue.isdigit()):
-            self.motor.exhaustMotorCycleOff = cycleOffValue
+            self.motor.exhaustMotorCycleOff = int(cycleOffValue)
             print cycleOffValue
         else:
             self.motor.exhaustMotorCycleOff = 0
@@ -92,7 +91,7 @@ class MotorController:
         cycleOn = event.GetEventObject()
         cycleOnValue = cycleOn.GetValue()
         if(cycleOnValue.isdigit()):
-            self.motor.ventMotorCycleOn = cycleOnValue
+            self.motor.ventMotorCycleOn = int(cycleOnValue)
         else:
             self.motor.ventMotorCycleOn = 0
             cycleOn.SetValue("0")
@@ -104,7 +103,7 @@ class MotorController:
         cycleOff = event.GetEventObject()
         cycleOffValue = cycleOff.GetValue()
         if (cycleOffValue.isdigit()):
-            self.motor.ventMotorCycleOff = cycleOffValue
+            self.motor.ventMotorCycleOff = int(cycleOffValue)
         else:
             self.motor.ventMotorCycleOff = 0
             cycleOff.SetValue("0")
@@ -136,7 +135,7 @@ class MotorController:
         cycleOn = event.GetEventObject()
         cycleOnValue = cycleOn.GetValue()
         if(cycleOnValue.isdigit()):
-            self.motor.intakeMotorCycleOn = cycleOnValue
+            self.motor.intakeMotorCycleOn = int(cycleOnValue)
         else:
             self.motor.intakeMotorCycleOn = 0
             cycleOn.SetValue("0")
@@ -146,7 +145,7 @@ class MotorController:
         cycleOff = event.GetEventObject()
         cycleOffValue = cycleOff.GetValue()
         if(cycleOffValue.isdigit()):
-            self.motor.intakeMotorCycleOff = cycleOffValue
+            self.motor.intakeMotorCycleOff = int(cycleOffValue)
         else:
             self.motor.intakeMotorCycleOff = 0
             cycleOff.SetValue("0")
