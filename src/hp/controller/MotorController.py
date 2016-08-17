@@ -5,12 +5,10 @@ class MotorController:
         self.motorView = motorView
         self.motor = motor
         self.appData = appData
-        self.threadlist = []
         self.ventFanThreading = None
         self.intakeFanThreading = None
         self.exhaustFanThreading = None
         self.waterAirThreading = None
-        self.threadlist.append(self.exhastFanThreading, self.intakeFanThreading, self.exhaustFanThreading,   self.waterAirThreading)
 
     def updateMode(self, mode):
         if(mode != self.appData.MANUAL):
