@@ -247,7 +247,7 @@ class MotorController:
                         None, None, Motor.EXHAUSTMOTOR)
     def startIntake(self):
         self.startMotor(self.motor.intakeFan, self.motor.isIntakeMotorOn,
-                        self.intakeFanThreadingFanThreading, self.appData.Mode,
+                        self.intakeFanThreading, self.appData.Mode,
                         None, None, Motor.INTAKEMOTOR)
     def startVent(self):
         self.startMotor(self.motor.ventFan, self.motor.isVentMotorOn,
