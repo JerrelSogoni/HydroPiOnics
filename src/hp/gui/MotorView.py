@@ -16,31 +16,31 @@ class MotorView:
     def initMotorInput(self):
         self.exaustFanCycleOnValue = wx.lib.masked.textctrl.TextCtrl(id=wx.ID_ANY,
               name=u'exaustFanCycleOnValue', parent=self.workspace,
-              pos=wx.Point(560, 56), size=wx.Size(48, 23), style=0, value='0')
+              pos=wx.Point(560, 56), size=wx.Size(48, 23), style= wx.TE_PROCESS_ENTER, value='0')
         self.cycleArray.append(self.exaustFanCycleOnValue)
 
         self.exaustFanCycleOffValue = wx.lib.masked.textctrl.TextCtrl(id=wx.ID_ANY,
               name=u'exaustFanCycleOffValue', parent=self.workspace,
-              pos=wx.Point(688, 56), size=wx.Size(48, 23), style=0, value='0')
+              pos=wx.Point(688, 56), size=wx.Size(48, 23), style= wx.TE_PROCESS_ENTER, value='0')
 
         self.cycleArray.append(self.exaustFanCycleOffValue)
         self.ventFanCycleOnValue = wx.lib.masked.textctrl.TextCtrl(id=wx.ID_ANY,
               name=u'ventFanCycleOnValue', parent=self.workspace,
-              pos=wx.Point(560, 144), size=wx.Size(48, 23), style=0, value='0')
+              pos=wx.Point(560, 144), size=wx.Size(48, 23), style= wx.TE_PROCESS_ENTER, value='0')
         self.cycleArray.append(self.ventFanCycleOnValue)
 
         self.ventFanCycleOffValue = wx.lib.masked.textctrl.TextCtrl(id=wx.ID_ANY,
               name=u'ventFanCycleOffValue', parent=self.workspace,
-              pos=wx.Point(688, 144), size=wx.Size(48, 23), style=0, value='0')
+              pos=wx.Point(688, 144), size=wx.Size(48, 23), style= wx.TE_PROCESS_ENTER, value='0')
         self.cycleArray.append(self.ventFanCycleOffValue)
 
         self.intakeFanCycleOnValue = wx.lib.masked.textctrl.TextCtrl(id=wx.ID_ANY,
               name=u'intakeFanCycleOnValue', parent=self.workspace,
-              pos=wx.Point(560, 240), size=wx.Size(48, 23), style=0, value='0')
+              pos=wx.Point(560, 240), size=wx.Size(48, 23), style= wx.TE_PROCESS_ENTER, value='0')
         self.cycleArray.append(self.intakeFanCycleOnValue)
         self.intakeFanCycleOffValue = wx.lib.masked.textctrl.TextCtrl(id=wx.ID_ANY,
               name=u'intakeFanCycleOffValue', parent=self.workspace,
-              pos=wx.Point(688, 240), size=wx.Size(48, 23), style=0, value='0')
+              pos=wx.Point(688, 240), size=wx.Size(48, 23), style= wx.TE_PROCESS_ENTER, value='0')
         self.cycleArray.append(self.intakeFanCycleOffValue)
         self.cycleOffExaustFan = wx.Choice(choices=['s', 'm', 'h'],
               id=wx.ID_ANY, name=u'cycleOffExaustFan',
