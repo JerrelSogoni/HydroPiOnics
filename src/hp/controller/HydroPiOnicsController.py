@@ -79,6 +79,7 @@ class HydroPiOnicsController:
 
 
     def checkMotors(self):
+        print "working mtor"
         if(self.hydroModel.Mode == self.hydroModel.MANUAL):
             if(self.motorC.motor.isExaustMotorOn):
                 self.motorC.startExhaust()
