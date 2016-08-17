@@ -74,7 +74,7 @@ class HydroPiOnicsController:
 
 
     def checkMotors(self):
-        if(self.hydroModel.Mode == self.hydroModel.Manual):
+        if(self.hydroModel.Mode == self.hydroModel.MANUAL):
             if(self.motorC.motor.isExaustMotorOn):
                 self.motorC.startExhaust()
             if(self.motorC.motor.isVentMotorOn):
