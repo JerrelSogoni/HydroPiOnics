@@ -24,7 +24,7 @@ class PumpPlantToResThreading(threading.Thread):
             print "Error in PLant Drain"
             self.die()
 
-    def die(self, bool):
+    def die(self):
         self.isDead = True
         print "Plant to Res Stopped"
         # GPIO.output(self.pin, GPIO.HIGH)

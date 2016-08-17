@@ -25,7 +25,7 @@ class PumpResToDrainThreading(threading.Thread):
             print "Error in ResToDrain"
             self.die()
 
-    def die(self, bool):
+    def die(self):
         self.isDead = True
         print "Res to Drain Stopped"
         # GPIO.output(self.pin, GPIO.HIGH)
