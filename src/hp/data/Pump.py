@@ -7,3 +7,4 @@ class Pump:
         self.isResToPlantOn = None
         self.isPlantDrainOn = None
         self.isResDrainOn = None
+        self.isDrainingOn = None

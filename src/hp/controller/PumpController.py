@@ -1,21 +1,103 @@
-
+from hpThreadingClasses.PumpDrainOutThreading import PumpDrainOutThreading
+from hpThreadingClasses.PumpResToDrainThreading import PumpResToDrainThreading
+from hpThreadingClasses.PumpPlantToResThreading import PumpPlantToResThreading
+from hpThreadingClasses.PumpResToPlantThreading import PumpResToPlantThreading
 class PumpController:
     def __init__(self, pumpView, pumpData, appData):
         self.pumpView = pumpView
         self.pumpData = pumpData
         self.appData = appData
+        self.pumpResToPlant = None
+        self.pumpResToDrain = None
+        self.pumpPlantToRes = None
+        self.pumpDrainOut = None
+
     def processResToPlantCheckbox(self, event):
         check = event.GetEventObject()
-        print "ResTo Plant CLicked"
-        self.pumpData.isResToPlantOn = check.getValue()
+        self.pumpData.isResToPlantOn = check.GetValue()
+        if(self.appData.running == self.appData.ON):
+            self.startResToPlant()
+
+    def startResToPlant(self):
+        if((self.pumpData.isResToPlantOn is False) and (self.pumpResToPlant is not None)):
+            self.pumpResToPlant.die()
+            self.pumpResToPlant = None
+        if(self.pumpData.isResToPlantOn and (self.pumpResToPlant is None)):
+            self.pumpResToPlant = PumpResToPlantThreading()
+
     def processPlantDrainCheckbox(self,event):
         check = event.GetEventObject()
-        print "PlantDrain clicked"
-        self.pumpData.isPlantDrainOn = check.getValue()
+        self.pumpData.isPlantDrainOn = check.GetValue()
+        if(self.appData.running == self.appData.ON):
+            self.startPlantDrain()
+
+
+
+    def startPlantDrain(self):
+        if((self.pumpData.isPlantDrainOn is False) and (self.pumpResToDrain is not None)):
+            self.pumpPlantToRes.die()
+            self.pumpPlantToRes = None
+        if (self.pumpData.isPlantDrainOn and (self.pumpResToDrain is None)):
+            self.pumpPlantToRes = PumpPlantToResThreading()
+
 
     def processResDrainCheckbox(self,event):
         check = event.GetEventObject()
-        print "ResDrain clicked"
-        self.pumpData.isResDrainOn = check.getValue()
+        self.pumpData.isResDrainOn = check.GetValue()
+        if (self.appData.running == self.appData.ON):
+            self.startResDrain()
+
+    def startResDrain(self):
+        if((self.pumpData.isResDrainOn is False)and (self.pumpResToDrain is not None) ):
+            self.pumpResToDrain.die()
+            self.pumpResToDrain = None
+        if((self.pumpData.isResDrainOn) and (self.pumpResToDrain is None)):
+            self.pumpResToDrain = PumpResToDrainThreading()
+
+
+    def processDrainSystem(self, event):
+        check = event.GetEventObject()
+        self.pumpData.isDrainingOn = check.GetValue()
+        if (self.appData.running == self.appData.ON):
+            self.startDrainOut()
+
+
+    def startDrainOut(self):
+        if(self.pumpData.isDrainingOn is False and (self.pumpDrainOut is not None)):
+            self.pumpDrainOut.die()
+            self.pumpDrainOut = None
+        if(self.pumpData.isDrainingOn and (self.pumpDrainOut is None)):
+            if(self.pumpData.isResToPlantOn):
+                self.pumpData.isResDrainOn = False
+                self.pumpView.mixToPlantCheckBox.SetValue(False)
+                self.pumpResToPlant.die()
+                self.pumpResToPlant = None
+
+            if(self.pumpData.isPlantDrainOn):
+                self.pumpData.isPlantDrainOn = False
+                self.pumpView.planToMixCheckbox.SetValue(False)
+                self.pumpPlantToRes.die()
+                self.pumpPlantToRes = None
+            if(self.pumpData.isResDrainOn):
+                self.pumpData.isResDrainOn = False
+                self.pumpView.mixToDrainCheckBox.SetValue(False)
+                self.pumpDrainOut.die()
+                self.pumpDrainOut = None
+
+            self.pumpDrainOut = PumpDrainOutThreading(self.pumpView.threePumps)
+    def killPumps(self):
+        if(self.pumpResToPlant is not None):
+            self.pumpResToDrain.die()
+        if(self.pumpResToDrain is not None):
+            self.pumpResToDrain.die()
+        if(self.pumpPlantToRes is not None):
+            self.pumpPlantToRes.die()
+        if(self.pumpDrainOut is not None):
+            self.pumpDrainOut.die()
+
+
+
+
+
 
 

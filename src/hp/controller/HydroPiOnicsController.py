@@ -12,6 +12,7 @@ class HydroPiOnicsController:
         self.menuBarC = None
         self.pumpC = None
         self.monitorC = None
+        self.workspaceController = None
 
     def initDefaultValue(self):
         self.setMode(self.hydroModel.MANUAL)
@@ -39,9 +40,10 @@ class HydroPiOnicsController:
     def setRun(self,run):
         self.hydroModel.setRunning(run)
         if(run == self.hydroModel.ON):
-            pass
+            self.checkPumps()
         else:
-            pass
+            self.pumpC.killPumps()
+            
     def setElectronicRelayEnvironmentC(self, electronicRelayEnvironmentC):
         self.electronicRelayEnvironmentC = electronicRelayEnvironmentC
     def setEnvironmentalMonitorC(self, environmentalMonitorC):
@@ -54,6 +56,20 @@ class HydroPiOnicsController:
         self.pumpC = pumpC
     def setMonitorC(self, monitorC):
         self.monitorC = monitorC
+    def setWorkspaceController(self, workspaceController):
+        self.workspaceController = workspaceController
+
+    def checkPumps(self):
+        if(self.pumpC.pumpData.isResToPlantOn):
+            self.pumpC.startResToPlant()
+        if(self.pumpC.pumpData.isPlantDrainOn):
+            self.pumpC.startPlantDrain()
+        if(self.pumpC.pumpData.isResDrainOn):
+            self.pumpC.startResDrain()
+        if(self.pumpC.pumpData.isDrainingOn):
+            self.pumpC.startDrainOut()
+
+
 
 
 

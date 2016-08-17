@@ -101,6 +101,10 @@ class HydroPiOnics(wx.Frame):
         self.guiController.setElectronicRelayEnvironmentC(self.electronicRelayController)
         self.guiController.setEnvironmentalMonitorC(self.environmentalMonitorController)
         self.guiController.setMotorC(self.motorController)
+        self.guiController.setMenuBarC(self.menuController)
+        self.guiController.setPumpC(self.pumpController)
+        self.guiController.setMonitorC(self.monitorController)
+        self.guiController.setWorkspaceController(self.workspaceController)
     def initDefaultValue(self):
         self.guiController.initDefaultValue()
 

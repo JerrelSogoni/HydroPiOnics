@@ -6,6 +6,7 @@ IMG_LOCATION = WorkspaceView.IMG_LOCATION
 class PumpView:
     def __init__(self,workspace):
         self.workspace = workspace
+        self.threePumps = []
         self.initPumpImages()
         self.initStaticPumpText()
         self.initPumpCheckbox()
@@ -66,19 +67,21 @@ class PumpView:
                                               parent=self.workspace, pos=wx.Point(96, 160),
                                               size=wx.Size(78, 15), style=0)
         self.mixToPlantCheckBox.SetValue(False)
+        self.threePumps.append(self.mixToPlantCheckBox)
 
         self.planToMixCheckbox = wx.CheckBox(id=wx.ID_ANY,
                                              label=u'On/Off', name=u'planToMixCheckbox',
                                              parent=self.workspace, pos=wx.Point(96, 256),
                                              size=wx.Size(84, 15), style=0)
         self.planToMixCheckbox.SetValue(False)
+        self.threePumps.append(self.planToMixCheckbox)
 
         self.mixToDrainCheckBox = wx.CheckBox(id=wx.ID_ANY,
                                               label=u'On/Off', name=u'mixToDrainCheckBox',
                                               parent=self.workspace, pos=wx.Point(96, 360),
                                               size=wx.Size(84, 15), style=0)
         self.mixToDrainCheckBox.SetValue(False)
-
+        self.threePumps.append(self.mixToDrainCheckBox)
         self.drainSystemCheckBox = wx.CheckBox(id=wx.ID_ANY,
                                                label=u'Drain System', name=u'drainSystemCheckBox',
                                                parent=self.workspace, pos=wx.Point(192, 360),
