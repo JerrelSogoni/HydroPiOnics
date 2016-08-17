@@ -33,7 +33,7 @@ class HydroPiOnicsController:
             self.electronicRelayEnvironmentC.updateMode(mode)
             self.environmentalMonitorC.updateMode(mode)
             self.setRun(self.hydroModel.OFF)
-            self.menuBarC.menuBarView.stop.SetValue(True)
+            self.menuBarC.menuBarView.stop.Check(True)
 
 
 
