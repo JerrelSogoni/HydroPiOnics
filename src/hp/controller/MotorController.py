@@ -116,14 +116,14 @@ class MotorController:
         cycleOn = event.GetEventObject()
         index = cycleOn.GetCurrentSelection()
         cycleOnUnit = self.motorView.cycleOnVentFan.GetString(index)
-        self.motor.ventCycleOnUnits = cycleOnUnit[0]
+        self.motor.ventCycleOnUnits = cycleOnUnit
         if(self.appData.running == self.appData.ON):
             self.startVentCycle()
     def processVentFanCycleOffUnits(self,event):
         cycleOff = event.GetEventObject()
         index = cycleOff.GetCurrentSelection()
         cycleOffUnit = self.motorView.cycleOffVentFan.GetString(index)
-        self.motor.ventCycleOffUnits = cycleOffUnit[0]
+        self.motor.ventCycleOffUnits = cycleOffUnit
         if(self.appData.running == self.appData.ON):
             self.startVentCycle()
     def processIntakeFanCheckbox(self,event):
@@ -156,14 +156,14 @@ class MotorController:
         cycleOn = event.GetEventObject()
         index = cycleOn.GetCurrentSelection()
         cycleOnUnit = self.motorView.cycleOnIntakeFan.GetString(index)
-        self.motor.intakeCycleOnUnits = cycleOnUnit[0]
+        self.motor.intakeCycleOnUnits = cycleOnUnit
         if(self.appData.running == self.appData.ON):
             self.startIntakeCycle()
     def processIntakeFanCycleOffUnits(self,event):
         cycleOff = event.GetEventObject()
         index = cycleOff.GetCurrentSelection()
         cycleOffUnit = self.motorView.cycleOffIntakeFan.GetString(index)
-        self.motor.intakeMotorCycleOff = cycleOffUnit[0]
+        self.motor.intakeMotorCycleOff = cycleOffUnit
         if(self.appData.running == self.appData.ON):
             self.startIntakeCycle()
     def processWaterAirPumpCheckBox(self,event):
@@ -192,11 +192,11 @@ class MotorController:
 
     def convertTimeToSeconds(self, cycleTime, cycleUnit):
         if(cycleUnit == 's'):
-            return float(cycleTime)
+            return cycleTime
         elif(cycleUnit == 'm'):
-            return float(cycleTime * 60)
+            return cycleTime * 60.0
         else:
-            return float(cycleTime * 3600)
+            return cycleTime * 3600
     def startMotor(self,motor, status, thread, mode, cycleOn, cycleOff, device):
         if((status == False) and (thread != None) and (mode == self.appData.MANUAL)):
             self.killAMotor(device)
