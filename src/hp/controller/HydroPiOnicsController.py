@@ -80,6 +80,7 @@ class HydroPiOnicsController:
 
     def checkMotors(self):
         print "working mtor"
+        print self.hydroModel.Mode
         if(self.hydroModel.Mode == self.hydroModel.MANUAL):
             if(self.motorC.motor.isExaustMotorOn):
                 self.motorC.startExhaust()
@@ -90,7 +91,7 @@ class HydroPiOnicsController:
         if(self.motorC.motor.isWaterAirPumpOn):
             print "working2"
             self.motorC.startWaterAirPump()
-        if(self.hydroModel.Mode is self.hydroModel.TIMER or self.hydroModel.Mode is self.hydroModel.ENVIRONMENTAL):
+        if((self.hydroModel.Mode == self.hydroModel.TIMER) or (self.hydroModel.Mode is self.hydroModel.ENVIRONMENTAL)):
             print "working"
             self.motorC.startExhaustCycle()
             self.motorC.startVentCycle()
