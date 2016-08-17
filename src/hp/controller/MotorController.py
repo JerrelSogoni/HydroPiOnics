@@ -101,7 +101,7 @@ class MotorController:
             self.startVentCycle()
 
     def processVentFanCycleOff(self,event):
-        cycleOff = event.getEventObject()
+        cycleOff = event.GetEventObject()
         cycleOffValue = cycleOff.GetValue()
         if (cycleOffValue.isdigit()):
             self.motor.ventMotorCycleOff = cycleOffValue
@@ -116,14 +116,14 @@ class MotorController:
         cycleOn = event.GetEventObject()
         index = cycleOn.GetCurrentSelection()
         cycleOnUnit = self.motorView.cycleOnVentFan.GetString(index)
-        self.motor.ventCycleOnUnits = cycleOnUnit
+        self.motor.ventCycleOnUnits = cycleOnUnit[0]
         if(self.appData.running == self.appData.ON):
             self.startVentCycle()
     def processVentFanCycleOffUnits(self,event):
         cycleOff = event.GetEventObject()
         index = cycleOff.GetCurrentSelection()
         cycleOffUnit = self.motorView.cycleOffVentFan.GetString(index)
-        self.motor.ventCycleOffUnits = cycleOffUnit
+        self.motor.ventCycleOffUnits = cycleOffUnit[0]
         if(self.appData.running == self.appData.ON):
             self.startVentCycle()
     def processIntakeFanCheckbox(self,event):
@@ -156,14 +156,14 @@ class MotorController:
         cycleOn = event.GetEventObject()
         index = cycleOn.GetCurrentSelection()
         cycleOnUnit = self.motorView.cycleOnIntakeFan.GetString(index)
-        self.motor.intakeCycleOnUnits = cycleOnUnit
+        self.motor.intakeCycleOnUnits = cycleOnUnit[0]
         if(self.appData.running == self.appData.ON):
             self.startIntakeCycle()
     def processIntakeFanCycleOffUnits(self,event):
         cycleOff = event.GetEventObject()
         index = cycleOff.GetCurrentSelection()
         cycleOffUnit = self.motorView.cycleOffIntakeFan.GetString(index)
-        self.motor.intakeMotorCycleOff = cycleOffUnit
+        self.motor.intakeMotorCycleOff = cycleOffUnit[0]
         if(self.appData.running == self.appData.ON):
             self.startIntakeCycle()
     def processWaterAirPumpCheckBox(self,event):
