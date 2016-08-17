@@ -28,12 +28,12 @@ class HydroPiOnicsController:
         else:
             event.StopPropagation()
     def setMode(self,mode):
-        if(self.hydroModel.Mode is not mode):
             self.hydroModel.setMode(mode)
-            self.pumpC.updateMode()
             self.motorC.updateMode(mode)
             self.electronicRelayEnvironmentC.updateMode(mode)
             self.environmentalMonitorC.updateMode(mode)
+            self.setRun(self.hydroModel.OFF)
+
 
 
 
