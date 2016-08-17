@@ -32,7 +32,8 @@ class MotorController:
         print check.GetValue()
 
     def processExhaustFanCycleOn(self,event):
-        cycleOnValue = event.GetValue()
+        cycleOn = event.getEventObject()
+        cycleOnValue = cycleOn.GetValue()
         print cycleOnValue
         if(cycleOnValue.isdigit()):
             self.motor.exhaustMotorCycleOn = cycleOnValue
@@ -57,9 +58,8 @@ class MotorController:
     def processExhaustFanCycleOnUnits(self, event):
         index = event
         print index
-        cycleOnUnit = self.motorView.cycleOnExaustFan.GetString(index)
-        self.motor.exhaustCycleOnUnits = cycleOnUnit
-        print index
+        #cycleOnUnit = self.motorView.cycleOnExaustFan.GetString(index)
+        #self.motor.exhaustCycleOnUnits = cycleOnUnit
 
 
     def processExhaustFanCycleOffUnits(self,event):
