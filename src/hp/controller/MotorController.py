@@ -201,9 +201,11 @@ class MotorController:
         else:
             return cycleTime * 3600
     def startMotor(self,motor, status, thread, mode, cycleOn, cycleOff, device):
+        print status
+        print thread
+        print device
         if((status is False) and (thread is not None) and (mode is self.appData.MANUAL)):
             self.killAMotor(device)
-
         elif(status and (thread is None) and (mode is self.appData.MANUAL)):
             self.startAMotor(device, motor)
         elif ((status is False) and (thread is not None) and (mode is self.appData.TIMER or mode is self.appData.ENVIRONMENTAL)):
