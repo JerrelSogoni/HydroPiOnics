@@ -39,6 +39,8 @@ class HydroPiOnicsController:
 
     def setRun(self,run):
         self.hydroModel.setRunning(run)
+        self.workspaceController.setSystemStatus(run)
+        self.workspaceController.updateSystemStatus()
         if(run == self.hydroModel.ON):
             self.checkPumps()
         else:
