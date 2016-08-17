@@ -254,6 +254,7 @@ class MotorController:
                         self.exhaustFanThreading, self.appData.Mode,
                         None, None, Motor.VENTMOTOR)
     def startWaterAirPump(self):
+
         self.startMotor(self.motor.waterAirPump, self.motor.isWaterAirPumpOn,
                         self.exhaustFanThreading, self.appData.Mode,
                         None, None, Motor.WATERAIRPUMP)
