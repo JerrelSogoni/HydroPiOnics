@@ -1,6 +1,12 @@
 
+from ThirdPartyAPIs.Adafruit-Motor-HAT-Python-Library.Adafruit_MotorHAT import Adafruit_MotorHAT, Adafruit_DCMotor
 
+VENTMOTOR = 1
+INTAKEMOTOR = 2
+EXHAUSTMOTOR = 4
+WATERAIRPUMP = 3
 class Motor:
+
 
     def __init__(self):
         self.ventMotorCycleOn = None
@@ -19,6 +25,11 @@ class Motor:
         self.exhaustCycleOffUnits = None
         self.exhaustCycleOnUnits = None
         self.isWaterAirPumpOn = None
+        self.motorObject = Adafruit_MotorHAT(addr=0x60)
+        self.ventFan = self.motorObject.getMotor(VENTMOTOR)
+        self.intakeFan = self.motorObject.getMotor(INTAKEMOTOR)
+        self.exhaustFan = self.motorObject.getMotor(EXHAUSTMOTOR)
+        self.waterAirPump = self.motorObject.getMotor(WATERAIRPUMP)
 
 
 

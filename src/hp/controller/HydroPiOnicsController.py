@@ -40,8 +40,12 @@ class HydroPiOnicsController:
         self.workspaceController.updateSystemStatus()
         if(run == self.hydroModel.ON):
             self.checkPumps()
+            self.checkMotors()
+
+
         else:
             self.pumpC.killPumps()
+            self.motorC.killMotors()
 
     def setElectronicRelayEnvironmentC(self, electronicRelayEnvironmentC):
         self.electronicRelayEnvironmentC = electronicRelayEnvironmentC
@@ -67,6 +71,20 @@ class HydroPiOnicsController:
             self.pumpC.startResDrain()
         if(self.pumpC.pumpData.isDrainingOn):
             self.pumpC.startDrainOut()
+
+
+    def checkMotors(self):
+        if(self.hydroModel.Mode == self.hydroModel.Manual):
+            if(self.motorC.motor.isExaustMotorOn):
+                self.motorC.startExhaust()
+            if(self.motorC.motor.isVentMotorOn):
+                self.motorC.startVent()
+            if(self.motorC.motor.isIntakeMotorOn):
+                self.motorC.startIntake()
+        if(self.motorC.motor.isWaterAirPumpOn):
+            self.motorC.startWaterAirPump()
+
+
 
 
 
