@@ -205,6 +205,7 @@ class MotorController:
         print status
         print thread
         print device
+        print mode
         if((status is False) and (thread is not None) and (mode is self.appData.MANUAL)):
             print "killing thread"
             self.killAMotor(device)
