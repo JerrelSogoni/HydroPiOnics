@@ -5,10 +5,12 @@ class MotorController:
         self.motorView = motorView
         self.motor = motor
         self.appData = appData
+        self.threadlist = []
         self.ventFanThreading = None
         self.intakeFanThreading = None
         self.exhaustFanThreading = None
         self.waterAirThreading = None
+        self.threadlist.append(self.exhastFanThreading, self.intakeFanThreading, self.exhaustFanThreading,   self.waterAirThreading)
 
     def updateMode(self, mode):
         if(mode != self.appData.MANUAL):
@@ -200,8 +202,10 @@ class MotorController:
             return cycleTime * 3600
     def startMotor(self,motor, status, thread, mode, cycleOn, cycleOff):
         if((status is False) and (thread is not None) and (mode is self.appData.MANUAL)):
+            print "Die"
             thread.die()
             thread = None
+
         elif(status and (thread is None) and (mode is self.appData.MANUAL)):
             thread = MotorFanThreading(motor)
         elif ((status is False) and (thread is not None) and (mode is self.appData.TIMER or mode is self.appData.ENVIRONMENTAL)):
