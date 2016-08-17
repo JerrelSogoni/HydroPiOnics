@@ -10,6 +10,10 @@ class MotorFanThreading(threading.Thread):
         self.cycleOn = cycleOn
         self.cycleOff = cycleOff
         self.cycle = cycle
+        print motor
+        print cycleOn
+        print cycleOff
+
         self.start()
 
     def run(self):
