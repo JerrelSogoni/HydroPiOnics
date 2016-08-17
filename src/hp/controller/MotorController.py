@@ -1,5 +1,6 @@
 from hpThreadingClasses.MotorFanThreading import MotorFanThreading
-from data.Motor import Motor
+import data.Motor as Motor
+
 
 class MotorController:
     def __init__(self, motorView, motor, appData):
