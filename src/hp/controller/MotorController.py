@@ -32,7 +32,7 @@ class MotorController:
         print check.GetValue()
 
     def processExhaustFanCycleOn(self,event):
-        cycleOn = event.getEventObject()
+        cycleOn = event.GetEventObject()
         cycleOnValue = cycleOn.GetValue()
         print cycleOnValue
         if(cycleOnValue.isdigit()):
