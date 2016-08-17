@@ -239,7 +239,7 @@ class MotorView:
         #vent listener
 
         self.ventFanCheckBox.Bind(wx.EVT_CHECKBOX, self.motorController.processVentFanCheckbox)
-        self.ventFanCycleOnValue.Bind(wx.EVT_TEXT, self.motorController.processVentFanCycleOn)
+        self.ventFanCycleOnValue.Bind(wx.EVT_TEXT_ENTER, self.motorController.processVentFanCycleOn)
         self.ventFanCycleOffValue.Bind(wx.EVT_TEXT_ENTER, self.motorController.processVentFanCycleOff)
         self.cycleOnVentFan.Bind(wx.EVT_CHOICE, self.motorController.processVentFanCycleOnUnits)
         self.cycleOffVentFan.Bind(wx.EVT_CHOICE, self.motorController.processVentFanCycleOffUnits)

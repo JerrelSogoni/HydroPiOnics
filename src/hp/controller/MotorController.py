@@ -96,13 +96,13 @@ class MotorController:
             cycleOff.SetValue(0)
 
     def processVentFanCycleOnUnits(self,event):
-        cycleOn = event.getEventObject()
+        cycleOn = event.GetEventObject()
         index = cycleOn.GetCurrentSelection()
         cycleOnUnit = self.motorView.cycleOnVentFan.GetString(index)
         self.motor.ventCycleOnUnits = cycleOnUnit
         print cycleOnUnit
     def processVentFanCycleOffUnits(self,event):
-        cycleOff = event.getEventObject()
+        cycleOff = event.GetEventObject()
         index = cycleOff.GetCurrentSelection()
         cycleOffUnit = self.motorView.cycleOffVentFan.GetString(index)
         self.motor.ventCycleOffUnits = cycleOffUnit
