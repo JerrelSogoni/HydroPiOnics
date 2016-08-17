@@ -31,15 +31,11 @@ class MotorController:
                 manual.Show(True)
             else:
                 manual.Hide()
-
-
     def processExhaustFanCheckbox(self,event):
         check = event.GetEventObject()
         self.motor.isExaustMotorOn = check.GetValue()
         if(self.appData.running == self.appData.ON):
             self.startExhaust()
-
-
     def processExhaustFanCycleOn(self,event):
         cycleOn = event.GetEventObject()
         cycleOnValue = cycleOn.GetValue()
