@@ -11,7 +11,7 @@ class MotorView:
         self.initStaticMotorText()
         self.initMotorCheckBoxes()
         self.initMotorInput()
-        self.monitorController = None
+        self.motorController = None
 
     def initMotorInput(self):
         self.exaustFanCycleOnValue = wx.lib.masked.textctrl.TextCtrl(id=wx.ID_ANY,
@@ -80,7 +80,7 @@ class MotorView:
               id=wx.ID_ANY, name=u'cycleOnExaustFan',
               parent=self.workspace, pos=wx.Point(608, 56),
               size=wx.Size(56, 23), style=0)
-        self.cycleOnExaustFan.SetStringSelection(u's')
+
         self.cycleOnExaustFan.SetSelection(0)
         self.cycleArray.append(self.cycleOnExaustFan)
 
@@ -219,5 +219,33 @@ class MotorView:
         self.manualArray.append(self.intakeFanCheckBox)
 
     def initController(self, controller):
-        self.monitorController = controller
+        self.motorController = controller
+
+    def initListeners(self):
+        # exhaust listner
+        self.exhaustFanCheckBox.Bind(wx.EVT_CHECKBOX, self.motorController.processExhaustFanCheckbox)
+        self.exaustFanCycleOnValue.Bind(wx.EVT_TEXT_ENTER, self.motorController.processExhaustFanCycleOn)
+        self.exaustFanCycleOffValue.Bind(wx.EVT_TEXT_ENTER, self.motorController.processExhaustFanCycleOff)
+        self.cycleOnExaustFan.Bind(wx.EVT_CHOICE, self.motorController.processExhaustFanCycleOnUnits)
+        self.cycleOffExaustFan.Bind(wx.EVT_CHOICE, self.motorController.processExhaustFanCycleOffUnits)
+
+        #intake listener
+        self.intakeFanCheckBox.Bind(wx.EVT_CHECKBOX, self.motorController.processIntakeFanCheckbox)
+        self.intakeFanCycleOnValue.Bind(wx.EVT_TEXT_ENTER, self.motorController.processIntakeFanCycleOn)
+        self.intakeFanCycleOffValue.Bind(wx.EVT_TEXT_ENTER, self.motorController.processIntakeFanCycleOff)
+        self.cycleOnIntakeFan.Bind(wx.EVT_CHOICE, self.motorController.processIntakeFanCycleOnUnits)
+        self.cycleOffIntakeFan.Bind(wx.EVT_CHOICE, self.motorController.processIntakeFanCycleOffUnits)
+
+        #vent listener
+
+        self.ventFanCheckBox.Bind(wx.EVT_CHECKBOX, self.motorController.processVentFanCheckbox)
+        self.ventFanCycleOnValue.Bind(wx.EVT_TEXT_ENTER, self.motorController.processVentFanCycleOn)
+        self.ventFanCycleOffValue.Bind(wx.EVT_TEXT_ENTER, self.motorController.processVentFanCycleOff)
+        self.cycleOnVentFan.Bind(wx.EVT_CHOICE, self.motorController.processVentFanCycleOnUnits)
+        self.cycleOffVentFan.Bind(wx.EVT_CHOICE, self.motorController.processVentFanCycleOffUnits)
+
+        #water pump listner
+
+        self.waterAirFanCheckBox.Bind(wx.EVT_CHECKBOX, self.motorController.processWAterAirPumpFanCheckbox)
+
 

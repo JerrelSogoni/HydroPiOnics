@@ -26,58 +26,123 @@ class MotorController:
                 manual.Show(True)
             else:
                 manual.Hide()
+
     def processExhaustFanCheckbox(self,event):
         check = event.GetEventObject()
         self.motor.isExaustMotorOn = check.GetValue()
+        print check.GetValue()
+
     def processExhaustFanCycleOn(self,event):
         cycleOn = event.getEventObject()
         cycleOnValue = cycleOn.GetStringSelection()
         if(cycleOnValue.isdigit()):
             self.motor.exhaustMotorCycleOn = cycleOnValue
-    def processExhaustFanCycleOnUnits(self, event):
-        cycleOn = event.getEventObject()
-        index = cycleOn.GetCurrentSelection()
-        cycleOnUnit = self.motorView.cycleOnExaustFan.GetString(index)
-        self.motor.exhaustCycleOnUnits = cycleOnUnit
+            print cycleOnValue
+        else:
+            self.motor.exhaustMotorCycleOn = 0
+            cycleOn.SetValue(0)
+            print "0"
+
     def processExhaustFanCycleOff(self,event):
         cycleOff = event.getEventObject()
         cycleOffValue = cycleOff.GetStringSelection()
         if(cycleOffValue.isdigit()):
             self.motor.exhaustMotorCycleOff = cycleOffValue
+            print cycleOffValue
+        else:
+            self.motor.exhaustMotorCycleOff = 0
+            cycleOff.SetValue(0)
+
+
+    def processExhaustFanCycleOnUnits(self, event):
+        cycleOn = event.getEventObject()
+        index = cycleOn.GetCurrentSelection()
+        cycleOnUnit = self.motorView.cycleOnExaustFan.GetString(index)
+        self.motor.exhaustCycleOnUnits = cycleOnUnit
+        print index
+
 
     def processExhaustFanCycleOffUnits(self,event):
-        pass
+        cycleOff = event.getEventObject()
+        index = cycleOff.GetCurrentSelection()
+        cycleOffUnit = self.motorView.cycleOffExaustFan.GetString(index)
+        self.motor.exhaustCycleOffUnits = cycleOffUnit
+        print index
+
     def processVentFanCheckbox(self,event):
         check = event.GetEventObject()
         self.motor.isVentMotorOn = check.GetValue()
+        print "VentFan" + check.GetValue()
     def processVentFanCycleOn(self,event):
         cycleOn = event.getEventObject()
         cycleOnValue = cycleOn.GetStringSelection()
         if(cycleOnValue.isdigit()):
             self.motor.ventMotorCycleOn = cycleOnValue
+            print cycleOnValue
+        else:
+            self.motor.ventMotorCycleOn = 0
+            cycleOn.SetValue(0)
+
     def processVentFanCycleOff(self,event):
-        pass
+        cycleOff = event.getEventObject()
+        cycleOffValue = cycleOff.GetStringSelection()
+        if (cycleOffValue.isdigit()):
+            self.motor.ventMotorCycleOff = cycleOffValue
+            print cycleOff
+        else:
+            self.motor.ventMotorCycleOff = 0
+            cycleOff.SetValue(0)
+
     def processVentFanCycleOnUnits(self,event):
-        pass
+        cycleOn = event.getEventObject()
+        index = cycleOn.GetCurrentSelection()
+        cycleOnUnit = self.motorView.cycleOnVentFan.GetString(index)
+        self.motor.ventCycleOnUnits = cycleOnUnit
+        print cycleOnUnit
     def processVentFanCycleOffUnits(self,event):
-        pass
+        cycleOff = event.getEventObject()
+        index = cycleOff.GetCurrentSelection()
+        cycleOffUnit = self.motorView.cycleOffVentFan.GetString(index)
+        self.motor.ventCycleOffUnits = cycleOffUnit
+        print cycleOffUnit
     def processIntakeFanCheckbox(self,event):
         check = event.GetEventObject()
         self.motor.isIntakeMotorOn = check.GetValue()
+        print check.GetValue()
     def processIntakeFanCycleOn(self,event):
         cycleOn = event.getEventObject()
         cycleOnValue = cycleOn.GetStringSelection()
         if(cycleOnValue.isdigit()):
             self.motor.intakeMotorCycleOn = cycleOnValue
+            print cycleOnValue
+        else:
+            self.motor.intakeMotorCycleOn = 0
+            cycleOn.SetValue(0)
     def processIntakeFanCycleOff(self,event):
-        pass
+        cycleOff = event.getEventObject()
+        cycleOffValue = cycleOff.GetStringSelection()
+        if(cycleOffValue.isdigit()):
+            self.motor.intakeMotorCycleOff = cycleOffValue
+            print cycleOffValue
+        else:
+            self.motor.intakeMotorCycleOff = 0
+            cycleOff.SetValue(0)
     def processIntakeFanCycleOnUnits(self,event):
-        pass
+        cycleOn = event.getEventObject()
+        index = cycleOn.GetCurrentSelection()
+        cycleOnUnit = self.motorView.cycleOnIntakeFan.GetString(index)
+        self.motor.intakeCycleOnUnits = cycleOnUnit
+        print cycleOnUnit
     def processIntakeFanCycleOffUnits(self,event):
-        pass
+        cycleOff = event.getEventObject()
+        index = cycleOff.GetCurrentSelection()
+        cycleOffUnit = self.motorView.cycleOffIntakeFan.GetString(index)
+        self.motor.intakeMotorCycleOff = cycleOffUnit
+        print cycleOffUnit
     def processWaterAirPumpCheckBox(self,event):
         check = event.GetEventObject()
         self.motor.isWaterAirPumpOn = check.GetValue()
+        print "Yes"
     def initDefaultValue(self):
         self.motor.ventMotorCycleOn = 0
         self.motor.ventMotorCycleOff = 0
