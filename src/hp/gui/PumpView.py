@@ -95,6 +95,7 @@ class PumpView:
         self.mixToDrainCheckBox.Bind(wx.EVT_CHECKBOX, self.pumpController.processResDrainCheckbox )
         self.planToMixCheckbox.Bind(wx.EVT_CHECKBOX, self.pumpController.processPlantDrainCheckbox)
         self.mixToPlantCheckBox.Bind(wx.EVT_CHECKBOX, self.pumpController.processResToPlantCheckbox)
+        self.drainSystemCheckBox.Bind(wx.EVT_CHECKBOX, self.pumpController.processDrainSystem)
 
 
 

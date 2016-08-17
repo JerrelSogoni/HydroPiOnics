@@ -15,6 +15,7 @@ class PumpController:
     def processResToPlantCheckbox(self, event):
         check = event.GetEventObject()
         self.pumpData.isResToPlantOn = check.GetValue()
+        print check.GetValue()
         if(self.appData.running == self.appData.ON):
             self.startResToPlant()
 
@@ -28,6 +29,7 @@ class PumpController:
     def processPlantDrainCheckbox(self,event):
         check = event.GetEventObject()
         self.pumpData.isPlantDrainOn = check.GetValue()
+        print check.GetValue()
         if(self.appData.running == self.appData.ON):
             self.startPlantDrain()
 
@@ -44,6 +46,7 @@ class PumpController:
     def processResDrainCheckbox(self,event):
         check = event.GetEventObject()
         self.pumpData.isResDrainOn = check.GetValue()
+        print check.GetValue()
         if (self.appData.running == self.appData.ON):
             self.startResDrain()
 
