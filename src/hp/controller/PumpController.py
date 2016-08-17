@@ -75,25 +75,28 @@ class PumpController:
             if(self.pumpData.isResToPlantOn):
                 self.pumpData.isResToPlantOn = False
                 self.pumpView.mixToPlantCheckBox.SetValue(False)
-                self.pumpResToPlant.die()
-                self.pumpResToPlant = None
+                if(self.pumpResToPlant is not None):
+                    self.pumpResToPlant.die()
+                    self.pumpResToPlant = None
             if(self.pumpData.isPlantDrainOn):
                 self.pumpData.isPlantDrainOn = False
                 self.pumpView.planToMixCheckbox.SetValue(False)
-                self.pumpPlantToRes.die()
-                self.pumpPlantToRes = None
+                if(self.pumpPlantToRes is not None):
+                    self.pumpPlantToRes.die()
+                    self.pumpPlantToRes = None
             if(self.pumpData.isResDrainOn):
                 self.pumpData.isResDrainOn = False
                 self.pumpView.mixToDrainCheckBox.SetValue(False)
-                self.pumpDrainOut.die()
-                self.pumpDrainOut = None
+                if(self.pumpResToDrain is not None):
+                    self.pumpResToDrain.die()
+                    self.pumpResToDrain = None
             self.pumpView.mixToPlantCheckBox.Hide()
             self.pumpView.planToMixCheckbox.Hide()
             self.pumpView.mixToDrainCheckBox.Hide()
             self.pumpDrainOut = PumpDrainOutThreading(self.pumpView.threePumps)
     def killPumps(self):
         if(self.pumpResToPlant is not None):
-            self.pumpResToDrain.die()
+            self.pumpResToPlant.die()
         if(self.pumpResToDrain is not None):
             self.pumpResToDrain.die()
         if(self.pumpPlantToRes is not None):
