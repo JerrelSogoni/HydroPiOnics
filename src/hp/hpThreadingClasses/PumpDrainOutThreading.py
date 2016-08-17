@@ -20,7 +20,7 @@ class PumpDrainOutThreading(threading.Thread):
         try:
             # GPIO.output(self.pinList[0], GPIO.LOW)
             # GPIO.output(self.pinList[1], GPIO.LOW)
-            # time.sleep(self.DRAINOUTTIME);
+            time.sleep(self.DRAINOUTTIME);
             print "Drain Out started"
             self.die()
 
