@@ -104,12 +104,20 @@ class PumpController:
     def killPumps(self):
         if(self.pumpResToPlant is not None):
             self.pumpResToPlant.die()
+            self.pumpData.isResToPlantOn = False
+            self.pumpView.mixToPlantCheckBox.SetValue(False)
         if(self.pumpResToDrain is not None):
             self.pumpResToDrain.die()
+            self.pumpData.isResDrainOn = False
+            self.pumpView.mixToDrainCheckBox.SetValue(False)
         if(self.pumpPlantToRes is not None):
             self.pumpPlantToRes.die()
+            self.pumpData.isPlantDrainOn = False
+            self.pumpView.planToMixCheckbox.SetValue(False)
         if(self.pumpDrainOut is not None):
             self.pumpDrainOut.die()
+            self.pumpData.isDrainingOn = False
+            self.pumpView.drainSystemCheckBox.SetValue(False)
     def initDefaultValue(self):
         self.pumpData.isDrainingOn = False
         self.pumpData.isPlantDrainOn = False
