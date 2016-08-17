@@ -1,5 +1,5 @@
 
-from ThirdPartyAPIs.Adafruit-Motor-HAT-Python-Library.Adafruit_MotorHAT import Adafruit_MotorHAT, Adafruit_DCMotor
+from ThirdPartyAPIs.Adafruit_Motor_HAT_Python_Library.Adafruit_MotorHAT import Adafruit_MotorHAT, Adafruit_DCMotor
 
 VENTMOTOR = 1
 INTAKEMOTOR = 2
