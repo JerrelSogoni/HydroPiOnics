@@ -217,6 +217,7 @@ class MotorController:
                 thread.changeCycleOn(cycleOn)
                 thread.changeCycleOff(cycleOff)
         elif ((thread is None) and ((mode is self.appData.TIMER or mode is self.appData.ENVIRONMENTAL))):
+            print "is Timing working"
             if(device is Motor.WATERAIRPUMP):
                 self.startAMotor(device, motor)
             else:
