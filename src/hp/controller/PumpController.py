@@ -86,6 +86,11 @@ class PumpController:
                 self.pumpView.mixToDrainCheckBox.SetValue(False)
                 self.pumpDrainOut.die()
                 self.pumpDrainOut = None
+            self.pumpView.mixToPlantCheckBox.Hide()
+            self.pumpView.planToMixCheckbox.Hide()
+            self.pumpView.mixToDrainCheckBox.Hide()
+
+
 
             self.pumpDrainOut = PumpDrainOutThreading(self.pumpView.threePumps)
     def killPumps(self):
