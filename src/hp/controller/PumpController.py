@@ -2,7 +2,9 @@ from hpThreadingClasses.PumpDrainOutThreading import PumpDrainOutThreading
 from hpThreadingClasses.PumpResToDrainThreading import PumpResToDrainThreading
 from hpThreadingClasses.PumpPlantToResThreading import PumpPlantToResThreading
 from hpThreadingClasses.PumpResToPlantThreading import PumpResToPlantThreading
+import wx
 class PumpController:
+
     def __init__(self, pumpView, pumpData, appData):
         self.pumpView = pumpView
         self.pumpData = pumpData
@@ -75,7 +77,6 @@ class PumpController:
                 self.pumpView.mixToPlantCheckBox.SetValue(False)
                 self.pumpResToPlant.die()
                 self.pumpResToPlant = None
-
             if(self.pumpData.isPlantDrainOn):
                 self.pumpData.isPlantDrainOn = False
                 self.pumpView.planToMixCheckbox.SetValue(False)
@@ -86,12 +87,9 @@ class PumpController:
                 self.pumpView.mixToDrainCheckBox.SetValue(False)
                 self.pumpDrainOut.die()
                 self.pumpDrainOut = None
-            self.pumpView.mixToPlantCheckBox.Hide()
-            self.pumpView.planToMixCheckbox.Hide()
-            self.pumpView.mixToDrainCheckBox.Hide()
-
-
-
+            self.pumpView.mixToPlantCheckBox.Show(False)
+            self.pumpView.planToMixCheckbox.Show(False)
+            self.pumpView.mixToDrainCheckBox.Show(False)
             self.pumpDrainOut = PumpDrainOutThreading(self.pumpView.threePumps)
     def killPumps(self):
         if(self.pumpResToPlant is not None):
