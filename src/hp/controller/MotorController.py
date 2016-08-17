@@ -207,13 +207,15 @@ class MotorController:
             self.killAMotor(device)
         elif(status and (thread is None) and (mode is self.appData.MANUAL)):
             self.startAMotor(device, motor)
-        elif ((thread is not None) and (mode is self.appData.TIMER or mode is self.appData.ENVIRONMENTAL)):
+        elif ((thread is not None) and (mode == self.appData.TIMER or mode == self.appData.ENVIRONMENTAL)):
+            print "Timingagain"
+
             if(device is Motor.WATERAIRPUMP):
                 self.killMotors(device)
             else:
                 thread.changeCycleOn(cycleOn)
                 thread.changeCycleOff(cycleOff)
-        elif ((thread is None) and ((mode is self.appData.TIMER or mode is self.appData.ENVIRONMENTAL))):
+        elif ((thread is None) and ((mode == self.appData.TIMER or mode == self.appData.ENVIRONMENTAL))):
             print "is Timing working"
             if(device is Motor.WATERAIRPUMP):
                 self.startAMotor(device, motor)
