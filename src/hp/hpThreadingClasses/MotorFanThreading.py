@@ -3,12 +3,12 @@ import time
 
 
 class MotorFanThreading(threading.Thread):
-    def __init__(self, motor, cycleOn = None,CycleOff = None, cycle = False):
+    def __init__(self, motor, cycleOn = None, cycleOff = None, cycle = False):
         super(MotorFanThreading, self).__init__()
         self.isDead = False
         self.motor = motor
         self.cycleOn = cycleOn
-        self.cycleOff = CycleOff
+        self.cycleOff = cycleOff
         self.cycle = cycle
         self.start()
 
