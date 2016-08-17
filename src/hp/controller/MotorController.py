@@ -204,8 +204,7 @@ class MotorController:
             self.killAMotor(device)
 
         elif(status and (thread is None) and (mode is self.appData.MANUAL)):
-            self.startAMotor(device, motor):
-            thread = MotorFanThreading(motor)
+            self.startAMotor(device, motor)
         elif ((status is False) and (thread is not None) and (mode is self.appData.TIMER or mode is self.appData.ENVIRONMENTAL)):
             thread.changeCycleOn(cycleOn)
             thread.changeCycleOff(cycleOff)
