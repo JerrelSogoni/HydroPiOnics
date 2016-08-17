@@ -43,7 +43,7 @@ class HydroPiOnicsController:
             self.checkPumps()
         else:
             self.pumpC.killPumps()
-            
+
     def setElectronicRelayEnvironmentC(self, electronicRelayEnvironmentC):
         self.electronicRelayEnvironmentC = electronicRelayEnvironmentC
     def setEnvironmentalMonitorC(self, environmentalMonitorC):

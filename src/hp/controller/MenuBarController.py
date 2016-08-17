@@ -20,6 +20,7 @@ class MenuBarController:
     def giveRunToController(self, event):
         item = self.menuBarView.FindItemById(event.GetId())
         run = item.GetText()
+        print run
         self.HydroController.setRun(run)
 
     def giveModeToController(self, event):
