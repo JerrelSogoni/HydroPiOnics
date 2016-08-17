@@ -42,8 +42,8 @@ class HydroPiOnics(wx.Frame):
     def __init__(self, parent):
 
         self.initFrameMVC()
-        self.initMenuBarMVC()
         self.initWorkspaceMVC()
+        self.initMenuBarMVC()
         self.initMonitorMVC()
         self.initMotorMVC()
         self.initPumpMVC()
@@ -61,7 +61,6 @@ class HydroPiOnics(wx.Frame):
         self.menuView = MenuBarView()
         self.SetMenuBar(self.menuView)
         self.menuController = MenuBarController(self.menuView, self)
-        self.menuController.initDefaultValue()
 
     def initMotorMVC(self):
         self.motorView = MotorView(self.workspaceView)

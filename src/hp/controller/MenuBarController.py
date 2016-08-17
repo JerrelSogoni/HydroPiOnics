@@ -7,7 +7,7 @@ class MenuBarController:
         self.menuBarView = menuBarView
         self.appGUI = appGUI
         self.HydroController = self.appGUI.getGUIController()
-
+        self.initDefaultValue()
         self.initActionListners()
 
     def initActionListners(self):
