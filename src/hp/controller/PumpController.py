@@ -15,6 +15,12 @@ class PumpController:
         self.pumpPlantToRes = None
         self.pumpDrainOut = None
 
+    def updateMode(self):
+        for i in self.pumpView.threePumps:
+            i.SetValue(False)
+        self.pumpView.drainSystemCheckBox.SetValue(False)
+        self.killPumps()
+
     def processResToPlantCheckbox(self, event):
         check = event.GetEventObject()
         self.pumpData.isResToPlantOn = check.GetValue()

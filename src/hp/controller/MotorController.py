@@ -18,6 +18,7 @@ class MotorController:
             self.motorView.waterAirCheckBox.Show(True)
         else:
             self.environmentManual(False,True)
+        self.killMotors()
 
     def environmentManual(self, cycle, manuals):
         for cycles in self.motorView.cycleArray:
