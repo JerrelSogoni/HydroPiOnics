@@ -208,7 +208,7 @@ class MotorController:
             thread.changeCycleOn(cycleOn)
             thread.changeCycleOff(cycleOff)
         elif (status and (thread is None) and ((mode is self.appData.TIMER or mode is self.appData.ENVIRONMENTAL))):
-            thread = MotorFanThreading(motor,cycleOn= cycleOn,cycleOff= cycleOff)
+            thread = MotorFanThreading(motor,cycleOn= cycleOn,cycleOff= cycleOff, cycle = True)
     def startExhaustCycle(self):
         self.startMotor(self.motor.exhaustFan, self.motor.isExaustMotorOn,
                         self.exhaustFanThreading, self.appData.Mode,
