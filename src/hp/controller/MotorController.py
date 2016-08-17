@@ -210,25 +210,31 @@ class MotorController:
             self.killAMotor(device)
         elif(status and (thread is None) and (mode is self.appData.MANUAL)):
             self.startAMotor(device, motor)
-        elif ((status is False) and (thread is not None) and (mode is self.appData.TIMER or mode is self.appData.ENVIRONMENTAL)):
-            thread.changeCycleOn(cycleOn)
-            thread.changeCycleOff(cycleOff)
-        elif (status and (thread is None) and ((mode is self.appData.TIMER or mode is self.appData.ENVIRONMENTAL))):
-            self.startMotorCycle(device,motor,cycleOn,cycleOff)
+        elif ((thread is not None) and (mode is self.appData.TIMER or mode is self.appData.ENVIRONMENTAL)):
+            if(device is Motor.WATERAIRPUMP):
+                self.killMotors(device)
+            else:
+                thread.changeCycleOn(cycleOn)
+                thread.changeCycleOff(cycleOff)
+        elif ((thread is None) and ((mode is self.appData.TIMER or mode is self.appData.ENVIRONMENTAL))):
+            if(device is Motor.WATERAIRPUMP):
+                self.startAMotor(device, motor)
+            else:
+                self.startMotorCycle(device,motor,cycleOn,cycleOff)
     def startExhaustCycle(self):
-        self.startMotor(self.motor.exhaustFan, self.motor.isExaustMotorOn,
+        self.startMotor(self.motor.exhaustFan, False,
                         self.exhaustFanThreading, self.appData.Mode,
                         self.convertTimeToSeconds(self.motor.exhaustMotorCycleOn, self.motor.exhaustCycleOnUnits),
                         self.convertTimeToSeconds(self.motor.exhaustMotorCycleOff, self.motor.exhaustCycleOffUnits),
                         Motor.EXHAUSTMOTOR)
     def startVentCycle(self):
-        self.startMotor(self.motor.ventFan, self.motor.isVentMotorOn,
+        self.startMotor(self.motor.ventFan, False,
                         self.ventFanThreading, self.appData.Mode,
                         self.convertTimeToSeconds(self.motor.ventMotorCycleOn, self.motor.ventCycleOnUnits),
                         self.convertTimeToSeconds(self.motor.ventMotorCycleOff, self.motor.ventCycleOffUnits),
                         Motor.VENTMOTOR)
     def startIntakeCycle(self):
-        self.startMotor(self.motor.intakeFan, self.motor.isIntakeMotorOn,
+        self.startMotor(self.motor.intakeFan, False,
                         self.intakeFanThreading, self.appData.Mode,
                         self.convertTimeToSeconds(self.motor.intakeMotorCycleOn, self.motor.intakeCycleOnUnits),
                         self.convertTimeToSeconds(self.motor.intakeMotorCycleOff, self.motor.intakeCycleOffUnits),
