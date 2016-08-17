@@ -32,7 +32,7 @@ class PumpDrainOutThreading(threading.Thread):
         print "Drain Out Completed"
         # GPIO.output(self.pinList[0], GPIO.HIGH)
         # GPIO.output(self.pinList[1], GPIO.HIGH)
-        for i in self.threePumps:
+        for i in self.list:
             i.Show(True)
 
 
