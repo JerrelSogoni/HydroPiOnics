@@ -205,6 +205,7 @@ class MotorController:
         print thread
         print device
         if((status is False) and (thread is not None) and (mode is self.appData.MANUAL)):
+            print "killing thread"
             self.killAMotor(device)
         elif(status and (thread is None) and (mode is self.appData.MANUAL)):
             self.startAMotor(device, motor)
