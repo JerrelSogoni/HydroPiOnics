@@ -246,6 +246,6 @@ class MotorView:
 
         #water pump listner
 
-        self.waterAirFanCheckBox.Bind(wx.EVT_CHECKBOX, self.motorController.processWAterAirPumpFanCheckbox)
+        self.waterAirFanCheckBox.Bind(wx.EVT_CHECKBOX, self.motorController.processWaterAirPumpFanCheckbox)
 
 

@@ -6,7 +6,6 @@ class MotorController:
         self.motorView = motorView
         self.motor = motor
         self.appData = appData
-        self.initDefaultValue()
 
     def updateMode(self, mode):
         if(mode != self.appData.MANUAL):

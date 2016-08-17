@@ -38,3 +38,11 @@ class ElectronicRelayEnvironmentController:
             else:
                 environment.Hide()
 
+    def initDefaultValues(self):
+        self.electronicRelayModel.isAirFilterOn = False
+        self.electronicRelayModel.isLedOn = False
+        self.electronicRelayModel.isAirHeaterOn = False
+        self.electronicRelayModel.isWaterHeaterOn = False
+        self.electronicRelayModel.isHumidifierOn = False
+
+
