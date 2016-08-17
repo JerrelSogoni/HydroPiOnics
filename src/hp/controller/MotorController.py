@@ -56,7 +56,7 @@ class MotorController:
 
 
     def processExhaustFanCycleOnUnits(self, event):
-        index = event
+        index = event.GetEventObject()
         print index
         #cycleOnUnit = self.motorView.cycleOnExaustFan.GetString(index)
         #self.motor.exhaustCycleOnUnits = cycleOnUnit
