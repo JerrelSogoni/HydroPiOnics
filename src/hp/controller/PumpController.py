@@ -73,7 +73,7 @@ class PumpController:
             self.pumpDrainOut = None
         if(self.pumpData.isDrainingOn and (self.pumpDrainOut is None)):
             if(self.pumpData.isResToPlantOn):
-                self.pumpData.isResDrainOn = False
+                self.pumpData.isResToPlantOn = False
                 self.pumpView.mixToPlantCheckBox.SetValue(False)
                 self.pumpResToPlant.die()
                 self.pumpResToPlant = None
