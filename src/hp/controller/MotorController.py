@@ -39,7 +39,7 @@ class MotorController:
             print cycleOnValue
         else:
             self.motor.exhaustMotorCycleOn = 0
-            cycleOn.SetValue(0)
+            cycleOn.SetValue("0")
             print "0"
 
     def processExhaustFanCycleOff(self,event):
@@ -50,7 +50,7 @@ class MotorController:
             print cycleOffValue
         else:
             self.motor.exhaustMotorCycleOff = 0
-            cycleOff.SetValue(0)
+            cycleOff.SetValue("0")
 
 
     def processExhaustFanCycleOnUnits(self, event):
@@ -78,7 +78,7 @@ class MotorController:
             self.motor.ventMotorCycleOn = cycleOnValue
         else:
             self.motor.ventMotorCycleOn = 0
-            cycleOn.SetValue(0)
+            cycleOn.SetValue("0")
 
     def processVentFanCycleOff(self,event):
         cycleOff = event.getEventObject()
@@ -87,7 +87,7 @@ class MotorController:
             self.motor.ventMotorCycleOff = cycleOffValue
         else:
             self.motor.ventMotorCycleOff = 0
-            cycleOff.SetValue(0)
+            cycleOff.SetValue("0")
 
     def processVentFanCycleOnUnits(self,event):
         cycleOn = event.GetEventObject()
@@ -109,7 +109,7 @@ class MotorController:
             self.motor.intakeMotorCycleOn = cycleOnValue
         else:
             self.motor.intakeMotorCycleOn = 0
-            cycleOn.SetValue(0)
+            cycleOn.SetValue("0")
     def processIntakeFanCycleOff(self,event):
         cycleOff = event.GetEventObject()
         cycleOffValue = cycleOff.GetValue()
@@ -117,7 +117,7 @@ class MotorController:
             self.motor.intakeMotorCycleOff = cycleOffValue
         else:
             self.motor.intakeMotorCycleOff = 0
-            cycleOff.SetValue(0)
+            cycleOff.SetValue("0")
     def processIntakeFanCycleOnUnits(self,event):
         cycleOn = event.GetEventObject()
         index = cycleOn.GetCurrentSelection()
