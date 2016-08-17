@@ -14,9 +14,6 @@ class HydroPiOnicsController:
         self.monitorC = None
         self.workspaceController = None
 
-    def initDefaultValue(self):
-        self.setMode(self.hydroModel.MANUAL)
-        self.setRun(self.hydroModel.OFF)
 
     def initActionListener(self):
         self.appGUI.Bind(wx.EVT_CLOSE, self.onClose)

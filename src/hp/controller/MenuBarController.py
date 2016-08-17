@@ -7,6 +7,7 @@ class MenuBarController:
         self.menuBarView = menuBarView
         self.appGUI = appGUI
         self.HydroController = self.appGUI.getGUIController()
+        self.initDefaultValue()
         self.initActionListners()
 
     def initActionListners(self):
@@ -27,6 +28,10 @@ class MenuBarController:
         item = self.menuBarView.FindItemById(event.GetId())
         mode = item.GetText()
         self.HydroController.setMode(mode)
+    def initDefaultValue(self):
+        self.HydroController.setRun(self.HydroController.hydroModel.OFF)
+        self.HydroController.setMode(self.HydroController.hydroModel.MANUAL)
+
 
 
 

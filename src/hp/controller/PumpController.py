@@ -9,6 +9,7 @@ class PumpController:
         self.pumpView = pumpView
         self.pumpData = pumpData
         self.appData = appData
+        self.initDefaultValue()
         self.pumpResToPlant = None
         self.pumpResToDrain = None
         self.pumpPlantToRes = None
@@ -103,6 +104,12 @@ class PumpController:
             self.pumpPlantToRes.die()
         if(self.pumpDrainOut is not None):
             self.pumpDrainOut.die()
+    def initDefaultValue(self):
+        self.pumpData.isDrainingOn = False
+        self.pumpData.isPlantDrainOn = False
+        self.pumpData.isResDrainOn = False
+        self.pumpData.isResToPlantOn = False
+
 
 
 
