@@ -1,4 +1,5 @@
 from hpThreadingClasses.MotorFanThreading import MotorFanThreading
+from data.Motor import Motor
 
 class MotorController:
     def __init__(self, motorView, motor, appData):
@@ -198,54 +199,84 @@ class MotorController:
             return cycleTime * 60
         else:
             return cycleTime * 3600
-    def startMotor(self,motor, status, thread, mode, cycleOn, cycleOff):
-        print status
-        print thread
-        print mode
-        
+    def startMotor(self,motor, status, thread, mode, cycleOn, cycleOff, device):
         if((status is False) and (thread is not None) and (mode is self.appData.MANUAL)):
-            print "Die"
-            thread.die()
-            thread = None
+            self.killAMotor(device)
 
         elif(status and (thread is None) and (mode is self.appData.MANUAL)):
+            self.startAMotor(device, motor):
             thread = MotorFanThreading(motor)
         elif ((status is False) and (thread is not None) and (mode is self.appData.TIMER or mode is self.appData.ENVIRONMENTAL)):
             thread.changeCycleOn(cycleOn)
             thread.changeCycleOff(cycleOff)
         elif (status and (thread is None) and ((mode is self.appData.TIMER or mode is self.appData.ENVIRONMENTAL))):
-            thread = MotorFanThreading(motor,cycleOn= cycleOn,cycleOff= cycleOff, cycle = True)
+            self.startMotorCycle(device,motor,cycleOn,cycleOff)
     def startExhaustCycle(self):
         self.startMotor(self.motor.exhaustFan, self.motor.isExaustMotorOn,
                         self.exhaustFanThreading, self.appData.Mode,
                         self.convertTimeToSeconds(self.motor.exhaustMotorCycleOn, self.motor.exhaustCycleOnUnits),
-                        self.convertTimeToSeconds(self.motor.exhaustMotorCycleOff, self.motor.exhaustCycleOffUnits))
+                        self.convertTimeToSeconds(self.motor.exhaustMotorCycleOff, self.motor.exhaustCycleOffUnits),
+                        Motor.EXHAUSTMOTOR)
     def startVentCycle(self):
         self.startMotor(self.motor.ventFan, self.motor.isVentMotorOn,
                         self.ventFanThreading, self.appData.Mode,
                         self.convertTimeToSeconds(self.motor.ventMotorCycleOn, self.motor.ventCycleOnUnits),
-                        self.convertTimeToSeconds(self.motor.ventMotorCycleOff, self.motor.ventCycleOffUnits))
+                        self.convertTimeToSeconds(self.motor.ventMotorCycleOff, self.motor.ventCycleOffUnits),
+                        Motor.VENTMOTOR)
     def startIntakeCycle(self):
         self.startMotor(self.motor.intakeFan, self.motor.isIntakeMotorOn,
                         self.intakeFanThreading, self.appData.Mode,
                         self.convertTimeToSeconds(self.motor.intakeMotorCycleOn, self.motor.intakeCycleOnUnits),
-                        self.convertTimeToSeconds(self.motor.intakeMotorCycleOff, self.motor.intakeCycleOffUnits))
+                        self.convertTimeToSeconds(self.motor.intakeMotorCycleOff, self.motor.intakeCycleOffUnits),
+                        Motor.INTAKEMOTOR)
     def startExhaust(self):
         self.startMotor(self.motor.exhaustFan, self.motor.isExaustMotorOn,
                         self.exhaustFanThreading, self.appData.Mode,
-                        None, None)
+                        None, None, Motor.EXHAUSTMOTOR)
     def startIntake(self):
         self.startMotor(self.motor.intakeFan, self.motor.isIntakeMotorOn,
                         self.exhaustFanThreading, self.appData.Mode,
-                        None, None)
+                        None, None, Motor.INTAKEMOTOR)
     def startVent(self):
         self.startMotor(self.motor.ventFan, self.motor.isVentMotorOn,
                         self.exhaustFanThreading, self.appData.Mode,
-                        None, None)
+                        None, None, Motor.VENTMOTOR)
     def startWaterAirPump(self):
         self.startMotor(self.motor.waterAirPump, self.motor.isWaterAirPumpOn,
                         self.exhaustFanThreading, self.appData.Mode,
-                        None, None)
+                        None, None, Motor.WATERAIRPUMP)
+
+    def killAMotor(self, device):
+        if (device == Motor.VENTMOTOR):
+            self.ventFanThreading.die()
+            self.ventFanThreading = None
+        elif (device == Motor.INTAKEMOTOR):
+            self.intakeFanThreading.die()
+            self.intakeFanThreading = None
+        elif (device == Motor.EXHAUSTMOTOR):
+            self.exhaustFanThreading.die()
+            self.exhaustFanThreading = None
+        elif (device == Motor.WATERAIRPUMP):
+            self.waterAirThreading.die()
+            self.waterAirThreading = None
+    def startAMotor(self, device, motor):
+        if (device == Motor.VENTMOTOR):
+            self.ventFanThreading = MotorFanThreading(motor)
+        elif (device == Motor.INTAKEMOTOR):
+            self.intakeFanThreading = MotorFanThreading(motor)
+        elif (device == Motor.EXHAUSTMOTOR):
+            self.exhaustFanThreading = MotorFanThreading(motor)
+        elif (device == Motor.WATERAIRPUMP):
+            self.waterAirThreading = MotorFanThreading(motor)
+    def startMotorCycle(self,device,motor,cycleOn,cycleOff):
+        if (device == Motor.VENTMOTOR):
+            self.ventFanThreading = MotorFanThreading(motor,cycleOn= cycleOn,cycleOff= cycleOff, cycle = True)
+        elif (device == Motor.INTAKEMOTOR):
+            self.intakeFanThreading = MotorFanThreading(motor,cycleOn= cycleOn,cycleOff= cycleOff, cycle = True)
+        elif (device == Motor.EXHAUSTMOTOR):
+            self.exhaustFanThreading = MotorFanThreading(motor,cycleOn= cycleOn,cycleOff= cycleOff, cycle = True)
+        elif (device == Motor.WATERAIRPUMP):
+            self.waterAirThreading = MotorFanThreading(motor,cycleOn= cycleOn,cycleOff= cycleOff, cycle = True)
 
 
 
