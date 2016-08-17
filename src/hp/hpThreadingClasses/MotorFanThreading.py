@@ -32,6 +32,7 @@ class MotorFanThreading(threading.Thread):
                 continue
     def die(self):
         self.isDead = True
+        print "cycle On"
         #self.motor.run(Adafruit_MotorHAT.RELEASE)
     def changeCycleOn(self, cycleOn):
         self.cycleOn = cycleOn
