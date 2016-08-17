@@ -247,16 +247,16 @@ class MotorController:
                         None, None, Motor.EXHAUSTMOTOR)
     def startIntake(self):
         self.startMotor(self.motor.intakeFan, self.motor.isIntakeMotorOn,
-                        self.exhaustFanThreading, self.appData.Mode,
+                        self.intakeFanThreadingFanThreading, self.appData.Mode,
                         None, None, Motor.INTAKEMOTOR)
     def startVent(self):
         self.startMotor(self.motor.ventFan, self.motor.isVentMotorOn,
-                        self.exhaustFanThreading, self.appData.Mode,
+                        self.ventFanThreading, self.appData.Mode,
                         None, None, Motor.VENTMOTOR)
     def startWaterAirPump(self):
 
         self.startMotor(self.motor.waterAirPump, self.motor.isWaterAirPumpOn,
-                        self.exhaustFanThreading, self.appData.Mode,
+                        self.waterAirThreading, self.appData.Mode,
                         None, None, Motor.WATERAIRPUMP)
 
     def killAMotor(self, device):
