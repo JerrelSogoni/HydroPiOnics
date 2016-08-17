@@ -192,30 +192,23 @@ class MotorController:
 
     def convertTimeToSeconds(self, cycleTime, cycleUnit):
         if(cycleUnit == 's'):
-            return cycleTime
+            return float(cycleTime)
         elif(cycleUnit == 'm'):
-            return cycleTime * 60
+            return float(cycleTime * 60)
         else:
-            return cycleTime * 3600
+            return float(cycleTime * 3600)
     def startMotor(self,motor, status, thread, mode, cycleOn, cycleOff, device):
-        print status
-        print thread
-        print device
-        print mode
         if((status == False) and (thread != None) and (mode == self.appData.MANUAL)):
-            print "killing thread"
             self.killAMotor(device)
         elif(status and (thread == None) and (mode == self.appData.MANUAL)):
             self.startAMotor(device, motor)
         elif ((thread is not None) and (mode == self.appData.TIMER or mode == self.appData.ENVIRONMENTAL)):
-            print "Timingagain"
             if(device is Motor.WATERAIRPUMP):
                 self.killMotors(device)
             else:
                 thread.changeCycleOn(cycleOn)
                 thread.changeCycleOff(cycleOff)
         elif ((thread is None) and ((mode == self.appData.TIMER or mode == self.appData.ENVIRONMENTAL))):
-            print "is Timing working"
             if(device is Motor.WATERAIRPUMP):
                 self.startAMotor(device, motor)
             else:
