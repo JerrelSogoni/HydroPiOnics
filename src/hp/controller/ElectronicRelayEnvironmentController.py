@@ -17,26 +17,21 @@ class ElectronicRelayEnvironmentController:
         self.electronicRelayModel.isHumidifierOn = checkboxValue()
 
     def updateMode(self,mode):
+        for objects in self.electronicRelayView.objects:
+            objects.Hide()
         if(mode == self.appData.ENVIRONMENTAL):
-            self.cycleOrEnvironmentalMode(True, False)
-            self.electronicRelayView.underwaterHeaterCheckBox.Show(False)
-        elif(mode == self.appData.TIMER):
-            self.cycleOrEnvironmentalMode(True, False)
-            self.electronicRelayView.underwaterHeaterCheckBox.Show(True)
-        else:
-            self.cycleOrEnvironmentalMode(False, True)
-
-    def cycleOrEnvironmentalMode(self, cycle, environmental):
-        for cycles in self.electronicRelayView.cycleArray:
-            if(cycle):
+            for cycles in self.electronicRelayView.cycleArray:
                 cycles.Show(True)
-            else:
-                cycles.Hide()
-        for environment in self.electronicRelayView.environmentalArray:
-            if(environmental):
-                environment.Show(True)
-            else:
-                environment.Hide()
+            for evironmental in self.electronicRelayView.environmentalHideArray:
+                evironmental.Hide()
+        elif(mode == self.appData.TIMER):
+            for cycles in self.electronicRelayView.cycleArray:
+                cycles.Show(True)
+        else:
+            for manuals in self.electronicRelayView.manualArray:
+                manuals.Show(True)
+
+
 
     def initDefaultValues(self):
         self.electronicRelayModel.isAirFilterOn = False
