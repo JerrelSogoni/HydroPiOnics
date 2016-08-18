@@ -251,7 +251,7 @@ class ElectronicRelayEnviromentView:
                                                                         style=0, value='')
         self.cycleArray.append(self.airHeaterFanCycleOnValue)
         self.objects.append(self.airHeaterFanCycleOnValue)
-        self.environmentalHideArray.append(self.airHeaterHumidOnValue)
+        self.environmentalHideArray.append(self.airHeaterFanCycleOnValue)
 
         self.airHeaterFanCycleOffValue = wx.lib.masked.textctrl.TextCtrl(id=wx.ID_ANY,
                                                                          name=u'airHeaterFanCycleOffValue',
