@@ -1,6 +1,6 @@
 import threading
 import time
-
+from ThirdPartyAPIs.Adafruit_Motor_HAT_Python_Library.Adafruit_MotorHAT import Adafruit_MotorHAT, Adafruit_DCMotor
 
 class MotorFanThreading(threading.Thread):
     def __init__(self, motor, cycleOn = None, cycleOff = None, cycle = False):
