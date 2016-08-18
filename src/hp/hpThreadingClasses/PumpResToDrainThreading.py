@@ -1,6 +1,6 @@
 import threading
 import RPi.GPIO as GPIO
-from data.Pump as pump
+import data.Pump as pump
 GPIO.setmode(GPIO.BCM)
 
 class PumpResToDrainThreading(threading.Thread):
