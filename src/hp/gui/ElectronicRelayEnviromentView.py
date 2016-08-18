@@ -402,37 +402,36 @@ class ElectronicRelayEnviromentView:
         self.electronicRelayC = controller
 
     def initListeners(self):
-        # self.airFilterFanCheckBox.Bind(wx.EVT_CHECKBOX, self.electronicRelayC.processAirFilterFanCheckbox)
-        # self.airFilterFanCycleOnValue.Bind(wx.EVT_TEXT_ENTER, self.electronicRelayC.processAirFilterCycleOn)
-        # self.airFilterFanCycleOffValue.Bind(wx.EVT_TEXT_ENTER, self.electronicRelayC.processAirFilterCycleOff)
-        # self.cycleOnAirFIlterFan.Bind(wx.EVT_CHOICE, self.electronicRelayC.processAirFilterCycleOnUnits)
-        # self.cycleOffAirFilterFan.Bind(wx.EVT_CHOICE, self.electronicRelayC.processAirFilterCycleOffUnits)
-        #
-        # self.airHeaterCheckBox.Bind(wx.EVT_CHECKBOX, self.electronicRelayC.processAirHeaterCheckbox)
-        # self.airHeaterFanCycleOnValue.Bind(wx.EVT_TEXT_ENTER, self.electronicRelayC.processAirHeaterCycleOn)
-        # self.airHeaterFanCycleOffValue.Bind(wx.EVT_TEXT_ENTER, self.electronicRelayC.processAirHeaterCycleOff)
-        # self.cycleOnAirHeaterFan.Bind(wx.EVT_CHOICE, self.electronicRelayC.processAirHeaterCycleOnUnits)
-        # self.cycleOffAirHeaterFan.Bind(wx.EVT_CHOICE, self.electronicRelayC.processAirHeaterCycleOffUnits)
-        #
-        # self.ledCheckBox.Bind(wx.EVT_CHECKBOX, self.electronicRelayC.processLedCheckbox)
-        # self.ledCycleOnValue.Bind(wx.EVT_TEXT_ENTER, self.electronicRelayC.processLedCycleOn)
-        # self.ledCycleOffValue.Bind(wx.EVT_TEXT_ENTER, self.electronicRelayC.processLedCycleOff)
-        # self.cycleOnLed.Bind(wx.EVT_CHOICE, self.electronicRelayC.processLedCycleOnUnits)
-        # self.cycleOffLed.Bind(wx.EVT_CHOICE, self.electronicRelayC.processLedCycleOffUnits)
-        #
-        # self.underwaterHeaterCheckBox.Bind(wx.EVT_CHECKBOX, self.electronicRelayC.processUnderwaterHeaterCheckbox)
-        # self.underwaterOnValue.Bind(wx.EVT_TEXT_ENTER, self.electronicRelayC.processUnderwaterHeaterCycleOn)
-        # self.underwaterOffValue.Bind(wx.EVT_TEXT_ENTER, self.electronicRelayC.processUnderwaterHeaterCycleOff)
-        # self.cycleOnunderwater.Bind(wx.EVT_CHOICE, self.electronicRelayC.processUnderwaterHeaterCycleOnUnits)
-        # self.cycleOffunderwater.Bind(wx.EVT_CHOICE, self.electronicRelayC.processUnderwaterHeaterCycleOffUnits)
-        #
-        #
-        # self.humidifierCheckBox.Bind(wx.EVT_CHECKBOX, self.electronicRelayC.processHumidifierCheckbox)
-        # self.airHeaterHumidOnValue.Bind(wx.EVT_TEXT_ENTER, self.electronicRelayC.processHumidifierCycleOn)
-        # self.airHeaterFanCycleOffValue.Bind(wx.EVT_TEXT_ENTER, self.electronicRelayC.processHumidifierCycleOff)
-        # self.cycleOnAirHeaterFan.Bind(wx.EVT_CHOICE, self.electronicRelayC.processHumidifierCycleOnUnits)
-        # self.cycleOffAirHumidFan.Bind(wx.EVT_CHOICE, self.electronicRelayC.processHumidifierCycleOffUnits)
-        pass
+        self.airFilterFanCheckBox.Bind(wx.EVT_CHECKBOX, self.electronicRelayC.processAirFilterFanCheckbox)
+        self.airFilterFanCycleOnValue.Bind(wx.EVT_TEXT_ENTER, self.electronicRelayC.processAirFilterCycleOn)
+        self.airFilterFanCycleOffValue.Bind(wx.EVT_TEXT_ENTER, self.electronicRelayC.processAirFilterCycleOff)
+        self.cycleOnAirFIlterFan.Bind(wx.EVT_CHOICE, self.electronicRelayC.processAirFilterCycleOnUnits)
+        self.cycleOffAirFilterFan.Bind(wx.EVT_CHOICE, self.electronicRelayC.processAirFilterCycleOffUnits)
+
+        self.airHeaterCheckBox.Bind(wx.EVT_CHECKBOX, self.electronicRelayC.processAirHeaterCheckbox)
+        self.airHeaterFanCycleOnValue.Bind(wx.EVT_TEXT_ENTER, self.electronicRelayC.processAirHeaterCycleOn)
+        self.airHeaterFanCycleOffValue.Bind(wx.EVT_TEXT_ENTER, self.electronicRelayC.processAirHeaterCycleOff)
+        self.cycleOnAirHeaterFan.Bind(wx.EVT_CHOICE, self.electronicRelayC.processAirHeaterCycleOnUnits)
+        self.cycleOffAirHeaterFan.Bind(wx.EVT_CHOICE, self.electronicRelayC.processAirHeaterCycleOffUnits)
+
+        self.ledCheckBox.Bind(wx.EVT_CHECKBOX, self.electronicRelayC.processLedCheckbox)
+        self.ledCycleOnValue.Bind(wx.EVT_TEXT_ENTER, self.electronicRelayC.processLedCycleOn)
+        self.ledCycleOffValue.Bind(wx.EVT_TEXT_ENTER, self.electronicRelayC.processLedCycleOff)
+        self.cycleOnLed.Bind(wx.EVT_CHOICE, self.electronicRelayC.processLedCycleOnUnits)
+        self.cycleOffLed.Bind(wx.EVT_CHOICE, self.electronicRelayC.processLedCycleOffUnits)
+
+        self.underwaterHeaterCheckBox.Bind(wx.EVT_CHECKBOX, self.electronicRelayC.processUnderwaterHeaterCheckbox)
+        self.underwaterOnValue.Bind(wx.EVT_TEXT_ENTER, self.electronicRelayC.processUnderwaterHeaterCycleOn)
+        self.underwaterOffValue.Bind(wx.EVT_TEXT_ENTER, self.electronicRelayC.processUnderwaterHeaterCycleOff)
+        self.cycleOnunderwater.Bind(wx.EVT_CHOICE, self.electronicRelayC.processUnderwaterHeaterCycleOnUnits)
+        self.cycleOffunderwater.Bind(wx.EVT_CHOICE, self.electronicRelayC.processUnderwaterHeaterCycleOffUnits)
+
+
+        self.humidifierCheckBox.Bind(wx.EVT_CHECKBOX, self.electronicRelayC.processHumidifierCheckbox)
+        self.airHeaterHumidOnValue.Bind(wx.EVT_TEXT_ENTER, self.electronicRelayC.processHumidifierCycleOn)
+        self.airHeaterFanCycleOffValue.Bind(wx.EVT_TEXT_ENTER, self.electronicRelayC.processHumidifierCycleOff)
+        self.cycleOnAirHeaterFan.Bind(wx.EVT_CHOICE, self.electronicRelayC.processHumidifierCycleOnUnits)
+        self.cycleOffAirHumidFan.Bind(wx.EVT_CHOICE, self.electronicRelayC.processHumidifierCycleOffUnits)
 
 
 
