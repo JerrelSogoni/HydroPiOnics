@@ -99,7 +99,7 @@ class ElectronicRelayEnviromentView:
                                             wx.NORMAL, False, u'Showcard Gothic'))
         self.cycleArray.append(self.cycleOffAirHeaterFanText)
         self.objects.append(self.cycleOffAirHeaterFanText)
-        self.environmentalHideArray(self.cycleOffAirHeaterFanText)
+        self.environmentalHideArray.append(self.cycleOffAirHeaterFanText)
 
         self.cycleOnAirHeaterFanText = wx.lib.stattext.GenStaticText(ID=wx.ID_ANY,
                                                                      label=u'Cycle On', name=u'cycleOnAirFIlterFanText',
@@ -109,7 +109,7 @@ class ElectronicRelayEnviromentView:
                                             wx.NORMAL, False, u'Showcard Gothic'))
         self.cycleArray.append(self.cycleOnAirHeaterFanText)
         self.objects.append(self.cycleOnAirHeaterFanText)
-        self.environmentalHideArray(self.cycleOnAirHumidFanText)
+        self.environmentalHideArray.append(self.cycleOnAirHumidFanText)
 
         self.cycleOffAirHumidFanText = wx.lib.stattext.GenStaticText(ID=wx.ID_ANY,
                                                                       label=u'Cycle Off',
@@ -120,7 +120,7 @@ class ElectronicRelayEnviromentView:
                                             wx.NORMAL, False, u'Showcard Gothic'))
         self.cycleArray.append(self.cycleOffAirHumidFanText)
         self.objects.append(self.cycleOffAirHumidFanText)
-        self.environmentalHideArray(self.cycleOffAirHumidFanText)
+        self.environmentalHideArray.append(self.cycleOffAirHumidFanText)
 
         self.cycleOnAirHumidFanText = wx.lib.stattext.GenStaticText(ID=wx.ID_ANY,
                                                                      label=u'Cycle On', name=u'cycleOnAirFIlterFanText',
@@ -130,7 +130,7 @@ class ElectronicRelayEnviromentView:
                                             wx.NORMAL, False, u'Showcard Gothic'))
         self.cycleArray.append(self.cycleOnAirHumidFanText)
         self.objects.append(self.cycleOnAirHumidFanText)
-        self.environmentalHideArray(self.cycleOnAirHumidFanText)
+        self.environmentalHideArray.append(self.cycleOnAirHumidFanText)
 
         self.cycleOffUnderwaterText = wx.lib.stattext.GenStaticText(ID=wx.ID_ANY,
                                                                       label=u'Cycle Off',
@@ -141,7 +141,7 @@ class ElectronicRelayEnviromentView:
                                             wx.NORMAL, False, u'Showcard Gothic'))
         self.cycleArray.append(self.cycleOffUnderwaterText)
         self.objects.append(self.cycleOffUnderwaterText)
-        self.environmentalHideArray(self.cycleOffUnderwaterText)
+        self.environmentalHideArray.append(self.cycleOffUnderwaterText)
 
         self.cycleOnUnderwaterText = wx.lib.stattext.GenStaticText(ID=wx.ID_ANY,
                                                                      label=u'Cycle On', name=u'cycleOnAirFIlterFanText',
@@ -151,7 +151,7 @@ class ElectronicRelayEnviromentView:
                                             wx.NORMAL, False, u'Showcard Gothic'))
         self.cycleArray.append(self.cycleOnUnderwaterText)
         self.objects.append(self.cycleOnUnderwaterText)
-        self.environmentalHideArray(self.cycleOnUnderwaterText)
+        self.environmentalHideArray.append(self.cycleOnUnderwaterText)
 
     def initElectronicImages(self):
         self.airFilterFanPicture = wx.StaticBitmap(
