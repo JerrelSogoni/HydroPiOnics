@@ -49,14 +49,14 @@ class ElectronicRelayEnvironmentController:
     def processAirFilterCycleOnUnits(self, event):
         cycleOn = event.GetEventObject()
         index = cycleOn.GetCurrentSelection()
-        cycleOnUnit = self.electronicRelayView.cycleOnAirFIlterFan.GetString(index)
+        cycleOnUnit = self.electronicRelayView.cycleOnAirFilterFan.GetString(index)
         print cycleOnUnit
         self.electronicRelayModel.airFilterFanCycleOnUnits = cycleOnUnit
 
     def processAirFilterCycleOffUnits(self, event):
         cycleOff = event.GetEventObject()
         index = cycleOff.GetCurrentSelection()
-        cycleOffUnit = self.electronicRelayView.cycleOffAirFIlterFan.GetString(index)
+        cycleOffUnit = self.electronicRelayView.cycleOffAirFilterFan.GetString(index)
         print cycleOffUnit
         self.electronicRelayModel.airFilterFanCycleOffUnits = cycleOffUnit
     def processAirHeaterCheckbox(self, event):
