@@ -97,6 +97,7 @@ class HydroPiOnics(wx.Frame):
         self.electronicRelayModel = ElectronicRelayEnvironment()
         self.electronicRelayController = ElectronicRelayEnvironmentController(self.electronicRelayView, self.electronicRelayModel, self.guiModel)
         self.electronicRelayView.initController(self.electronicRelayController)
+        self.electronicRelayView.initListeners()
 
     def giveControllersToMainController(self):
         self.guiController.setElectronicRelayEnvironmentC(self.electronicRelayController)
