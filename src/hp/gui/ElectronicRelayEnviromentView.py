@@ -405,7 +405,7 @@ class ElectronicRelayEnviromentView:
         self.airFilterFanCheckBox.Bind(wx.EVT_CHECKBOX, self.electronicRelayC.processAirFilterFanCheckbox)
         self.airFilterFanCycleOnValue.Bind(wx.EVT_TEXT_ENTER, self.electronicRelayC.processAirFilterCycleOn)
         self.airFilterFanCycleOffValue.Bind(wx.EVT_TEXT_ENTER, self.electronicRelayC.processAirFilterCycleOff)
-        self.cycleOnAirFIlterFan.Bind(wx.EVT_CHOICE, self.electronicRelayC.processAirFilterCycleOnUnits)
+        self.cycleOnAirFilterFan.Bind(wx.EVT_CHOICE, self.electronicRelayC.processAirFilterCycleOnUnits)
         self.cycleOffAirFilterFan.Bind(wx.EVT_CHOICE, self.electronicRelayC.processAirFilterCycleOffUnits)
 
         self.airHeaterCheckBox.Bind(wx.EVT_CHECKBOX, self.electronicRelayC.processAirHeaterCheckbox)
