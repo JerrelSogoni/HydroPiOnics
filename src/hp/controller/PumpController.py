@@ -9,7 +9,6 @@ class PumpController:
         self.pumpView = pumpView
         self.pumpData = pumpData
         self.appData = appData
-        self.initDefaultValue()
         self.pumpResToPlant = None
         self.pumpResToDrain = None
         self.pumpPlantToRes = None
@@ -118,11 +117,7 @@ class PumpController:
             self.pumpDrainOut.die()
             self.pumpData.isDrainingOn = False
             self.pumpView.drainSystemCheckBox.SetValue(False)
-    def initDefaultValue(self):
-        self.pumpData.isDrainingOn = False
-        self.pumpData.isPlantDrainOn = False
-        self.pumpData.isResDrainOn = False
-        self.pumpData.isResToPlantOn = False
+
 
 
 

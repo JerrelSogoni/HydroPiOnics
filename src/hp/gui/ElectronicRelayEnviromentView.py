@@ -228,94 +228,94 @@ class ElectronicRelayEnviromentView:
 
     def initRelayInputs(self):
 
-        self.airFilterFanCycleOnValue = wx.lib.masked.textctrl.TextCtrl(id=wx.ID_ANY,
+        self.airFilterFanCycleOnValue = wx.TextCtrl(id=wx.ID_ANY,
                                                                         name=u'airFilterFanCycleOnValue',
                                                                         parent=self.workspace,
                                                                         pos=wx.Point(560, 336), size=wx.Size(48, 23),
-                                                                        style=0, value='')
+                                                                        style=wx.TE_PROCESS_ENTER, value='0')
         self.cycleArray.append(self.airFilterFanCycleOnValue)
         self.objects.append(self.airFilterFanCycleOnValue)
 
-        self.airFilterFanCycleOffValue = wx.lib.masked.textctrl.TextCtrl(id=wx.ID_ANY,
+        self.airFilterFanCycleOffValue = wx.TextCtrl(id=wx.ID_ANY,
                                                                          name=u'airFilterFanCycleOffValue',
                                                                          parent=self.workspace,
                                                                          pos=wx.Point(688, 336), size=wx.Size(48, 23),
-                                                                         style=0, value='')
+                                                                         style=wx.TE_PROCESS_ENTER, value='0')
         self.cycleArray.append(self.airFilterFanCycleOffValue)
         self.objects.append(self.airFilterFanCycleOffValue)
 
-        self.airHeaterFanCycleOnValue = wx.lib.masked.textctrl.TextCtrl(id=wx.ID_ANY,
+        self.airHeaterFanCycleOnValue = wx.TextCtrl(id=wx.ID_ANY,
                                                                         name=u'airHeaterFanCycleOnValue',
                                                                         parent=self.workspace,
                                                                         pos=wx.Point(560, 536), size=wx.Size(48, 23),
-                                                                        style=0, value='')
+                                                                        style=wx.TE_PROCESS_ENTER, value='0')
         self.cycleArray.append(self.airHeaterFanCycleOnValue)
         self.objects.append(self.airHeaterFanCycleOnValue)
         self.environmentalHideArray.append(self.airHeaterFanCycleOnValue)
 
-        self.airHeaterFanCycleOffValue = wx.lib.masked.textctrl.TextCtrl(id=wx.ID_ANY,
+        self.airHeaterFanCycleOffValue = wx.TextCtrl(id=wx.ID_ANY,
                                                                          name=u'airHeaterFanCycleOffValue',
                                                                          parent=self.workspace,
                                                                          pos=wx.Point(688, 536), size=wx.Size(48, 23),
-                                                                         style=0, value='')
+                                                                         style=wx.TE_PROCESS_ENTER, value='0')
         self.cycleArray.append(self.airHeaterFanCycleOffValue)
         self.objects.append(self.airHeaterFanCycleOffValue)
         self.environmentalHideArray.append(self.airHeaterFanCycleOffValue)
 
-        self.airHeaterHumidOnValue = wx.lib.masked.textctrl.TextCtrl(id=wx.ID_ANY,
+        self.airHeaterHumidOnValue = wx.TextCtrl(id=wx.ID_ANY,
                                                                         name=u'airFilterHumidOnValue',
                                                                         parent=self.workspace,
                                                                         pos=wx.Point(560, 440), size=wx.Size(48, 23),
-                                                                        style=0, value='')
+                                                                        style=wx.TE_PROCESS_ENTER, value='0')
         self.cycleArray.append(self.airHeaterHumidOnValue)
         self.objects.append(self.airHeaterHumidOnValue)
         self.environmentalHideArray.append(self.airHeaterHumidOnValue)
 
-        self.airHeaterHumidOffValue = wx.lib.masked.textctrl.TextCtrl(id=wx.ID_ANY,
+        self.airHeaterHumidOffValue = wx.TextCtrl(id=wx.ID_ANY,
                                                                          name=u'airFilterHumidOffValue',
                                                                          parent=self.workspace,
                                                                          pos=wx.Point(688, 440), size=wx.Size(48, 23),
-                                                                         style=0, value='')
+                                                                         style=wx.TE_PROCESS_ENTER, value='0')
         self.cycleArray.append(self.airHeaterHumidOffValue)
         self.objects.append(self.airHeaterHumidOffValue)
-        
+
         self.environmentalHideArray.append(self.airHeaterHumidOffValue)
-        self.underwaterOnValue = wx.lib.masked.textctrl.TextCtrl(id=wx.ID_ANY,
+        self.underwaterOnValue = wx.TextCtrl(id=wx.ID_ANY,
                                                                         name=u'airFilterHumidOnValue',
                                                                         parent=self.workspace,
                                                                         pos=wx.Point(150, 106), size=wx.Size(48, 23),
-                                                                        style=0, value='')
+                                                                        style=wx.TE_PROCESS_ENTER, value='0')
         self.cycleArray.append(self.underwaterOnValue)
         self.objects.append(self.underwaterOnValue)
         self.environmentalHideArray.append(self.underwaterOnValue)
 
-        self.underwaterOffValue = wx.lib.masked.textctrl.TextCtrl(id=wx.ID_ANY,
+        self.underwaterOffValue = wx.TextCtrl(id=wx.ID_ANY,
                                                                          name=u'airFilterHumidOffValue',
                                                                          parent=self.workspace,
                                                                          pos=wx.Point(278, 106), size=wx.Size(48, 23),
-                                                                         style=0, value='')
+                                                                         style=wx.TE_PROCESS_ENTER, value='0')
         self.cycleArray.append(self.underwaterOffValue)
         self.objects.append(self.underwaterOffValue)
         self.environmentalHideArray.append(self.underwaterOffValue)
 
-        self.ledCycleOnValue = wx.lib.masked.textctrl.TextCtrl(id=wx.ID_ANY,
+        self.ledCycleOnValue = wx.TextCtrl(id=wx.ID_ANY,
                                                                name=u'ledCycleOnValue', parent=self.workspace,
-                                                               pos=wx.Point(560, 603), size=wx.Size(48, 23), style=0,
-                                                               value='')
+                                                               pos=wx.Point(560, 603), size=wx.Size(48, 23), style=wx.TE_PROCESS_ENTER,
+                                                               value='0')
         self.cycleArray.append(self.ledCycleOnValue)
         self.objects.append(self.ledCycleOnValue)
 
-        self.ledCycleOffValue = wx.lib.masked.textctrl.TextCtrl(id=wx.ID_ANY,
+        self.ledCycleOffValue = wx.TextCtrl(id=wx.ID_ANY,
                                                                 name=u'ledCycleOffValue', parent=self.workspace,
-                                                                pos=wx.Point(696, 603), size=wx.Size(48, 23), style=0,
-                                                                value='')
+                                                                pos=wx.Point(696, 603), size=wx.Size(48, 23), style=wx.TE_PROCESS_ENTER,
+                                                                value='0')
         self.cycleArray.append(self.ledCycleOffValue)
         self.objects.append(self.ledCycleOffValue)
 
         self.cycleOnAirFIlterFan = wx.Choice(choices=['s', 'm', 'h'],
                                              id=wx.ID_ANY,
                                              name=u'cycleOnAirFIlterFan', parent=self.workspace,
-                                             pos=wx.Point(608, 336), size=wx.Size(56, 23), style=0)
+                                             pos=wx.Point(608, 336), size=wx.Size(56, 23), style= wx.TE_PROCESS_ENTER, value= '0')
         self.cycleOnAirFIlterFan.SetSelection(0)
         self.cycleArray.append(self.cycleOnAirFIlterFan)
         self.objects.append(self.cycleOnAirFIlterFan)
@@ -323,7 +323,7 @@ class ElectronicRelayEnviromentView:
         self.cycleOffAirHeaterFan = wx.Choice(choices=['s', 'm', 'h'],
                                               id=wx.ID_ANY,
                                               name=u'cycleOffAirFilterFan', parent=self.workspace,
-                                              pos=wx.Point(736, 536), size=wx.Size(56, 23), style=0)
+                                              pos=wx.Point(736, 536), size=wx.Size(56, 23), style= wx.TE_PROCESS_ENTER, value = '0')
         self.cycleOffAirHeaterFan.SetSelection(0)
         self.cycleArray.append(self.cycleOffAirHeaterFan)
         self.objects.append(self.cycleOffAirHeaterFan)
@@ -386,7 +386,6 @@ class ElectronicRelayEnviromentView:
                                     id=wx.ID_ANY, name=u'cycleOnLed',
                                     parent=self.workspace, pos=wx.Point(608, 603),
                                     size=wx.Size(56, 23), style=0)
-        self.cycleOnLed.SetStringSelection(u'')
         self.cycleOnLed.SetSelection(0)
         self.cycleArray.append(self.cycleOnLed)
         self.objects.append(self.cycleOnLed)
@@ -403,7 +402,29 @@ class ElectronicRelayEnviromentView:
         self.electronicRelayC = controller
 
     def initListeners(self):
-        pass
+        self.airFilterFanCheckBox.Bind(wx.EVT_CHECKBOX, self.electronicRelayC.processAirFilterFanCheckbox)
+        self.airFilterFanCycleOnValue.Bind(wx.EVT_TEXT_ENTER, self.electronicRelayC.processAirFilterCycleOn)
+        self.airFilterFanCycleOffValue.Bind(wx.EVT_TEXT_ENTER, self.electronicRelayC.processAirFilterCycleOff)
+        self.cycleOnAirFIlterFan.Bind(wx.EVT_CHOICE, self.electronicRelayC.processAirFilterCycleOnUnits)
+        self.cycleOffAirFilterFan.Bind(wx.EVT_CHOICE, self.electronicRelayC.processAirFilterCycleOffUnits)
+        
+        self.airHeaterCheckBox.Bind(wx.EVT_CHECKBOX, self.electronicRelayC.processAirHeaterCheckbox)
+        self.airHeaterFanCycleOnValue.Bind(wx.EVT_TEXT_ENTER, self.electronicRelayC.processAirHeaterCycleOn)
+        self.airHeaterFanCycleOffValue.Bind(wx.EVT_TEXT_ENTER, self.electronicRelayC.processAirHeaterCycleOff)
+        self.cycleOnAirHeaterFan.Bind(wx.EVT_CHOICE, self.electronicRelayC.processAirHeaterCycleOnUnits)
+        self.cycleOffAirHeaterFan.Bind(wx.EVT_CHOICE, self.electronicRelayC.processAirHeaterCycleOffUnits)
+
+        self.ledCheckBox.Bind(wx.EVT_CHECKBOX, self.electronicRelayC.processLedCheckbox)
+        self.ledCycleOnValue.Bind(wx.EVT_TEXT_ENTER, self.electronicRelayC.processLedCycleOn)
+        self.ledCycleOffValue.Bind(wx.EVT_TEXT_ENTER, self.electronicRelayC.processLedCycleOff)
+        self.cycleOnLed.Bind(wx.EVT_CHOICE, self.electronicRelayC.processLedCycleOnUnits)
+        self.cycleOffLed.Bind(wx.EVT_CHOICE, self.electronicRelayC.processLedCycleOffUnits)
+
+        self.underwaterHeaterCheckBox.Bind(wx.EVT_CHECKBOX, self.electronicRelayC.processUnderwaterHeaterCheckbox)
+        self.underwaterOnValue.Bind(wx.EVT_TEXT_ENTER, self.electronicRelayC.processUnderwaterHeaterCycleOn)
+        self.underwaterOffValue.Bind(wx.EVT_TEXT_ENTER, self.electronicRelayC.processUnderwaterHeaterCycleOff)
+        self.cycleOnunderwater.Bind(wx.EVT_CHOICE, self.electronicRelayC.processUnderwaterHeaterCycleOnUnits)
+        self.cycleOffunderwater.Bind(wx.EVT_CHOICE, self.electronicRelayC.processUnderwaterHeaterCycleOffUnits)
 
 
 

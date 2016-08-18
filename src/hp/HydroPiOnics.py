@@ -50,7 +50,6 @@ class HydroPiOnics(wx.Frame):
         self.initEnvironmentalMonitorMVC()
         self.initElectronicRelayEnvironmentMVC()
         self.giveControllersToMainController()
-        self.initDefaultValue()
 
         self._init_ctrls(parent)
     def initFrameMVC(self):
@@ -106,11 +105,6 @@ class HydroPiOnics(wx.Frame):
         self.guiController.setPumpC(self.pumpController)
         self.guiController.setMonitorC(self.monitorController)
         self.guiController.setWorkspaceController(self.workspaceController)
-    def initDefaultValue(self):
-        self.menuController.initDefaultValue()
-        self.motorController.initDefaultValue()
-        self.menuController.initDefaultValue()
-        self.pumpController.initDefaultValue()
 
 
     # def OnCheckBox12Checkbox(self, event):

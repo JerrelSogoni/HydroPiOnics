@@ -171,24 +171,6 @@ class MotorController:
         if(self.appData.running == self.appData.ON):
             self.startWaterAirPump()
 
-    def initDefaultValue(self):
-        self.motor.ventMotorCycleOn = 0
-        self.motor.ventMotorCycleOff = 0
-        self.motor.isVentMotorOn = False
-        self.motor.ventCycleOffUnits = 's'
-        self.motor.ventCycleOnUnits = 's'
-        self.motor.intakeMotorCycleOn = 0
-        self.motor.intakeMotorCycleOff = 0
-        self.motor.isIntakeMotorOn = False
-        self.motor.intakeCycleOffUnits = 's'
-        self.motor.intakeCycleOnUnits = 's'
-        self.motor.exhaustMotorCycleOn = 0
-        self.motor.exhaustMotorCycleOff = 0
-        self.motor.isExaustMotorOn = False
-        self.motor.exhaustCycleOffUnits = 's'
-        self.motor.exhaustCycleOnUnits = 's'
-        self.motor.isWaterAirPumpOn = False
-
     def convertTimeToSeconds(self, cycleTime, cycleUnit):
         if(cycleUnit == 's'):
             return cycleTime
