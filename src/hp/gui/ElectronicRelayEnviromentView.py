@@ -109,7 +109,7 @@ class ElectronicRelayEnviromentView:
                                             wx.NORMAL, False, u'Showcard Gothic'))
         self.cycleArray.append(self.cycleOnAirHeaterFanText)
         self.objects.append(self.cycleOnAirHeaterFanText)
-        self.environmentalHideArray.append(self.cycleOnAirHumidFanText)
+        self.environmentalHideArray.append(self.cycleOnAirHeaterFanText)
 
         self.cycleOffAirHumidFanText = wx.lib.stattext.GenStaticText(ID=wx.ID_ANY,
                                                                       label=u'Cycle Off',
