@@ -170,6 +170,42 @@ class ElectronicRelayEnvironmentController:
         cycleOffUnit = self.electronicRelayView.cycleOffunderwater.GetString(index)
         self.electronicRelayModel.underWaterHeaterCycleOffUnits = cycleOffUnit
         print cycleOff
+    def processHumidifierCheckbox(self, event):
+        check = event.GetEventObject()
+        self.electronicRelayModel.isHumidifierOn = check.GetValue()
+        print check
+    def processHumidifierCycleOn(self, event):
+        cycleOn = event.GetEventObject()
+        cycleOnValue = cycleOn.GetValue()
+        print cycleOnValue
+        if(cycleOnValue.isdigit()):
+            self.electronicRelayModel.humidifierFanCycleOn = int(cycleOnValue)
+        else:
+            self.electronicRelayModel.humidifierFanCycleOn = 0
+            cycleOn.SetValue("0")
+    def processHumidifierCycleOff(self, event):
+        cycleOff = event.GetEventObject()
+        cycleOffValue = cycleOff.GetValue()
+        print cycleOffValue
+        if(cycleOffValue.isdigit()):
+            self.electronicRelayModel.humidifierFanCycleOff = int(cycleOffValue)
+        else:
+            self.electronicRelayModel.humidifierFanCycleOff = 0
+            cycleOff.SetValue("0")
+
+    def processHumidifierCycleOnUnits(self, event):
+        cycleOn = event.GetEventObject()
+        index = cycleOn.GetCurrentSelection()
+        cycleOnUnit = self.electronicRelayView.cycleOnAirHumidFan.GetString(index)
+        print cycleOnUnit
+        self.electronicRelayModel.humidifierFanCycleOnUnits = cycleOnUnit
+
+    def processHumidifierCycleOffUnits(self, event):
+        cycleOff = event.GetEventObject()
+        index = cycleOff.GetCurrentSelection()
+        cycleOffUnit = self.electronicRelayView.cycleOffAirHumidFan.GetString(index)
+        self.electronicRelayModel.humidifierFanCycleOffUnits = cycleOffUnit
+        print cycleOff
 
 
 

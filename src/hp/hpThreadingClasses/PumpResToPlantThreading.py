@@ -1,6 +1,7 @@
 import threading
 import RPi.GPIO as GPIO
-from data.Pump import Pump
+import data.Pump as Pump
+GPIO.setmode(GPIO.BCM)
 
 class PumpResToPlantThreading(threading.Thread):
     def __init__(self):
@@ -10,12 +11,12 @@ class PumpResToPlantThreading(threading.Thread):
 
 
     def run(self):
-        # self.pin = Pump.RESTOPLANTPIN
+        self.pin = Pump.RESTOPLANTPIN
         try:
-            # GPIO.setup(self.pin, GPIO.OUT)
-            # GPIO.output(self.pin, GPIO.HIGH)
-            #
-            # GPIO.output(self.pin, GPIO.LOW)
+            GPIO.setup(self.pin, GPIO.OUT)
+            GPIO.output(self.pin, GPIO.HIGH)
+
+            GPIO.output(self.pin, GPIO.LOW)
             print "Res to Plant Started"
             while not self.isDead:
                 continue
@@ -26,5 +27,4 @@ class PumpResToPlantThreading(threading.Thread):
     def die(self):
         self.isDead = True
         print "Res to Plant stopped"
-        # GPIO.output(self.pin, GPIO.HIGH)
-
+        GPIO.output(self.pin, GPIO.HIGH)

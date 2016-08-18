@@ -1,6 +1,7 @@
 import threading
 import RPi.GPIO as GPIO
-from data.Pump import Pump
+from data.Pump as pump
+GPIO.setmode(GPIO.BCM)
 
 class PumpResToDrainThreading(threading.Thread):
     def __init__(self):
@@ -10,16 +11,17 @@ class PumpResToDrainThreading(threading.Thread):
 
 
     def run(self):
-        # self.pin = Pump.RESDRAINPIN
+
         try:
-            # GPIO.setup(self.pin, GPIO.OUT)
-            # GPIO.output(self.pin, GPIO.HIGH)
-            #
-            # GPIO.output(self.pin, GPIO.LOW)
+            self.pin = pump.RESDRAINPIN
+            GPIO.setup(self.pin, GPIO.OUT)
+            GPIO.output(self.pin, GPIO.HIGH)
+
+            GPIO.output(self.pin, GPIO.LOW)
 
             print "Res to Drain Started"
 
-            while not self.isDead:
+            while(not self.isDead):
                 continue
         except:
             print "Error in ResToDrain"
@@ -28,7 +30,7 @@ class PumpResToDrainThreading(threading.Thread):
     def die(self):
         self.isDead = True
         print "Res to Drain Stopped"
-        # GPIO.output(self.pin, GPIO.HIGH)
+        GPIO.output(self.pin, GPIO.HIGH)
 
 
 
