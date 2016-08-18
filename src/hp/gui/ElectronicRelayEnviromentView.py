@@ -121,7 +121,7 @@ class ElectronicRelayEnviromentView:
         self.cycleOffUnderwaterText = wx.lib.stattext.GenStaticText(ID=wx.ID_ANY,
                                                                       label=u'Cycle Off',
                                                                       name=u'cycleOffAirFIlterFanText',
-                                                                      parent=self.workspace, pos=wx.Point(378, 75),
+                                                                      parent=self.workspace, pos=wx.Point(328, 82),
                                                                       size=wx.Size(104, 15), style=0)
         self.cycleOffUnderwaterText.SetFont(wx.Font(9, wx.DECORATIVE, wx.NORMAL,
                                             wx.NORMAL, False, u'Showcard Gothic'))
@@ -129,7 +129,7 @@ class ElectronicRelayEnviromentView:
 
         self.cycleOnUnderwaterText = wx.lib.stattext.GenStaticText(ID=wx.ID_ANY,
                                                                      label=u'Cycle On', name=u'cycleOnAirFIlterFanText',
-                                                                     parent=self.workspace, pos=wx.Point(250, 75),
+                                                                     parent=self.workspace, pos=wx.Point(200, 82),
                                                                      size=wx.Size(104, 15), style=0)
         self.cycleOnUnderwaterText.SetFont(wx.Font(9, wx.DECORATIVE, wx.NORMAL,
                                             wx.NORMAL, False, u'Showcard Gothic'))
@@ -245,14 +245,14 @@ class ElectronicRelayEnviromentView:
         self.underwaterOnValue = wx.lib.masked.textctrl.TextCtrl(id=wx.ID_ANY,
                                                                         name=u'airFilterHumidOnValue',
                                                                         parent=self.workspace,
-                                                                        pos=wx.Point(250, 91), size=wx.Size(48, 23),
+                                                                        pos=wx.Point(200, 98), size=wx.Size(48, 23),
                                                                         style=0, value='')
         self.cycleArray.append(self.underwaterOnValue)
 
         self.underwaterOffValue = wx.lib.masked.textctrl.TextCtrl(id=wx.ID_ANY,
                                                                          name=u'airFilterHumidOffValue',
                                                                          parent=self.workspace,
-                                                                         pos=wx.Point(378, 91), size=wx.Size(48, 23),
+                                                                         pos=wx.Point(328, 98), size=wx.Size(48, 23),
                                                                          style=0, value='')
         self.cycleArray.append(self.underwaterOffValue)
 
@@ -303,17 +303,17 @@ class ElectronicRelayEnviromentView:
         self.cycleOnAirHeaterFan.SetSelection(0)
         self.cycleArray.append(self.cycleOnAirHumidFan)
 
-        self.cycleOffundwater = wx.Choice(choices=['s', 'm', 'h'],
+        self.cycleOffunderwater = wx.Choice(choices=['s', 'm', 'h'],
                                              id=wx.ID_ANY,
                                              name=u'cycleOffAirFilterFan', parent=self.workspace,
-                                             pos=wx.Point(426, 91), size=wx.Size(56, 23), style=0)
-        self.cycleOffundwater.SetSelection(0)
-        self.cycleArray.append(self.cycleOffundwater)
+                                             pos=wx.Point(376, 98), size=wx.Size(56, 23), style=0)
+        self.cycleOffunderwater.SetSelection(0)
+        self.cycleArray.append(self.cycleOffunderwater)
 
         self.cycleOnunderwater = wx.Choice(choices=['s', 'm', 'h'],
                                             id=wx.ID_ANY,
                                             name=u'cycleOnAirFIlterFan', parent=self.workspace,
-                                            pos=wx.Point(298, 91), size=wx.Size(56, 23), style=0)
+                                            pos=wx.Point(248, 98), size=wx.Size(56, 23), style=0)
         self.cycleOnunderwater.SetSelection(0)
         self.cycleArray.append(self.cycleOnunderwater)
 
