@@ -1,6 +1,5 @@
 import threading
 import time
-import wx
 from ThirdPartyAPIs.MinipHBFW.BeagleBone.pHReader import pHReader
 class MonitorPHThreading(threading.Thread):
     def __init__(self, monitorController):
@@ -16,7 +15,7 @@ class MonitorPHThreading(threading.Thread):
                 if(phLevel != self.monitorController.getPHLevel()):
                     self.monitorController.setPHLevel(phLevel)
                     self.monitorController.updatePHView()
-                wx.Yield()
+                time.sleep(10)
             except:
                 print "Error in PH Sensor, re-reading in 5 seconds"
                 time.sleep(5)
