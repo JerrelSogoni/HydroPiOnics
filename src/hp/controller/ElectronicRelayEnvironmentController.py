@@ -25,7 +25,7 @@ class ElectronicRelayEnvironmentController:
     def processAirFilterFanCheckbox(self, event):
         check = event.GetEventObject()
         self.electronicRelayModel.isAirFilterOn = check.GetValue()
-        print check
+        print check.GetValue()
     def processAirFilterCycleOn(self, event):
         cycleOn = event.GetEventObject()
         cycleOnValue = cycleOn.GetValue()
@@ -62,7 +62,7 @@ class ElectronicRelayEnvironmentController:
     def processAirHeaterCheckbox(self, event):
         check = event.GetEventObject()
         self.electronicRelayModel.isAirHeaterOn = check.GetValue()
-        print check
+        print check.GetValue()
     def processAirHeaterCycleOn(self, event):
         cycleOn = event.GetEventObject()
         cycleOnValue = cycleOn.GetValue()
@@ -72,7 +72,6 @@ class ElectronicRelayEnvironmentController:
         else:
             self.electronicRelayModel.airHeaterFanCycleOn = 0
             cycleOn.SetValue("0")
-        pass
     def processAirHeaterCycleOff(self, event):
         cycleOff = event.GetEventObject()
         cycleOffValue = cycleOff.GetValue()
@@ -82,7 +81,6 @@ class ElectronicRelayEnvironmentController:
         else:
             self.electronicRelayModel.airHeaterFanCycleOff = 0
             cycleOff.SetValue("0")
-        pass
     def processAirHeaterCycleOnUnits(self, event):
         cycleOn = event.GetEventObject()
         index = cycleOn.GetCurrentSelection()
@@ -99,7 +97,7 @@ class ElectronicRelayEnvironmentController:
     def processLedCheckbox(self, event):
         check = event.GetEventObject()
         self.electronicRelayModel.isLedOn = check.GetValue()
-        print check
+        print check.GetValue()
     def processLedCycleOn(self, event):
         cycleOn = event.GetEventObject()
         cycleOnValue = cycleOn.GetValue()
@@ -137,7 +135,7 @@ class ElectronicRelayEnvironmentController:
     def processUnderwaterHeaterCheckbox(self, event):
         check = event.GetEventObject()
         self.electronicRelayModel.isWaterHeaterOn = check.GetValue()
-        print check
+        print check.GetValue()
     def processUnderwaterHeaterCycleOn(self, event):
         cycleOn = event.GetEventObject()
         cycleOnValue = cycleOn.GetValue()
@@ -173,7 +171,7 @@ class ElectronicRelayEnvironmentController:
     def processHumidifierCheckbox(self, event):
         check = event.GetEventObject()
         self.electronicRelayModel.isHumidifierOn = check.GetValue()
-        print check
+        print check.GetValue()
     def processHumidifierCycleOn(self, event):
         cycleOn = event.GetEventObject()
         cycleOnValue = cycleOn.GetValue()
