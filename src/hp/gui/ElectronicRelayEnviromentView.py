@@ -278,6 +278,7 @@ class ElectronicRelayEnviromentView:
                                                                          style=0, value='')
         self.cycleArray.append(self.airHeaterHumidOffValue)
         self.objects.append(self.airHeaterHumidOffValue)
+        
         self.environmentalHideArray.append(self.airHeaterHumidOffValue)
         self.underwaterOnValue = wx.lib.masked.textctrl.TextCtrl(id=wx.ID_ANY,
                                                                         name=u'airFilterHumidOnValue',
@@ -286,6 +287,7 @@ class ElectronicRelayEnviromentView:
                                                                         style=0, value='')
         self.cycleArray.append(self.underwaterOnValue)
         self.objects.append(self.underwaterOnValue)
+        self.environmentalHideArray.append(self.underwaterOnValue)
 
         self.underwaterOffValue = wx.lib.masked.textctrl.TextCtrl(id=wx.ID_ANY,
                                                                          name=u'airFilterHumidOffValue',
@@ -294,6 +296,7 @@ class ElectronicRelayEnviromentView:
                                                                          style=0, value='')
         self.cycleArray.append(self.underwaterOffValue)
         self.objects.append(self.underwaterOffValue)
+        self.environmentalHideArray.append(self.underwaterOffValue)
 
         self.ledCycleOnValue = wx.lib.masked.textctrl.TextCtrl(id=wx.ID_ANY,
                                                                name=u'ledCycleOnValue', parent=self.workspace,
@@ -324,6 +327,7 @@ class ElectronicRelayEnviromentView:
         self.cycleOffAirHeaterFan.SetSelection(0)
         self.cycleArray.append(self.cycleOffAirHeaterFan)
         self.objects.append(self.cycleOffAirHeaterFan)
+        self.environmentalHideArray.append(self.cycleOffAirHeaterFan)
 
         self.cycleOnAirHeaterFan = wx.Choice(choices=['s', 'm', 'h'],
                                              id=wx.ID_ANY,
@@ -332,6 +336,7 @@ class ElectronicRelayEnviromentView:
         self.cycleOnAirHeaterFan.SetSelection(0)
         self.cycleArray.append(self.cycleOnAirHeaterFan)
         self.objects.append(self.cycleOnAirHeaterFan)
+        self.environmentalHideArray.append(self.cycleOnAirHeaterFan)
 
         self.cycleOffAirHumidFan = wx.Choice(choices=['s', 'm', 'h'],
                                               id=wx.ID_ANY,
@@ -340,6 +345,7 @@ class ElectronicRelayEnviromentView:
         self.cycleOffAirHumidFan.SetSelection(0)
         self.cycleArray.append(self.cycleOffAirHumidFan)
         self.objects.append(self.cycleOffAirHumidFan)
+        self.environmentalHideArray.append(self.cycleOffAirHumidFan)
 
         self.cycleOnAirHumidFan = wx.Choice(choices=['s', 'm', 'h'],
                                              id=wx.ID_ANY,
@@ -348,6 +354,7 @@ class ElectronicRelayEnviromentView:
         self.cycleOnAirHeaterFan.SetSelection(0)
         self.cycleArray.append(self.cycleOnAirHumidFan)
         self.objects.append(self.cycleOnAirHumidFan)
+        self.environmentalHideArray.append(self.cycleOnAirHumidFan)
 
         self.cycleOffunderwater = wx.Choice(choices=['s', 'm', 'h'],
                                              id=wx.ID_ANY,
