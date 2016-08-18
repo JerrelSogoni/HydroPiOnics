@@ -315,7 +315,7 @@ class ElectronicRelayEnviromentView:
         self.cycleOnAirFIlterFan = wx.Choice(choices=['s', 'm', 'h'],
                                              id=wx.ID_ANY,
                                              name=u'cycleOnAirFIlterFan', parent=self.workspace,
-                                             pos=wx.Point(608, 336), size=wx.Size(56, 23), style= wx.TE_PROCESS_ENTER, value= '0')
+                                             pos=wx.Point(608, 336), size=wx.Size(56, 23), style= 0)
         self.cycleOnAirFIlterFan.SetSelection(0)
         self.cycleArray.append(self.cycleOnAirFIlterFan)
         self.objects.append(self.cycleOnAirFIlterFan)
@@ -323,7 +323,7 @@ class ElectronicRelayEnviromentView:
         self.cycleOffAirHeaterFan = wx.Choice(choices=['s', 'm', 'h'],
                                               id=wx.ID_ANY,
                                               name=u'cycleOffAirFilterFan', parent=self.workspace,
-                                              pos=wx.Point(736, 536), size=wx.Size(56, 23), style= wx.TE_PROCESS_ENTER, value = '0')
+                                              pos=wx.Point(736, 536), size=wx.Size(56, 23), style= 0)
         self.cycleOffAirHeaterFan.SetSelection(0)
         self.cycleArray.append(self.cycleOffAirHeaterFan)
         self.objects.append(self.cycleOffAirHeaterFan)
