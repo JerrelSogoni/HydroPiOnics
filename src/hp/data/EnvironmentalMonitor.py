@@ -2,11 +2,11 @@
 class EnvironmentalMonitor:
 
     def __init__(self):
-        self.humidityStartValue = 0
-        self.humidityEndValue = 0
-        self.phStartValue = 0
-        self.phEndValue = 0
-        self.airTempStartValue = None
-        self.airTempEndValue = None
-        self.underwaterTempStartValue = None
-        self.underwaterTempEndValue = None
+        self.humidityStartValue = "50"
+        self.humidityEndValue = "50"
+        self.phStartValue = "6"
+        self.phEndValue = "6"
+        self.airTempStartValue = "75"
+        self.airTempEndValue = "75"
+        self.underwaterTempStartValue = "65"
+        self.underwaterTempEndValue = "65"

@@ -80,7 +80,7 @@ class HydroPiOnicsController:
 
     def checkMotors(self):
         print self.hydroModel.Mode
-        if(self.hydroModel.Mode is self.hydroModel.MANUAL):
+        if(self.hydroModel.Mode == self.hydroModel.MANUAL):
             if(self.motorC.motor.isExaustMotorOn):
                 self.motorC.startExhaust()
             if(self.motorC.motor.isVentMotorOn):
@@ -95,6 +95,44 @@ class HydroPiOnicsController:
             self.motorC.startExhaustCycle()
             self.motorC.startVentCycle()
             self.motorC.startIntakeCycle()
+    def checkRelay(self):
+        if(self.hydroModel.Mode == self.hydroModel.MANUAL):
+            if(self.electronicRelayEnvironmentC.electronicRelayModel.isAirFilterOn):
+                self.electronicRelayEnvironmentC.startAirFilterManual()
+            if(self.electronicRelayEnvironmentC.electronicRelayModel.isLedOn):
+                self.electronicRelayEnvironmentC.startLedManual()
+            if(self.electronicRelayEnvironmentC.electronicRelayModel.isAirHeaterOn):
+                self.electronicRelayEnvironmentC.startHeaterManual()
+            if(self.electronicRelayEnvironmentC.electronicRelayModel.isWaterHeaterOn):
+                self.electronicRelayEnvironmentC.startUnderwaterManual()
+            if(self.electronicRelayEnvironmentC.electronicRelayModel.isHumidifierOn):
+                self.electronicRelayEnvironmentC.startHumidifierManual()
+        elif(self.hydroModel.Mode == self.hydroModel.TIMER):
+            if(self.electronicRelayEnvironmentC.electronicRelayModel.isAirFilterOn):
+                self.electronicRelayEnvironmentC.startAirFilterCycle()
+            if(self.electronicRelayEnvironmentC.electronicRelayModel.isLedOn):
+                self.electronicRelayEnvironmentC.startLedCycle()
+            if(self.electronicRelayEnvironmentC.electronicRelayModel.isAirHeaterOn):
+                self.electronicRelayEnvironmentC.startHeaterCycle()
+            if(self.electronicRelayEnvironmentC.electronicRelayModel.isWaterHeaterOn):
+                self.electronicRelayEnvironmentC.startUnderwaterCycle()
+            if(self.electronicRelayEnvironmentC.electronicRelayModel.isHumidifierOn):
+                self.electronicRelayEnvironmentC.startHumidifierCycle()
+        else:
+            if (self.electronicRelayEnvironmentC.electronicRelayModel.isAirFilterOn):
+                self.electronicRelayEnvironmentC.startAirFilterCycle()
+            if(self.electronicRelayEnvironmentC.electronicRelayModel.isLedOn):
+                self.electronicRelayEnvironmentC.startLedCycle()
+            self.electronicRelayEnvironmentC.startHeaterEvironmental(self.environmentalMonitorC.environmentalMonitorModel.airTempStartValue,
+                                                                     self.environmentalMonitorC.environmentalMonitorModel.airTempEndValue)
+
+            self.electronicRelayEnvironmentC.startUnderwaterEnvironmental(self.environmentalMonitorC.environmentalMonitorModel.underwaterTempStartValue,
+                                                                     self.environmentalMonitorC.environmentalMonitorModel.underwaterTempEndValue)
+
+            self.electronicRelayEnvironmentC.startHumidifierEnvironmental(self.environmentalMonitorC.environmentalMonitorModel.humidityStartValue,
+                                                                          self.environmentalMonitorC.environmentalMonitorModel.humidityEndValue)
+
+
 
 
 

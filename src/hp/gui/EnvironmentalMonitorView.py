@@ -29,54 +29,54 @@ class EvironmentalMonitorView:
         self.humidityRangeStartSlider = wx.Slider(id=wx.ID_ANY,
                                                   maxValue=100, minValue=0, name=u'humidityRangeStartSlider',
                                                   parent=self.workspace, pos=wx.Point(STARTSLIDERX, 470),
-                                                  size=wx.Size(SLIDERSTARTWIDTH, 24), style=wx.SL_HORIZONTAL, value=0)
+                                                  size=wx.Size(SLIDERSTARTWIDTH, 24), style=wx.SL_HORIZONTAL, value=50)
         self.humidityRangeStartSlider.SetPageSize(1)
         self.sliderArray.append(self.humidityRangeStartSlider)
         self.humidityRangeEndSlider = wx.Slider(id=wx.ID_ANY,
                                                 maxValue=100, minValue=0, name=u'humidityRangeEndSlider',
                                                 parent=self.workspace, pos=wx.Point(STARTSLIDERX, 490),
-                                                size=wx.Size(SLIDERSTARTWIDTH, 24), style=wx.SL_HORIZONTAL, value=0)
+                                                size=wx.Size(SLIDERSTARTWIDTH, 24), style=wx.SL_HORIZONTAL, value=50)
         self.humidityRangeEndSlider.SetPageSize(1)
         self.sliderArray.append(self.humidityRangeEndSlider)
         #airTemperature
         self.temperatureRangeStartSlider = wx.Slider(id=wx.ID_ANY,
                                                      maxValue=100, minValue=45, name=u'temperatureRangeStartSlider',
                                                      parent=self.workspace, pos=wx.Point(STARTSLIDERX, 420),
-                                                     size=wx.Size(SLIDERSTARTWIDTH, 24), style=wx.SL_HORIZONTAL, value=45)
+                                                     size=wx.Size(SLIDERSTARTWIDTH, 24), style=wx.SL_HORIZONTAL, value=75)
         self.temperatureRangeStartSlider.SetPageSize(1)
         self.sliderArray.append(self.temperatureRangeStartSlider)
         self.temperatureRangeEndSlider = wx.Slider(id=wx.ID_ANY,
                                                    maxValue=100, minValue=45, name=u'temperatureRangeEndSlider',
                                                    parent=self.workspace, pos=wx.Point(STARTSLIDERX, 440),
-                                                   size=wx.Size(SLIDERSTARTWIDTH, 24), style=wx.SL_HORIZONTAL, value=0)
+                                                   size=wx.Size(SLIDERSTARTWIDTH, 24), style=wx.SL_HORIZONTAL, value=75)
         self.temperatureRangeEndSlider.SetPageSize(1)
         self.sliderArray.append(self.temperatureRangeEndSlider)
         # ph Sensor
         self.pHRangeStartSlider = wx.Slider(id=wx.ID_ANY,
                                             maxValue=12, minValue=0, name=u'pHRangeStartSlider',
                                             parent=self.workspace, pos=wx.Point(STARTSLIDERX, 520),
-                                            size=wx.Size(SLIDERSTARTWIDTH, 24), style=wx.SL_HORIZONTAL, value=0)
+                                            size=wx.Size(SLIDERSTARTWIDTH, 24), style=wx.SL_HORIZONTAL, value=6)
         self.pHRangeStartSlider.SetPageSize(1)
         self.sliderArray.append(self.pHRangeStartSlider)
 
         self.pHRangeEndSlider = wx.Slider(id=wx.ID_ANY,
                                           maxValue=12, minValue=0, name=u'pHRangeEndSlider',
                                           parent=self.workspace, pos=wx.Point(STARTSLIDERX, 540),
-                                          size=wx.Size(SLIDERSTARTWIDTH, 24), style=wx.SL_HORIZONTAL, value=0)
+                                          size=wx.Size(SLIDERSTARTWIDTH, 24), style=wx.SL_HORIZONTAL, value=6)
         self.pHRangeEndSlider.SetPageSize(1)
         self.sliderArray.append(self.pHRangeEndSlider)
         #underwater
         self.underwaterTemperatureRangeStartSlider = wx.Slider(id=wx.ID_ANY,
                                                      maxValue=100, minValue=45, name=u'temperatureRangeStartSlider',
                                                      parent=self.workspace, pos=wx.Point(STARTSLIDERX, 570),
-                                                     size=wx.Size(SLIDERSTARTWIDTH, 24), style=wx.SL_HORIZONTAL, value=45)
+                                                     size=wx.Size(SLIDERSTARTWIDTH, 24), style=wx.SL_HORIZONTAL, value=65)
         self.underwaterTemperatureRangeStartSlider.SetPageSize(1)
         self.sliderArray.append(self.underwaterTemperatureRangeStartSlider)
 
         self.underwaterTemperatureRangeEndSlider = wx.Slider(id=wx.ID_ANY,
                                                    maxValue=100, minValue=45, name=u'temperatureRangeEndSlider',
                                                    parent=self.workspace, pos=wx.Point(STARTSLIDERX, 590),
-                                                   size=wx.Size(SLIDERSTARTWIDTH, 24), style=wx.SL_HORIZONTAL, value=0)
+                                                   size=wx.Size(SLIDERSTARTWIDTH, 24), style=wx.SL_HORIZONTAL, value=65)
         self.underwaterTemperatureRangeEndSlider.SetPageSize(1)
         self.sliderArray.append(self.underwaterTemperatureRangeEndSlider)
 

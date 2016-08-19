@@ -51,14 +51,13 @@ class airHeaterThreading(threading.Thread):
                 self.die()
 
     def die(self):
-        print "Air Heater Off"
         self.isDead = True
         GPIO.output(self.pin, GPIO.HIGH)
 
     def changeAirLow(self, air):
         self.airLow = air
     def changeAirHigh(self, air):
-        self.airHigh = air
+        self.airHigh=
 
 
 
