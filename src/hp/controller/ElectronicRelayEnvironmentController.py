@@ -1,5 +1,4 @@
 from hpThreadingClasses.ElectronicThreading import ElectronicThreading
-import data.ElectronicRelayEnviroment as pins
 import MotorController as calculate
 class ElectronicRelayEnvironmentController:
     def __init__(self, electronicRelayView, electronicRelayModel, appData):
@@ -269,75 +268,75 @@ class ElectronicRelayEnvironmentController:
 
 
     def startADeviceManual(self, pin):
-        if(pin == pins.AIRFILTERPIN ):
+        if(pin == self.electronicRelayModel.AIRFILTERPIN ):
             self.airFilterThreading = ElectronicThreading(pin, mode= self.appData.MANUAL)
-        elif(pin == pins.AIRHEATERPIN):
+        elif(pin == self.electronicRelayModel.AIRHEATERPIN):
             self.airHeaterThreading = ElectronicThreading(pin, mode=self.appData.MANUAL)
-        elif(pin == pins.WATERHEATERPIN):
+        elif(pin == self.electronicRelayModel.WATERHEATERPIN):
             self.underwaterHeaterThreading = ElectronicThreading(pin, mode=self.appData.MANUAL)
-        elif(pin == pins.LEDPIN):
+        elif(pin == self.electronicRelayModel.LEDPIN):
             self.ledThreading = ElectronicThreading(pin, mode=self.appData.MANUAL)
-        elif(pin == pins.HUMIDIFIERPIN):
+        elif(pin == self.electronicRelayModel.HUMIDIFIERPIN):
             self.humidifierThreading = ElectronicThreading(pin, mode=self.appData.MANUAL)
     def startADeviceCycle(self, pin, cycleOn, cycleOff):
 
-        if (pin == pins.AIRFILTERPIN):
+        if (pin == self.electronicRelayModel.AIRFILTERPIN):
             self.airFilterThreading = ElectronicThreading(pin, mode=self.appData.TIMER,cycleOn = cycleOn,cycleOff = cycleOff)
-        elif (pin == pins.AIRHEATERPIN):
+        elif (pin == self.electronicRelayModel.AIRHEATERPIN):
             self.airHeaterThreading = ElectronicThreading(pin, mode=self.appData.TIMER, cycleOn = cycleOn,cycleOff = cycleOn)
-        elif (pin == pins.WATERHEATERPIN):
+        elif (pin == self.electronicRelayModel.WATERHEATERPIN):
             self.underwaterHeaterThreading = ElectronicThreading(pin, mode=self.appData.TIMER, cycleOn = cycleOn,cycleOff = cycleOff)
-        elif (pin == pins.LEDPIN):
+        elif (pin == self.electronicRelayModel.LEDPIN):
             self.ledThreading = ElectronicThreading(pin, mode=self.appData.TIMER, cycleOn = cycleOff,cycleOff = cycleOff)
-        elif (pin == pins.HUMIDIFIERPIN):
+        elif (pin == self.electronicRelayModel.HUMIDIFIERPIN):
             self.humidifierThreading = ElectronicThreading(pin, mode=self.appData.TIMER, cycleOn = cycleOn,cycleOff = cycleOff)
     def startADeviceEvironmental(self, pin, rangeLow, rangeHigh):
-        if(pin == pins.AIRHEATERPIN):
+        if(pin == self.electronicRelayModel.AIRHEATERPIN):
             self.airHeaterThreading = ElectronicThreading(pin, mode=self.appData.ENVIRONMENTAL, rangeLow = rangeLow, rangeHigh = rangeHigh)
-        elif (pin == pins.WATERHEATERPIN):
+        elif (pin == self.electronicRelayModel.WATERHEATERPIN):
             self.underwaterHeaterThreading = ElectronicThreading(pin, mode=self.appData.ENVIRONMENTAL, rangeLow = rangeLow, rangeHigh = rangeHigh)
-        elif (pin == pins.HUMIDIFIERPIN):
+        elif (pin == self.electronicRelayModel.HUMIDIFIERPIN):
             self.humidifierThreading = ElectronicThreading(pin, mode=self.appData.ENVIRONMENTAL,rangeLow = rangeLow, rangeHigh = rangeHigh)
 
 
     def startAirFilterManual(self):
-        self.startADeviceManual(pins.AIRFILTERPIN)
+        self.startADeviceManual(self.electronicRelayModel.AIRFILTERPIN)
     def startAirFilterCycle(self):
-        self.startADeviceCycle(pins.AIRFILTERPIN,
+        self.startADeviceCycle(self.electronicRelayModel.AIRFILTERPIN,
                                cycleOn=calculate.convertTimeToSeconds(self.electronicRelayModel.airFilterFanCycleOn, self.electronicRelayModel.airFilterFanCycleOnUnits),
                                cycleOff=calculate.convertTimeToSeconds(self.electronicRelayModel.airFilterFanCycleOff, self.electronicRelayModel.airFilterFanCycleOffUnits))
     def startHeaterManual(self):
-        self.startADeviceManual(pins.AIRHEATERPIN)
+        self.startADeviceManual(self.electronicRelayModel.AIRHEATERPIN)
     def startHeaterCycle(self):
-        self.startADeviceCycle(pins.AIRHEATERPIN,
+        self.startADeviceCycle(self.electronicRelayModel.AIRHEATERPIN,
                                cycleOn=calculate.convertTimeToSeconds(self.electronicRelayModel.airHeaterFanCycleOn, self.electronicRelayModel.airHeaterFanCycleOnUnits),
                                cycleOff=calculate.convertTimeToSeconds(self.electronicRelayModel.airHeaterFanCycleOff, self.electronicRelayModel.airHeaterFanCycleOffUnits))
     def startHeaterEvironmental(self, rangeLow, rangeHigh):
-        self.startADeviceCycle(pins.AIRHEATERPIN, rangeLow= rangeLow, rangeHigh = rangeHigh)
+        self.startADeviceCycle(self.electronicRelayModel.AIRHEATERPIN, rangeLow= rangeLow, rangeHigh = rangeHigh)
 
     def startLedManual(self):
-        self.startADeviceManual(pins.LEDPIN)
+        self.startADeviceManual(self.electronicRelayModel.LEDPIN)
     def startLedCycle(self):
-        self.startADeviceCycle(pins.LEDPIN,
+        self.startADeviceCycle(self.electronicRelayModel.LEDPIN,
                                cycleOn=calculate.convertTimeToSeconds(self.electronicRelayModel.ledCycleOn, self.electronicRelayModel.ledCycleOnUnits),
                                cycleOff=calculate.convertTimeToSeconds(self.electronicRelayModel.ledCycleOff, self.electronicRelayModel.ledCycleOffUnits))
 
     def startUnderwaterManual(self):
-        self.startADeviceManual(pins.WATERHEATERPIN)
+        self.startADeviceManual(self.electronicRelayModel.WATERHEATERPIN)
     def startUnderwaterCycle(self):
-        self.startADeviceCycle(pins.WATERHEATERPIN,
+        self.startADeviceCycle(self.electronicRelayModel.WATERHEATERPIN,
                                cycleOn=calculate.convertTimeToSeconds(self.electronicRelayModel.underWaterHeaterCycleOn, self.electronicRelayModel.underWaterHeaterCycleOnUnits),
                                cycleOff=calculate.convertTimeToSeconds(self.electronicRelayModel.underWaterHeaterCycleOff, self.electronicRelayModel.underWaterHeaterCycleOffUnits))
     def startUnderwaterEnvironmental(self, rangeLow, rangeHigh):
-        self.startADeviceCycle(pins.WATERHEATERPIN, rangeLow=rangeLow, rangeHigh=rangeHigh)
+        self.startADeviceCycle(self.electronicRelayModel.WATERHEATERPIN, rangeLow=rangeLow, rangeHigh=rangeHigh)
     def startHumidifierManual(self):
-        self.startADeviceManual(pins.HUMIDIFIERPIN)
+        self.startADeviceManual(self.electronicRelayModel.HUMIDIFIERPIN)
     def startHumidifierCycle(self):
-        self.startADeviceCycle(pins.HUMIDIFIERPIN,
+        self.startADeviceCycle(self.electronicRelayModel.HUMIDIFIERPIN,
                                cycleOn=calculate.convertTimeToSeconds(self.electronicRelayModel.humidifierFanCycleOn, self.electronicRelayModel.humidifierFanCycleOnUnits),
                                cycleOff=calculate.convertTimeToSeconds(self.electronicRelayModel.humidifierFanCycleOff, self.electronicRelayModel.humidifierFanCycleOffUnits))
     def startHumidifierEnvironmental(self, rangeLow, rangeHigh):
-        self.startADeviceCycle(pins.HUMIDIFIERPIN, rangeLow=rangeLow, rangeHigh=rangeHigh)
+        self.startADeviceCycle(self.electronicRelayModel.HUMIDIFIERPIN, rangeLow=rangeLow, rangeHigh=rangeHigh)
 
 
 
