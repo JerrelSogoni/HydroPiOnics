@@ -429,8 +429,8 @@ class ElectronicRelayEnviromentView:
 
         self.humidifierCheckBox.Bind(wx.EVT_CHECKBOX, self.electronicRelayC.processHumidifierCheckbox)
         self.airHeaterHumidOnValue.Bind(wx.EVT_TEXT_ENTER, self.electronicRelayC.processHumidifierCycleOn)
-        self.airHeaterFanCycleOffValue.Bind(wx.EVT_TEXT_ENTER, self.electronicRelayC.processHumidifierCycleOff)
-        self.cycleOnAirHeaterFan.Bind(wx.EVT_CHOICE, self.electronicRelayC.processHumidifierCycleOnUnits)
+        self.airHeaterHumidOffValue.Bind(wx.EVT_TEXT_ENTER, self.electronicRelayC.processHumidifierCycleOff)
+        self.cycleOnAirHumidFan.Bind(wx.EVT_CHOICE, self.electronicRelayC.processHumidifierCycleOnUnits)
         self.cycleOffAirHumidFan.Bind(wx.EVT_CHOICE, self.electronicRelayC.processHumidifierCycleOffUnits)
 
 
