@@ -271,5 +271,18 @@ class EvironmentalMonitorView:
         self.environmentalMonitorC = controller
 
     def initListners(self):
-        self.humidityRangeStartSlider.Bind(wx.EVT_SCROLL_THUMBRELEASE, self.environmentalMonitorC.process)
+
+        self.humidityRangeStartSlider.Bind(wx.EVT_SCROLL_THUMBRELEASE, self.environmentalMonitorC.processHumidityStartValue)
+        self.humidityRangeStartSlider.Bind(wx.EVT_SCROLL_THUMBRELEASE, self.environmentalMonitorC.processHumidityEndValue)
+
+        self.temperatureRangeStartValue.Bind(wx.EVT_SCROLL_THUMBRELEASE, self.environmentalMonitorC.processTemperatureStartValue)
+        self.temperatureRangeStartValue.Bind(wx.EVT_SCROLL_THUMBRELEASE, self.environmentalMonitorC.processTemperatureEndValue)
+
+        self.pHLevelStartValue.Bind(wx.EVT_SCROLL_THUMBRELEASE, self.environmentalMonitorC.processPHStartValue)
+        self.pHLevelStartValue.Bind(wx.EVT_SCROLL_THUMBRELEASE, self.environmentalMonitorC.processPHEndValue)
+
+        self.underwaterTemperatureRangeStartValue.Bind(wx.EVT_SCROLL_THUMBRELEASE, self.environmentalMonitorC.processUnderwaterStartValue)
+        self.underwaterTemperatureRangeStartValue.Bind(wx.EVT_SCROLL_THUMBRELEASE, self.environmentalMonitorC.processUnderwaterEndValue)
+
+
 
