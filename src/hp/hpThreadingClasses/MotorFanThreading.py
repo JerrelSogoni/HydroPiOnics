@@ -14,6 +14,7 @@ class MotorFanThreading(threading.Thread):
         CycleOn = cycleOn
         CycleOff = cycleOff
         self.cycle = cycle
+        print "Started Motor"
         self.start()
 
     def run(self):

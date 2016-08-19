@@ -92,7 +92,6 @@ class HydroPiOnicsController:
         if(self.motorC.motor.isWaterAirPumpOn):
             self.motorC.startWaterAirPump()
         if((self.hydroModel.Mode == self.hydroModel.TIMER) or (self.hydroModel.Mode == self.hydroModel.ENVIRONMENTAL)):
-
             self.motorC.startExhaustCycle()
             self.motorC.startVentCycle()
             self.motorC.startIntakeCycle()

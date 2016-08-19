@@ -193,6 +193,7 @@ class MotorController:
             if(device is Motor.WATERAIRPUMP):
                 self.startAMotor(device, motor)
             else:
+                print "Starting cycle"
                 self.startMotorCycle(device,motor,cycleOn,cycleOff)
     def startExhaustCycle(self):
         self.startMotor(self.motor.exhaustFan, False,
