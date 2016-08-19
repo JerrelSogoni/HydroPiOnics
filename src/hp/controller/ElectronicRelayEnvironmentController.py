@@ -1,7 +1,7 @@
 from hpThreadingClasses.ElectronicThreading import ElectronicThreading
 import data.ElectronicRelayEnviroment as ElectronicRelayEnviroment
 import MotorController as calculate
-class ElectronicRelayEnviromentController:
+class ElectronicRelayEnvironmentController:
     def __init__(self, electronicRelayView, electronicRelayModel, appData):
         self.electronicRelayView = electronicRelayView
         self.electronicRelayModel = electronicRelayModel
