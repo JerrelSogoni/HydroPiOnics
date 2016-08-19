@@ -212,51 +212,64 @@ class EvironmentalMonitorView:
         #temp
         self.temperatureRangeStartValue = wx.TextCtrl(id=wx.ID_ANY,
                                                       name=u'temperatureRangeStartValue', parent=self.workspace,
-                                                      pos=wx.Point(STARTINPUTXSTATIC, 400), size=wx.Size(STARTINPUTSIZEWIDTH, 25), style=0, value=u'')
+                                                      pos=wx.Point(STARTINPUTXSTATIC, 400), size=wx.Size(STARTINPUTSIZEWIDTH, 25), style=0, value=u'75')
+        self.temperatureRangeStartValue.SetEditable(False)
         self.environmentInputArray.append(self.temperatureRangeStartValue)
-        self.temperatureRangeEndValue = wx.lib.masked.textctrl.TextCtrl(id=wx.ID_ANY,
+        self.temperatureRangeEndValue = wx.TextCtrl(id=wx.ID_ANY,
                                                                         name=u'temperatureRangeEndValue',
                                                                         parent=self.workspace,
                                                                         pos=wx.Point(ENDINPUTXSTATIC, 400), size=wx.Size(STARTINPUTSIZEWIDTH, 25),
-                                                                        style=0, value='')
+                                                                        style=0, value='75')
+        self.temperatureRangeStartValue.SetEditable(False)
+
         self.environmentInputArray.append(self.temperatureRangeEndValue)
         #humid
-        self.humidityRangeStartValue = wx.lib.masked.textctrl.TextCtrl(id=wx.ID_ANY,
+        self.humidityRangeStartValue = wx.TextCtrl(id=wx.ID_ANY,
                                                                        name=u'humidityRangeStartValue',
                                                                        parent=self.workspace,
                                                                        pos=wx.Point(STARTINPUTXSTATIC, 455), size=wx.Size(STARTINPUTSIZEWIDTH, 25),
-                                                                       style=0, value='')
+                                                                       style=0, value='50')
+        self.humidityRangeStartValue.SetEditable(False)
         self.environmentInputArray.append(self.humidityRangeStartValue)
-        self.humidityRangeEndValue = wx.lib.masked.textctrl.TextCtrl(id=wx.ID_ANY,
+        self.humidityRangeEndValue = wx.TextCtrl(id=wx.ID_ANY,
                                                                      name=u'humidityRangeEndValue',
                                                                      parent=self.workspace,
                                                                      pos=wx.Point(ENDINPUTXSTATIC, 455), size=wx.Size(STARTINPUTSIZEWIDTH, 25),
-                                                                     style=0, value='')
+                                                                     style=0, value='50')
+        self.humidityRangeEndValue.SetEditable(False)
         self.environmentInputArray.append(self.humidityRangeEndValue)
         #ph
 
-        self.pHLevelStartValue = wx.lib.masked.textctrl.TextCtrl(id=wx.ID_ANY,
+        self.pHLevelStartValue = wx.TextCtrl(id=wx.ID_ANY,
                                                                  name=u'pHLevelStartValue', parent=self.workspace,
                                                                  pos=wx.Point(STARTINPUTXSTATIC, 505), size=wx.Size(STARTINPUTSIZEWIDTH, 25), style=0,
-                                                                 value='')
+                                                                 value='6')
+        self.pHLevelStartValue.SetEditable(False)
         self.environmentInputArray.append(self.pHLevelStartValue)
-        self.phLevelEndValue = wx.lib.masked.textctrl.TextCtrl(id=wx.ID_ANY,
+        self.phLevelEndValue = wx.TextCtrl(id=wx.ID_ANY,
                                                                name=u'phLevelEndValue', parent=self.workspace,
                                                                pos=wx.Point(ENDINPUTXSTATIC, 505), size=wx.Size(STARTINPUTSIZEWIDTH, 25), style=0,
-                                                               value='')
+                                                               value='6')
+        self.phLevelEndValue.SetEditable(False)
         self.environmentInputArray.append(self.phLevelEndValue)
         #underwater
         self.underwaterTemperatureRangeStartValue = wx.TextCtrl(id=wx.ID_ANY,
                                                       name=u'temperatureRangeStartValue', parent=self.workspace,
-                                                      pos=wx.Point(STARTINPUTXSTATIC, 555), size=wx.Size(STARTINPUTSIZEWIDTH, 25), style=0, value=u'')
+                                                      pos=wx.Point(STARTINPUTXSTATIC, 555), size=wx.Size(STARTINPUTSIZEWIDTH, 25), style=0, value=u'65')
+        self.underwaterTemperatureRangeStartValue.SetEditable(False)
         self.environmentInputArray.append(self.underwaterTemperatureRangeStartValue)
-        self.underwaterTemperatureRangeEndValue = wx.lib.masked.textctrl.TextCtrl(id=wx.ID_ANY,
+
+        self.underwaterTemperatureRangeEndValue = wx.TextCtrl(id=wx.ID_ANY,
                                                                         name=u'temperatureRangeEndValue',
                                                                         parent=self.workspace,
                                                                         pos=wx.Point(ENDINPUTXSTATIC, 555), size=wx.Size(STARTINPUTSIZEWIDTH, 25),
-                                                                        style=0, value='')
+                                                                        style=0, value='65')
+        self.underwaterTemperatureRangeEndValue.SetEditable(False)
         self.environmentInputArray.append(self.underwaterTemperatureRangeEndValue)
 
     def initController(self, controller):
         self.environmentalMonitorC = controller
+
+    def initListners(self):
+        self.humidityRangeStartSlider.Bind(wx.EVT_SCROLL_THUMBRELEASE, self.environmentalMonitorC.process)
 
