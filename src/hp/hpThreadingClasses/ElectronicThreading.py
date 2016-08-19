@@ -55,11 +55,13 @@ class ElectronicThreading(threading.Thread):
                             print "Cannot really do much We dont have a water cooler"
                             GPIO.output(self.pin, GPIO.HIGH)
                             self.isOn = False
+                            time.sleep(60)
                             continue
 
                         else:
                             GPIO.output(self.pin, GPIO.HIGH)
                             self.isOn = False
+                            time.sleep(60)
                             continue
                 elif(self.pin == self.relayData.AIRHEATERPIN):
                     while (not self.isDead):
@@ -73,6 +75,7 @@ class ElectronicThreading(threading.Thread):
                         else:
                             GPIO.output(self.pin, GPIO.HIGH)
                             self.isOn = False
+                            time.sleep(60)
                             continue
                 elif(self.pin == self.relayData.HUMIDIFIERPIN):
                     while (not self.isDead):
@@ -87,6 +90,7 @@ class ElectronicThreading(threading.Thread):
                         else:
                             GPIO.output(self.pin, GPIO.HIGH)
                             self.isOn = False
+                            time.sleep(60)
                             continue
 
 
