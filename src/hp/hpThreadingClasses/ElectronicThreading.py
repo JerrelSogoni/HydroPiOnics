@@ -34,6 +34,8 @@ class ElectronicThreading(threading.Thread):
                         print str(self.pin) +" Off for " + str(self.cycleOff)
                         GPIO.output(self.pin, GPIO.HIGH)
                         time.sleep(self.cycleOff)
+                    time.sleep(2147483647)
+                    continue
             elif(self.mode == self.appData.ENVIRONMENTAL):
                 if(self.pin == self.relayData.WATERHEATERPIN):
                     while(not self.isDead):
@@ -42,6 +44,7 @@ class ElectronicThreading(threading.Thread):
                                 GPIO.output(self.pin, GPIO.LOW)
                                 self.isOn = True
                             else:
+                                time.sleep(60)
                                 continue
                         elif (self.monitor.waterTemperature > self.RangeHigh):
                             print "Cannot really do much We dont have a water cooler"
@@ -58,6 +61,7 @@ class ElectronicThreading(threading.Thread):
                                 GPIO.output(self.pin, GPIO.LOW)
                                 self.isOn = True
                             else:
+                                time.sleep(60)
                                 continue
                         else:
                             GPIO.output(self.pin, GPIO.HIGH)
@@ -69,6 +73,7 @@ class ElectronicThreading(threading.Thread):
                                 GPIO.output(self.pin, GPIO.LOW)
                                 self.isOn = True
                             else:
+                                time.sleep(60)
                                 continue
                         else:
                             GPIO.output(self.pin, GPIO.HIGH)

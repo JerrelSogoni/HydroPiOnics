@@ -22,6 +22,8 @@ class MotorFanThreading(threading.Thread):
                     time.sleep(self.cycleOn)
                     self.motor.run(Adafruit_MotorHAT.RELEASE)
                     time.sleep(self.cycleOff)
+                time.sleep(2147483647)
+                continue
 
         else:
 
