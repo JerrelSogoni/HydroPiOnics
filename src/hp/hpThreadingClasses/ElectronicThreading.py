@@ -6,7 +6,7 @@ RangeLow = None
 RangeHigh = None
 GPIO.setmode(GPIO.BCM)
 class ElectronicThreading(threading.Thread):
-    def __init__(self, device, mode= None,rangeLow = None, rangeHigh = None,cycleOn = None,cycleOff = None, appData = None, monitor = None , relayData = None):
+    def __init__(self, device, mode= None, rangeLow = None, rangeHigh = None,cycleOn = None,cycleOff = None, appData = None, monitor = None , relayData = None):
         super(ElectronicThreading, self).__init__()
         global RangeLow
         global RangeHigh
