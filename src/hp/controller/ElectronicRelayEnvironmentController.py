@@ -353,8 +353,8 @@ class ElectronicRelayEnvironmentController:
         self.startADeviceCycle(self.electronicRelayModel.AIRHEATERPIN,
                                cycleOn=self.convertTimeToSeconds(self.electronicRelayModel.airHeaterFanCycleOn, self.electronicRelayModel.airHeaterFanCycleOnUnits),
                                cycleOff=self.convertTimeToSeconds(self.electronicRelayModel.airHeaterFanCycleOff, self.electronicRelayModel.airHeaterFanCycleOffUnits))
-    def startHeaterEvironmental(self, rangeLow, rangeHigh):
-        self.startADeviceEvironmental(self.electronicRelayModel.AIRHEATERPIN, rangeLow, rangeHigh)
+    def startHeaterEvironmental(self, rangeLow, rangeHigh, monitor):
+        self.startADeviceEvironmental(self.electronicRelayModel.AIRHEATERPIN, rangeLow, rangeHigh, monitor)
 
     def startLedManual(self):
         self.startADeviceManual(self.electronicRelayModel.LEDPIN)
@@ -369,16 +369,16 @@ class ElectronicRelayEnvironmentController:
         self.startADeviceCycle(self.electronicRelayModel.WATERHEATERPIN,
                                cycleOn=self.convertTimeToSeconds(self.electronicRelayModel.underWaterHeaterCycleOn, self.electronicRelayModel.underWaterHeaterCycleOnUnits),
                                cycleOff=self.convertTimeToSeconds(self.electronicRelayModel.underWaterHeaterCycleOff, self.electronicRelayModel.underWaterHeaterCycleOffUnits))
-    def startUnderwaterEnvironmental(self, rangeLow, rangeHigh):
-        self.startADeviceEvironmental(self.electronicRelayModel.WATERHEATERPIN, rangeLow, rangeHigh)
+    def startUnderwaterEnvironmental(self, rangeLow, rangeHigh, monitor):
+        self.startADeviceEvironmental(self.electronicRelayModel.WATERHEATERPIN, rangeLow, rangeHigh, monitor)
     def startHumidifierManual(self):
         self.startADeviceManual(self.electronicRelayModel.HUMIDIFIERPIN)
     def startHumidifierCycle(self):
         self.startADeviceCycle(self.electronicRelayModel.HUMIDIFIERPIN,
                                cycleOn=self.convertTimeToSeconds(self.electronicRelayModel.humidifierFanCycleOn, self.electronicRelayModel.humidifierFanCycleOnUnits),
                                cycleOff=self.convertTimeToSeconds(self.electronicRelayModel.humidifierFanCycleOff, self.electronicRelayModel.humidifierFanCycleOffUnits))
-    def startHumidifierEnvironmental(self, rangeLow, rangeHigh):
-        self.startADeviceEvironmental(self.electronicRelayModel.HUMIDIFIERPIN, rangeLow, rangeHigh)
+    def startHumidifierEnvironmental(self, rangeLow, rangeHigh, monitor):
+        self.startADeviceEvironmental(self.electronicRelayModel.HUMIDIFIERPIN, rangeLow, rangeHigh, monitor)
 
     def killAll(self):
         if(self.airFilterThreading != None):
