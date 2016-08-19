@@ -1,12 +1,13 @@
 import threading
 import RPi.GPIO as GPIO
-import data.Pump as pump
+
 import time
 GPIO.setmode(GPIO.BCM)
 
 class PumpResToDrainThreading(threading.Thread):
-    def __init__(self):
+    def __init__(self,pin):
         super(PumpResToDrainThreading, self).__init__()
+        self.pin = pin
         self.isDead = False
         self.start()
 
@@ -14,7 +15,7 @@ class PumpResToDrainThreading(threading.Thread):
     def run(self):
 
         try:
-            self.pin = pump.RESDRAINPIN
+
             GPIO.setup(self.pin, GPIO.OUT)
             GPIO.output(self.pin, GPIO.HIGH)
 

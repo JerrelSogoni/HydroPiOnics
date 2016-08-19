@@ -1,6 +1,5 @@
 import threading
 import RPi.GPIO as GPIO
-import data.Pump as Pump
 import time
 import wx
 GPIO.setmode(GPIO.BCM)
@@ -13,7 +12,6 @@ class PumpDrainOutThreading(threading.Thread):
         self.start()
 
     def run(self):
-        self.pinList = [Pump.PLANTDRAINPIN, Pump.RESDRAINPIN]
         for  i in self.pinList:
              GPIO.setup(i, GPIO.OUT)
              GPIO.output(i, GPIO.HIGH)

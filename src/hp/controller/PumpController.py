@@ -32,7 +32,7 @@ class PumpController:
             self.pumpResToPlant.die()
             self.pumpResToPlant = None
         if(self.pumpData.isResToPlantOn and (self.pumpResToPlant is None)):
-            self.pumpResToPlant = PumpResToPlantThreading()
+            self.pumpResToPlant = PumpResToPlantThreading(self.pumpData.RESTOPLANTPIN)
 
     def processPlantDrainCheckbox(self,event):
         check = event.GetEventObject()
@@ -48,7 +48,7 @@ class PumpController:
             self.pumpPlantToRes.die()
             self.pumpPlantToRes = None
         if (self.pumpData.isPlantDrainOn and (self.pumpResToDrain is None)):
-            self.pumpPlantToRes = PumpPlantToResThreading()
+            self.pumpPlantToRes = PumpPlantToResThreading(self.pumpData.PLANTDRAINPIN)
 
 
     def processResDrainCheckbox(self,event):
@@ -63,7 +63,7 @@ class PumpController:
             self.pumpResToDrain.die()
             self.pumpResToDrain = None
         if((self.pumpData.isResDrainOn) and (self.pumpResToDrain is None)):
-            self.pumpResToDrain = PumpResToDrainThreading()
+            self.pumpResToDrain = PumpResToDrainThreading(self.pumpData.RESDRAINPIN)
 
 
     def processDrainSystem(self, event):

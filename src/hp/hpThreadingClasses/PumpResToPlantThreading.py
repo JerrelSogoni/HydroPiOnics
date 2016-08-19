@@ -1,18 +1,17 @@
 import threading
 import RPi.GPIO as GPIO
-import data.Pump as Pump
 import time
 GPIO.setmode(GPIO.BCM)
 
 class PumpResToPlantThreading(threading.Thread):
-    def __init__(self):
+    def __init__(self,pin):
         super(PumpResToPlantThreading, self).__init__()
+        self.pin = pin
         self.isDead = False
         self.start()
 
 
     def run(self):
-        self.pin = Pump.RESTOPLANTPIN
         try:
             GPIO.setup(self.pin, GPIO.OUT)
             GPIO.output(self.pin, GPIO.HIGH)
