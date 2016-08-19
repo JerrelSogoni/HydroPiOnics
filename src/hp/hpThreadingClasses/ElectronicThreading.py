@@ -79,7 +79,7 @@ class ElectronicThreading(threading.Thread):
                   GPIO.output(self.pin, GPIO.LOW)
                   print "Looping"
                   while (not self.isDead):
-
+                        time.sleep(2147483647)
                         continue
         except:
                 print "Error in " + str(self.pin)

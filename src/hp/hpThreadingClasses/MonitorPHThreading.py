@@ -15,7 +15,7 @@ class MonitorPHThreading(threading.Thread):
                 if(phLevel != self.monitorController.getPHLevel()):
                     self.monitorController.setPHLevel(phLevel)
                     self.monitorController.updatePHView()
-                time.sleep(10)
+                time.sleep(30)
             except:
                 print "Error in PH Sensor, re-reading in 5 seconds"
                 time.sleep(5)

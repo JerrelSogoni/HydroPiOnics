@@ -18,14 +18,13 @@ class MonitorHumidityTemperatureThreading(threading.Thread):
                 humidtyR, temperatureR = self.airTemperatureRightSideSensor.getHumidityandTemp()
                 humidtyL, temperatureL = self.airTemperatureLeftSideSensor.getHumidityandTemp()
                 humidityAvg, tempAvg = self.averageHumidityAndTemp(humidtyR,humidtyL,temperatureR,temperatureL)
-                wx.Yield()
                 if(humidityAvg != self.monitorController.getHumidity()):
                     self.monitorController.setHumidity(humidityAvg)
                     self.monitorController.updateHumidityView()
                 if(tempAvg != self.monitorController.getTemperature()):
                     self.monitorController.setTemperature(tempAvg)
                     self.monitorController.updateAirView()
-                time.sleep(10)
+                time.sleep(30)
             except:
                 print "error in humidity/temp re-reading in 2 sec"
                 time.sleep(2)

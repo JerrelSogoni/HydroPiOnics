@@ -42,6 +42,7 @@ class UnderwaterHeaterThreading(threading.Thread):
             else:
                 GPIO.output(self.pin, GPIO.LOW)
                 while(not self.isDead):
+                    time.sleep(2147483647)
                     continue
 
         except:

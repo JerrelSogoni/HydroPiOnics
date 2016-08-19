@@ -14,11 +14,10 @@ class MonitorWaterTempThreading(threading.Thread):
         while(self.isDead != True):
             try:
                 waterTemp = self.waterTemperature.read_temp()
-                wx.Yield()
                 if(waterTemp != self.monitorController.getWaterTemperature()):
                     self.monitorController.setWaterTemperature(waterTemp)
                     self.monitorController.updateWaterTemperatureView()
-                time.sleep(10)
+                time.sleep(30)
             except:
                 print "error in underwater temp, re-reading in 5 seconds"
                 time.sleep(5)

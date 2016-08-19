@@ -1,6 +1,7 @@
 import threading
 import RPi.GPIO as GPIO
 import data.Pump as Pump
+import time
 GPIO.setmode(GPIO.BCM)
 
 class PumpPlantToResThreading(threading.Thread):
@@ -19,7 +20,7 @@ class PumpPlantToResThreading(threading.Thread):
             GPIO.output(self.pin, GPIO.LOW)
             print "Plant to Res Started"
             while not self.isDead:
-
+                time.sleep(2147483647)
                 continue
         except:
             print "Error in PLant Drain"

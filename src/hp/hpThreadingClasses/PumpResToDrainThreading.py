@@ -1,6 +1,7 @@
 import threading
 import RPi.GPIO as GPIO
 import data.Pump as pump
+import time
 GPIO.setmode(GPIO.BCM)
 
 class PumpResToDrainThreading(threading.Thread):
@@ -22,6 +23,7 @@ class PumpResToDrainThreading(threading.Thread):
             print "Res to Drain Started"
 
             while(not self.isDead):
+                time.sleep(2147483647)
                 continue
         except:
             print "Error in ResToDrain"
