@@ -24,8 +24,8 @@ class WorkspaceView(wx.Panel):
         self.SetBackgroundColour(wx.Colour(185, 242, 253))
 
         self.initWorkspaceStaticText()
-        self.initWorkspaceCheckboxes()
-        self.initWorkspaceClock()
+        #self.initWorkspaceCheckboxes()
+        #self.initWorkspaceClock()
         self.workspaceController = None
         
     
