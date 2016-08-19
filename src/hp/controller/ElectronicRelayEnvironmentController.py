@@ -268,66 +268,69 @@ class ElectronicRelayEnvironmentController:
 
     def startADeviceManual(self, pin):
         if(pin == self.electronicRelayModel.AIRFILTERPIN ):
-            if(self.airFilterThreading == None):
-                self.airFilterThreading = ElectronicThreading(pin, mode= self.appData.MANUAL, appData = self.appData)
-            else:
+            if(self.airFilterThreading != None):
                 self.airFilterThreading.die()
                 self.airFilterThreading = None
+            self.airFilterThreading = ElectronicThreading(pin, mode= self.appData.MANUAL, appData = self.appData)
+
         elif(pin == self.electronicRelayModel.AIRHEATERPIN):
-            if(self.airHeaterThreading == None):
-                self.airHeaterThreading = ElectronicThreading(pin, mode=self.appData.MANUAL, appData = self.appData)
-            else:
+            if(self.airHeaterThreading != None):
                 self.airHeaterThreading.die()
                 self.airHeaterThreading = None
+            self.airHeaterThreading = ElectronicThreading(pin, mode=self.appData.MANUAL, appData = self.appData)
+
         elif(pin == self.electronicRelayModel.WATERHEATERPIN):
-            if(self.underwaterHeaterThreading == None):
-                self.underwaterHeaterThreading = ElectronicThreading(pin, mode=self.appData.MANUAL, appData = self.appData)
-            else:
+            if(self.underwaterHeaterThreading != None):
                 self.underwaterHeaterThreading.die()
                 self.underwaterHeaterThreading = None
+            self.underwaterHeaterThreading = ElectronicThreading(pin, mode=self.appData.MANUAL, appData = self.appData)
+
         elif(pin == self.electronicRelayModel.LEDPIN):
-            if(self.ledThreading == None):
-                self.ledThreading = ElectronicThreading(pin, mode=self.appData.MANUAL, appData = self.appData)
-            else:
+            if(self.ledThreading != None):
                 self.ledThreading.die()
                 self.ledThreading = None
+            self.ledThreading = ElectronicThreading(pin, mode=self.appData.MANUAL, appData = self.appData)
+
+
         elif(pin == self.electronicRelayModel.HUMIDIFIERPIN):
-            if(self.humidifierThreading == None):
-                self.humidifierThreading = ElectronicThreading(pin, mode=self.appData.MANUAL, appData = self.appData)
-            else:
+            if(self.humidifierThreading != None):
                 self.humidifierThreading.die()
                 self.humidifierThreading = None
+            self.humidifierThreading = ElectronicThreading(pin, mode=self.appData.MANUAL, appData = self.appData)
+
+
     def startADeviceCycle(self, pin, cycleOn, cycleOff):
         if (pin == self.electronicRelayModel.AIRFILTERPIN):
-            if (self.airFilterThreading == None):
-                self.airFilterThreading = ElectronicThreading(pin, mode=self.appData.TIMER,appData = self.appData,cycleOn = cycleOn,cycleOff = cycleOff)
-            else:
+            if (self.airFilterThreading != None):
                 self.airFilterThreading.die()
                 self.airFilterThreading = None
+            self.airFilterThreading = ElectronicThreading(pin, mode=self.appData.TIMER,appData = self.appData,cycleOn = cycleOn,cycleOff = cycleOff)
+
         elif (pin == self.electronicRelayModel.AIRHEATERPIN):
-            if (self.airHeaterThreading == None):
-                self.airHeaterThreading = ElectronicThreading(pin, mode=self.appData.TIMER,appData = self.appData ,cycleOn = cycleOn,cycleOff = cycleOn)
-            else:
+            if (self.airHeaterThreading != None):
                 self.airHeaterThreading.die()
                 self.airHeaterThreading = None
+            self.airHeaterThreading = ElectronicThreading(pin, mode=self.appData.TIMER,appData = self.appData ,cycleOn = cycleOn,cycleOff = cycleOn)
+
         elif (pin == self.electronicRelayModel.WATERHEATERPIN):
             if(self.underwaterHeaterThreading == None):
-                self.underwaterHeaterThreading = ElectronicThreading(pin, mode=self.appData.TIMER,appData = self.appData, cycleOn = cycleOn,cycleOff = cycleOff)
-            else:
                 self.underwaterHeaterThreading.die()
                 self.underwaterHeaterThreading = None
+            self.underwaterHeaterThreading = ElectronicThreading(pin, mode=self.appData.TIMER,appData = self.appData, cycleOn = cycleOn,cycleOff = cycleOff)
+
         elif (pin == self.electronicRelayModel.LEDPIN):
-            if (self.ledThreading == None):
-                self.ledThreading = ElectronicThreading(pin, mode=self.appData.TIMER,appData = self.appData, cycleOn = cycleOff,cycleOff = cycleOff)
-            else:
+            if (self.ledThreading != None):
                 self.ledThreading.die()
                 self.ledThreading = None
+            self.ledThreading = ElectronicThreading(pin, mode=self.appData.TIMER,appData = self.appData, cycleOn = cycleOff,cycleOff = cycleOff)
+
         elif (pin == self.electronicRelayModel.HUMIDIFIERPIN):
-            if (self.humidifierThreading == None):
-                self.humidifierThreading = ElectronicThreading(pin, mode=self.appData.TIMER,appData = self.appData, cycleOn = cycleOn,cycleOff = cycleOff)
-            else:
+            if (self.humidifierThreading != None):
                 self.humidifierThreading.die()
                 self.humidifierThreading = None
+            self.humidifierThreading = ElectronicThreading(pin, mode=self.appData.TIMER,appData = self.appData, cycleOn = cycleOn,cycleOff = cycleOff)
+
+
 
     def startADeviceEvironmental(self, pin, rangeLow, rangeHigh, monitor):
         if(pin == self.electronicRelayModel.AIRHEATERPIN):
