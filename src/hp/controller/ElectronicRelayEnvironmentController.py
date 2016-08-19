@@ -203,7 +203,7 @@ class ElectronicRelayEnvironmentController:
         index = cycleOff.GetCurrentSelection()
         cycleOffUnit = self.electronicRelayView.cycleOffAirHumidFan.GetString(index)
         self.electronicRelayModel.humidifierFanCycleOffUnits = cycleOffUnit
-        print cycleOff
+        print cycleOffUnit
 
 
 
