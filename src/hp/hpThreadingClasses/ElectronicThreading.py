@@ -6,9 +6,11 @@ import data.HydroPiOnicsM as appData
 import data.Monitor as monitor
 GPIO.setmode(GPIO.BCM)
 class ElectronicThreading(threading.Thread):
-    def __init__(self, device, mode= None,rangeLow = None, rangeHigh = None,cycleOn = None,cycleOff = None):
+    def __init__(self, device, mode= None,rangeLow = None, rangeHigh = None,cycleOn = None,cycleOff = None, appData = None, monitor = None):
         super(ElectronicThreading, self).__init__()
         self.pin = device
+        self.appData = appData
+        self.monitor = monitor
         self.isDead = False
         self.isOn = False
         self.mode = mode
@@ -24,7 +26,7 @@ class ElectronicThreading(threading.Thread):
         try:
             # GPIO.setup(self.pin, GPIO.OUT)
             # GPIO.output(self.pin, GPIO.HIGH)
-            if(self.mode == appData.TIMER):
+            if(self.mode == self.appData.TIMER):
                 while(not self.isDead):
                     if(self.cycleOn != 0):
                         # GPIO.output(self.pin, GPIO.LOW)
@@ -33,7 +35,7 @@ class ElectronicThreading(threading.Thread):
                         print str(self.pin) +" Off for " + str(self.cycleOff)
                         # GPIO.output(self.pin, GPIO.HIGH)
                         time.sleep(self.cycleOff)
-            elif(self.mode == appData.ENVIRONMENTAL):
+            elif(self.mode == self.appData.ENVIRONMENTAL):
                 if(self.pin == ElectronicRelayEnvironment.WATERHEATERPIN):
                     while(not self.isDead):
                         if (monitor.waterTemperature < self.RangeLow):

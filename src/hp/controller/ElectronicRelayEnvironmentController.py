@@ -269,7 +269,7 @@ class ElectronicRelayEnvironmentController:
 
     def startADeviceManual(self, pin):
         if(pin == self.electronicRelayModel.AIRFILTERPIN ):
-            self.airFilterThreading = ElectronicThreading(pin, mode= self.appData.MANUAL)
+            self.airFilterThreading = ElectronicThreading(pin, mode= self.appData.MANUAL, appData = self.appData)
         elif(pin == self.electronicRelayModel.AIRHEATERPIN):
             self.airHeaterThreading = ElectronicThreading(pin, mode=self.appData.MANUAL)
         elif(pin == self.electronicRelayModel.WATERHEATERPIN):
