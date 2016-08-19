@@ -173,11 +173,11 @@ class MotorController:
 
     def convertTimeToSeconds(self, cycleTime, cycleUnit):
         if(cycleUnit == 's'):
-            return cycleTime
+            return float(cycleTime)
         elif(cycleUnit == 'm'):
             return cycleTime * 60.0
         else:
-            return cycleTime * 3600
+            return cycleTime * 3600.0
     def startMotor(self,motor, status, thread, mode, cycleOn, cycleOff, device):
         if((status == False) and (thread != None) and (mode == self.appData.MANUAL)):
             self.killAMotor(device)
