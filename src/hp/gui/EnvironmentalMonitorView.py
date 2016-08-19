@@ -272,17 +272,17 @@ class EvironmentalMonitorView:
 
     def initListners(self):
 
-        self.humidityRangeStartSlider.Bind(wx.EVT_SCROLL_THUMBRELEASE, self.environmentalMonitorC.processHumidityStartValue)
-        self.humidityRangeStartSlider.Bind(wx.EVT_SCROLL_THUMBRELEASE, self.environmentalMonitorC.processHumidityEndValue)
+        self.humidityRangeStartSlider.Bind(wx.EVT_SCROLL, self.environmentalMonitorC.processHumidityStartValue)
+        self.humidityRangeStartSlider.Bind(wx.EVT_SCROLL, self.environmentalMonitorC.processHumidityEndValue)
 
-        self.temperatureRangeStartValue.Bind(wx.EVT_SCROLL_THUMBRELEASE, self.environmentalMonitorC.processTemperatureStartValue)
-        self.temperatureRangeStartValue.Bind(wx.EVT_SCROLL_THUMBRELEASE, self.environmentalMonitorC.processTemperatureEndValue)
+        self.temperatureRangeStartValue.Bind(wx.EVT_SCROLL, self.environmentalMonitorC.processTemperatureStartValue)
+        self.temperatureRangeStartValue.Bind(wx.EVT_SCROLL, self.environmentalMonitorC.processTemperatureEndValue)
 
-        self.pHLevelStartValue.Bind(wx.EVT_SCROLL_THUMBRELEASE, self.environmentalMonitorC.processPHStartValue)
-        self.pHLevelStartValue.Bind(wx.EVT_SCROLL_THUMBRELEASE, self.environmentalMonitorC.processPHEndValue)
+        self.pHLevelStartValue.Bind(wx.EVT_SCROLL, self.environmentalMonitorC.processPHStartValue)
+        self.pHLevelStartValue.Bind(wx.EVT_SCROLL, self.environmentalMonitorC.processPHEndValue)
 
-        self.underwaterTemperatureRangeStartValue.Bind(wx.EVT_SCROLL_THUMBRELEASE, self.environmentalMonitorC.processUnderwaterStartValue)
-        self.underwaterTemperatureRangeStartValue.Bind(wx.EVT_SCROLL_THUMBRELEASE, self.environmentalMonitorC.processUnderwaterEndValue)
+        self.underwaterTemperatureRangeStartValue.Bind(wx.EVT_SCROLL, self.environmentalMonitorC.processUnderwaterStartValue)
+        self.underwaterTemperatureRangeStartValue.Bind(wx.EVT_SCROLL, self.environmentalMonitorC.processUnderwaterEndValue)
 
 
 
