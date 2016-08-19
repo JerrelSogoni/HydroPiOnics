@@ -10,6 +10,7 @@ class EnvironmentalMonitorController:
         self.environmentalMonitorModel.humidityStartValue = sliderValue
         self.environmentalMonitorView.humidityRangeStartValue.SetValue(str(sliderValue))
         if(self.environmentalMonitorModel.humidityEndValue < sliderValue):
+            print "changing end"
             self.environmentalMonitorModel.humidityEndValue = sliderValue
             self.environmentalMonitorView.humidityRangeEndValue.SetValue(str(sliderValue))
             self.environmentalMonitorView.humidityRangeEndSlider.SetValue(sliderValue)
@@ -45,7 +46,7 @@ class EnvironmentalMonitorController:
         slider = event.GetEventObject()
         sliderValue = slider.GetValue()
         self.environmentalMonitorModel.phStartValue = sliderValue
-        self.environmentalMonitorView.pHLevelStartValue.SetValue(sliderValue)
+        self.environmentalMonitorView.pHLevelStartValue.SetValue(str(sliderValue))
         if(self.environmentalMonitorModel.phEndValue < sliderValue):
             self.environmentalMonitorModel.phEndValue = sliderValue
             self.environmentalMonitorView.phLevelEndValue.SetValue(str(sliderValue))
