@@ -5,8 +5,9 @@ import data.ElectronicRelayEnviroment as ElectronicRelayEnvironment
 
 GPIO.setmode(GPIO.BCM)
 class ElectronicThreading(threading.Thread):
-    def __init__(self, device, mode= None,rangeLow = None, rangeHigh = None,cycleOn = None,cycleOff = None, appData = None, monitor = None):
+    def __init__(self, device, mode= None,rangeLow = None, rangeHigh = None,cycleOn = None,cycleOff = None, appData = None, monitor = None , relayData = None):
         super(ElectronicThreading, self).__init__()
+        self.relayData = relayData
         self.pin = device
         self.appData = appData
         self.monitor = monitor
@@ -20,8 +21,7 @@ class ElectronicThreading(threading.Thread):
         self.start()
 
     def run(self):
-        print "run Entered"
-        print self.mode
+
         try:
             # GPIO.setup(self.pin, GPIO.OUT)
             # GPIO.output(self.pin, GPIO.HIGH)
@@ -35,13 +35,13 @@ class ElectronicThreading(threading.Thread):
                         # GPIO.output(self.pin, GPIO.HIGH)
                         time.sleep(self.cycleOff)
             elif(self.mode == self.appData.ENVIRONMENTAL):
-                if(self.pin == ElectronicRelayEnvironment.WATERHEATERPIN):
+                if(self.pin == self.relayData.WATERHEATERPIN):
                     while(not self.isDead):
-                        if (monitor.waterTemperature < self.RangeLow):
+                        if (self.monitor.waterTemperature < self.RangeLow):
                             if(not self.isOn):
                                 # GPIO.output(self.pin, GPIO.LOW)
                                 self.isOn = True
-                        elif (monitor.waterTemperature > self.RangeHigh):
+                        elif (self.monitor.waterTemperature > self.RangeHigh):
                             print "Cannot really do much We dont have a water cooler"
                             # GPIO.output(self.pin, GPIO.HIGH)
                             self.isOn = False
@@ -49,9 +49,9 @@ class ElectronicThreading(threading.Thread):
                         else:
                             # GPIO.output(self.pin, GPIO.HIGH)
                             self.isOn = False
-                elif(self.pin == ElectronicRelayEnvironment.AIRHEATERPIN):
+                elif(self.pin == self.relayData.AIRHEATERPIN):
                     while (not self.isDead):
-                        if (monitor.temperature < self.RangeLow):
+                        if (self.monitor.temperature < self.RangeLow):
                             if (not self.isOn):
                                 # GPIO.output(self.pin, GPIO.LOW)
                                 self.isOn = True
@@ -60,9 +60,9 @@ class ElectronicThreading(threading.Thread):
                         else:
                             # GPIO.output(self.pin, GPIO.HIGH)
                             self.isOn = False
-                elif(self.pin == ElectronicRelayEnvironment.HUMIDIFIERPIN):
+                elif(self.pin == self.relayData.HUMIDIFIERPIN):
                     while (not self.isDead):
-                        if (monitor.humidity < self.RangeLow):
+                        if (self.monitor.humidity < self.RangeLow):
                             if (not self.isOn):
                                 # GPIO.output(self.pin, GPIO.LOW)
                                 self.isOn = True
