@@ -1,6 +1,7 @@
 
 class EnvironmentalMonitorController:
     def __init__(self, enviromentalMonitorView, environmentalMonitorModel, appData):
+        self.electronicRelayConroller = None
         self.environmentalMonitorView = enviromentalMonitorView
         self.environmentalMonitorModel = environmentalMonitorModel
         self.appData = appData
@@ -9,8 +10,11 @@ class EnvironmentalMonitorController:
         sliderValue = slider.GetValue()
         self.environmentalMonitorModel.humidityStartValue = sliderValue
         self.environmentalMonitorView.humidityRangeStartValue.SetValue(str(sliderValue))
+        if(self.electronicRelayConroller.humidifierThreading != None):
+            self.electronicRelayConroller.humidifierThreading.changeRangeLow(sliderValue)
         if(self.environmentalMonitorModel.humidityEndValue < sliderValue):
-
+            if(self.electronicRelayConroller.humidifierThreading != None):
+                self.electronicRelayConroller.humidifierThreading.changeRangeHigh(sliderValue)
             self.environmentalMonitorModel.humidityEndValue = sliderValue
             self.environmentalMonitorView.humidityRangeEndValue.SetValue(str(sliderValue))
             self.environmentalMonitorView.humidityRangeEndSlider.SetValue(sliderValue)
@@ -19,6 +23,8 @@ class EnvironmentalMonitorController:
         slider = event.GetEventObject()
         sliderValue = slider.GetValue()
         if(sliderValue > self.environmentalMonitorModel.humidityStartValue):
+            if(self.electronicRelayConroller.humidifierThreading != None):
+                self.electronicRelayConroller.humidifierThreading.changeRangeHigh(sliderValue)
             self.environmentalMonitorView.humidityRangeEndValue.SetValue(str(sliderValue))
             self.environmentalMonitorModel.humidityEndValue = sliderValue
         else:
@@ -29,8 +35,12 @@ class EnvironmentalMonitorController:
         slider = event.GetEventObject()
         sliderValue = slider.GetValue()
         self.environmentalMonitorModel.airTempStartValue =  sliderValue
+        if(self.electronicRelayConroller.airHeaterThreading != None):
+            self.electronicRelayConroller.airHeaterThreading.changeRangeLow(sliderValue)
         self.environmentalMonitorView.temperatureRangeStartValue.SetValue(str(sliderValue))
         if(self.environmentalMonitorModel.airTempEndValue <sliderValue):
+            if (self.electronicRelayConroller.airHeaterThreading != None):
+                self.electronicRelayConroller.airHeaterThreading.changeRangeHigh(sliderValue)
             self.environmentalMonitorModel.airTempEndValue = sliderValue
             self.environmentalMonitorView.temperatureRangeEndValue.SetValue(str(sliderValue))
             self.environmentalMonitorView.temperatureRangeEndSlider.SetValue(sliderValue)
@@ -38,6 +48,8 @@ class EnvironmentalMonitorController:
         slider = event.GetEventObject()
         sliderValue = slider.GetValue()
         if(sliderValue > self.environmentalMonitorModel.airTempStartValue):
+            if (self.electronicRelayConroller.airHeaterThreading != None):
+                self.electronicRelayConroller.airHeaterThreading.changeRangeHigh(sliderValue)
             self.environmentalMonitorView.temperatureRangeEndValue.SetValue(str(sliderValue))
             self.environmentalMonitorModel.airTempEndValue = sliderValue
         else:
@@ -64,7 +76,11 @@ class EnvironmentalMonitorController:
         sliderValue = slider.GetValue()
         self.environmentalMonitorModel.underwaterTempStartValue = sliderValue
         self.environmentalMonitorView.underwaterTemperatureRangeStartValue.SetValue(str(sliderValue))
+        if(self.electronicRelayConroller.underwaterHeaterThreading != None):
+            self.electronicRelayConroller.underwaterHeaterThreading.changeRangeLow(sliderValue)
         if(self.environmentalMonitorModel.underwaterTempEndValue < sliderValue):
+            if (self.electronicRelayConroller.underwaterHeaterThreading != None):
+                self.electronicRelayConroller.underwaterHeaterThreading.changeRangeHigh(sliderValue)
             self.environmentalMonitorModel.underwaterTempEndValue = sliderValue
             self.environmentalMonitorView.underwaterTemperatureRangeEndValue.SetValue(str(sliderValue))
             self.environmentalMonitorView.underwaterTemperatureRangeEndSlider.SetValue(sliderValue)
@@ -72,6 +88,8 @@ class EnvironmentalMonitorController:
         slider= event.GetEventObject()
         sliderValue = slider.GetValue()
         if (sliderValue > self.environmentalMonitorModel.underwaterTempStartValue):
+            if (self.electronicRelayConroller.underwaterHeaterThreading != None):
+                self.electronicRelayConroller.underwaterHeaterThreading.changeRangeHigh(sliderValue)
             self.environmentalMonitorView.underwaterTemperatureRangeStartValue.SetValue(str(sliderValue))
             self.environmentalMonitorModel.underwaterTempEndValue = sliderValue
         else:
@@ -101,6 +119,8 @@ class EnvironmentalMonitorController:
             else:
                 inputs.Hide()
 
+    def setElectronicRelayController(self,controller):
+        self.electronicRelayConroller = controller
 
 
 
