@@ -1,27 +1,24 @@
 import threading
 import RPi.GPIO as GPIO
 import time
-cycleON = None
-cycleOFF = None
+
 RangeLow = None
 RangeHigh = None
 GPIO.setmode(GPIO.BCM)
 class ElectronicThreading(threading.Thread):
     def __init__(self, device, mode= None,rangeLow = None, rangeHigh = None,cycleOn = None,cycleOff = None, appData = None, monitor = None , relayData = None):
         super(ElectronicThreading, self).__init__()
-        global cycleON
-        global cycleOFF
         global RangeLow
         global RangeHigh
-        self.relayData
+        self.relayData = relayData
         self.pin = device
         self.appData = appData
         self.monitor = monitor
         self.isDead = False
         self.isOn = False
         self.mode = mode
-        cycleON = cycleOn
-        cycleOFF = cycleOff
+        self.cycleOn = cycleOn
+        self.cycleOff = cycleOff
         RangeLow = rangeLow
         RangeHigh = rangeHigh
         self.start()
@@ -35,11 +32,11 @@ class ElectronicThreading(threading.Thread):
                 while(not self.isDead):
                     if(self.cycleOn != 0):
                         GPIO.output(self.pin, GPIO.LOW)
-                        print  str(self.pin) +" On for " + str(cycleON)
-                        time.sleep(cycleON)
-                        print str(self.pin) +" Off for " + str(cycleOFF)
+                        print  str(self.pin) +" On for " + str(self.cycleOn)
+                        time.sleep(self.cycleOn)
+                        print str(self.pin) +" Off for " + str(self.cycleOff)
                         GPIO.output(self.pin, GPIO.HIGH)
-                        time.sleep(cycleOFF)
+                        time.sleep(self.cycleOff)
                         continue
                     time.sleep(2147483647)
                     continue
