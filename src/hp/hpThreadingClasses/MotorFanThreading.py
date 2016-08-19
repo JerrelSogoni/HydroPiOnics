@@ -28,6 +28,7 @@ class MotorFanThreading(threading.Thread):
             self.motor.run(Adafruit_MotorHAT.FORWARD)
             self.motor.setSpeed(255)
             while(not self.isDead):
+                time.sleep(2147483647)
                 continue
     def die(self):
         self.isDead = True

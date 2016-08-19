@@ -17,7 +17,7 @@ class MonitorWaterTempThreading(threading.Thread):
                 if(waterTemp != self.monitorController.getWaterTemperature()):
                     self.monitorController.setWaterTemperature(waterTemp)
                     self.monitorController.updateWaterTemperatureView()
-                time.sleep(30)
+                time.sleep(60)
             except:
                 print "error in underwater temp, re-reading in 5 seconds"
                 time.sleep(5)

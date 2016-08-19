@@ -24,7 +24,7 @@ class MonitorHumidityTemperatureThreading(threading.Thread):
                 if(tempAvg != self.monitorController.getTemperature()):
                     self.monitorController.setTemperature(tempAvg)
                     self.monitorController.updateAirView()
-                time.sleep(30)
+                time.sleep(60)
             except:
                 print "error in humidity/temp re-reading in 2 sec"
                 time.sleep(2)
