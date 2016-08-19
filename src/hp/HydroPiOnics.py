@@ -5,7 +5,6 @@ from gui.HydroPiOnicsView import HydroPiOnicsView
 from data.HydroPiOnicsM import HydroPiOnicsM
 from controller.HydroPiOnicsController import HydroPiOnicsController
 from gui.MenuBarView import MenuBarView
-from data.MenuBar import MenuBar
 from controller.MenuBarController import MenuBarController
 from gui.MonitorView import MonitorView
 from data.Monitor import Monitor
@@ -23,7 +22,7 @@ from gui.EnvironmentalMonitorView import EvironmentalMonitorView
 from data.EnvironmentalMonitor import EnvironmentalMonitor
 from controller.EnvironmentalMonitorController import EnvironmentalMonitorController
 from gui.ElectronicRelayEnviromentView import  ElectronicRelayEnviromentView
-from data.ElectronicRelayEnviroment import ElectronicRelayEnvironment
+from data.ElectronicRelayEnviroment import ElectronicRelayEnviroment
 from controller.ElectronicRelayEnvironmentController import ElectronicRelayEnvironmentController
 
 
@@ -94,7 +93,7 @@ class HydroPiOnics(wx.Frame):
         self.environmentalMonitorView.initController(self.environmentalMonitorController)
     def initElectronicRelayEnvironmentMVC(self):
         self.electronicRelayView = ElectronicRelayEnviromentView(self.workspaceView)
-        self.electronicRelayModel = ElectronicRelayEnvironment()
+        self.electronicRelayModel = ElectronicRelayEnviroment()
         self.electronicRelayController = ElectronicRelayEnvironmentController(self.electronicRelayView, self.electronicRelayModel, self.guiModel)
         self.electronicRelayView.initController(self.electronicRelayController)
         self.electronicRelayView.initListeners()
