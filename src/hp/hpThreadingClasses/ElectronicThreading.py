@@ -2,8 +2,7 @@ import threading
 import RPi.GPIO as GPIO
 import time
 import data.ElectronicRelayEnviroment as ElectronicRelayEnvironment
-import data.HydroPiOnicsM as appData
-import data.Monitor as monitor
+
 GPIO.setmode(GPIO.BCM)
 class ElectronicThreading(threading.Thread):
     def __init__(self, device, mode= None,rangeLow = None, rangeHigh = None,cycleOn = None,cycleOff = None, appData = None, monitor = None):

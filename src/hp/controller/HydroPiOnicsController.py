@@ -46,11 +46,13 @@ class HydroPiOnicsController:
         if(run == self.hydroModel.ON):
             self.checkPumps()
             self.checkMotors()
+            self.checkRelay()
 
 
         else:
             self.pumpC.killPumps()
             self.motorC.killMotors()
+            self.electronicRelayEnvironmentC.killAll()
 
     def setElectronicRelayEnvironmentC(self, electronicRelayEnvironmentC):
         self.electronicRelayEnvironmentC = electronicRelayEnvironmentC
