@@ -1,5 +1,4 @@
 from hpThreadingClasses.ElectronicThreading import ElectronicThreading
-import MotorController as calculate
 class ElectronicRelayEnvironmentController:
     def __init__(self, electronicRelayView, electronicRelayModel, appData):
         self.electronicRelayView = electronicRelayView
@@ -322,14 +321,14 @@ class ElectronicRelayEnvironmentController:
         self.startADeviceManual(self.electronicRelayModel.AIRFILTERPIN)
     def startAirFilterCycle(self):
         self.startADeviceCycle(self.electronicRelayModel.AIRFILTERPIN,
-                               cycleOn=calculate.convertTimeToSeconds(self.electronicRelayModel.airFilterFanCycleOn, self.electronicRelayModel.airFilterFanCycleOnUnits),
-                               cycleOff=calculate.convertTimeToSeconds(self.electronicRelayModel.airFilterFanCycleOff, self.electronicRelayModel.airFilterFanCycleOffUnits))
+                               cycleOn=self.convertTimeToSeconds(self.electronicRelayModel.airFilterFanCycleOn, self.electronicRelayModel.airFilterFanCycleOnUnits),
+                               cycleOff=self.convertTimeToSeconds(self.electronicRelayModel.airFilterFanCycleOff, self.electronicRelayModel.airFilterFanCycleOffUnits))
     def startHeaterManual(self):
         self.startADeviceManual(self.electronicRelayModel.AIRHEATERPIN)
     def startHeaterCycle(self):
         self.startADeviceCycle(self.electronicRelayModel.AIRHEATERPIN,
-                               cycleOn=calculate.convertTimeToSeconds(self.electronicRelayModel.airHeaterFanCycleOn, self.electronicRelayModel.airHeaterFanCycleOnUnits),
-                               cycleOff=calculate.convertTimeToSeconds(self.electronicRelayModel.airHeaterFanCycleOff, self.electronicRelayModel.airHeaterFanCycleOffUnits))
+                               cycleOn=self.convertTimeToSeconds(self.electronicRelayModel.airHeaterFanCycleOn, self.electronicRelayModel.airHeaterFanCycleOnUnits),
+                               cycleOff=self.convertTimeToSeconds(self.electronicRelayModel.airHeaterFanCycleOff, self.electronicRelayModel.airHeaterFanCycleOffUnits))
     def startHeaterEvironmental(self, rangeLow, rangeHigh):
         self.startADeviceCycle(self.electronicRelayModel.AIRHEATERPIN, rangeLow= rangeLow, rangeHigh = rangeHigh)
 
@@ -337,23 +336,23 @@ class ElectronicRelayEnvironmentController:
         self.startADeviceManual(self.electronicRelayModel.LEDPIN)
     def startLedCycle(self):
         self.startADeviceCycle(self.electronicRelayModel.LEDPIN,
-                               cycleOn=calculate.convertTimeToSeconds(self.electronicRelayModel.ledCycleOn, self.electronicRelayModel.ledCycleOnUnits),
-                               cycleOff=calculate.convertTimeToSeconds(self.electronicRelayModel.ledCycleOff, self.electronicRelayModel.ledCycleOffUnits))
+                               cycleOn=self.convertTimeToSeconds(self.electronicRelayModel.ledCycleOn, self.electronicRelayModel.ledCycleOnUnits),
+                               cycleOff=self.convertTimeToSeconds(self.electronicRelayModel.ledCycleOff, self.electronicRelayModel.ledCycleOffUnits))
 
     def startUnderwaterManual(self):
         self.startADeviceManual(self.electronicRelayModel.WATERHEATERPIN)
     def startUnderwaterCycle(self):
         self.startADeviceCycle(self.electronicRelayModel.WATERHEATERPIN,
-                               cycleOn=calculate.convertTimeToSeconds(self.electronicRelayModel.underWaterHeaterCycleOn, self.electronicRelayModel.underWaterHeaterCycleOnUnits),
-                               cycleOff=calculate.convertTimeToSeconds(self.electronicRelayModel.underWaterHeaterCycleOff, self.electronicRelayModel.underWaterHeaterCycleOffUnits))
+                               cycleOn=self.convertTimeToSeconds(self.electronicRelayModel.underWaterHeaterCycleOn, self.electronicRelayModel.underWaterHeaterCycleOnUnits),
+                               cycleOff=self.convertTimeToSeconds(self.electronicRelayModel.underWaterHeaterCycleOff, self.electronicRelayModel.underWaterHeaterCycleOffUnits))
     def startUnderwaterEnvironmental(self, rangeLow, rangeHigh):
         self.startADeviceCycle(self.electronicRelayModel.WATERHEATERPIN, rangeLow=rangeLow, rangeHigh=rangeHigh)
     def startHumidifierManual(self):
         self.startADeviceManual(self.electronicRelayModel.HUMIDIFIERPIN)
     def startHumidifierCycle(self):
         self.startADeviceCycle(self.electronicRelayModel.HUMIDIFIERPIN,
-                               cycleOn=calculate.convertTimeToSeconds(self.electronicRelayModel.humidifierFanCycleOn, self.electronicRelayModel.humidifierFanCycleOnUnits),
-                               cycleOff=calculate.convertTimeToSeconds(self.electronicRelayModel.humidifierFanCycleOff, self.electronicRelayModel.humidifierFanCycleOffUnits))
+                               cycleOn=self.convertTimeToSeconds(self.electronicRelayModel.humidifierFanCycleOn, self.electronicRelayModel.humidifierFanCycleOnUnits),
+                               cycleOff=self.convertTimeToSeconds(self.electronicRelayModel.humidifierFanCycleOff, self.electronicRelayModel.humidifierFanCycleOffUnits))
     def startHumidifierEnvironmental(self, rangeLow, rangeHigh):
         self.startADeviceCycle(self.electronicRelayModel.HUMIDIFIERPIN, rangeLow=rangeLow, rangeHigh=rangeHigh)
 
@@ -373,6 +372,15 @@ class ElectronicRelayEnvironmentController:
         if(self.ledThreading != None):
             self.ledThreading.die()
             self.ledThreading = None
+    
+
+    def convertTimeToSeconds(self, cycleTime, cycleUnit):
+        if(cycleUnit == 's'):
+            return float(cycleTime)
+        elif(cycleUnit == 'm'):
+            return cycleTime * 60.0
+        else:
+            return cycleTime * 3600.0
 
 
 
