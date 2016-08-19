@@ -18,6 +18,7 @@ class ElectronicThreading(threading.Thread):
         self.cycleOff = cycleOff
         self.RangeLow = rangeLow
         self.RangeHigh = rangeHigh
+        print "timer started"
         self.start()
 
     def run(self):

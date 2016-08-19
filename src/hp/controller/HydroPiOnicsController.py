@@ -109,21 +109,14 @@ class HydroPiOnicsController:
             if(self.electronicRelayEnvironmentC.electronicRelayModel.isHumidifierOn):
                 self.electronicRelayEnvironmentC.startHumidifierManual()
         elif(self.hydroModel.Mode == self.hydroModel.TIMER):
-            if(self.electronicRelayEnvironmentC.electronicRelayModel.isAirFilterOn):
-                self.electronicRelayEnvironmentC.startAirFilterCycle()
-            if(self.electronicRelayEnvironmentC.electronicRelayModel.isLedOn):
-                self.electronicRelayEnvironmentC.startLedCycle()
-            if(self.electronicRelayEnvironmentC.electronicRelayModel.isAirHeaterOn):
-                self.electronicRelayEnvironmentC.startHeaterCycle()
-            if(self.electronicRelayEnvironmentC.electronicRelayModel.isWaterHeaterOn):
-                self.electronicRelayEnvironmentC.startUnderwaterCycle()
-            if(self.electronicRelayEnvironmentC.electronicRelayModel.isHumidifierOn):
-                self.electronicRelayEnvironmentC.startHumidifierCycle()
+            self.electronicRelayEnvironmentC.startAirFilterCycle()
+            self.electronicRelayEnvironmentC.startLedCycle()
+            self.electronicRelayEnvironmentC.startHeaterCycle()
+            self.electronicRelayEnvironmentC.startUnderwaterCycle()
+            self.electronicRelayEnvironmentC.startHumidifierCycle()
         else:
-            if (self.electronicRelayEnvironmentC.electronicRelayModel.isAirFilterOn):
-                self.electronicRelayEnvironmentC.startAirFilterCycle()
-            if(self.electronicRelayEnvironmentC.electronicRelayModel.isLedOn):
-                self.electronicRelayEnvironmentC.startLedCycle()
+            self.electronicRelayEnvironmentC.startAirFilterCycle()
+            self.electronicRelayEnvironmentC.startLedCycle()
             self.electronicRelayEnvironmentC.startHeaterEvironmental(self.environmentalMonitorC.environmentalMonitorModel.airTempStartValue,
                                                                      self.environmentalMonitorC.environmentalMonitorModel.airTempEndValue)
 
