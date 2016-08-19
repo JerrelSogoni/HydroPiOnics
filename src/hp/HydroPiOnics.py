@@ -91,6 +91,7 @@ class HydroPiOnics(wx.Frame):
         self.environmentalMonitorModel = EnvironmentalMonitor()
         self.environmentalMonitorController = EnvironmentalMonitorController(self.environmentalMonitorView, self.environmentalMonitorModel, self.guiModel)
         self.environmentalMonitorView.initController(self.environmentalMonitorController)
+        self.environmentalMonitorView.initListners()
     def initElectronicRelayEnvironmentMVC(self):
         self.electronicRelayView = ElectronicRelayEnviromentView(self.workspaceView)
         self.electronicRelayModel = ElectronicRelayEnviroment()
