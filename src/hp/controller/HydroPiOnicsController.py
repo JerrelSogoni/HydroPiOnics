@@ -118,13 +118,13 @@ class HydroPiOnicsController:
             self.electronicRelayEnvironmentC.startAirFilterCycle()
             self.electronicRelayEnvironmentC.startLedCycle()
             self.electronicRelayEnvironmentC.startHeaterEvironmental(self.environmentalMonitorC.environmentalMonitorModel.airTempStartValue,
-                                                                     self.environmentalMonitorC.environmentalMonitorModel.airTempEndValue, self.monitorC.environmentalMonitorModel)
+                                                                     self.environmentalMonitorC.environmentalMonitorModel.airTempEndValue, self.monitorC.monitorModel)
 
             self.electronicRelayEnvironmentC.startUnderwaterEnvironmental(self.environmentalMonitorC.environmentalMonitorModel.underwaterTempStartValue,
-                                                                     self.environmentalMonitorC.environmentalMonitorModel.underwaterTempEndValue, self.monitorC.environmentalMonitorModel)
+                                                                     self.environmentalMonitorC.environmentalMonitorModel.underwaterTempEndValue, self.monitorC.monitorModel)
 
             self.electronicRelayEnvironmentC.startHumidifierEnvironmental(self.environmentalMonitorC.environmentalMonitorModel.humidityStartValue,
-                                                                          self.environmentalMonitorC.environmentalMonitorModel.humidityEndValue, self.monitorC.environmentalMonitorModel)
+                                                                          self.environmentalMonitorC.environmentalMonitorModel.humidityEndValue, self.monitorC.monitorModel)
 
 
 
