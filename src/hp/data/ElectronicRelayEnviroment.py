@@ -1,5 +1,5 @@
 
-class ElectronicRelayEnvironment:
+class ElectronicRelayEnviroment:
     AIRFILTERPIN = 4
     LEDPIN = 13
     AIRHEATERPIN = 16
