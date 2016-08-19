@@ -185,7 +185,7 @@ class MotorController:
             self.startAMotor(device, motor)
         elif ((thread != None) and (mode == self.appData.TIMER or mode == self.appData.ENVIRONMENTAL)):
             if(device is Motor.WATERAIRPUMP):
-                self.killMotors(device)
+                self.killAMotors(device)
             else:
                 thread.changeCycleOn(cycleOn)
                 thread.changeCycleOff(cycleOff)
