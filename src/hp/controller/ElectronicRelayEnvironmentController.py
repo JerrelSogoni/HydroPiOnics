@@ -277,7 +277,7 @@ class ElectronicRelayEnvironmentController:
         elif(pin == self.electronicRelayModel.LEDPIN):
             self.ledThreading = ElectronicThreading(pin, mode=self.appData.MANUAL)
         elif(pin == self.electronicRelayModel.HUMIDIFIERPIN):
-            self.humidifierThreading = ElectronicThreading(pin, mode=self.appData.MANUAL)
+            self.humidifierThreading = ElectronicThreading(pin, mode=self.appData.MANUAL, appData = self.appData)
     def startADeviceCycle(self, pin, cycleOn, cycleOff):
 
         if (pin == self.electronicRelayModel.AIRFILTERPIN):
