@@ -271,32 +271,37 @@ class ElectronicRelayEnvironmentController:
             if(self.airFilterThreading != None):
                 self.airFilterThreading.die()
                 self.airFilterThreading = None
-            self.airFilterThreading = ElectronicThreading(pin, mode= self.appData.MANUAL, appData = self.appData)
+            else:
+                self.airFilterThreading = ElectronicThreading(pin, mode= self.appData.MANUAL, appData = self.appData)
 
         elif(pin == self.electronicRelayModel.AIRHEATERPIN):
             if(self.airHeaterThreading != None):
                 self.airHeaterThreading.die()
                 self.airHeaterThreading = None
-            self.airHeaterThreading = ElectronicThreading(pin, mode=self.appData.MANUAL, appData = self.appData)
+            else:
+                self.airHeaterThreading = ElectronicThreading(pin, mode=self.appData.MANUAL, appData = self.appData)
 
         elif(pin == self.electronicRelayModel.WATERHEATERPIN):
             if(self.underwaterHeaterThreading != None):
                 self.underwaterHeaterThreading.die()
                 self.underwaterHeaterThreading = None
-            self.underwaterHeaterThreading = ElectronicThreading(pin, mode=self.appData.MANUAL, appData = self.appData)
+            else:
+                self.underwaterHeaterThreading = ElectronicThreading(pin, mode=self.appData.MANUAL, appData = self.appData)
 
         elif(pin == self.electronicRelayModel.LEDPIN):
             if(self.ledThreading != None):
                 self.ledThreading.die()
                 self.ledThreading = None
-            self.ledThreading = ElectronicThreading(pin, mode=self.appData.MANUAL, appData = self.appData)
+            else:
+                self.ledThreading = ElectronicThreading(pin, mode=self.appData.MANUAL, appData = self.appData)
 
 
         elif(pin == self.electronicRelayModel.HUMIDIFIERPIN):
             if(self.humidifierThreading != None):
                 self.humidifierThreading.die()
                 self.humidifierThreading = None
-            self.humidifierThreading = ElectronicThreading(pin, mode=self.appData.MANUAL, appData = self.appData)
+            else:
+                self.humidifierThreading = ElectronicThreading(pin, mode=self.appData.MANUAL, appData = self.appData)
 
 
     def startADeviceCycle(self, pin, cycleOn, cycleOff):

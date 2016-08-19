@@ -10,6 +10,7 @@ class HydroPiOnicsM:
         self.ENVIRONMENTAL = "ENVIRONMENTAL"
         self.running = self.OFF
         self.Mode = self.MANUAL
+        self.Saved = False
     def setRunning(self, running):
         self.running = running
     def getRunning(self):
