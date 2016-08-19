@@ -20,6 +20,7 @@ class ElectronicThreading(threading.Thread):
 
     def run(self):
         print "run Entered"
+        print self.mode
         try:
             # GPIO.setup(self.pin, GPIO.OUT)
             # GPIO.output(self.pin, GPIO.HIGH)
