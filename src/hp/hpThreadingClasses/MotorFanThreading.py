@@ -18,10 +18,9 @@ class MotorFanThreading(threading.Thread):
         self.start()
 
     def run(self):
-
         if(self.cycle):
             while(not self.isDead):
-                if(self.cycleOn != 0):
+                if(CycleOn != 0):
                     self.motor.run(Adafruit_MotorHAT.FORWARD)
                     self.motor.setSpeed(255)
                     time.sleep(CycleOn)
