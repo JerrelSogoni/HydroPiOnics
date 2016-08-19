@@ -10,16 +10,19 @@ class EnvironmentalMonitorController:
         self.environmentalMonitorModel.humidityStartValue = sliderValue
         self.environmentalMonitorView.humidityRangeStartValue.SetValue(str(sliderValue))
         if(self.environmentalMonitorModel.humidityEndValue < sliderValue):
-            self.environmentalMonitorModel.humidityEndValue = sliderValue.GetValue()
+            self.environmentalMonitorModel.humidityEndValue = sliderValue
             self.environmentalMonitorView.humidityRangeEndValue.SetValue(str(sliderValue))
-            self.environmentalMonitorView.humidityRangeEndSlider.SetValue(str(sliderValue))
+            self.environmentalMonitorView.humidityRangeEndSlider.SetValue(sliderValue)
 
     def processHumidityEndValue(self,event):
         slider = event.GetEventObject()
         sliderValue = slider.GetValue()
-        if(not(sliderValue < self.environmentalMonitorModel.humidityStartValue)):
+        if(sliderValue > self.environmentalMonitorModel.humidityStartValue):
             self.environmentalMonitorView.humidityRangeEndValue.SetValue(str(sliderValue))
             self.environmentalMonitorModel.humidityEndValue = sliderValue
+        else:
+            slider.SetValue(self.environmentalMonitorModel.humidityEndValue)
+
 
     def processTemperatureStartValue(self,event):
         slider = event.GetEventObject()
@@ -29,13 +32,15 @@ class EnvironmentalMonitorController:
         if(self.environmentalMonitorModel.airTempEndValue <sliderValue):
             self.environmentalMonitorModel.airTempEndValue = sliderValue
             self.environmentalMonitorView.temperatureRangeEndValue.SetValue(str(sliderValue))
-            self.environmentalMonitorView.temperatureRangeEndSlider.SetValue(str(sliderValue))
+            self.environmentalMonitorView.temperatureRangeEndSlider.SetValue(sliderValue)
     def processTemperatureEndValue(self,event):
         slider = event.GetEventObject()
         sliderValue = slider.GetValue()
-        if(not(sliderValue < self.environmentalMonitorModel.airTempStartValue)):
+        if(sliderValue > self.environmentalMonitorModel.airTempStartValue):
             self.environmentalMonitorView.temperatureRangeEndValue.SetValue(str(sliderValue))
             self.environmentalMonitorModel.airTempEndValue = sliderValue
+        else:
+            slider.SetValue(self.environmentalMonitorModel.airTempEndValue)
     def processPHStartValue(self,event):
         slider = event.GetEventObject()
         sliderValue = slider.GetValue()
@@ -44,13 +49,15 @@ class EnvironmentalMonitorController:
         if(self.environmentalMonitorModel.phEndValue < sliderValue):
             self.environmentalMonitorModel.phEndValue = sliderValue
             self.environmentalMonitorView.phLevelEndValue.SetValue(str(sliderValue))
-            self.environmentalMonitorView.pHRangeEndSlider.SetValue(str(sliderValue))
+            self.environmentalMonitorView.pHRangeEndSlider.SetValue(sliderValue)
     def processPHEndValue(self,event):
         slider = event.GetEventObject()
         sliderValue = slider.GetValue()
-        if (not (sliderValue < self.environmentalMonitorModel.phStartValue)):
+        if (sliderValue > self.environmentalMonitorModel.phStartValue):
             self.environmentalMonitorView.pHLevelStartValue.SetValue(str(sliderValue))
             self.environmentalMonitorModel.phEndValue = sliderValue
+        else:
+            slider.SetValue(self.environmentalMonitorModel.phEndValue)
     def processUnderwaterStartValue(self,event):
         slider = event.GetEventObject()
         sliderValue = slider.GetValue()
@@ -59,13 +66,15 @@ class EnvironmentalMonitorController:
         if(self.environmentalMonitorModel.underwaterTempEndValue < sliderValue):
             self.environmentalMonitorModel.underwaterTempEndValue = sliderValue
             self.environmentalMonitorView.underwaterTemperatureRangeEndValue.SetValue(str(sliderValue))
-            self.environmentalMonitorView.underwaterTemperatureRangeEndSlider.SetValue(str(sliderValue))
+            self.environmentalMonitorView.underwaterTemperatureRangeEndSlider.SetValue(sliderValue)
     def processUnderwaterEndValue(self,event):
         slider= event.GetEventObject()
         sliderValue = slider.GetValue()
-        if (not (sliderValue < self.environmentalMonitorModel.underwaterTempStartValue)):
+        if (sliderValue > self.environmentalMonitorModel.underwaterTempStartValue):
             self.environmentalMonitorView.underwaterTemperatureRangeStartValue.SetValue(str(sliderValue))
             self.environmentalMonitorModel.underwaterTempEndValue = sliderValue
+        else:
+            slider.SetValue(self.environmentalMonitorModel.underwaterTempEndValue)
 
     def updateMode(self, mode):
         if(mode != self.appData.ENVIRONMENTAL):
