@@ -11,6 +11,7 @@ class EnvironmentalMonitorController:
         self.environmentalMonitorView.humidityRangeStartValue.SetValue(str(sliderValue))
         print "wokring"
         if(self.environmentalMonitorModel.humidityEndValue < sliderValue):
+            print "dp"
             self.environmentalMonitorModel.humidityEndValue = sliderValue
             self.environmentalMonitorView.humidityRangeEndValue.SetValue(str(sliderValue))
             self.environmentalMonitorView.humidityRangeEndSlider.SetValue(sliderValue)
