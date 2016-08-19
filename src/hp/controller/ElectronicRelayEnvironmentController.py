@@ -391,8 +391,8 @@ class ElectronicRelayEnvironmentController:
             self.underwaterHeaterThreading.die()
             self.underwaterHeaterThreading = None
         if(self.humidifierThreading != None):
-            self.underwaterHeaterThreading.die()
-            self.underwaterHeaterThreading = None
+            self.humidifierThreading.die()
+            self.humidifierThreading = None
         if(self.ledThreading != None):
             self.ledThreading.die()
             self.ledThreading = None
