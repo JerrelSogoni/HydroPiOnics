@@ -44,10 +44,10 @@ class PumpController:
 
 
     def startPlantDrain(self):
-        if((self.pumpData.isPlantDrainOn is False) and (self.pumpResToDrain is not None)):
+        if((self.pumpData.isPlantDrainOn is False) and (self.pumpPlantToRes is not None)):
             self.pumpPlantToRes.die()
             self.pumpPlantToRes = None
-        if (self.pumpData.isPlantDrainOn and (self.pumpResToDrain is None)):
+        if (self.pumpData.isPlantDrainOn and (self.pumpPlantToRes is None)):
             self.pumpPlantToRes = PumpPlantToResThreading(self.pumpData.PLANTDRAINPIN)
 
 

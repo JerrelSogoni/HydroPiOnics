@@ -270,19 +270,18 @@ class MotorController:
         if(self.ventFanThreading is not None):
             self.ventFanThreading.die()
             self.motor.isVentMotorOn = False
-            self.motorView.ventFanCheckBox.SetValue(False)
+
         if(self.intakeFanThreading is not None):
             self.intakeFanThreading.die()
             self.motor.isIntakeMotorOn = False
-            self.motorView.intakeFanCheckBox.SetValue(False)
+
         if(self.exhaustFanThreading is not None):
             self.exhaustFanThreading.die()
             self.motor.isExaustMotorOn = False
-            self.motorView.exhaustFanCheckBox.SetValue(False)
+
         if(self.waterAirThreading is not None):
             self.waterAirThreading.die()
             self.motor.isWaterAirPumpOn = False
-            self.motorView.waterAirCheckBox.SetValue(False)
 
 
 
