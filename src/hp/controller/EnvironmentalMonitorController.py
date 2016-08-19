@@ -6,7 +6,7 @@ class EnvironmentalMonitorController:
         self.appData = appData
     def processHumidityStartValue(self,event):
         sliderValue = event.GetEventObject()
-
+        print "?"
         self.environmentalMonitorModel.humidityStartValue = sliderValue.GetValue()
         self.environmentalMonitorView.humidityRangeStartValue.SetValue(sliderValue.getValue)
         if(self.environmentalMonitorModel.humidityEndValue < sliderValue.getValue()):
