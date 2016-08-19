@@ -313,7 +313,7 @@ class ElectronicRelayEnvironmentController:
             self.airHeaterThreading = ElectronicThreading(pin, mode=self.appData.TIMER,appData = self.appData ,cycleOn = cycleOn,cycleOff = cycleOn)
 
         elif (pin == self.electronicRelayModel.WATERHEATERPIN):
-            if(self.underwaterHeaterThreading == None):
+            if(self.underwaterHeaterThreading != None):
                 self.underwaterHeaterThreading.die()
                 self.underwaterHeaterThreading = None
             self.underwaterHeaterThreading = ElectronicThreading(pin, mode=self.appData.TIMER,appData = self.appData, cycleOn = cycleOn,cycleOff = cycleOff)
