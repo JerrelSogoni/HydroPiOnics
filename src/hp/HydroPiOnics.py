@@ -46,6 +46,11 @@ class HydroPiOnics(wx.Frame):
             self.giveControllersToMainController()
             self.initDefaultMode()
 
+            self.fileManager = FileManager(self.guiController)
+            print self.fileManager
+
+
+
     def initFrameMVC(self):
         self.gui = HydroPiOnicsView(self)
         self.guiModel =  HydroPiOnicsM()
@@ -110,12 +115,7 @@ if __name__ == '__main__':
     app = wx.App()
     frame = create(None)
     frame.Show()
-    try:
-        app.MainLoop()
-    except KeyboardInterrupt:
-        print "Shutting Down"
-        frame.guiController.killSystem()
-    except:
-        print "Error Occured"
+    app.MainLoop()
+
 
 
