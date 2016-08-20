@@ -71,8 +71,8 @@ class FileManager:
         self.electronicRelayView = self.relayController.electronicRelayView
         
         self.environmentalController = self.appController.environmentalMonitorC
-        self.environmentalMonitorModel = self.appController.environmentalMonitorModel
-        self.environmentalMonitorView = self.appController.environmentalMonitorView
+        self.environmentalMonitorModel = self.environmentalController.environmentalMonitorModel
+        self.environmentalMonitorView = self.environmentalController.environmentalMonitorView
         self.pumpController = self.appController.pumpC
         
         self.pumpView = self.pumpController.pumpView
