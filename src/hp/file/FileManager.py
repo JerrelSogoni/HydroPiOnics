@@ -93,6 +93,7 @@ class FileManager:
     def save(self):
         try:
             if(self.appModel.Saved == False):
+                self.constructSaveJson()
                 self.saveFileDialog = wx.FileDialog(self, "Save As", "", "",
                                                "Json files (*.json)|*.json",
                                                    wx.FD_SAVE )
@@ -102,8 +103,7 @@ class FileManager:
                 with open(self.filePath + ".json", 'w') as file:
                     json.dump(self.data, file)
                 self.currentSaveLocation = self.saveFileDialog.GetPath()
-            else:
-                self.currentSaveLocation = self.saveFileDialog.GetPath()
+
         except:
             print "Error in Save"
 
