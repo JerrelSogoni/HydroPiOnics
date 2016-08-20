@@ -78,6 +78,7 @@ class FileManager:
         self.pumpView = self.pumpController.pumpView
         self.pumpData = self.pumpController.pumpData
         self.workspaceController = self.appController.workspaceController
+
         
         
         self.currentSaveLocation = None
@@ -93,7 +94,7 @@ class FileManager:
     def save(self):
         try:
             if(self.appModel.Saved == False):
-                self.constructSaveJson()
+
                 self.saveFileDialog = wx.FileDialog(self, "Save As", "", "",
                                                "Json files (*.json)|*.json",
                                                    wx.FD_SAVE )
@@ -101,7 +102,7 @@ class FileManager:
                 self.filePath = self.saveFileDialog.GetPath()
                 self.saveFileDialog.Destroy()
                 with open(self.filePath + ".json", 'w') as file:
-                    json.dump(self.data, file)
+                    json.dump(self.constructSaveJson(), file)
                 self.currentSaveLocation = self.saveFileDialog.GetPath()
 
         except:
@@ -129,6 +130,7 @@ class FileManager:
             self.saveCycleState(self.data)
         else:
             self.saveEnvironmentalState(self.data)
+        return self.data
 
 
     def saveManualState(self, data):
