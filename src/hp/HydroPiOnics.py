@@ -40,19 +40,26 @@ class HydroPiOnics(wx.Frame):
 
 
     def __init__(self, parent):
+        try:
+            self.initFrameMVC()
+            self.initMenuBarMVC()
+            self.initWorkspaceMVC()
+            self.initMonitorMVC()
+            self.initMotorMVC()
+            self.initPumpMVC()
+            self.initEnvironmentalMonitorMVC()
+            self.initElectronicRelayEnvironmentMVC()
+            self.giveControllersToMainController()
+            self.initDefaultMode()
+            self.fileManager = FileManager(self.guiController)
+            self.menuController.setFileManager(self.fileManager)
+        except KeyboardInterrupt:
+            print "Shutting Down"
+            self.guiController.killSystem()
+        except:
+            print "Error Occured"
 
-        self.initFrameMVC()
-        self.initMenuBarMVC()
-        self.initWorkspaceMVC()
-        self.initMonitorMVC()
-        self.initMotorMVC()
-        self.initPumpMVC()
-        self.initEnvironmentalMonitorMVC()
-        self.initElectronicRelayEnvironmentMVC()
-        self.giveControllersToMainController()
-        self.initDefaultMode()
-        self.fileManager = FileManager(self.guiController)
-        self.menuController.setFileManager(self.fileManager)
+
 
         self._init_ctrls(parent)
     def initFrameMVC(self):
