@@ -27,6 +27,8 @@ class MonitorPHThreading(threading.Thread):
     def getPHLevel(self):
         sample = self.pHReader.read()
         return self.pHReader.calc_ph(sample)
+    def die(self):
+        self.isDead = True
 
 
 
