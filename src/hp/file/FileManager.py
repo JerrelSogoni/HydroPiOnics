@@ -92,7 +92,6 @@ class FileManager:
             print "Error in Opening"
 
     def save(self):
-        try:
             if(self.appModel.Saved == False):
 
                 self.saveFileDialog = wx.FileDialog(self, "Save As", "", "",
@@ -105,8 +104,6 @@ class FileManager:
                     json.dump(self.constructSaveJson(), file)
                 self.currentSaveLocation = self.saveFileDialog.GetPath()
 
-        except:
-            print "Error in Save"
 
     def saveAs(self):
         pass
