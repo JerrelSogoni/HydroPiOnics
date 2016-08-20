@@ -184,13 +184,13 @@ class MotorController:
         elif(status and (thread == None) and (mode == self.appData.MANUAL)):
             self.startAMotor(device, motor)
         elif ((thread != None) and (mode == self.appData.TIMER or mode == self.appData.ENVIRONMENTAL)):
-            if(device is Motor.WATERAIRPUMP):
+            if(device == Motor.WATERAIRPUMP):
                 self.killAMotors(device)
             else:
                 thread.changeCycleOn(cycleOn)
                 thread.changeCycleOff(cycleOff)
         elif ((thread == None) and ((mode == self.appData.TIMER or mode == self.appData.ENVIRONMENTAL))):
-            if(device is Motor.WATERAIRPUMP):
+            if(device == Motor.WATERAIRPUMP):
                 self.startAMotor(device, motor)
             else:
                 print "Starting cycle"
@@ -269,19 +269,19 @@ class MotorController:
 
         if(self.ventFanThreading != None):
             self.ventFanThreading.die()
-            self.motor.isVentMotorOn = False
+            self.ventFanThreading = False
 
         if(self.intakeFanThreading != None):
             self.intakeFanThreading.die()
-            self.motor.isIntakeMotorOn = False
+            self.intakeFanThreading = False
 
         if(self.exhaustFanThreading != None):
             self.exhaustFanThreading.die()
-            self.motor.isExaustMotorOn = False
+            self.exhaustFanThreading = False
 
         if(self.waterAirThreading != None):
             self.waterAirThreading.die()
-            self.motor.isWaterAirPumpOn = False
+            self.waterAirThreading = False
 
 
 
