@@ -267,19 +267,19 @@ class MotorController:
 
     def killMotors(self):
 
-        if(self.ventFanThreading is not None):
+        if(self.ventFanThreading != None):
             self.ventFanThreading.die()
             self.motor.isVentMotorOn = False
 
-        if(self.intakeFanThreading is not None):
+        if(self.intakeFanThreading != None):
             self.intakeFanThreading.die()
             self.motor.isIntakeMotorOn = False
 
-        if(self.exhaustFanThreading is not None):
+        if(self.exhaustFanThreading != None):
             self.exhaustFanThreading.die()
             self.motor.isExaustMotorOn = False
 
-        if(self.waterAirThreading is not None):
+        if(self.waterAirThreading != None):
             self.waterAirThreading.die()
             self.motor.isWaterAirPumpOn = False
 
