@@ -19,14 +19,17 @@ class HydroPiOnicsController:
         self.appGUI.Bind(wx.EVT_CLOSE, self.onClose)
 
     def onClose(self, event):
-        dialog = wx.MessageDialog(self.appGUI, message="Are you sure you want to quit?", caption="Caption", style=wx.YES_NO,
-                                  pos=wx.DefaultPosition)
-        response = dialog.ShowModal()
+        if(not self.hydroModel.Saved):
+            dialog = wx.MessageDialog(self.appGUI, message="Are you sure you want to quit without Saving?", caption="File Not Saved", style=wx.YES_NO,
+                                      pos=wx.DefaultPosition)
+            response = dialog.ShowModal()
 
-        if (response == wx.ID_YES):
-            self.appGUI.Destroy()
-        else:
-            event.StopPropagation()
+            if (response == wx.ID_YES):
+                self.killSystem()
+                self.appGUI.Destroy()
+
+            else:
+                event.StopPropagation()
     def setMode(self,mode):
             self.hydroModel.setMode(mode)
             self.motorC.updateMode(mode)
@@ -35,8 +38,13 @@ class HydroPiOnicsController:
             self.setRun(self.hydroModel.OFF)
             self.menuBarC.menuBarView.stop.Check(True)
 
-
-
+    def killSystem(self):
+        self.kill()
+        self.killMonitors()
+    def kill(self):
+        self.pumpC.killPumps()
+        self.motorC.killMotors()
+        self.electronicRelayEnvironmentC.killAll()
 
 
     def setRun(self,run):
@@ -50,9 +58,7 @@ class HydroPiOnicsController:
 
 
         else:
-            self.pumpC.killPumps()
-            self.motorC.killMotors()
-            self.electronicRelayEnvironmentC.killAll()
+            self.kill()
 
     def setElectronicRelayEnvironmentC(self, electronicRelayEnvironmentC):
         self.electronicRelayEnvironmentC = electronicRelayEnvironmentC
@@ -125,6 +131,10 @@ class HydroPiOnicsController:
             self.electronicRelayEnvironmentC.startHumidifierEnvironmental(self.environmentalMonitorC.environmentalMonitorModel.humidityStartValue,
                                                                           self.environmentalMonitorC.environmentalMonitorModel.humidityEndValue, self.monitorC.monitorModel)
 
+    def killMonitors(self):
+        self.monitorC.monitorHumidityTempThreading.die()
+        self.monitorC.monitorWaterTempThreading.die()
+        self.monitorC.monitorPHThreading.die()
 
 
 

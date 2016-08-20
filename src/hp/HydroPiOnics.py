@@ -24,6 +24,7 @@ from controller.EnvironmentalMonitorController import EnvironmentalMonitorContro
 from gui.ElectronicRelayEnviromentView import  ElectronicRelayEnviromentView
 from data.ElectronicRelayEnviroment import ElectronicRelayEnviroment
 from controller.ElectronicRelayEnvironmentController import ElectronicRelayEnvironmentController
+from file.FileManager import FileManager
 
 
 
@@ -50,6 +51,8 @@ class HydroPiOnics(wx.Frame):
         self.initElectronicRelayEnvironmentMVC()
         self.giveControllersToMainController()
         self.initDefaultMode()
+        self.fileManager = FileManager(self.guiController)
+        self.menuController.setFileManager(self.fileManager)
 
         self._init_ctrls(parent)
     def initFrameMVC(self):
