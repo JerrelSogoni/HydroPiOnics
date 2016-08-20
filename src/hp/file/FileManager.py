@@ -116,6 +116,7 @@ class FileManager:
         #turn off everything
         isAppOn = self.appModel.running
         appMode = self.appModel.Mode
+        print "saving"
         self.data.update({ISON: isAppOn},{MODE:appMode})
         # constant checkboxes no matter what mode
         self.data.update({EXHAUST: self.motor.isExaustMotorOn},
@@ -124,7 +125,6 @@ class FileManager:
                          {RESTODRAIN: self.pumpModel.isResToPlantOn},
                          {DRAINOUT: self.pumpModel.isDrainingOn})
         if(appMode == self.appModel.MANUAL ):
-            print "manual"
             self.saveManualState(self.data)
 
         elif(appMode == self.appModel.TIMER):
