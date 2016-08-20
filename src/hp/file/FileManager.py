@@ -124,6 +124,7 @@ class FileManager:
                          {RESTODRAIN: self.pumpModel.isResToPlantOn},
                          {DRAINOUT: self.pumpModel.isDrainingOn})
         if(appMode == self.appModel.MANUAL ):
+            print "manual"
             self.saveManualState(self.data)
 
         elif(appMode == self.appModel.TIMER):
