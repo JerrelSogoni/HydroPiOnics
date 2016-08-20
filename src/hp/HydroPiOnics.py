@@ -52,6 +52,7 @@ class HydroPiOnics(wx.Frame):
             self.giveControllersToMainController()
             self.initDefaultMode()
             self.fileManager = FileManager(self.guiController)
+            print "gave menu file manager"
             self.menuController.setFileManager(self.fileManager)
         except KeyboardInterrupt:
             print "Shutting Down"
