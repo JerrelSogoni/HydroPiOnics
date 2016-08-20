@@ -46,8 +46,11 @@ class HydroPiOnics(wx.Frame):
             self.giveControllersToMainController()
             self.initDefaultMode()
 
-            self.fileManager = FileManager(self.guiController)
-            self.menuController.setFileManager(self.fileManager)
+            #implement over free time
+            #SAVE, LOAD
+
+            # self.fileManager = FileManager(self.guiController)
+            # self.menuController.setFileManager(self.fileManager)
 
 
 

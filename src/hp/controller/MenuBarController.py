@@ -17,7 +17,15 @@ class MenuBarController:
         self.appGUI.Bind(wx.EVT_MENU, self.giveModeToController, self.menuBarView.getEnvironmentalItem())
         self.appGUI.Bind(wx.EVT_MENU, self.giveRunToController, self.menuBarView.start)
         self.appGUI.Bind(wx.EVT_MENU, self.giveRunToController, self.menuBarView.stop)
-        self.appGUI.Bind(wx.EVT_MENU, self.giveFileFunction, self.menuBarView.saveItem)
+        self.appGUI.Bind(wx.EVT_MENU, self.aboutMeLaunch, self.menuBarView.aboutMeItem)
+        # self.appGUI.Bind(wx.EVT_MENU, self.giveFileFunction, self.menuBarView.saveItem)
+
+    def aboutMeLaunch(self, event):
+        dialog = wx.MessageDialog(self.appGUI, message="Application made by Jerrel Sogoni in the Summer of 2016",
+                                  caption="About Me", style= wx.OK,
+                                  pos=wx.DefaultPosition)
+        response = dialog.ShowModal()
+
 
     def giveFileFunction(self, event):
         self.fileManager.save()

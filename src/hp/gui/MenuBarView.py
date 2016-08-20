@@ -14,9 +14,9 @@ class MenuBarView(wx.MenuBar):
 
     def initFileTab(self):
         self.menuFile = wx.Menu()
-        self.openItem = self.menuFile.Append(wx.ID_OPEN, 'Open')
-        self.saveItem = self.menuFile.Append(wx.ID_SAVE, 'Save')
-        self.saveAsItem = self.menuFile.Append(wx.ID_SAVEAS, 'Save as')
+        # self.openItem = self.menuFile.Append(wx.ID_OPEN, 'Open')
+        # self.saveItem = self.menuFile.Append(wx.ID_SAVE, 'Save')
+        # self.saveAsItem = self.menuFile.Append(wx.ID_SAVEAS, 'Save as')
         self.exitItem = self.menuFile.Append(wx.ID_CLOSE, 'Quit')
         return self.menuFile
     def initHelpTab(self):

@@ -103,7 +103,6 @@ class FileManager:
                 self.filePath = self.saveFileDialog.GetPath()
                 self.saveFileDialog.Destroy()
                 with open(self.filePath + ".json", 'w') as file:
-                    print "error here"
                     json.dump(self.constructSaveJson(), file)
                 self.currentSaveLocation = self.saveFileDialog.GetPath()
         except:
