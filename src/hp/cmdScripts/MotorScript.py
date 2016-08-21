@@ -10,11 +10,7 @@ VENTMOTOR = 1
 INTAKEMOTOR = 2
 EXHAUSTMOTOR = 4
 WATERAIRPUMP = 3
-motorObject = Adafruit_MotorHAT(addr=0x60)
-ventFan = motorObject.getMotor(VENTMOTOR)
-intakeFan = motorObject.getMotor(INTAKEMOTOR)
-exhaustFan = motorObject.getMotor(EXHAUSTMOTOR)
-waterAirPump = motorObject.getMotor(WATERAIRPUMP)
+
 
 
 
@@ -28,6 +24,11 @@ def main(cycleOn1,cycleOn1Units, cycleOff1, cycleOff1Units,
     cycleOn3 = convertTimeToSeconds(cycleOn3, cycleOn3Units)
     cycleOff3 = convertTimeToSeconds(cycleOff3, cycleOff3Units)
     try:
+        motorObject = Adafruit_MotorHAT(addr=0x60)
+        ventFan = motorObject.getMotor(VENTMOTOR)
+        intakeFan = motorObject.getMotor(INTAKEMOTOR)
+        exhaustFan = motorObject.getMotor(EXHAUSTMOTOR)
+        waterAirPump = motorObject.getMotor(WATERAIRPUMP)
         while(True):
             WaterPumpThread = MotorFanThreading(waterAirPump)
             VentThread = MotorFanThreading(ventFan, cycleOn = cycleOn1, cycleOff = cycleOff1, cycle = True )
