@@ -42,7 +42,7 @@ def main( ):
                 print "PH LEVEL : " + phLevel
                 time.sleep(10)
                 continue
-    
+
                 print "read failure re-reading"
                 time.sleep(5)
                 continue
