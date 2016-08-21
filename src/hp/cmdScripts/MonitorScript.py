@@ -23,7 +23,7 @@ def main( ):
                 humidtyL, temperatureL = airTemperatureLeftSideSensor.getHumidityandTemp()
                 humidityAvg, tempAvg = averageHumidityAndTemp(humidtyR, humidtyL, temperatureR, temperatureL)
                 waterTemp = waterTemperature.read_temp()
-                # phLevel = getPHLevel()
+                phLevel = getPHLevel()
                 print "Humidity Left : " + str(humidtyL) + " %"
                 print "Humidity Right : " + str(humidtyR) + " %"
                 print "Avg Humidity : " + str(humidityAvg) + " %"
@@ -35,9 +35,9 @@ def main( ):
                 print
                 print
                 print "Underwater temp: " + str(waterTemp) + " F"
-                # print
-                # print
-                # print "PH LEVEL :" + str(phLevel)
+                print
+                print
+                print "PH LEVEL :" + phLevel
                 time.sleep(10)
                 continue
             except:
