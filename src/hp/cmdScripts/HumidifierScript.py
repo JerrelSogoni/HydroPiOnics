@@ -18,7 +18,7 @@ def main(cycleOn,cycleOnUnits, cycleOff, cycleOffUnits, mode , limit):
     airTemperatureLeftSideSensor = AdafruitDHT2('22', Monitor.LEFTSIDEAIRSENSOR)
     on = False
     try:
-        if(mode == 0):
+        if(int(mode) == 0):
             cycleOn = convertTimeToSeconds(cycleOn, cycleOnUnits)
             cycleOff = convertTimeToSeconds(cycleOff, cycleOffUnits)
             while(True):
@@ -41,12 +41,12 @@ def main(cycleOn,cycleOnUnits, cycleOff, cycleOffUnits, mode , limit):
                             GPIO.output(pin, GPIO.LOW)
                             on = True
                         else:
-                            time.sleep(60)
+                            time.sleep(5)
                             continue
                     else:
                         GPIO.output(pin, GPIO.HIGH)
                         on = False
-                        time.sleep(60)
+                        time.sleep(5)
                         continue
                     print "Humidity is" + str(on)
                 except:

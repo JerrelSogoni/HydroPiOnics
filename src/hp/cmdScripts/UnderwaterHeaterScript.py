@@ -13,13 +13,13 @@ def main(cycleOn,cycleOnUnits, cycleOff, cycleOffUnits, mode , limit):
     pin = 19
     GPIO.setup(pin, GPIO.OUT)
     GPIO.output(pin, GPIO.HIGH)
-    cycleOn = convertTimeToSeconds(cycleOn, cycleOnUnits)
-    cycleOff = convertTimeToSeconds(cycleOff, cycleOffUnits)
-    waterTemperature = Temperature()
+
 
     on = False
     try:
-        if(mode == 1):
+        if(int(mode) == 1):
+            cycleOn = convertTimeToSeconds(cycleOn, cycleOnUnits)
+            cycleOff = convertTimeToSeconds(cycleOff, cycleOffUnits)
             while(True):
                 GPIO.output(pin, GPIO.LOW)
                 print "Water Heater On for " + str(cycleOn) + " seconds"
@@ -29,6 +29,8 @@ def main(cycleOn,cycleOnUnits, cycleOff, cycleOffUnits, mode , limit):
                 time.sleep(cycleOff)
                 continue
         else:
+
+            waterTemperature = Temperature()
             while (True):
                 try:
                     temp = waterTemperature.read_temp()
