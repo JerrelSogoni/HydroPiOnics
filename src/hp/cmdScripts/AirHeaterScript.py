@@ -36,12 +36,13 @@ def main(cycleOn,cycleOnUnits, cycleOff, cycleOffUnits, mode , limit):
             humidtyR, temperatureR = airTemperatureRightSideSensor.getHumidityandTemp()
             humidtyL, temperatureL = airTemperatureLeftSideSensor.getHumidityandTemp()
             humidityAvg, tempAvg = averageHumidityAndTemp(humidtyR, humidtyL, temperatureR, temperatureL)
+            print limit
             while (True):
                 try:
                     humidtyR, temperatureR = airTemperatureRightSideSensor.getHumidityandTemp()
                     humidtyL, temperatureL = airTemperatureLeftSideSensor.getHumidityandTemp()
                     humidityAvg, tempAvg = averageHumidityAndTemp(humidtyR, humidtyL, temperatureR, temperatureL)
-                    print "Avg Tmep: " + str(tempAvg)
+                    print "Avg Temp: " + str(tempAvg)
                     if (tempAvg < limit):
                         if (not on):
                             GPIO.output(pin, GPIO.LOW)
