@@ -18,7 +18,7 @@ def main( ):
 
     try:
         while(True):
-            try:
+
                 humidtyR, temperatureR = airTemperatureRightSideSensor.getHumidityandTemp()
                 humidtyL, temperatureL = airTemperatureLeftSideSensor.getHumidityandTemp()
                 humidityAvg, tempAvg = averageHumidityAndTemp(humidtyR, humidtyL, temperatureR, temperatureL)
@@ -42,7 +42,7 @@ def main( ):
                 print "PH LEVEL : " + phLevel
                 time.sleep(10)
                 continue
-            except:
+    
                 print "read failure re-reading"
                 time.sleep(5)
                 continue
