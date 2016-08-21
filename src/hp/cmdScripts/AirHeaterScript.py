@@ -23,6 +23,7 @@ def main(cycleOn,cycleOnUnits, cycleOff, cycleOffUnits, mode , limit):
     humidtyR, temperatureR = airTemperatureRightSideSensor.getHumidityandTemp()
     humidtyL, temperatureL = airTemperatureLeftSideSensor.getHumidityandTemp()
     humidityAvg, tempAvg = averageHumidityAndTemp(humidtyR, humidtyL, temperatureR, temperatureL)
+    limit = int(limit)
     on = False
     try:
         if(mode == 1):
