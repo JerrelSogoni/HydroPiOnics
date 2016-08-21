@@ -23,7 +23,6 @@ def main(cycleOn,cycleOnUnits, cycleOff, cycleOffUnits, mode , limit):
     humidtyR, temperatureR = airTemperatureRightSideSensor.getHumidityandTemp()
     humidtyL, temperatureL = airTemperatureLeftSideSensor.getHumidityandTemp()
     humidityAvg, tempAvg = averageHumidityAndTemp(humidtyR, humidtyL, temperatureR, temperatureL)
-    limit = int(limit)
     on = False
     try:
         if(mode == 1):
@@ -87,4 +86,4 @@ def averageHumidityAndTemp( humidityR, humidityL, tempR, tempL):
     return humidityAvg, tempAvg
 
 if __name__ == '__main__':
-	sys.exit(main(sys.argv[1], sys.argv[2],sys.argv[3],sys.argv[4], sys.argv[5]))
+	sys.exit(main(sys.argv[1], sys.argv[2],sys.argv[3],sys.argv[4], sys.argv[5], sys.argv[6]))
