@@ -1,4 +1,5 @@
 import time
+import sys
 sys.path.insert(0, os.getcwd()[0:len(os.getcwd()) - 10] )
 from ThirdPartyAPIs.MinipHBFW.BeagleBone.pHReader import pHReader
 from ThirdPartyAPIs.UnderwaterTemperatureReader.Temperature import Temperature
