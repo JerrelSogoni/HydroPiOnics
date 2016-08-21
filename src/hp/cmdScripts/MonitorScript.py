@@ -24,17 +24,17 @@ def main( ):
                 humidityAvg, tempAvg = averageHumidityAndTemp(humidtyR, humidtyL, temperatureR, temperatureL)
                 # waterTemp = waterTemperature.read_temp()
                 # phLevel = getPHLevel()
-                print "Humidity Left : " + str(humidtyL) + "%"
-                print "Humidity Right : " + str(humidtyR) + "%"
-                print "Avg Humidity : " + str(humidityAvg) + "%"
+                print "Humidity Left : " + str(humidtyL) + " %"
+                print "Humidity Right : " + str(humidtyR) + " %"
+                print "Avg Humidity : " + str(humidityAvg) + " %"
                 print
                 print
-                print "Temperature Left : " + str(temperatureL) + "F"
-                print "Temperature Right : " + str(temperatureR) + "F"
-                print "Avg Temperature : " + str(tempAvg) + "F"
+                print "Temperature Left : " + str(temperatureL) + " F"
+                print "Temperature Right : " + str(temperatureR) + " F"
+                print "Avg Temperature : " + str(tempAvg) + " F"
                 print
                 print
-                # print "Underwater temp: " + str(waterTemp) + "F"
+                print "Underwater temp: " + str(waterTemp) + " F"
                 # print
                 # print
                 # print "PH LEVEL :" + str(phLevel)
