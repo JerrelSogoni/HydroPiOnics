@@ -16,16 +16,11 @@ def main(cycleOn,cycleOnUnits, cycleOff, cycleOffUnits, mode , limit):
     pin = 16
     GPIO.setup(pin, GPIO.OUT)
     GPIO.output(pin, GPIO.HIGH)
-    cycleOn = convertTimeToSeconds(cycleOn, cycleOnUnits)
-    cycleOff = convertTimeToSeconds(cycleOff, cycleOffUnits)
-    airTemperatureRightSideSensor = AdafruitDHT2('22', Monitor.RIGHTSIDEAIRSENSOR)
-    airTemperatureLeftSideSensor = AdafruitDHT2('22', Monitor.LEFTSIDEAIRSENSOR)
-    humidtyR, temperatureR = airTemperatureRightSideSensor.getHumidityandTemp()
-    humidtyL, temperatureL = airTemperatureLeftSideSensor.getHumidityandTemp()
-    humidityAvg, tempAvg = averageHumidityAndTemp(humidtyR, humidtyL, temperatureR, temperatureL)
     on = False
     try:
         if(mode == 1):
+            cycleOn = convertTimeToSeconds(cycleOn, cycleOnUnits)
+            cycleOff = convertTimeToSeconds(cycleOff, cycleOffUnits)
             while(True):
                 GPIO.output(pin, GPIO.LOW)
                 print "Heater On for " + str(cycleOn) + " seconds"
@@ -36,6 +31,11 @@ def main(cycleOn,cycleOnUnits, cycleOff, cycleOffUnits, mode , limit):
                 continue
 
         else:
+            airTemperatureRightSideSensor = AdafruitDHT2('22', Monitor.RIGHTSIDEAIRSENSOR)
+            airTemperatureLeftSideSensor = AdafruitDHT2('22', Monitor.LEFTSIDEAIRSENSOR)
+            humidtyR, temperatureR = airTemperatureRightSideSensor.getHumidityandTemp()
+            humidtyL, temperatureL = airTemperatureLeftSideSensor.getHumidityandTemp()
+            humidityAvg, tempAvg = averageHumidityAndTemp(humidtyR, humidtyL, temperatureR, temperatureL)
             while (True):
                 try:
                     humidtyR, temperatureR = airTemperatureRightSideSensor.getHumidityandTemp()
