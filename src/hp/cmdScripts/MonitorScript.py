@@ -1,5 +1,5 @@
 import time
-from ThirdPartyAPIs.MinipHBFW.BeagleBone.pHReader import pHReader
+#from ThirdPartyAPIs.MinipHBFW.BeagleBone.pHReader import pHReader
 from ThirdPartyAPIs.UnderwaterTemperatureReader.Temperature import Temperature
 from ThirdPartyAPIs.Adafruit_Python_DHT.examples.AdafruitDHT2 import AdafruitDHT2
 from data.Monitor import Monitor
@@ -8,8 +8,8 @@ def main( ):
     airTemperatureRightSideSensor = AdafruitDHT2('22', Monitor.RIGHTSIDEAIRSENSOR)
     airTemperatureLeftSideSensor = AdafruitDHT2('22', Monitor.LEFTSIDEAIRSENSOR)
     waterTemperature = Temperature()
-    phReader = pHReader()
-    
+    #phReader = pHReader()
+
 
 
 
@@ -20,7 +20,7 @@ def main( ):
                 humidtyL, temperatureL = airTemperatureLeftSideSensor.getHumidityandTemp()
                 humidityAvg, tempAvg = averageHumidityAndTemp(humidtyR, humidtyL, temperatureR, temperatureL)
                 waterTemp = waterTemperature.read_temp()
-                phLevel = getPHLevel()
+               # phLevel = getPHLevel()
                 print "Humidity Left : " + str(humidtyL) + "%"
                 print "Humidity Right : " + str(humidtyR) + "%"
                 print "Avg Humidity : " + str(humidityAvg) + "%"
@@ -34,7 +34,7 @@ def main( ):
                 print "Underwater temp: " + str(waterTemp) + "F"
                 print
                 print
-                print "PH LEVEL :" + str(phLevel)
+                # print "PH LEVEL :" + str(phLevel)
                 time.sleep(10)
                 continue
             except:
