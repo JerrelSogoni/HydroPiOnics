@@ -1,7 +1,7 @@
 import time
-from hp.ThirdPartyAPIs.MinipHBFW.BeagleBone.pHReader import pHReader
-from hp.ThirdPartyAPIs.UnderwaterTemperatureReader.Temperature import Temperature
-from hp.ThirdPartyAPIs.Adafruit_Python_DHT.examples.AdafruitDHT2 import AdafruitDHT2
+from ThirdPartyAPIs.MinipHBFW.BeagleBone.pHReader import pHReader
+from ThirdPartyAPIs.UnderwaterTemperatureReader.Temperature import Temperature
+from ThirdPartyAPIs.Adafruit_Python_DHT.examples.AdafruitDHT2 import AdafruitDHT2
 from data.Monitor import Monitor
 
 def main( ):
