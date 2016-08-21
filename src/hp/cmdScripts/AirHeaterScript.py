@@ -43,13 +43,13 @@ def main(cycleOn,cycleOnUnits, cycleOff, cycleOffUnits, mode , limit):
                             GPIO.output(pin, GPIO.LOW)
                             on = True
                         else:
-                            time.sleep(60)
+                            time.sleep(5)
                             continue
                     else:
 
                         GPIO.output(pin, GPIO.HIGH)
                         on = False
-                        time.sleep(60)
+                        time.sleep(5)
                         continue
                     print "AirHeater is " + str(on)
                 except:
