@@ -62,7 +62,7 @@ def averageHumidityAndTemp(humidityR, humidityL, tempR, tempL):
 
 def getPHLevel(phReader):
     sample = phReader.read()
-    return pHReader.calc_ph(sample)
+    return phReader.calc_ph(sample)
 
 
 if __name__ == '__main__':
