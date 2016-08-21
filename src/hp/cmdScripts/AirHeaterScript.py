@@ -37,7 +37,7 @@ def main(cycleOn,cycleOnUnits, cycleOff, cycleOffUnits, mode , limit):
                     humidtyL, temperatureL = airTemperatureLeftSideSensor.getHumidityandTemp()
                     humidityAvg, tempAvg = averageHumidityAndTemp(humidtyR, humidtyL, temperatureR, temperatureL)
                     print "Avg Temp: " + str(tempAvg)
-                    if (tempAvg > limit):
+                    if (tempAvg < limit):
                         print "did it go through"
                         if (not on):
                             GPIO.output(pin, GPIO.LOW)
