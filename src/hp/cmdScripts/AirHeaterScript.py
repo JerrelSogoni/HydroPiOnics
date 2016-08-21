@@ -1,6 +1,7 @@
 import sys
 import os
 print os.getcwd()
+sys.path.insert(0, os.getcwd()[0:len(os.getcwd()) - 10] )
 print sys.path
 import RPi.GPIO as GPIO
 import time
