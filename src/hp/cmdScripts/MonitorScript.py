@@ -11,11 +11,14 @@ def main( ):
     airTemperatureRightSideSensor = AdafruitDHT2('22', Monitor.RIGHTSIDEAIRSENSOR)
     airTemperatureLeftSideSensor = AdafruitDHT2('22', Monitor.LEFTSIDEAIRSENSOR)
     waterTemperature = Temperature()
-    phReader = pHReader()
+    pHReader = pHReader()
+
+
+
 
     try:
         while(True):
-
+            try:
                 humidtyR, temperatureR = airTemperatureRightSideSensor.getHumidityandTemp()
                 humidtyL, temperatureL = airTemperatureLeftSideSensor.getHumidityandTemp()
                 humidityAvg, tempAvg = averageHumidityAndTemp(humidtyR, humidtyL, temperatureR, temperatureL)
@@ -38,8 +41,8 @@ def main( ):
                 print
                 print "PH LEVEL : " + phLevel
                 time.sleep(10)
-                
-
+                continue
+            except:
                 print "read failure re-reading"
                 time.sleep(5)
                 continue
@@ -59,7 +62,6 @@ def averageHumidityAndTemp(humidityR, humidityL, tempR, tempL):
 
 def getPHLevel():
     sample = pHReader.read()
-    print sample
     return pHReader.calc_ph(sample)
 
 
