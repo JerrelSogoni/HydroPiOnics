@@ -1,4 +1,5 @@
 import sys
+import os
 sys.path.insert(0, os.getcwd()[0:len(os.getcwd()) - 10] )
 import RPi.GPIO as GPIO
 import time
