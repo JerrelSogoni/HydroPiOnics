@@ -1,8 +1,6 @@
 import sys
 import os
-print os.getcwd()
 sys.path.insert(0, os.getcwd()[0:len(os.getcwd()) - 10] )
-print sys.path
 import RPi.GPIO as GPIO
 import time
 from ThirdPartyAPIs.Adafruit_Python_DHT.examples.AdafruitDHT2 import AdafruitDHT2
@@ -36,16 +34,13 @@ def main(cycleOn,cycleOnUnits, cycleOff, cycleOffUnits, mode , limit):
             humidtyR, temperatureR = airTemperatureRightSideSensor.getHumidityandTemp()
             humidtyL, temperatureL = airTemperatureLeftSideSensor.getHumidityandTemp()
             humidityAvg, tempAvg = averageHumidityAndTemp(humidtyR, humidtyL, temperatureR, temperatureL)
-            print limit
             while (True):
                 try:
                     humidtyR, temperatureR = airTemperatureRightSideSensor.getHumidityandTemp()
                     humidtyL, temperatureL = airTemperatureLeftSideSensor.getHumidityandTemp()
                     humidityAvg, tempAvg = averageHumidityAndTemp(humidtyR, humidtyL, temperatureR, temperatureL)
                     print "Avg Temp: " + str(tempAvg)
-                    print tempAvg < limit
-                    if (tempAvg < limit):
-                        print "did it go through?"
+                    if (tempAvg > limit):
                         if (not on):
                             GPIO.output(pin, GPIO.LOW)
                             on = True

@@ -1,8 +1,8 @@
 import sys
 import RPi.GPIO as GPIO
 import time
+sys.path.insert(0, os.getcwd()[0:len(os.getcwd()) - 10] )
 from ThirdPartyAPIs.UnderwaterTemperatureReader.Temperature import Temperature
-from data.Monitor import Monitor
 GPIO.setmode(GPIO.BCM)
 
 

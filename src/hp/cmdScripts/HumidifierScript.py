@@ -1,4 +1,5 @@
 import sys
+sys.path.insert(0, os.getcwd()[0:len(os.getcwd()) - 10] )
 import RPi.GPIO as GPIO
 import time
 from ThirdPartyAPIs.Adafruit_Python_DHT.examples.AdafruitDHT2 import AdafruitDHT2

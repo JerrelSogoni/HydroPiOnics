@@ -1,5 +1,6 @@
 import sys
 import time
+sys.path.insert(0, os.getcwd()[0:len(os.getcwd()) - 10] )
 from ThirdPartyAPIs.Adafruit_Motor_HAT_Python_Library.Adafruit_MotorHAT import Adafruit_MotorHAT, Adafruit_DCMotor
 from hpThreadingClasses.MotorFanThreading import MotorFanThreading
 
