@@ -45,8 +45,9 @@ def main(cycleOn1,cycleOn1Units, cycleOff1, cycleOff1Units,
 
 
 def convertTimeToSeconds(cycleTime, cycleUnit):
+    cycleTime = float(cycleTime)
     if (cycleUnit == 's'):
-        return float(cycleTime)
+        return cycleTime
     elif (cycleUnit == 'm'):
         return cycleTime * 60.0
     else:

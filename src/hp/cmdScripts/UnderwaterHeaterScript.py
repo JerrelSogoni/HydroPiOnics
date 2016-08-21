@@ -40,12 +40,12 @@ def main(cycleOn,cycleOnUnits, cycleOff, cycleOffUnits, mode , limit):
                             GPIO.output(pin, GPIO.LOW)
                             on = True
                         else:
-                            time.sleep(60)
+                            time.sleep(5)
                             continue
                     else:
                         GPIO.output(pin, GPIO.HIGH)
                         on = False
-                        time.sleep(60)
+                        time.sleep(5)
                         continue
                     print "Underwater Heater is" + str(on)
                 except:
@@ -65,8 +65,9 @@ def main(cycleOn,cycleOnUnits, cycleOff, cycleOffUnits, mode , limit):
 
 
 def convertTimeToSeconds(self, cycleTime, cycleUnit):
+    cycleTime = float(cycleTime)
     if (cycleUnit == 's'):
-        return float(cycleTime)
+        return cycleTime
     elif (cycleUnit == 'm'):
         return cycleTime * 60.0
     else:
@@ -74,7 +75,7 @@ def convertTimeToSeconds(self, cycleTime, cycleUnit):
 
 
 def averageHumidityAndTemp(self, humidityR, humidityL, tempR, tempL):
-    humidityAvg = (humidityR + humidityR) / 2
+    humidityAvg = (humidityR + humidityL) / 2
     tempAvg = (tempR + tempL) / 2
     return humidityAvg, tempAvg
 
