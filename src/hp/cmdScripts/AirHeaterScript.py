@@ -14,6 +14,8 @@ def main(cycleOn,cycleOnUnits, cycleOff, cycleOffUnits, mode , limit):
     pin = 16
     GPIO.setup(pin, GPIO.OUT)
     GPIO.output(pin, GPIO.HIGH)
+    airTemperatureRightSideSensor = AdafruitDHT2('22', Monitor.RIGHTSIDEAIRSENSOR)
+    airTemperatureLeftSideSensor = AdafruitDHT2('22', Monitor.LEFTSIDEAIRSENSOR)
     on = False
     try:
         if(mode == 1):
@@ -29,11 +31,6 @@ def main(cycleOn,cycleOnUnits, cycleOff, cycleOffUnits, mode , limit):
                 continue
 
         else:
-            airTemperatureRightSideSensor = AdafruitDHT2('22', Monitor.RIGHTSIDEAIRSENSOR)
-            airTemperatureLeftSideSensor = AdafruitDHT2('22', Monitor.LEFTSIDEAIRSENSOR)
-            humidtyR, temperatureR = airTemperatureRightSideSensor.getHumidityandTemp()
-            humidtyL, temperatureL = airTemperatureLeftSideSensor.getHumidityandTemp()
-            humidityAvg, tempAvg = averageHumidityAndTemp(humidtyR, humidtyL, temperatureR, temperatureL)
             while (True):
                 try:
                     humidtyR, temperatureR = airTemperatureRightSideSensor.getHumidityandTemp()
