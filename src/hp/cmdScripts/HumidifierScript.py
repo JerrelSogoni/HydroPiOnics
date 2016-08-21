@@ -20,7 +20,7 @@ def main(cycleOn,cycleOnUnits, cycleOff, cycleOffUnits, mode , limit):
 
     on = False
     try:
-        if(mode == 1):
+        if(mode == 0):
             while(True):
                 GPIO.output(pin, GPIO.LOW)
                 print "Heater On for " + str(cycleOn) + " seconds"
@@ -36,7 +36,7 @@ def main(cycleOn,cycleOnUnits, cycleOff, cycleOffUnits, mode , limit):
                     humidtyL, temperatureL = airTemperatureLeftSideSensor.getHumidityandTemp()
                     humidityAvg, tempAvg = averageHumidityAndTemp(humidtyR, humidtyL, temperatureR, temperatureL)
                     print "Avg Humidity: " + str(humidityAvg)
-                    if (humidityAvg < limit):
+                    if (humidityAvg < int(limit)):
                         if (not on):
                             GPIO.output(pin, GPIO.LOW)
                             on = True
@@ -80,4 +80,4 @@ def averageHumidityAndTemp(humidityR, humidityL, tempR, tempL):
     return humidityAvg, tempAvg
 
 if __name__ == '__main__':
-	sys.exit(main(sys.argv[1], sys.argv[2],sys.argv[3],sys.argv[4], sys.argv[5]))
+	sys.exit(main(sys.argv[1], sys.argv[2],sys.argv[3],sys.argv[4], sys.argv[5], sys.argv[6]))

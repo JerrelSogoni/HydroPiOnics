@@ -18,7 +18,7 @@ def main(cycleOn,cycleOnUnits, cycleOff, cycleOffUnits, mode , limit):
     airTemperatureLeftSideSensor = AdafruitDHT2('22', Monitor.LEFTSIDEAIRSENSOR)
     on = False
     try:
-        if(mode == 1):
+        if(mode == 0):
             cycleOn = convertTimeToSeconds(cycleOn, cycleOnUnits)
             cycleOff = convertTimeToSeconds(cycleOff, cycleOffUnits)
             while(True):

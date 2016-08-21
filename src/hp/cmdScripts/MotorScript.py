@@ -27,6 +27,7 @@ def main(cycleOn1,cycleOn1Units, cycleOff1, cycleOff1Units,
     cycleOff3 = convertTimeToSeconds(cycleOff3, cycleOff3Units)
     try:
         while(True):
+            WaterPumpThread = MotorFanThreading(waterAirPump)
             VentThread = MotorFanThreading(ventFan, cycleOn = cycleOn1, cycleOff = cycleOff1, cycle = True )
             IntakeThread = MotorFanThreading(intakeFan, cycleOn=cycleOn2, cycleOff=cycleOff2, cycle=True)
             ExhaustThread = MotorFanThreading(exhaustFan, cycleOn=cycleOn3, cycleOff=cycleOff3, cycle=True)
@@ -36,6 +37,7 @@ def main(cycleOn1,cycleOn1Units, cycleOff1, cycleOff1Units,
         VentThread.die()
         IntakeThread.die()
         ExhaustThread.die()
+        WaterPumpThread.die()
         print "bye"
 
 
