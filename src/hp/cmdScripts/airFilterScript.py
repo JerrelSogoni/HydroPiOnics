@@ -16,10 +16,10 @@ def main(cycleOn,cycleOnUnits, cycleOff, cycleOffUnits ):
     try:
         while(True):
             GPIO.output(pin, GPIO.LOW)
-            print "LED On for " + str(cycleOn) + " seconds"
+            print "AirFilter On for " + str(cycleOn) + " seconds"
             time.sleep(cycleOn)
             GPIO.output(pin, GPIO.HIGH)
-            print "LED Off for " + str(cycleOff) + " seconds"
+            print "AirFilter for " + str(cycleOff) + " seconds"
             time.sleep(cycleOff)
             continue
     except KeyboardInterrupt:
