@@ -14,14 +14,13 @@ def main(cycleOn,cycleOnUnits, cycleOff, cycleOffUnits, mode , limit):
     pin = 20
     GPIO.setup(pin, GPIO.OUT)
     GPIO.output(pin, GPIO.HIGH)
-    cycleOn = convertTimeToSeconds(cycleOn, cycleOnUnits)
-    cycleOff = convertTimeToSeconds(cycleOff, cycleOffUnits)
     airTemperatureRightSideSensor = AdafruitDHT2('22', Monitor.RIGHTSIDEAIRSENSOR)
     airTemperatureLeftSideSensor = AdafruitDHT2('22', Monitor.LEFTSIDEAIRSENSOR)
-
     on = False
     try:
         if(mode == 0):
+            cycleOn = convertTimeToSeconds(cycleOn, cycleOnUnits)
+            cycleOff = convertTimeToSeconds(cycleOff, cycleOffUnits)
             while(True):
                 GPIO.output(pin, GPIO.LOW)
                 print "Heater On for " + str(cycleOn) + " seconds"
