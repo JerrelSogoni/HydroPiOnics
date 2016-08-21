@@ -44,6 +44,7 @@ def main(cycleOn,cycleOnUnits, cycleOff, cycleOffUnits, mode , limit):
                     humidityAvg, tempAvg = averageHumidityAndTemp(humidtyR, humidtyL, temperatureR, temperatureL)
                     print "Avg Temp: " + str(tempAvg)
                     if (tempAvg < limit):
+                        print "did it go through?"
                         if (not on):
                             GPIO.output(pin, GPIO.LOW)
                             on = True
@@ -51,6 +52,7 @@ def main(cycleOn,cycleOnUnits, cycleOff, cycleOffUnits, mode , limit):
                             time.sleep(60)
                             continue
                     else:
+
                         GPIO.output(pin, GPIO.HIGH)
                         on = False
                         time.sleep(60)
