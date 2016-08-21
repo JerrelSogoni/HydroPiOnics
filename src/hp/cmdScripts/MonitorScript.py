@@ -8,6 +8,9 @@ def main( ):
     airTemperatureRightSideSensor = AdafruitDHT2('22', Monitor.RIGHTSIDEAIRSENSOR)
     airTemperatureLeftSideSensor = AdafruitDHT2('22', Monitor.LEFTSIDEAIRSENSOR)
     waterTemperature = Temperature()
+    phReader = pHReader()
+    
+
 
 
     try:
@@ -47,7 +50,7 @@ def main( ):
 
 
 def averageHumidityAndTemp(humidityR, humidityL, tempR, tempL):
-            humidityAvg = (humidityR + humidityR) / 2
+            humidityAvg = (humidityR + humidityL) / 2
             tempAvg = (tempR + tempL) / 2
             return humidityAvg, tempAvg
 
@@ -55,6 +58,7 @@ def averageHumidityAndTemp(humidityR, humidityL, tempR, tempL):
 def getPHLevel():
     sample = pHReader.read()
     return pHReader.calc_ph(sample)
+
 
 if __name__ == '__main__':
 	main()
