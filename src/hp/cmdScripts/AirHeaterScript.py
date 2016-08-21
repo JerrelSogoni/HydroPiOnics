@@ -1,7 +1,8 @@
 import sys
+print sys.path
 import RPi.GPIO as GPIO
 import time
-from Adafruit_Python_DHT.examples.AdafruitDHT2 import AdafruitDHT2
+from ThirdPartyAPIs.Adafruit_Python_DHT.examples.AdafruitDHT2 import AdafruitDHT2
 from data.Monitor import Monitor
 GPIO.setmode(GPIO.BCM)
 
