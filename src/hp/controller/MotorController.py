@@ -269,19 +269,19 @@ class MotorController:
 
         if(self.ventFanThreading != None):
             self.ventFanThreading.die()
-            self.ventFanThreading = False
+            self.ventFanThreading = None
 
         if(self.intakeFanThreading != None):
             self.intakeFanThreading.die()
-            self.intakeFanThreading = False
+            self.intakeFanThreading = None
 
         if(self.exhaustFanThreading != None):
             self.exhaustFanThreading.die()
-            self.exhaustFanThreading = False
+            self.exhaustFanThreading = None
 
         if(self.waterAirThreading != None):
             self.waterAirThreading.die()
-            self.waterAirThreading = False
+            self.waterAirThreading = None
 
 
 
