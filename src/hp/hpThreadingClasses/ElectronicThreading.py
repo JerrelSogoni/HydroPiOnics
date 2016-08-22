@@ -2,14 +2,12 @@ import threading
 import RPi.GPIO as GPIO
 import time
 
-RangeLow = None
-RangeHigh = None
+
 GPIO.setmode(GPIO.BCM)
 class ElectronicThreading(threading.Thread):
     def __init__(self, device, mode= None, rangeLow = None, rangeHigh = None,cycleOn = None,cycleOff = None, appData = None, monitor = None , relayData = None):
         super(ElectronicThreading, self).__init__()
-        global RangeLow
-        global RangeHigh
+
         self.relayData = relayData
         self.pin = device
         self.appData = appData
@@ -19,8 +17,8 @@ class ElectronicThreading(threading.Thread):
         self.mode = mode
         self.cycleOn = cycleOn
         self.cycleOff = cycleOff
-        RangeLow = rangeLow
-        RangeHigh = rangeHigh
+        self.RangeLow = rangeLow
+        self.RangeHigh = rangeHigh
         self.start()
 
     def run(self):
@@ -43,7 +41,7 @@ class ElectronicThreading(threading.Thread):
             elif(self.mode == self.appData.ENVIRONMENTAL):
                 if(self.pin == self.relayData.WATERHEATERPIN):
                     while(not self.isDead):
-                        if (self.monitor.waterTemperature < RangeLow):
+                        if (self.monitor.waterTemperature < self.RangeLow):
                             if(not self.isOn):
                                 GPIO.output(self.pin, GPIO.LOW)
                                 self.isOn = True
@@ -51,7 +49,7 @@ class ElectronicThreading(threading.Thread):
                             else:
                                 time.sleep(60)
                                 continue
-                        elif (self.monitor.waterTemperature > RangeHigh):
+                        elif (self.monitor.waterTemperature > self.RangeHigh):
                             print "Cannot really do much We dont have a water cooler"
                             GPIO.output(self.pin, GPIO.HIGH)
                             self.isOn = False
@@ -110,10 +108,9 @@ class ElectronicThreading(threading.Thread):
         GPIO.output(self.pin, GPIO.HIGH)
 
     def changeRangeLow(self, air):
-        global RangeLow
-        RangeLow = air
+
+        self.RangeLow = air
     def changeRangeHigh(self, air):
-        global RangeHigh
-        RangeHigh = air
+        self.RangeHigh = air
 
 
