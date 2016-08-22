@@ -32,11 +32,10 @@ def main(cycleOn1,cycleOn1Units, cycleOff1, cycleOff1Units,
         while(True):
             WaterPumpThread = MotorFanThreading(waterAirPump)
             print "Vent fan on for " + str(cycleOn1) + " off : " + str(cycleOff1)
-            print "Intake fan on for " + str(cycleOn2) + " off : " + str(cycleOff2)
-            print "Exhaust fan on for " + str(cycleOn3) + " off : " + str(cycleOff3)
-
             VentThread = MotorFanThreading(ventFan, cycleOn = cycleOn1, cycleOff = cycleOff1, cycle = True )
+            print "Intake fan on for " + str(cycleOn2) + " off : " + str(cycleOff2)
             IntakeThread = MotorFanThreading(intakeFan, cycleOn=cycleOn2, cycleOff=cycleOff2, cycle= True)
+            print "Exhaust fan on for " + str(cycleOn3) + " off : " + str(cycleOff3)
             ExhaustThread = MotorFanThreading(exhaustFan, cycleOn=cycleOn3, cycleOff=cycleOff3, cycle=True)
             time.sleep(2147483647)
             continue
