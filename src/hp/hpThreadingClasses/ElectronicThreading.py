@@ -63,7 +63,7 @@ class ElectronicThreading(threading.Thread):
                             continue
                 elif(self.pin == self.relayData.AIRHEATERPIN):
                     while (not self.isDead):
-                        if (self.monitor.temperature < RangeLow):
+                        if (self.monitor.temperature < self.RangeLow):
                             if (not self.isOn):
                                 GPIO.output(self.pin, GPIO.LOW)
                                 self.isOn = True
@@ -77,7 +77,7 @@ class ElectronicThreading(threading.Thread):
                             continue
                 elif(self.pin == self.relayData.HUMIDIFIERPIN):
                     while (not self.isDead):
-                        if (self.monitor.humidity < RangeLow):
+                        if (self.monitor.humidity < self.RangeLow):
                             if (not self.isOn):
                                 GPIO.output(self.pin, GPIO.LOW)
                                 self.isOn = True
