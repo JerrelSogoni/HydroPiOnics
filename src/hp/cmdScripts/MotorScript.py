@@ -42,15 +42,11 @@ def main(cycleOn1,cycleOn1Units, cycleOff1, cycleOff1Units,
             continue
     except KeyboardInterrupt:
         VentThread.die()
-        VentThread = None
         IntakeThread.die()
-        IntakeThread = None
         ExhaustThread.die()
-        ExhaustThread = None
         WaterPumpThread.die()
-        WaterPumpThread = None
-        sys.exit()
         print "bye"
+        sys.exit(1)
 
 
 
