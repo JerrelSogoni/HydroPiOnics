@@ -22,10 +22,11 @@ class MotorFanThreading(threading.Thread):
                     self.motor.setSpeed(255)
                     print "motor on for " + str(self.CycleOn)
                     time.sleep(self.CycleOn)
-                    print "motor off for " + str(self.CycleOff)
-                    self.motor.run(Adafruit_MotorHAT.RELEASE)
-                    time.sleep(self.CycleOff)
-                    continue
+                    if(self.CycleOff != 0):
+                        print "motor off for " + str(self.CycleOff)
+                        self.motor.run(Adafruit_MotorHAT.RELEASE)
+                        time.sleep(self.CycleOff)
+                        continue
                 time.sleep(60)
                 continue
 

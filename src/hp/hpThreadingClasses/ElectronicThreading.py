@@ -32,11 +32,12 @@ class ElectronicThreading(threading.Thread):
                         GPIO.output(self.pin, GPIO.LOW)
                         print  str(self.pin) +" On for " + str(self.cycleOn)
                         time.sleep(self.cycleOn)
-                        print str(self.pin) +" Off for " + str(self.cycleOff)
-                        GPIO.output(self.pin, GPIO.HIGH)
-                        time.sleep(self.cycleOff)
-                        continue
-                    time.sleep(2147483647)
+                        if(self.cycleOff != 0):
+                            print str(self.pin) +" Off for " + str(self.cycleOff)
+                            GPIO.output(self.pin, GPIO.HIGH)
+                            time.sleep(self.cycleOff)
+                            continue
+                    time.sleep(60)
                     continue
             elif(self.mode == self.appData.ENVIRONMENTAL):
                 if(self.pin == self.relayData.WATERHEATERPIN):
