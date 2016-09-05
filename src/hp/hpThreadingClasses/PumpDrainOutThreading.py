@@ -9,6 +9,7 @@ class PumpDrainOutThreading(threading.Thread):
         super(PumpDrainOutThreading, self).__init__()
         self.DRAINOUTTIME = 300
         self.list = list
+        self.pinList = [6,12]
         self.start()
 
     def run(self):
