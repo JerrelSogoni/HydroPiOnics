@@ -88,8 +88,8 @@ class EvironmentalMonitorView:
                                                                   size=wx.Size(104, 13), style=0)
         self.temperatureRangeText.SetToolTipString(u'in Fahrenheit')
         self.temperatureRangeText.SetHelpText(u'in Fahrenheit')
-        self.temperatureRangeText.SetFont(wx.Font(7, wx.DECORATIVE, wx.NORMAL,
-                                               False))
+        self.temperatureRangeText.SetFont(wx.Font(7, wx.DECORATIVE, wx.NORMAL, wx.NORMAL,
+                                               False,  u'Segoe Print'))
         self.staticEnvironmentArray.append(self.temperatureRangeText)
 
         self.temperatureTextStart = wx.lib.stattext.GenStaticText(ID=wx.ID_ANY,
@@ -121,8 +121,8 @@ class EvironmentalMonitorView:
                                                                label=u'Humidity Range', name=u'humdiityRangeText',
                                                                parent=self.workspace, pos=wx.Point(STARTTEXTX, 460),
                                                                size=wx.Size(86, 15), style=0)
-        self.humidityRangeText.SetFont(wx.Font(7, wx.DECORATIVE, wx.NORMAL,
-                                               False))
+        self.humidityRangeText.SetFont(wx.Font(7, wx.DECORATIVE, wx.NORMAL, wx.NORMAL,
+                                               False, u'Segoe Print'))
         self.staticEnvironmentArray.append(self.humidityRangeText)
 
 
@@ -181,7 +181,7 @@ class EvironmentalMonitorView:
                                                                   size=wx.Size(104, 13), style=0)
         self.underwaterTemperatureRangeText.SetToolTipString(u'in Fahrenheit')
         self.underwaterTemperatureRangeText.SetHelpText(u'in Fahrenheit')
-        self.underwaterTemperatureRangeText.SetFont(wx.Font(7, wx.DECORATIVE, wx.NORMAL,
+        self.underwaterTemperatureRangeText.SetFont(wx.Font(7, wx.DECORATIVE, wx.NORMAL, wx.NORMAL,
                                                False))
         self.staticEnvironmentArray.append(self.underwaterTemperatureRangeText)
 
